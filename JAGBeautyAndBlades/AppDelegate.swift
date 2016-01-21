@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIColor_Hex_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+   //     UINavigationBar.appearance().barTintColor = purpleColor
+        UILabel.appearance().font = UIFont(name: "HiraKakuProN-W3", size: 9)
+        UINavigationBar.appearance().backItem?.backBarButtonItem?.tintColor = UIColor.whiteColor()
+   //     UILabel.appearance().textColor = UIColor.greenColor()
+    //    UILabel.appearance().backgroundColor = UIColor.whiteColor()
+        
+      //  UIView.appearance().backgroundColor = UIColor.blackColor()
         return true
     }
 

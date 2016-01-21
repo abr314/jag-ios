@@ -1,0 +1,47 @@
+PODS:
+  - Alamofire (3.1.5)
+  - PureLayout (3.0.1)
+  - Realm (0.97.0):
+    - Realm/Headers (= 0.97.0)
+  - Realm/Headers (0.97.0)
+  - RealmSwift (0.97.0):
+    - Realm (= 0.97.0)
+  - SwiftyButton (0.4.0):
+    - SwiftyButton/CustomContent (= 0.4.0)
+  - SwiftyButton/CustomContent (0.4.0):
+    - PureLayout (~> 3.0)
+  - SwiftyJSON (2.3.2)
+  - SwiftyTimer (1.2.0)
+  - UIColor_Hex_Swift (1.8)
+  - XLForm (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - RealmSwift
+  - SwiftyButton
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - SwiftyTimer
+  - UIColor_Hex_Swift (~> 1.8)
+  - XLForm (~> 3.0)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 929539eb6a3304eaa9153ca44041a78b85bf2ee5
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
+  RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
+  SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SwiftyTimer: 5453593e0aaacfb1611fb6986d257281140913bb
+  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
+  XLForm: 754b061f9f4b249a7ab7548efb22f1b586e26740
+
+COCOAPODS: 0.39.0
