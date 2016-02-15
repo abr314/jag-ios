@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c5r-w3-Hk1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PF Monumenta Pro Metallica.ttf">
+            <string>PFMonumentaPro-Metallica</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="iGJ-BA-p8E">
+            <objects>
+                <viewController id="Qau-sl-3md" customClass="InitialViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YZp-8w-ReA"/>
+                        <viewControllerLayoutGuide type="bottom" id="6qp-YL-Zmf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hdw-fn-lEX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JAG Beauty and Blades" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHs-Qb-gLE">
+                                <rect key="frame" x="73" y="72" width="455" height="137"/>
+                                <fontDescription key="fontDescription" name="PFMonumentaPro-Metallica" family="PF Monumenta Pro" pointSize="57"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SUs-AO-ckD"/>
+                    <connections>
+                        <segue destination="1xc-Yf-5U2" kind="show" identifier="SignUp" id="bcP-sr-fBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNM-EK-0mm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252" y="-194"/>
+        </scene>
+        <!--HomePage-->
+        <scene sceneID="cTO-fv-ZJe">
+            <objects>
+                <viewController storyboardIdentifier="HomePage" title="HomePage" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1xc-Yf-5U2" customClass="HomePageViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3c-xN-VKo"/>
+                        <viewControllerLayoutGuide type="bottom" id="fDj-R9-qyL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nV0-d1-Oqr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rp7-mz-7r3">
+                                <rect key="frame" x="369" y="282.5" width="145" height="34"/>
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.7725490196" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="RsU-Td-JgL">
+                                        <variation key="widthClass=compact" constant="102"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="102" id="gfN-XF-kv6"/>
+                                </constraints>
+                                <state key="normal" title="Professional"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gfN-XF-kv6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="RsU-Td-JgL"/>
+                                        <include reference="gfN-XF-kv6"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTC-Dc-vmF">
+                                <rect key="frame" x="111" y="282.5" width="145" height="34"/>
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.7725490196" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="x61-qY-wOS">
+                                        <variation key="widthClass=compact" constant="102"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" title="Customer">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please Create an Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7p5-7a-W4F">
+                                <rect key="frame" x="147" y="182" width="307" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7p5-7a-W4F" firstAttribute="centerY" secondItem="nV0-d1-Oqr" secondAttribute="centerY" constant="-90.5" id="2Q7-XI-HzI"/>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="firstBaseline" secondItem="fTC-Dc-vmF" secondAttribute="baseline" id="B9Y-dz-6lz">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="7p5-7a-W4F" firstAttribute="centerX" secondItem="nV0-d1-Oqr" secondAttribute="centerX" id="CoW-Vb-OWY"/>
+                            <constraint firstItem="fTC-Dc-vmF" firstAttribute="leading" secondItem="nV0-d1-Oqr" secondAttribute="leadingMargin" id="D1x-P1-3Bo">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="baseline" secondItem="fTC-Dc-vmF" secondAttribute="baseline" id="F9a-Xd-UHm">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="trailing" secondItem="nV0-d1-Oqr" secondAttribute="trailingMargin" id="IO9-Gf-Eoh"/>
+                            <constraint firstItem="fDj-R9-qyL" firstAttribute="top" secondItem="rp7-mz-7r3" secondAttribute="bottom" constant="304" id="KoJ-ws-wgV">
+                                <variation key="widthClass=compact" constant="304"/>
+                            </constraint>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="baseline" secondItem="fTC-Dc-vmF" secondAttribute="baseline" id="ONm-0u-L6C">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="fTC-Dc-vmF" firstAttribute="leading" secondItem="nV0-d1-Oqr" secondAttribute="leadingMargin" constant="91" id="SiU-cO-75B"/>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="top" secondItem="fTC-Dc-vmF" secondAttribute="top" id="Uc5-Sg-ZP8">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="fTC-Dc-vmF" firstAttribute="top" secondItem="rp7-mz-7r3" secondAttribute="top" id="VIn-Zk-UpI">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="firstBaseline" secondItem="fTC-Dc-vmF" secondAttribute="baseline" id="Vgx-21-NDu">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="fTC-Dc-vmF" firstAttribute="centerY" secondItem="nV0-d1-Oqr" secondAttribute="centerY" id="Vvg-R5-mBC">
+                                <variation key="widthClass=compact" constant="-19"/>
+                            </constraint>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="baseline" secondItem="fTC-Dc-vmF" secondAttribute="firstBaseline" id="YmV-Dh-KJV">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="7p5-7a-W4F" firstAttribute="top" secondItem="c3c-xN-VKo" secondAttribute="bottom" constant="94" id="cvM-8g-CBB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rp7-mz-7r3" secondAttribute="trailing" constant="66" id="eiK-cl-8sZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rp7-mz-7r3" secondAttribute="trailing" constant="20" id="h4N-Ec-vat"/>
+                            <constraint firstItem="7p5-7a-W4F" firstAttribute="leading" secondItem="nV0-d1-Oqr" secondAttribute="leadingMargin" constant="82" id="rhD-Ls-RFr"/>
+                            <constraint firstItem="rp7-mz-7r3" firstAttribute="baseline" secondItem="fTC-Dc-vmF" secondAttribute="firstBaseline" id="tTZ-jZ-DC2">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cvM-8g-CBB"/>
+                                <exclude reference="rhD-Ls-RFr"/>
+                                <exclude reference="D1x-P1-3Bo"/>
+                                <exclude reference="IO9-Gf-Eoh"/>
+                                <exclude reference="Uc5-Sg-ZP8"/>
+                                <exclude reference="Vgx-21-NDu"/>
+                                <exclude reference="h4N-Ec-vat"/>
+                                <exclude reference="tTZ-jZ-DC2"/>
+                                <exclude reference="KoJ-ws-wgV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="rp7-mz-7r3"/>
+                                <include reference="7p5-7a-W4F"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="cvM-8g-CBB"/>
+                                <include reference="rhD-Ls-RFr"/>
+                                <include reference="D1x-P1-3Bo"/>
+                                <exclude reference="SiU-cO-75B"/>
+                                <exclude reference="B9Y-dz-6lz"/>
+                                <exclude reference="IO9-Gf-Eoh"/>
+                                <include reference="Uc5-Sg-ZP8"/>
+                                <include reference="Vgx-21-NDu"/>
+                                <exclude reference="YmV-Dh-KJV"/>
+                                <exclude reference="eiK-cl-8sZ"/>
+                                <include reference="h4N-Ec-vat"/>
+                                <include reference="tTZ-jZ-DC2"/>
+                                <include reference="KoJ-ws-wgV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="09p-vX-qRc"/>
+                    <connections>
+                        <outlet property="createAccountCallLabel" destination="7p5-7a-W4F" id="H2C-Hh-Lpk"/>
+                        <outlet property="customerButton" destination="fTC-Dc-vmF" id="ixd-rK-Jk9"/>
+                        <outlet property="professionalButton" destination="rp7-mz-7r3" id="NQz-uv-tId"/>
+                        <segue destination="mwj-Jv-CbB" kind="show" identifier="ProfessionalSignup" animates="NO" id="TPF-op-JGa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkE-hH-9lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-383" y="-746"/>
+        </scene>
+        <!--Select Licenses-->
+        <scene sceneID="EgP-d5-AEE">
+            <objects>
+                <viewController id="mwj-Jv-CbB" customClass="SelectLicenses" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OOh-CA-qWF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z80-ME-SW2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeD-zu-EXi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ncb-tA-qPX"/>
+                    <connections>
+                        <segue destination="1xc-Yf-5U2" kind="presentation" identifier="Cancel" id="HUG-VI-3zG"/>
+                        <segue destination="mhz-W5-6vg" kind="show" identifier="SignUp" animates="NO" id="Kdi-5l-MCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcr-f1-2VJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="-1370"/>
+        </scene>
+        <!--ViewLocations-->
+        <scene sceneID="1Qx-af-kRg">
+            <objects>
+                <tableViewController title="ViewLocations" id="gZz-7t-zA8" customClass="ViewLocationsTableViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dhE-vt-xGv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="r5m-57-fM4" detailTextLabel="gJP-Tw-qxh" style="IBUITableViewCellStyleValue1" id="xxZ-RJ-lBw">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xxZ-RJ-lBw" id="j1p-eE-oOn">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r5m-57-fM4">
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gJP-Tw-qxh">
+                                            <rect key="frame" x="543.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gZz-7t-zA8" id="mfG-qv-rBs"/>
+                            <outlet property="delegate" destination="gZz-7t-zA8" id="Fgf-dn-JGG"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="lLO-ni-vdQ" kind="show" identifier="CreateLocation" id="Psu-a9-kVd"/>
+                        <segue destination="2L2-Eh-mWu" kind="show" identifier="locationFromMap" id="D3a-lQ-G9H"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBm-Fb-qkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="-1622"/>
+        </scene>
+        <!--BasicSignUp-->
+        <scene sceneID="29I-jo-DUG">
+            <objects>
+                <viewController storyboardIdentifier="BasicSignUp" title="BasicSignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mhz-W5-6vg" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AiC-kC-tKW"/>
+                        <viewControllerLayoutGuide type="bottom" id="6No-wV-AaL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tvo-Qs-K3t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gYa-hG-GtN"/>
+                    <connections>
+                        <segue destination="oBR-rO-yMK" kind="show" identifier="ProfessionalDetail" animates="NO" id="ZVv-Pe-KFB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDB-aZ-hYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="-455"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="H2O-BN-fbc">
+            <objects>
+                <viewController title="Details" id="oBR-rO-yMK" customClass="ProfessionalDetailSignUpViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bYx-iy-UlT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qfq-LD-WMO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HBE-pE-U31">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="SrS-Ok-qxK" kind="show" identifier="Availability" animates="NO" id="YNl-Kc-xQP"/>
+                        <segue destination="gZz-7t-zA8" kind="show" identifier="ViewLocations" animates="NO" id="emF-Hh-Cgg"/>
+                        <segue destination="Kdn-tA-gI3" kind="show" identifier="VerifyInformation" animates="NO" id="acv-Xk-SnX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqG-v8-yp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-455"/>
+        </scene>
+        <!--Verify Information Form-->
+        <scene sceneID="GTn-Og-9i0">
+            <objects>
+                <viewController title="Verify Information Form" id="Kdn-tA-gI3" customClass="VerifyInformationFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z3P-Bc-ayh"/>
+                        <viewControllerLayoutGuide type="bottom" id="eOc-u5-cqZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LWi-W1-NwL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sK-1h-GP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="-455"/>
+        </scene>
+        <!--ProfessionalDetailSignUp1-->
+        <scene sceneID="h1a-lY-Uqe">
+            <objects>
+                <viewController storyboardIdentifier="ProDetailSignUp" title="ProfessionalDetailSignUp1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="inQ-1n-2Vg" customClass="ProfessionalDetailSignUpViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5uf-ix-K2I"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIn-4m-afg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mhn-kg-oWa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaP-Mw-GZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="471"/>
+        </scene>
+        <!--Locations Map View Controller-->
+        <scene sceneID="EgN-lU-UCA">
+            <objects>
+                <viewController id="2L2-Eh-mWu" customClass="LocationsMapViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Fn-MN-ov3"/>
+                        <viewControllerLayoutGuide type="bottom" id="abA-aj-e2l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gkb-fR-q1C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMc-PB-ThG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Fy-TF-vNj">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dMc-PB-ThG" firstAttribute="leading" secondItem="Gkb-fR-q1C" secondAttribute="leading" id="7Xz-Bp-JSU"/>
+                            <constraint firstItem="dMc-PB-ThG" firstAttribute="leading" secondItem="5Fy-TF-vNj" secondAttribute="leading" id="AD3-nf-rRq"/>
+                            <constraint firstItem="5Fy-TF-vNj" firstAttribute="bottom" secondItem="abA-aj-e2l" secondAttribute="top" id="PTs-5W-1Vc"/>
+                            <constraint firstItem="dMc-PB-ThG" firstAttribute="bottom" secondItem="5Fy-TF-vNj" secondAttribute="top" id="TLy-az-SI4"/>
+                            <constraint firstItem="dMc-PB-ThG" firstAttribute="trailing" secondItem="5Fy-TF-vNj" secondAttribute="trailing" id="e1q-0x-Fk8"/>
+                            <constraint firstItem="dMc-PB-ThG" firstAttribute="top" secondItem="1Fn-MN-ov3" secondAttribute="bottom" id="foG-8Q-gLz"/>
+                            <constraint firstAttribute="trailing" secondItem="dMc-PB-ThG" secondAttribute="trailing" id="rwl-k5-su6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="5Fy-TF-vNj" id="eXV-pK-d1d"/>
+                        <outlet property="searchBar" destination="dMc-PB-ThG" id="4Qq-9S-Exp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHz-GO-gIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3598" y="-2501"/>
+        </scene>
+        <!--CreateLocation-->
+        <scene sceneID="2BR-T5-FPn">
+            <objects>
+                <viewController title="CreateLocation" id="lLO-ni-vdQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uHw-sC-X0S"/>
+                        <viewControllerLayoutGuide type="bottom" id="xSg-JD-Mwg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3re-Vx-qWe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyx-dT-gRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3518" y="-1622"/>
+        </scene>
+        <!--AvailabilityTBVC-->
+        <scene sceneID="IjJ-aO-yei">
+            <objects>
+                <tableViewController title="AvailabilityTBVC" extendedLayoutIncludesOpaqueBars="YES" id="SrS-Ok-qxK" customClass="AvailabilityTableViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8sg-zJ-GIb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Fwc-Xm-BqA" detailTextLabel="YD7-oV-0r2" style="IBUITableViewCellStyleValue1" id="24S-Ud-7u0">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="24S-Ud-7u0" id="bvl-1K-ce0">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fwc-Xm-BqA">
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YD7-oV-0r2">
+                                            <rect key="frame" x="543.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Adw-7e-aID" kind="show" identifier="CreateAvailability" trigger="accessoryAction" id="2AE-ph-PFh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SrS-Ok-qxK" id="8M2-bv-7Yv"/>
+                            <outlet property="delegate" destination="SrS-Ok-qxK" id="ku2-y8-Jqh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtZ-6J-4nF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="550"/>
+        </scene>
+        <!--Availability-->
+        <scene sceneID="0DS-od-NlY">
+            <objects>
+                <viewController storyboardIdentifier="Availiability" title="Availability" extendedLayoutIncludesOpaqueBars="YES" id="Adw-7e-aID" customClass="AvailabilityViewController" customModule="JAGBeautyAndBlades" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1aI-7d-CDb"/>
+                        <viewControllerLayoutGuide type="bottom" id="6th-U3-Rxo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kC7-yn-Pd0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbd-yI-0Jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="545"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dW1-d7-6C9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c5r-w3-Hk1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5w-fT-eQw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qau-sl-3md" kind="relationship" relationship="rootViewController" id="LJt-QW-Br5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yO-jJ-z7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2304" y="-177"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bcP-sr-fBe"/>
+    </inferredMetricsTieBreakers>
+</document>
