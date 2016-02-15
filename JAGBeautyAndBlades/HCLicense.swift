@@ -6,8 +6,15 @@
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
 
-import Cocoa
+import UIKit
+import RealmSwift
 
 class HCLicense: Object {
 
+    dynamic var name = ""
+    dynamic var IDstring = ""
+    dynamic var picture: NSData? = nil
+    dynamic var licenseType = ""
+    dynamic var state = ""
+    dynamic var isCertified = false
 }

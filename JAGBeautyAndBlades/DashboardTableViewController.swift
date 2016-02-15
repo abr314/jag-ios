@@ -29,23 +29,93 @@ class DashboardTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        // depends on messages and appointments
+        return 1
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+  //      var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let messagesCell:HCMessagePreviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("messagesCell") as! HCMessagePreviewTableViewCell
+        messagesCell.senderNameLabel.font = UIFont(name: kHeaderFont, size: 14)
+        messagesCell.messagePreviewTextLabel.font = UIFont(name: kBodyFont, size: 14)
+     //   tableView.rowHeight = 83
+        
+       
+       
+        if (indexPath.section == 0) {
+           return messagesCell
+            
+        }
+   //     tableview.rowHeight = 44
+        
+        if let appointmentCell = tableView.dequeueReusableCellWithIdentifier("appointmentsCell") {
+            appointmentCell.textLabel?.font = UIFont(name: kBodyFont, size: 14)
+            appointmentCell.textLabel?.text = "5:30 PM - South Austin"
+            appointmentCell.detailTextLabel?.text = "Haircut"
+            
+            if (indexPath.section == 1 ) {
+                
+                return appointmentCell
+            }
+        }
+       
+        
         // Configure the cell...
+        
+        
 
-        return cell
+        return messagesCell
     }
-    */
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0 ) {
+                return 83
+        }
+        
+        if (indexPath.section == 1 ) {
+            return 44
+        }
+        
+        return 44
+        
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return "Notifications"
+        }
+        
+        if (section == 1) {
+            return "Appointments"
+        }
+        return ""
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        var sectionTitle: String = self.tableView(tableView, titleForHeaderInSection: section)!
+        if sectionTitle == "" {
+            return nil
+        }
+        
+        var title: UILabel = UILabel()
+        
+        title.text = sectionTitle
+        title.textColor = UIColor.whiteColor()
+        title.backgroundColor = kPurpleColor
+        title.tintColor = UIColor(hue: 270, saturation: 100, brightness: 50, alpha: 1)
+        title.font = UIFont(name: kHeaderFont, size: 14)
+        
+        return title
+    }
 
     /*
     // Override to support conditional editing of the table view.

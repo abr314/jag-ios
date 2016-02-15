@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 import UIColor_Hex_Swift
 
+let kHeaderFont = "Roboto"
+let kBodyFont = "Raleway"
 
-
-let primaryColor = UIColor(rgba: "#533A71")
-let secondaryColor = UIColor(rgba: "#50C5B7")
-let goldColor:UIColor = UIColor(rgba: "#E4DDCA")
-let purpleColor:UIColor = UIColor(rgba: "#7851A9")
+let kPrimaryColor = UIColor(rgba: "#533A71")
+let kSecondaryColor = UIColor(rgba: "#50C5B7")
+let kGoldColor:UIColor = UIColor(rgba: "#E4DDCA")
+let kPurpleColor:UIColor = UIColor(rgba: "#4C0B84")
 class HCFontsandColors:NSObject {
     
 

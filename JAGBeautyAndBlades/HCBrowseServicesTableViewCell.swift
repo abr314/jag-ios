@@ -10,6 +10,8 @@ import UIKit
 
 class HCBrowseServicesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

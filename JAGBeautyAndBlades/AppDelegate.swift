@@ -16,14 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-   //     UINavigationBar.appearance().barTintColor = purpleColor
-        UILabel.appearance().font = UIFont(name: "HiraKakuProN-W3", size: 9)
-        UINavigationBar.appearance().backItem?.backBarButtonItem?.tintColor = UIColor.whiteColor()
-   //     UILabel.appearance().textColor = UIColor.greenColor()
-    //    UILabel.appearance().backgroundColor = UIColor.whiteColor()
+        UITableView.appearance().backgroundColor = UIColor.blackColor()
+       UINavigationBar.appearance().backgroundColor = UIColor.purpleColor()
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+    
+        let fontFamilyNames = UIFont.familyNames()
+        for familyName in fontFamilyNames {
+            print("------------------------------")
+            print("Font Family Name = [\(familyName)]")
+            let names = UIFont.fontNamesForFamilyName(familyName as String)
+            print("Font Names = [\(names)]")
+        }
         
-      //  UIView.appearance().backgroundColor = UIColor.blackColor()
+        
         return true
     }
 

@@ -17,36 +17,46 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var professionalButton: UIButton!
     
     @IBOutlet weak var createAccountCallLabel: UILabel!
+    
+    var userInfo:String = " "
     override func viewDidLoad() {
        super.viewDidLoad()
+    
+        self.navigationItem.rightBarButtonItem?.enabled = false
+        self.navigationController?.navigationBar.translucent = false
         
+        if let font = UIFont(name: kHeaderFont, size: 23) {
+            
+            self.navigationController?.navigationBar.titleTextAttributes =
+                [NSFontAttributeName: font,
+                    NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
         }
     override func viewWillAppear(animated: Bool) {
-        setUpView()
-        
-        self.navigationController?.navigationBarHidden = true
+        setUpView()        
     }
     
     func setUpView() {
         
-        let font:UIFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)!
+        let font:UIFont = UIFont(name: kBodyFont, size: 16)!
         
         createAccountCallLabel.backgroundColor = UIColor.clearColor()
-        createAccountCallLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
+        createAccountCallLabel.font = UIFont(name: kHeaderFont, size: 20)
         createAccountCallLabel.textColor = UIColor.whiteColor()
+        
         customerButton.backgroundColor = UIColor.clearColor()
-     
         customerButton.titleLabel?.font = font
         customerButton.titleLabel?.tintColor = UIColor.whiteColor()
         
         professionalButton.backgroundColor = UIColor.clearColor()
         professionalButton.titleLabel?.font = font
         professionalButton.titleLabel?.tintColor = UIColor.whiteColor()
+       
         customerButton.addTarget(self, action: "customerButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         
         professionalButton.addTarget(self, action: "professionalButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
         
-        self.view.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.5)
+   //     self.view.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.5)
     }
     
     func customerButtonPressed() {
@@ -58,13 +68,23 @@ class HomePageViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CustomerSignup" {
-            let basicQuestionsViewController: BasicSignupViewController = segue.destinationViewController as! BasicSignupViewController
-           // basicQuestionsViewController.isProvider = false
+        if let svc = segue.destinationViewController as? BasicSignupViewController {
+        
+        // UX: change to maintain input on back push
+        svc.formMode = FormMode.CreateMode
+            
+        if segue.identifier == "ProfessionalSignUp" {
+           // if let svc = segue.destinationViewController as? BasicSignupViewController {
+                svc.userType = UserType.Provider
+           // }
         }
-        if segue.identifier == "ProfessionalSignup" {
-            let basicQuestionsViewController: BasicSignupViewController = segue.destinationViewController as! BasicSignupViewController
-         //   basicQuestionsViewController.isProvider = true
+        
+        if segue.identifier == "CustomerSignUp" {
+          //  if let svc = segue.destinationViewController as? BasicSignupViewController {
+                svc.userType = UserType.Customer
+            }
+        //    }
         }
+       
     }
 }

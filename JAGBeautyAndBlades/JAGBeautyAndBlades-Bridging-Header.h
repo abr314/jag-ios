@@ -9,5 +9,7 @@
 #ifndef JAGBeautyAndBlades_Bridging_Header_h
 #define JAGBeautyAndBlades_Bridging_Header_h
 
+#import "UIScrollView+EmptyDataSet.h"
+#import "KMDiscoverListCell.h"
 
 #endif /* JAGBeautyAndBlades_Bridging_Header_h */

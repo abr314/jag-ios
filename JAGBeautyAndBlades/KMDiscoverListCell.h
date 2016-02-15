@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KMGillSansLabel.h"
+//#import "KMGillSansLabel.h"
 
 @interface KMDiscoverListCell : UITableViewCell
 
@@ -19,6 +19,6 @@
 /**
  *  The movie's title label.
  */
-@property (weak, nonatomic) IBOutlet KMGillSansLightLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

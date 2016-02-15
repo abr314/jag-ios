@@ -9,7 +9,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JAGBeautyAndBlades-DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JAGBeautyAndBlades-XLForm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-JAGBeautyAndBlades.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JAGBeautyAndBladesTests-DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JAGBeautyAndBladesTests-XLForm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JAGBeautyAndBladesTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -25,6 +50,11 @@
 			<false/>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SFFocusViewLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,60 +79,80 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>XLForm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0AE8C25052C709C4D7E8059655D8979A</key>
+		<key>1611192780500FAE4FD5A5ED1F3CDCDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>107EBE6DD7653647A1D41E3335C693D6</key>
+		<key>1FF7B72F646E7E04A131B9D7C120DFF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39D2D700719395D38362CC69B27E7C2C</key>
+		<key>236A80A93CE7BF0EB99D2DE49953D97F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<key>3E4CD424D70A1B7539566A268F4E5893</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>720DDF1F282162FBDD4FFA934F3BB8D3</key>
+		<key>49B2015E9F4153EA01A49AA62DFAF0CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9FB3FDFEF39B744E28A84F433626F32</key>
+		<key>599CD70F8B66E7C48C32838B592AC0BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8C51F7B10CDBB552E4F560412E9FD7D</key>
+		<key>74D9D8FF423B72EB3DC569DD89E82D9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB7EE41B6DD2E8B7C45C8B8FB4424B62</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F03A652B45F0F277031CB3A306729689</key>
+		<key>83C3552288B802E70913F6147EBEEA71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FFD14B60AA0B1CF87B2DD310D2A91C15</key>
+		<key>8DDACF3ABD042302E2CAE7B7BF9D820E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9675F2C7B191DC21F0012802B800F000</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97089472E43A55C581A683B34F58B12E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3A3041B7157820CC79BF8D432743066</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB2474E420F103BD3DF67B1D86FC61B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC4314F31CFEC7273BC2D9B3EF75D24F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

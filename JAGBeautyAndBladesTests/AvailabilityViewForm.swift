@@ -7,9 +7,16 @@
 //
 
 import XCTest
+import XLForm
 
 class AvailabilityViewForm: XCTestCase {
     
+    let viewController = XLFormViewController()
+    
+    func testTableView() {
+   viewController.tableView.backgroundColor = UIColor.blackColor()
+     //  xct
+    }
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.

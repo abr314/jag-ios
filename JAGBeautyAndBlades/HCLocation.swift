@@ -6,8 +6,8 @@
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
 
-import Cocoa
-
+import UIKit
+import RealmSwift
 class HCLocation: Object {
 
 }

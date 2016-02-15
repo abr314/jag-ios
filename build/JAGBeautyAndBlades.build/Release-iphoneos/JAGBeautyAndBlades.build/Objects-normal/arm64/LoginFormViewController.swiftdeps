@@ -1,0 +1,155 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "LoginFormViewController"
+provides-nominal:
+- "C18JAGBeautyAndBlades23LoginFormViewController"
+provides-member:
+- ["C18JAGBeautyAndBlades23LoginFormViewController", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "XLFormViewController"
+- !private "XLFormRowDescriptor"
+- !private "kSignUp"
+- "String"
+- !private "kHeaderFont"
+- !private "NSForegroundColorAttributeName"
+- "NSBundle"
+- !private "XLFormRowDescriptorTypeEmail"
+- !private "XLFormSectionDescriptor"
+- !private "UIFont"
+- !private "kEmail"
+- !private "NSFontAttributeName"
+- !private "kLogin"
+- "LoginFormViewController"
+- !private "kBookNow"
+- !private "performSegueWithIdentifier"
+- !private "XLFormRowDescriptorTypeButton"
+- !private "XLFormDescriptor"
+- !private "XLFormRowDescriptorTypePassword"
+- !private "kPassword"
+- "NSCoder"
+- !private "UIColor"
+depends-member:
+- !private ["PSs9AnyObject", "NSFontAttributeName"]
+- !private ["PSs9AnyObject", "NSForegroundColorAttributeName"]
+- !private ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIFont"]
+- !private ["PSs9AnyObject", "XLFormDescriptor"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeButton"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeEmail"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypePassword"]
+- !private ["PSs9AnyObject", "XLFormSectionDescriptor"]
+- !private ["PSs9AnyObject", "blackColor"]
+- !private ["PSs9AnyObject", "form"]
+- !private ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "initializeForm"]
+- !private ["PSs9AnyObject", "kBookNow"]
+- !private ["PSs9AnyObject", "kEmail"]
+- !private ["PSs9AnyObject", "kHeaderFont"]
+- !private ["PSs9AnyObject", "kLogin"]
+- !private ["PSs9AnyObject", "kPassword"]
+- !private ["PSs9AnyObject", "kSignUp"]
+- !private ["PSs9AnyObject", "navigationController"]
+- !private ["PSs9AnyObject", "navigationItem"]
+- !private ["PSs9AnyObject", "performSegueWithIdentifier"]
+- !private ["PSs9AnyObject", "tableView"]
+- !private ["PSs9AnyObject", "whiteColor"]
+- ["PSs9AnyObject", ""]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["PSs11CVarArgType", "blackColor"]
+- !private ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "whiteColor"]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- !private ["PSs23CustomStringConvertible", "blackColor"]
+- !private ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "whiteColor"]
+- !private ["PSs9Equatable", "blackColor"]
+- !private ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "whiteColor"]
+- !private ["PSs8Hashable", "blackColor"]
+- !private ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "whiteColor"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "NSBundle"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "NSCoder"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "NSFontAttributeName"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "NSForegroundColorAttributeName"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "String"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "UIColor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "UIFont"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormDescriptor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypeButton"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypeEmail"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypePassword"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormSectionDescriptor"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "bookNowPressed"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "deinit"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "didReceiveMemoryWarning"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "form"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "init"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "initializeForm"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kBookNow"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kEmail"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kHeaderFont"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kLogin"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kPassword"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kSignUp"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "navigationController"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "navigationItem"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "performSegueWithIdentifier"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "signUpPressed"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "tableView"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "viewDidLoad"]
+- !private ["PSo8NSCoding", "blackColor"]
+- !private ["PSo8NSCoding", "whiteColor"]
+- !private ["PSo9NSCopying", "blackColor"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "whiteColor"]
+- !private ["CSo8NSObject", "blackColor"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "whiteColor"]
+- !private ["PSo16NSObjectProtocol", "blackColor"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "whiteColor"]
+- !private ["PSo14NSSecureCoding", "blackColor"]
+- !private ["PSo14NSSecureCoding", "whiteColor"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["CSo7UIColor", "blackColor"]
+- !private ["CSo7UIColor", "whiteColor"]
+- !private ["CSo6UIFont", "init"]
+- !private ["PSs24_ColorLiteralConvertible", "blackColor"]
+- !private ["PSs24_ColorLiteralConvertible", "whiteColor"]
+- ["PSs12_Reflectable", "Some"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "V12CoreGraphics7CGFloat"
+- !private "PSs11CVarArgType"
+- "PSs28CustomDebugStringConvertible"
+- !private "PSs23CustomStringConvertible"
+- !private "PSs9Equatable"
+- !private "PSs8Hashable"
+- "C18JAGBeautyAndBlades23LoginFormViewController"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- "PSs21NilLiteralConvertible"
+- "Sq"
+- !private "CSo7UIColor"
+- !private "CSo6UIFont"
+- !private "PSs24_ColorLiteralConvertible"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+interface-hash: "31f47c1bee52c5e95aee9c78e4fc57b0"

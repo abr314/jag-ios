@@ -8,9 +8,20 @@
 
 import UIKit
 import XLForm
-import UIColor_Hex_Swift
-class BasicSignupViewController: XLFormViewController {
+//import UIColor_Hex_Swift
 
+class BasicSignupViewController: XLFormViewController {
+    
+    
+    var validationIsOn = false
+    
+    var userType:UserType?
+    var personType:String = ""
+    var provider:HCProvider?
+    var customer:HCCustomer = HCCustomer()
+    var isProviderType:Bool = false
+    var formMode:FormMode?
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -21,77 +32,67 @@ class BasicSignupViewController: XLFormViewController {
         initializeForm()
     }
     
+    
     func initializeForm() {
+        
         let form : XLFormDescriptor
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-        
-        form = XLFormDescriptor(title: "Basic Signup")
+        form = XLFormDescriptor(title: "Signup")
         
         form.assignFirstResponderOnShow = true
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Please Enter this Basic Information")
-  //      section.footerTitle = "This is a long text that will appear on section footer"
+  
         form.addFormSection(section)
-      //  let goldColor:UIColor = UIColor(rgba: "#E4DDCA")
-        // First Name
-        row = XLFormRowDescriptor(tag: "FirstName", rowType: XLFormRowDescriptorTypeName, title: "First Name")
-        row.required = true
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
-        row.cellConfig.setObject(goldColor, forKey: "textField.textColor")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textLabel.font")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textField.font")
-        
-        section.addFormRow(row)
-        // Last Name
-        row = XLFormRowDescriptor(tag: "LastName", rowType: XLFormRowDescriptorTypeName, title: "Last Name")
-        row.required = true
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textField.textColor")
-        row.cellConfig.setObject(goldColor, forKey: "textField.textColor")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textLabel.font")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textField.font")
-        section.addFormRow(row)
-        // Phone Number
-        row = XLFormRowDescriptor(tag: "Phone", rowType: XLFormRowDescriptorTypeEmail, title: "Phone")
-        row.required = true
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textField.textColor")
-        row.cellConfig.setObject(goldColor, forKey: "textField.textColor")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textLabel.font")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textField.font")
-        row.addValidator(XLFormRegexValidator(msg: "At least 6, max 32 characters", andRegexString: "(?\\d{3})?\\s\\d{3}-\\d{4}"))
-        section.addFormRow(row)
-        // Email
-        row = XLFormRowDescriptor(tag: "Email", rowType: XLFormRowDescriptorTypeEmail, title: "Email")
-        row.required = true
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textField.textColor")
-        row.cellConfig.setObject(goldColor, forKey: "textField.textColor")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textLabel.font")
-        row.cellConfig.setObject(UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!, forKey: "textField.font")
-        section.addFormRow(row)
       
+        // turn rows into arrays
+        let firstNameArray = [kFirstName, XLFormRowDescriptorTypeName]
+        let lastNameArray = [kLastName, XLFormRowDescriptorTypeName]
+        let phoneNumberArray = [kPhone, XLFormRowDescriptorTypeText]
+        let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
+        let nextArray = [kNext, XLFormRowDescriptorTypeButton]
+        // create array of rows
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, nextArray]
+        // add array of rows to form with parameters
         
-        // Button
-        row = XLFormRowDescriptor(tag: "Button", rowType: XLFormRowDescriptorTypeButton, title: "Next")
-        row.cellConfig["textLabel.textColor"] = goldColor
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-        row.action.formSelector = "didTouchNextButton"
-        section.addFormRow(row)
+        for rowStrings in arrayOfRows {
+     
+            row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
+            
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
+            // add row customizations here
+            
+            if (row.tag == kNext) {
+                row.action.formSelector = "nextButtonPressed"
+                row.cellConfig.setObject("", forKey: "self.selectionStyle")
+            }
+            if (row.tag != kNext) {
+                row.required = true
+
+                row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textField.textColor")
+            }
+            if (row.tag == kFirstName || row.tag == kLastName) {
+                row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^\\w*$"))
+            }
+            
+            if (row.tag == kPhone) {
+                row.addValidator(XLFormRegexValidator(msg: "At least 6, max 32 characters", andRegexString: "^[2-9][0-9]{9}$"))
+            }
+            
+            if (row.tag == kEmail) {
+                row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
+            }
+            
+            section.addFormRow(row)
+        }
         
         self.form = form
-        
-        self.navigationItem.backBarButtonItem?.setValue(UIColor.whiteColor(), forKey: "tintColor")
     
     }
     
@@ -101,69 +102,58 @@ class BasicSignupViewController: XLFormViewController {
         // go to next screen or not depending on validation result
     }
     
-    override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!) {
-        super.formRowDescriptorValueHasChanged(formRow, oldValue: oldValue, newValue: newValue)
+    func nextButtonPressed() {
         
-        if (formRow.tag == "Phone") {
-            if formRow.value == nil { return};
-            let isValidForm = isValidPhone(formRow.value as! String)
+        if validationIsOn {
+            let result:Bool = validateForm(self)
             
-            if (!isValidForm) {
-                print("Error: is not valid phone number")
+            if (result) {
+                synchronizeData()
+        
+                performSegueWithIdentifier("ProfessionalDetail", sender: nil)
+         
             }
+        } else {
+            synchronizeData()
+            
+            performSegueWithIdentifier("ProfessionalDetail", sender: nil) 
         }
+        
     }
     
-    func validateForm(buttonItem: UIBarButtonItem) {
-        let array = formValidationErrors()
-        for errorItem in array {
-            let error = errorItem as! NSError
-            let validationStatus : XLFormValidationStatus = error.userInfo[XLValidationStatusErrorKey] as! XLFormValidationStatus
-            if validationStatus.rowDescriptor!.tag == "FirstName" {
-                if let rowDescriptor = validationStatus.rowDescriptor, let indexPath = form.indexPathOfFormRow(rowDescriptor), let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                    cell.backgroundColor = .orangeColor()
-                    UIView.animateWithDuration(0.3, animations: { () -> Void in
-                        cell.backgroundColor = .whiteColor()
-                    })
-                }
+    func synchronizeData() {
+        
+            if let firstName = form.formRowWithTag(kFirstName)?.value as? String {
+                provider?.firstName = firstName
             }
-            else if validationStatus.rowDescriptor!.tag == "LastName" ||
-                validationStatus.rowDescriptor!.tag == "Phone" ||
-                validationStatus.rowDescriptor!.tag == "Email" {
-                    if let rowDescriptor = validationStatus.rowDescriptor, let indexPath = form.indexPathOfFormRow(rowDescriptor), let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                        self.animateCell(cell)
-                    }
+        
+            if let lastName = form.formRowWithTag(kLastName)?.value as? String {
+                provider?.lastName = lastName
             }
-        }
-    }
-    
-    func animateCell(cell: UITableViewCell) {
-        let animation = CAKeyframeAnimation()
-        animation.keyPath = "position.x"
-        animation.values =  [0, 20, -20, 10, 0]
-        animation.keyTimes = [0, (1 / 6.0), (3 / 6.0), (5 / 6.0), 1]
-        animation.duration = 0.3
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        animation.additive = true
-        cell.layer.addAnimation(animation, forKey: "shake")
+        
+            if let phoneNumber = form.formRowWithTag(kPhone)?.value as? String {
+                provider?.phoneNumber = phoneNumber
+            }
+        
+            if let email = form.formRowWithTag(kEmail)?.value as? String {
+                provider?.email = email
+            }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.5)
-   //     self.navigationController?.view.tintColor = UIColor.whiteColor()
+     
         self.inputViewController?.view.backgroundColor = UIColor.blackColor()
-        
+   //     self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.backgroundColor = UIColor.blackColor()
+        if (userType == UserType.Provider && formMode == FormMode.CreateMode) {
+            provider = HCProvider()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.backgroundColor = UIColor.clearColor()
-        self.navigationController?.navigationBarHidden = false
-        
-        navigationItem.rightBarButtonItem?.enabled = true
-       
-        
-  //      view.tintColor = UIColor.whiteColor()
+  
     }
 
     override func didReceiveMemoryWarning() {
@@ -171,15 +161,21 @@ class BasicSignupViewController: XLFormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ProfessionalDetail" {
+            if let svc = segue.destinationViewController as? ProfessionalDetailSignUpViewController {
+                
+                if let provider = provider {
+                svc.provider = provider
+                }
+            }
+        }
     }
-    */
 
 }

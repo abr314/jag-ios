@@ -1,8 +1,565 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>New item</key>
-	<string></string>
-</dict>
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Hair</string>
+		<key>License Options</key>
+		<array>
+			<string>Barber</string>
+			<string>Cosmetology</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Express Hair Cut and Neck Clean Up</string>
+				<key>Price Options</key>
+				<array>
+					<integer>35</integer>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Express Hair Cut, Neck/Brow/Nose/Ears Grooming</string>
+				<key>Price Options</key>
+				<array>
+					<integer>35</integer>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Head Shave</string>
+				<key>Price Options</key>
+				<array>
+					<integer>35</integer>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Beard or Mustache Trim</string>
+				<key>Price Options</key>
+				<array>
+					<integer>15</integer>
+					<integer>20</integer>
+					<integer>25</integer>
+					<integer>30</integer>
+					<integer>35</integer>
+				</array>
+				<key>Time</key>
+				<integer>15</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Hot Lather Shave</string>
+				<key>Price Options</key>
+				<array>
+					<integer>30</integer>
+					<integer>35</integer>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+				</array>
+				<key>Time</key>
+				<integer>15</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Color</string>
+				<key>Price Options</key>
+				<array>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+					<integer>85</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Root Touch-Up</string>
+				<key>Price Options</key>
+				<array>
+					<integer>35</integer>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+				</array>
+				<key>Time</key>
+				<integer>75</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Nails</string>
+		<key>License Options</key>
+		<array>
+			<string>Nail Technician</string>
+			<string>Esthetician</string>
+			<string>Cosmetology</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Manicure and Pedicure</string>
+				<key>Price Options</key>
+				<array>
+					<integer>55</integer>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Manicure only, with Salt Scrub</string>
+				<key>Price Options</key>
+				<array>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+					<integer>60</integer>
+					<integer>65</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Manicure and Pedicure with Salt Scrub</string>
+				<key>Price Options</key>
+				<array>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+					<integer>85</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Massage</string>
+		<key>License Options</key>
+		<array>
+			<string>Massage Therapy</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Relaxing Massage, 45 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>75</integer>
+					<integer>80</integer>
+					<integer>85</integer>
+					<integer>90</integer>
+					<integer>95</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Class</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Relaxing Massage, 60 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>85</integer>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+					<integer>105</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Relaxing Massage, 90 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>95</integer>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+					<integer>115</integer>
+				</array>
+				<key>Time</key>
+				<integer>90</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Sports Massage, 45 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>80</integer>
+					<integer>85</integer>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Sports Massage, 60 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Sports Massage, 90 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+					<integer>115</integer>
+					<integer>120</integer>
+				</array>
+				<key>Time</key>
+				<integer>90</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Deep Tissue Massage, 45 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>80</integer>
+					<integer>85</integer>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Deep Tissue Massage, 60 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Deep Tissue Massage, 90 min.</string>
+				<key>Price Options</key>
+				<array>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+					<integer>115</integer>
+					<integer>120</integer>
+				</array>
+				<key>Time</key>
+				<integer>90</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Spa</string>
+		<key>License Options</key>
+		<array>
+			<string>Esthetician</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Wax: Brow, Nose, Ears</string>
+				<key>Price Options</key>
+				<array>
+					<integer>20</integer>
+					<integer>23</integer>
+					<integer>26</integer>
+					<integer>29</integer>
+					<integer>32</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Wax: Back</string>
+				<key>Price Options</key>
+				<array>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Wax: Chest and Stomach</string>
+				<key>Price Options</key>
+				<array>
+					<integer>55</integer>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Wax: Full Arm</string>
+				<key>Price Options</key>
+				<array>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>D</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Hot Lather Shave</string>
+				<key>Price Options</key>
+				<array>
+					<integer>90</integer>
+					<integer>95</integer>
+					<integer>100</integer>
+					<integer>105</integer>
+					<integer>110</integer>
+				</array>
+				<key>Time</key>
+				<integer>30</integer>
+				<key>Type</key>
+				<string>E</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Cosmetic</string>
+		<key>License Options</key>
+		<array>
+			<string>None</string>
+			<string>Doctor</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Spray Tan</string>
+				<key>Price Options</key>
+				<array>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Teeth Whitening</string>
+				<key>Price Options</key>
+				<array>
+					<integer>60</integer>
+					<integer>65</integer>
+					<integer>70</integer>
+					<integer>75</integer>
+					<integer>80</integer>
+				</array>
+				<key>Time</key>
+				<integer>45</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Botox</string>
+				<key>Price Options</key>
+				<array>
+					<integer>10</integer>
+				</array>
+				<key>Time</key>
+				<integer>75</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Filler</string>
+				<key>Price Options</key>
+				<array>
+					<integer>8</integer>
+				</array>
+				<key>Time</key>
+				<integer>75</integer>
+				<key>Type</key>
+				<string>D</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Trainer</string>
+		<key>License Options</key>
+		<array>
+			<string>Yoga</string>
+			<string>Personal Trainer</string>
+		</array>
+		<key>Procedures</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Personal Trainer</string>
+				<key>Price Options</key>
+				<array>
+					<integer>50</integer>
+					<integer>60</integer>
+					<integer>70</integer>
+					<integer>80</integer>
+					<integer>90</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Running Trainer</string>
+				<key>Price Options</key>
+				<array>
+					<integer>40</integer>
+					<integer>45</integer>
+					<integer>50</integer>
+					<integer>55</integer>
+					<integer>60</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Yoga Trainer</string>
+				<key>Price Options</key>
+				<array>
+					<string>55</string>
+					<string>60</string>
+					<string>65</string>
+					<string>70</string>
+					<integer>75</integer>
+				</array>
+				<key>Time</key>
+				<integer>60</integer>
+				<key>Type</key>
+				<string>C</string>
+			</dict>
+		</array>
+	</dict>
+</array>
 </plist>

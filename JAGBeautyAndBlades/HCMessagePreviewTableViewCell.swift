@@ -10,6 +10,12 @@ import UIKit
 
 class HCMessagePreviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var senderNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var senderImage: UIImageView!
+    @IBOutlet weak var dayLabel: UILabel!
+
+    @IBOutlet weak var messagePreviewTextLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

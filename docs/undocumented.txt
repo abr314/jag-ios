@@ -1,0 +1,25 @@
+HCFormValidator.swift
+	public func validateForm(formVC: XLFormViewController) -> Bool
+Helpers.swift
+	public func isValidPhone(value: String) -> Bool
+	public enum DayOfWeek: String
+	case Monday = "Monday"
+	case Tuesday = "Tuesday"
+	case Wednesday = "Wednesday"
+	case Thursday = "Thursday"
+	case Friday = "Friday"
+	case Saturday = "Saturday"
+	case Sunday = "Sunday"
+	public enum LicenseType: String
+	case BarberType = "Barber"
+	case CosmetologyType = "Cosmetology"
+	case ManicuristType = "Manicurist"
+	case EtheticianType = "Ethetician"
+	case EyeLashExtensionsType = "Eye Lash Extensions"
+	case ManicuristEsthecticianType = "Manicurist/Esthetician"
+	case SprayTansType = "Spray Tans"
+	case MassageType = "Massage"
+	case FitnessType = "Fitness"
+	case YogaType = "Yoga"
+	case PersonalTrainerType = "Personal Training"
+	case count

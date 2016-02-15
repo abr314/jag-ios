@@ -16,16 +16,17 @@ pod 'RealmSwift'
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
-pod 'SwiftyButton'
-
 pod 'SwiftyTimer'
 
 pod 'UIColor_Hex_Swift', '~> 1.8'
 
+pod 'DZNEmptyDataSet'
+
 end
 
 target 'JAGBeautyAndBladesTests' do
-
+pod 'XLForm', '~> 3.0'
+pod 'DZNEmptyDataSet'
 end
 
 target 'JAGBeautyAndBladesUITests' do

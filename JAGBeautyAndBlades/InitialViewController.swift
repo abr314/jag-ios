@@ -10,24 +10,21 @@ import UIKit
 import SwiftyTimer
 class InitialViewController: UIViewController {
 
-    @IBOutlet weak var visualEffect: UIVisualEffectView!
-    @IBOutlet weak var backgroundImage: UIImageView!
+ //   @IBOutlet weak var pageTitle: UILabel!
+  //  @IBOutlet weak var visualEffect: UIVisualEffectView!
+//    @IBOutlet weak var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
-        NSTimer.after(2.seconds) {
-            self.addBlurToBackgroundImage()
-
-            self.performSegueWithIdentifier("SignUp", sender: self)
-        }
-        
-        self.backgroundImage.hidden = false
-        self.navigationController?.navigationBarHidden = true
-        
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.purpleColor()
         
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        self.performSegueWithIdentifier("SignUp", sender: self)
+    }
     func addBlurToBackgroundImage() {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -41,7 +38,7 @@ class InitialViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         //       blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
      //   self.view.addSubview(blurEffectView)
-        self.backgroundImage.hidden = false
+ //       self.backgroundImage.hidden = false
         
         
    //     presentViewController(nc, animated: true, completion: nil)

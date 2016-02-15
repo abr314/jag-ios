@@ -6,8 +6,11 @@
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
 
-import Cocoa
+import UIKit
+import RealmSwift
 
 class HCTimeSlot: Object {
-
+    dynamic var startTime = ""
+    dynamic var endTime = ""
+    dynamic var dayNumber = DayOfWeek.Monday.dayNumber
 }

@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import XLForm
 
 class ViewPendingAppointmentViewController: XLFormViewController {
 
+    var userType:UserType?
+    var provider:HCProvider?
+    var customer:HCCustomer?
+    
+    var formMode:FormMode?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +27,41 @@ class ViewPendingAppointmentViewController: XLFormViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initializeForm()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initializeForm()
+    }
+    
+    
+    func initializeForm() {
+        let form : XLFormDescriptor
+        var section : XLFormSectionDescriptor
+        var row : XLFormRowDescriptor
+        
+        form = XLFormDescriptor(title: "Pending Appointment")
+        
+        form.assignFirstResponderOnShow = true
+        
+        section = XLFormSectionDescriptor.formSectionWithTitle("Details")
+        
+        form.addFormSection(section)
+        
+        // other participant name
+        
+        // location address
+        
+        // city and state
+        
+        // date and time
+        
+        // new section:
+            // rows of services
+    }
 
     /*
     // MARK: - Navigation

@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-JAGBeautyAndBlades/Alamofire.framework"
+  install_framework "Pods-JAGBeautyAndBlades/DZNEmptyDataSet.framework"
   install_framework "Pods-JAGBeautyAndBlades/PureLayout.framework"
   install_framework "Pods-JAGBeautyAndBlades/Realm.framework"
   install_framework "Pods-JAGBeautyAndBlades/RealmSwift.framework"
+  install_framework "Pods-JAGBeautyAndBlades/SFFocusViewLayout.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyButton.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyJSON.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyTimer.framework"
@@ -96,9 +98,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-JAGBeautyAndBlades/Alamofire.framework"
+  install_framework "Pods-JAGBeautyAndBlades/DZNEmptyDataSet.framework"
   install_framework "Pods-JAGBeautyAndBlades/PureLayout.framework"
   install_framework "Pods-JAGBeautyAndBlades/Realm.framework"
   install_framework "Pods-JAGBeautyAndBlades/RealmSwift.framework"
+  install_framework "Pods-JAGBeautyAndBlades/SFFocusViewLayout.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyButton.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyJSON.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyTimer.framework"

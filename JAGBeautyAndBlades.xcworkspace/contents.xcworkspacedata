@@ -5,6 +5,9 @@
       location = "group:JAGBeautyAndBlades.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:stylize/Stylize.xcworkspace">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
