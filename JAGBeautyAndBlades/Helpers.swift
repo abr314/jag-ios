@@ -19,6 +19,12 @@ enum FormMode {
     case ViewMode
 }
 
+let kName = "Name"
+let kLicenseOptions = "License Options"
+let kProcedures = "Procedures"
+let kPlist = "plist"
+let kServiceTypesPlistTitle = "ServiceTypes"
+
 let kFirstName = "First Name"
 let kLastName = "Last Name"
 let kPhone = "Phone"
@@ -35,6 +41,15 @@ let kAllDay = "All-Day"
 let kSave = "Save"
 let kCancel = "Cancel"
 let kSubmit = "Submit"
+let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
+
+
+
+class ServicesManager {
+    
+    let servicesArray = NSArray(contentsOfFile: path!)
+}
+
 
 
 public func isValidPhone(value: String) -> Bool {

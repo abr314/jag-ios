@@ -50,7 +50,7 @@ class SelectLicenses: XLFormViewController {
         print("\(formValues)")
         
         var i = 0
-        var selectedLicenses = Array<LicenseType>()
+        var selectedLicenses = Array<RLMStringWrapper>()
         // validation
       
         for (i = 0; i <= self.formValues().count-1; i++) {
@@ -60,11 +60,17 @@ class SelectLicenses: XLFormViewController {
                 if (value as! Bool == true) {
                     oneHasBeenPressed = true
                 // ADd license from rawvalue
-                    selectedLicenses.append(license)
+                    var stringWrapper = RLMStringWrapper()
+                    stringWrapper.string = license.rawValue
+                    
+                    for obj in selectedLicenses where obj.string != "\(license.rawValue)" {
+                        selectedLicenses.append(stringWrapper)
+                    }
+                  
                 }
-           }
+            }
         }
-        
+
         // create array of licenses
         
         // add selected licenses to provider licenses
@@ -72,7 +78,8 @@ class SelectLicenses: XLFormViewController {
         // navigate to next view controller
         
         if (oneHasBeenPressed) {
-            self.performSegueWithIdentifier("SignUp", sender:nil)
+        // display possible services 
+            self.performSegueWithIdentifier("SelectServices", sender:nil)
         }
     }
     override func viewWillAppear(animated: Bool) {
@@ -84,11 +91,11 @@ class SelectLicenses: XLFormViewController {
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-        form = XLFormDescriptor(title: "Services")
+        form = XLFormDescriptor(title: "Licenses")
         
         form.assignFirstResponderOnShow = true
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("Please Choose Your Services")
+        section = XLFormSectionDescriptor.formSectionWithTitle("Please Select The Licenses You Hold")
  
         form.addFormSection(section)
         
@@ -118,6 +125,13 @@ class SelectLicenses: XLFormViewController {
             if let svc = segue.destinationViewController as? BasicSignupViewController {
                           svc.isProviderType = true
                           svc.provider = professional
+            }
+        }
+        
+        if segue.identifier == "SelectServices" {
+            if let svc = segue.destinationViewController as? SelectServicesFormViewController {
+     //           svc.isProviderType = true
+                svc.professional = professional
             }
         }
     }

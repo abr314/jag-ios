@@ -503,63 +503,59 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Trainer</string>
+		<string>Yoga Trainer</string>
+		<key>Price Options</key>
+		<array>
+			<string>55</string>
+			<string>60</string>
+			<string>65</string>
+			<string>70</string>
+			<integer>75</integer>
+		</array>
+		<key>Time</key>
+		<integer>60</integer>
 		<key>License Options</key>
 		<array>
 			<string>Yoga</string>
+		</array>
+		<key>Type</key>
+		<string>C</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Running Trainer</string>
+		<key>Price Options</key>
+		<array>
+			<integer>40</integer>
+			<integer>45</integer>
+			<integer>50</integer>
+			<integer>55</integer>
+			<integer>60</integer>
+		</array>
+		<key>Time</key>
+		<integer>60</integer>
+		<key>Type</key>
+		<string>B</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Personal Trainer</string>
+		<key>Price Options</key>
+		<array>
+			<integer>50</integer>
+			<integer>60</integer>
+			<integer>70</integer>
+			<integer>80</integer>
+			<integer>90</integer>
+		</array>
+		<key>Time</key>
+		<integer>60</integer>
+		<key>License Options</key>
+		<array>
 			<string>Personal Trainer</string>
 		</array>
-		<key>Procedures</key>
-		<array>
-			<dict>
-				<key>Name</key>
-				<string>Personal Trainer</string>
-				<key>Price Options</key>
-				<array>
-					<integer>50</integer>
-					<integer>60</integer>
-					<integer>70</integer>
-					<integer>80</integer>
-					<integer>90</integer>
-				</array>
-				<key>Time</key>
-				<integer>60</integer>
-				<key>Type</key>
-				<string>A</string>
-			</dict>
-			<dict>
-				<key>Name</key>
-				<string>Running Trainer</string>
-				<key>Price Options</key>
-				<array>
-					<integer>40</integer>
-					<integer>45</integer>
-					<integer>50</integer>
-					<integer>55</integer>
-					<integer>60</integer>
-				</array>
-				<key>Time</key>
-				<integer>60</integer>
-				<key>Type</key>
-				<string>B</string>
-			</dict>
-			<dict>
-				<key>Name</key>
-				<string>Yoga Trainer</string>
-				<key>Price Options</key>
-				<array>
-					<string>55</string>
-					<string>60</string>
-					<string>65</string>
-					<string>70</string>
-					<integer>75</integer>
-				</array>
-				<key>Time</key>
-				<integer>60</integer>
-				<key>Type</key>
-				<string>C</string>
-			</dict>
-		</array>
+		<key>Type</key>
+		<string>A</string>
 	</dict>
 </array>
 </plist>

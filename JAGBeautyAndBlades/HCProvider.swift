@@ -17,9 +17,9 @@ class HCProvider: Object {
     dynamic var level = 0
     dynamic var dateJoined = NSDate()
     dynamic var applicationAccepted = false
-    var licenseTypes = Array<LicenseType>()
-    var licenses = List<HCLicense>()
-    
+    let licenseTypes = List<RLMStringWrapper>()
+    let licenses = List<HCLicense>()
+    let services = List<RLMStringWrapper>()
     var availabilities = List<HCAvailability>()
     var locations = List<HCLocation>()
     

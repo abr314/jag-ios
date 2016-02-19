@@ -9,7 +9,11 @@
 import UIKit
 import UIColor_Hex_Swift
 
+
+
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -28,7 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Font Names = [\(names)]")
         }
         
+        let serviceTypes = ServiceTypes()
         
+        let newArray = serviceTypes.licensesForServiceName(ServiceCategoryType.kHairType.rawValue)
+    //    let something = newArray[0]
         return true
     }
 
