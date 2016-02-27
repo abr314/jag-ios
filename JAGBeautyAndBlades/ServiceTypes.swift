@@ -12,7 +12,9 @@ import Foundation
 
 class ServiceTypes {
     private var array:NSArray!
+   
     var creationSuccessful = false
+    
     init()
     {
         creationSuccessful = createServiceTypeObjectSuccessful()
@@ -21,6 +23,7 @@ class ServiceTypes {
             // error
         }
     }
+
     private func createServiceTypeObjectSuccessful()-> Bool {
         // test and check for errors
         if let path = NSBundle.mainBundle().pathForResource(kServiceTypesPlistTitle, ofType:kPlist) {
@@ -81,5 +84,17 @@ class ServiceTypes {
         }
         return newArray
     }
-  ///  static let sharedInstance = ServiceTypes()
+    
+    func arrayOfLicenses() -> Array<String> {
+        
+        var licensesArray = [String]()
+        
+        for dict in array {
+            licensesArray.appendContentsOf(dict.objectForKey(kLicenseOptions) as! [String])
+        }
+        
+        let unique = Array(Set(licensesArray))
+        
+        return unique
+    }
 }

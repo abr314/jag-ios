@@ -11,7 +11,9 @@ import XLForm
 
 class SelectLicenses: XLFormViewController {
 
+    var numOfItemsChecked = 0
     var professional:HCProvider = HCProvider()
+    var licenseArrayCache = Array<String>()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -43,47 +45,57 @@ class SelectLicenses: XLFormViewController {
         self.navigationController?.popToRootViewControllerAnimated(false)
     }
     
-    func pressedDone() {
+   
+    
+    
+    override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!) {
         
-        var oneHasBeenPressed = false
-        // create provider
-        print("\(formValues)")
+        if let title = formRow.title {
         
-        var i = 0
-        var selectedLicenses = Array<RLMStringWrapper>()
-        // validation
-      
-        for (i = 0; i <= self.formValues().count-1; i++) {
-            let license:LicenseType = LicenseType.fromNumber(i)
-            if let value = form.formRowWithTag(license.rawValue)?.value {
-                
-                if (value as! Bool == true) {
-                    oneHasBeenPressed = true
-                // ADd license from rawvalue
-                    var stringWrapper = RLMStringWrapper()
-                    stringWrapper.string = license.rawValue
-                    
-                    for obj in selectedLicenses where obj.string != "\(license.rawValue)" {
-                        selectedLicenses.append(stringWrapper)
-                    }
-                  
+            if(newValue as? Bool == true){
+            // add to array cache
+        
+                if !licenseArrayCache.contains(title) {
+                    licenseArrayCache.append(title)
+                    numOfItemsChecked++
+                }
+            }
+        
+            if(newValue as? Bool == false) {
+            // remove from array
+            
+                if licenseArrayCache.contains(title) {
+                    licenseArrayCache = licenseArrayCache.filter { $0 != title }
+                    numOfItemsChecked--
                 }
             }
         }
-
-        // create array of licenses
+    }
+    
+    func pressedDone() {
         
-        // add selected licenses to provider licenses
-        professional.licenseTypes.appendContentsOf(selectedLicenses)
-        // navigate to next view controller
-        
-        if (oneHasBeenPressed) {
-        // display possible services 
-            self.performSegueWithIdentifier("SelectServices", sender:nil)
+      //  var oneHasBeenPressed = false
+       
+     //   formValues().
+        if (licenseArrayCache.isEmpty) {
+            // alert: this can't be empty
+        } else if (!licenseArrayCache.isEmpty) {
+            
+            // verify that at least one is checked
+            
+            
+            for type in licenseArrayCache {
+                let string = RLMStringWrapper().wrapperValueForString(type)
+                professional.licenseTypes.append(string)
+            }
+          //  professional.licenseTypes.appendContentsOf(licenseArrayCache)
+            self.performSegueWithIdentifier("SignUp", sender:nil)
         }
+        
+       
     }
     override func viewWillAppear(animated: Bool) {
- 
+        professional.licenseTypes.removeAll()
     }
     func initializeForm() {
         
@@ -99,11 +111,14 @@ class SelectLicenses: XLFormViewController {
  
         form.addFormSection(section)
         
-        var i = 0
+     //   var i = 0
         
-        for (i = 0; i <= LicenseType.count.typeNumber-1; i++) {
-            let licenseType:LicenseType = LicenseType.fromNumber(i)
-            row = XLFormRowDescriptor(tag: "\(licenseType.rawValue)", rowType: XLFormRowDescriptorTypeBooleanCheck, title: licenseType.rawValue)
+        let licenses:[String] = ServiceTypes().arrayOfLicenses()
+        
+        for license in licenses {
+            
+        
+            row = XLFormRowDescriptor(tag: license, rowType: XLFormRowDescriptorTypeBooleanCheck, title: license)
             
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")

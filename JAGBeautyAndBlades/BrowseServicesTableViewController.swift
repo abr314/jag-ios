@@ -43,6 +43,7 @@ class BrowseServicesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> HCBrowseServicesTableViewCell {
         let cell:HCBrowseServicesTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! HCBrowseServicesTableViewCell
+   //     cell.imageView = UIImageView(image: UIImage(named: <#T##String#>))
     //    cell.timelineImageView = UIImageView(image: UIImage(named:"pexels-photo"))
 
         // Configure the cell...

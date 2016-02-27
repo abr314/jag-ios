@@ -22,6 +22,8 @@ pod 'UIColor_Hex_Swift', '~> 1.8'
 
 pod 'DZNEmptyDataSet'
 
+pod 'Auk', '~> 2.0'
+
 end
 
 target 'JAGBeautyAndBladesTests' do
