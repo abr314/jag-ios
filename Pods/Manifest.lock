@@ -1,17 +1,14 @@
 PODS:
   - Alamofire (3.2.0)
+  - Auk (2.0.19):
+    - moa (~> 2.0)
   - DZNEmptyDataSet (1.7.3)
-  - PureLayout (3.0.1)
+  - moa (2.1.7)
   - Realm (0.98.0):
     - Realm/Headers (= 0.98.0)
   - Realm/Headers (0.98.0)
   - RealmSwift (0.98.0):
     - Realm (= 0.98.0)
-  - SFFocusViewLayout (2.0.0)
-  - SwiftyButton (0.4.0):
-    - SwiftyButton/CustomContent (= 0.4.0)
-  - SwiftyButton/CustomContent (0.4.0):
-    - PureLayout (~> 3.0)
   - SwiftyJSON (2.3.2)
   - SwiftyTimer (1.2.0)
   - UIColor_Hex_Swift (1.8)
@@ -19,10 +16,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Auk (~> 2.0)
   - DZNEmptyDataSet
   - RealmSwift
-  - SFFocusViewLayout (~> 2.0)
-  - SwiftyButton
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyTimer
   - UIColor_Hex_Swift (~> 1.8)
@@ -39,12 +35,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  Auk: 28b2f2372b8482d4bd1f1188c3638ef72a021dea
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  moa: bf5704e649973fdefbcebe7bfa1aa21cdd3292b4
   Realm: 28efc598b8b1b378d27a222d9fc037a29ae68642
   RealmSwift: 7ef4b9ee449d711cd5a7d69a3af1cc5cd0efb619
-  SFFocusViewLayout: bb580b208a791c075f9e0f7021dd961e8c4cfaf7
-  SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SwiftyTimer: 5453593e0aaacfb1611fb6986d257281140913bb
   UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680

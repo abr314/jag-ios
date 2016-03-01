@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '40BAD9A677A898D09A9C3A81'
+               BlueprintIdentifier = 'EFE084B66709AE72C8426540'
                BlueprintName = 'Pods-JAGBeautyAndBladesTests-XLForm'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-JAGBeautyAndBladesTests-XLForm.a'>

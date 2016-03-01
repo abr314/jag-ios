@@ -16,11 +16,9 @@ pod 'RealmSwift'
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
-pod 'SwiftyTimer'
-
-pod 'UIColor_Hex_Swift', '~> 1.8'
-
 pod 'DZNEmptyDataSet'
+
+pod 'Auk', '~> 2.0'
 
 end
 

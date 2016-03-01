@@ -79,7 +79,7 @@ class SelectLicenses: XLFormViewController {
         
         if (oneHasBeenPressed) {
         // display possible services 
-            self.performSegueWithIdentifier("SelectServices", sender:nil)
+            self.performSegueWithIdentifier("SignUp", sender:nil)
         }
     }
     override func viewWillAppear(animated: Bool) {

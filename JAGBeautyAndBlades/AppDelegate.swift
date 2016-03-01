@@ -21,9 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UITableView.appearance().backgroundColor = UIColor.blackColor()
-       UINavigationBar.appearance().backgroundColor = UIColor.purpleColor()
+       UINavigationBar.appearance().backgroundColor = kSilverColor
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+     
+        
+
+        if let font = UIFont(name: kHeaderFont, size: 20) {
     
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:UIColor.whiteColor()]
+            
+        }
+        /*
         let fontFamilyNames = UIFont.familyNames()
         for familyName in fontFamilyNames {
             print("------------------------------")
@@ -36,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let newArray = serviceTypes.licensesForServiceName(ServiceCategoryType.kHairType.rawValue)
     //    let something = newArray[0]
+*/
         return true
     }
 

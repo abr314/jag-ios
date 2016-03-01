@@ -58,13 +58,13 @@ class ViewLocationsTableViewController: UITableViewController, DZNEmptyDataSetDe
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-    
+  /*
     func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
         let str = "addLocation"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
+      //  let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-    
+*/    
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
         self.performSegueWithIdentifier("locationFromMap", sender: nil)
     }

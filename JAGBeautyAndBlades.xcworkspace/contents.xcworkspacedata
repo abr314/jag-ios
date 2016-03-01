@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:JAGBeautyAndBlades.xcodeproj">
+      location = "group:/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGForMen.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:stylize/Stylize.xcworkspace">

@@ -5,7 +5,7 @@
 //  Created by Abraham Brovold on 1/20/16.
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
-
+import Auk
 import UIKit
 import XLForm
 //import UIColor_Hex_Swift
@@ -13,7 +13,7 @@ import XLForm
 class BasicSignupViewController: XLFormViewController {
     
     
-    var validationIsOn = false
+    var validationIsOn = true
     
     var userType:UserType?
     var personType:String = ""
@@ -39,10 +39,9 @@ class BasicSignupViewController: XLFormViewController {
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-        form = XLFormDescriptor(title: "Signup")
+        form = XLFormDescriptor(title: "Sign Up")
         
         form.assignFirstResponderOnShow = true
-        
         section = XLFormSectionDescriptor.formSectionWithTitle("Please Enter this Basic Information")
   
         form.addFormSection(section)
@@ -52,26 +51,29 @@ class BasicSignupViewController: XLFormViewController {
         let lastNameArray = [kLastName, XLFormRowDescriptorTypeName]
         let phoneNumberArray = [kPhone, XLFormRowDescriptorTypeText]
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
-        let nextArray = [kNext, XLFormRowDescriptorTypeButton]
+        let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
+        let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
+        let isProfessionalArray = ["I am a Service Provider", XLFormRowDescriptorTypeBooleanCheck]
+        let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
         // create array of rows
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, nextArray]
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
      
             row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
             
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(kSilverColor, forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "self.tintColor")
+            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
             // add row customizations here
             
-            if (row.tag == kNext) {
+            if (row.tag == "Register Now") {
                 row.action.formSelector = "nextButtonPressed"
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
             }
-            if (row.tag != kNext) {
+            if (row.tag != "Register Now" && row.tag != "I am a Service Provider") {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -87,6 +89,12 @@ class BasicSignupViewController: XLFormViewController {
             
             if (row.tag == kEmail) {
                 row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
+            }
+            
+            if (row.tag == "Referral Code") {
+                let string = "I am a Service Provider"
+                row.required = false
+           //     row.hidden = "$string == 0"
             }
             
             section.addFormRow(row)
@@ -109,44 +117,69 @@ class BasicSignupViewController: XLFormViewController {
             
             if (result) {
                 synchronizeData()
-        
-                performSegueWithIdentifier("ProfessionalDetail", sender: nil)
+                // make json object
+                // send to server
+                // return to scroll view
+                sendCustomerSignUpInfoSuccessful(customer)
+            //    performSegueWithIdentifier("ProfessionalDetail", sender: nil)
          
             }
         } else {
-            synchronizeData()
+       //     synchronizeData()
             
-            performSegueWithIdentifier("ProfessionalDetail", sender: nil) 
+          //  performSegueWithIdentifier("ProfessionalDetail", sender: nil)
         }
         
     }
     
     func synchronizeData() {
         
-            if let firstName = form.formRowWithTag(kFirstName)?.value as? String {
-                provider?.firstName = firstName
-            }
+        if let firstName = form.formRowWithTag(kFirstName)?.value as? String {
+      //      provider?.firstName = firstName
+            customer.firstName = firstName
+        }
         
-            if let lastName = form.formRowWithTag(kLastName)?.value as? String {
-                provider?.lastName = lastName
-            }
+        if let lastName = form.formRowWithTag(kLastName)?.value as? String {
+        //    provider?.lastName = lastName
+            customer.lastName = lastName
+        }
         
-            if let phoneNumber = form.formRowWithTag(kPhone)?.value as? String {
-                provider?.phoneNumber = phoneNumber
-            }
+        if let phoneNumber = form.formRowWithTag(kPhone)?.value as? String {
+          //  provider?.phoneNumber = phoneNumber
+            customer.phoneNumber = phoneNumber
+        }
         
-            if let email = form.formRowWithTag(kEmail)?.value as? String {
-                provider?.email = email
-            }
+        if let email = form.formRowWithTag(kEmail)?.value as? String {
+           // provider?.email = email
+            customer.email = email
+        }
+        
+        if let isPro = form.formRowWithTag("I am a Service Provider")?.value as? Bool {
+            customer.isProfessional = isPro
+            
+        }
+        
+        if let password = form.formRowWithTag(kPassword)?.value as? String {
+            // provider?.email = email
+            customer.password = password
+        }
+        
+        if let referralCode = form.formRowWithTag("Referral Code")?.value as? String {
+            customer.referralCode = referralCode
+            
+        }
         
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
         self.inputViewController?.view.backgroundColor = UIColor.blackColor()
    //     self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.backgroundColor = UIColor.blackColor()
+        self.tableView.backgroundColor = kSilverColor
+        self.navigationItem.hidesBackButton = true
+       
         if (userType == UserType.Provider && formMode == FormMode.CreateMode) {
             provider = HCProvider()
         }
