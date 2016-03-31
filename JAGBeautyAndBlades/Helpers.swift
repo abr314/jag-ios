@@ -41,6 +41,12 @@ let kAllDay = "All-Day"
 let kSave = "Save"
 let kCancel = "Cancel"
 let kSubmit = "Submit"
+let kFirstLine = "First Line"
+let kSecondLine = "Second Line"
+let kZipCode = "Zip Code"
+let kCityState = "City and State"
+let kJAGToken:String = "JAGToken"
+
 let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
 
 

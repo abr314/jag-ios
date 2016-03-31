@@ -10,7 +10,7 @@ import XLForm
 import RealmSwift
 class VerifyInformationFormViewController: XLFormViewController {
 
-    var provider:HCProvider?
+   // var provider:HCProvider?
     var realm:Realm?
     var customer:HCCustomer?
     

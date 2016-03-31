@@ -20,7 +20,7 @@ class LocationsMapViewController: UIViewController, CLLocationManagerDelegate {
     {
         super.viewDidLoad()
         
-        let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: nil, action: "addButtonPressed")
+        let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: nil, action: #selector(LocationsMapViewController.addButtonPressed))
   
         navigationItem.rightBarButtonItem = barButton
   

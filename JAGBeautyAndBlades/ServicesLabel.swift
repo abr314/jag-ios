@@ -17,5 +17,22 @@ class ServicesLabel: UILabel {
         // Drawing code
     }
     */
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setProperties()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setProperties()
+    }
+    func setProperties() {
+        self.layer.cornerRadius = 8.0
+        self.layer.masksToBounds = true
+        self.textColor = kPurpleColor
+        self.backgroundColor = UIColor.whiteColor()
+        
+    }
 
 }

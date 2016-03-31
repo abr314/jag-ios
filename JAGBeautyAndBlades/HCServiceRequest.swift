@@ -10,9 +10,10 @@ import UIKit
 import RealmSwift
 
 class HCServiceRequest: NSObject {
-    dynamic var serviceRequestID = 0
-    dynamic var appointment = ""
-    dynamic var service = ""
-    dynamic var requestedTier = 0
-    dynamic var serviceLinePrice = ""
+     var serviceRequestID = 0
+     var appointmentID = 0
+     var serviceName = ""
+     var requestedTier = 0
+     var serviceLinePrice = ""
+     var serviceID = 0
 }

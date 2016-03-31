@@ -14,6 +14,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Braintree-Braintree-Drop-In-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Braintree-Braintree-UI-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Braintree.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Locksmith.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-JAGBeautyAndBlades-DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,11 +79,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyTimer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>UIColor_Hex_Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,27 +92,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0AE2B1D53B2D66B3CBEEA1462EB93F8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0AF548336117C4B277A7C98F3FAE9047</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20C7C6F5AAAA04472DCA92DE9D0A9AD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26E4B597D370F369CC2480BEA912AB64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C9F8188802DB4395B862D4E5BC72FD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53BE34A2571BD3A05DC04CF101B27AFA</key>
+		<key>4E37B7D765A18C74F05F595FFEBCE9BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>623114E0BEE18D58B54AFD6C63C70989</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6DCCB6E68EC54F4971438E106EB50484</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>73BA30D3528CCA9E948A4C812396E384</key>
+		<key>718D302F2AF22AAB733FDC961931108D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E915761D33C6F8FA7F2C7CF8D1833DA</key>
+		<key>83C3552288B802E70913F6147EBEEA71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83C3552288B802E70913F6147EBEEA71</key>
+		<key>92943306EC8070DF9CD02ECD505D2CD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,7 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>980FF39B75AE038AC89A38C909DAF216</key>
+		<key>A61173943B2B802C595507B183DD2660</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E45C66276C97420AEAD41D8A1637F4DC</key>
+		<key>D8208337550A19F84313FB2453B2BF43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F08E495C8573C01AC4A78A3BAC8CB5EA</key>
+		<key>DFCE73D7A2F9B071C25F724D0A8C217A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E97BDDCCFF16A910C000E8B1D89C9277</key>
 		<dict>
 			<key>primary</key>
 			<true/>

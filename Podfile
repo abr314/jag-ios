@@ -20,6 +20,11 @@ pod 'DZNEmptyDataSet'
 
 pod 'Auk', '~> 2.0'
 
+pod 'Locksmith'
+
+pod 'UIColor_Hex_Swift', '~> 2.1'
+
+pod 'Braintree'
 end
 
 target 'JAGBeautyAndBladesTests' do

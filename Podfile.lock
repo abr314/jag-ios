@@ -2,7 +2,26 @@ PODS:
   - Alamofire (3.2.0)
   - Auk (2.0.19):
     - moa (~> 2.0)
+  - Braintree (4.2.3):
+    - Braintree/Card (= 4.2.3)
+    - Braintree/Core (= 4.2.3)
+    - Braintree/PayPal (= 4.2.3)
+    - Braintree/UI (= 4.2.3)
+  - Braintree/Card (4.2.3):
+    - Braintree/Core
+  - Braintree/Core (4.2.3)
+  - Braintree/PayPal (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.2.3)
+  - Braintree/PayPalOneTouch (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+  - Braintree/UI (4.2.3):
+    - Braintree/Card
+    - Braintree/Core
   - DZNEmptyDataSet (1.7.3)
+  - Locksmith (2.0.8)
   - moa (2.1.7)
   - Realm (0.98.0):
     - Realm/Headers (= 0.98.0)
@@ -10,18 +29,18 @@ PODS:
   - RealmSwift (0.98.0):
     - Realm (= 0.98.0)
   - SwiftyJSON (2.3.2)
-  - SwiftyTimer (1.2.0)
-  - UIColor_Hex_Swift (1.8)
+  - UIColor_Hex_Swift (2.1)
   - XLForm (3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - Auk (~> 2.0)
+  - Braintree
   - DZNEmptyDataSet
+  - Locksmith
   - RealmSwift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-  - SwiftyTimer
-  - UIColor_Hex_Swift (~> 1.8)
+  - UIColor_Hex_Swift (~> 2.1)
   - XLForm (~> 3.0)
 
 EXTERNAL SOURCES:
@@ -36,13 +55,14 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
   Auk: 28b2f2372b8482d4bd1f1188c3638ef72a021dea
+  Braintree: 05791bdc6d43c3faf2f802dd2d687e9f619f7f57
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
+  Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
   moa: bf5704e649973fdefbcebe7bfa1aa21cdd3292b4
   Realm: 28efc598b8b1b378d27a222d9fc037a29ae68642
   RealmSwift: 7ef4b9ee449d711cd5a7d69a3af1cc5cd0efb619
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  SwiftyTimer: 5453593e0aaacfb1611fb6986d257281140913bb
-  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
+  UIColor_Hex_Swift: e91dc51f6bf252ec7bf74c8704ceedeeb7640c1c
   XLForm: 754b061f9f4b249a7ab7548efb22f1b586e26740
 
 COCOAPODS: 0.39.0

@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagesCell" rowHeight="83" id="20J-cP-OsQ" customClass="HCMessagePreviewTableViewCell" customModule="JAGBeautyAndBlades" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="83"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="20J-cP-OsQ" id="koW-Pz-GQe">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="82.5"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="appointmentsCell" textLabel="lSX-Sc-xzu" detailTextLabel="mAH-jm-iLy" style="IBUITableViewCellStyleValue1" id="Gm7-Yp-60F">
-                                <rect key="frame" x="0.0" y="175" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="111" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gm7-Yp-60F" id="lcd-DH-dbD">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -97,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -133,7 +133,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42X-NZ-EoV">
                                             <rect key="frame" x="8" y="8" width="70" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -176,12 +176,20 @@
                     <connections>
                         <segue destination="8xk-CV-EvZ" kind="show" identifier="SignUp" animates="NO" id="oGS-hB-RGf"/>
                         <segue destination="9Dx-Oi-YNC" kind="show" identifier="BookNow" id="w53-mM-Pu2"/>
-                        <segue destination="ak0-8p-JUK" kind="show" identifier="dashboard" id="0HC-35-4c3"/>
+                        <segue destination="zDw-ea-kBU" kind="show" identifier="appointments" id="DjG-Jq-ual"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbc-de-peH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-181" y="991"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="rqI-wd-EqX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="zDw-ea-kBU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VW-3U-V3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.5" y="1354"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="4JE-cv-GL0">
@@ -189,7 +197,46 @@
                 <viewControllerPlaceholder storyboardName="SignUp" id="8xk-CV-EvZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPq-Mf-mvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="1438"/>
+            <point key="canvasLocation" x="-303" y="1436"/>
+        </scene>
+        <!--Appointments Form View Controller-->
+        <scene sceneID="hQ4-sg-rsF">
+            <objects>
+                <viewController id="nKF-6t-j9S" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sIF-eL-l2F"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jci-JW-w8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OMl-gA-x4I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="NCC-xj-x3l" kind="show" identifier="showDetail" id="H5d-rh-nW7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c40-bg-dP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="1736"/>
+        </scene>
+        <!--Appointment Detail Form View Controller-->
+        <scene sceneID="8Hn-tl-KWc">
+            <objects>
+                <viewController id="NCC-xj-x3l" customClass="AppointmentDetailFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adU-bV-8oa"/>
+                        <viewControllerLayoutGuide type="bottom" id="a9i-2F-Ug4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hBX-Yg-Nnu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgn-bm-wxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="1736"/>
         </scene>
     </scenes>
     <resources>

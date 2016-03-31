@@ -1,7 +1,253 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rc7-46-eLM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="Pfq-bX-QIL">
+            <objects>
+                <navigationController id="gAU-xY-x6T" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zdT-za-Rek"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="foF-aO-cSx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZh-CF-FTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="-840"/>
+        </scene>
+        <!--Services-->
+        <scene sceneID="UrN-Rp-Lzm">
+            <objects>
+                <collectionViewController id="MMf-p8-nH0" customClass="ServicesCollectionViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qjw-4A-9AO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s9I-m1-kBb">
+                            <size key="itemSize" width="225" height="170"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="30" minY="30" maxX="30" maxY="30"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="XVA-iH-1sT" customClass="ServicesCollectionViewCell" customModule="JAGBeautyAndBlades" customModuleProvider="target">
+                                <rect key="frame" x="30" y="94" width="225" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNe-Ar-DbA">
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="170"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-f2-doT" customClass="ServicesLabel" customModule="JAGBeautyAndBlades" customModuleProvider="target">
+                                            <rect key="frame" x="69" y="8" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="cellImage" destination="YNe-Ar-DbA" id="3w2-7F-u1C"/>
+                                    <outlet property="serviceLabel" destination="zZi-f2-doT" id="agV-B2-Xbt"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="MMf-p8-nH0" id="Ofy-bI-Bpa"/>
+                            <outlet property="delegate" destination="MMf-p8-nH0" id="cp8-t0-SCH"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Services" id="jKm-Lb-Q1i"/>
+                    <navigationItem key="navigationItem" id="WEx-nY-XCU"/>
+                    <connections>
+                        <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1r-sh-QI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="133"/>
+        </scene>
+        <!--Service Detail Form View Controller-->
+        <scene sceneID="mgH-k5-nyY">
+            <objects>
+                <viewController id="YRQ-co-0Hs" customClass="ServiceDetailFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bSR-Be-jmt"/>
+                        <viewControllerLayoutGuide type="bottom" id="LW1-aZ-v0v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vVF-xo-WLz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="EFl-9J-lCC" kind="show" identifier="schedule" id="Wy5-iw-cdF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMc-9C-oOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Jn-qe-9nO">
+            <objects>
+                <viewController id="ew8-7y-cqV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fjG-N9-EjV"/>
+                        <viewControllerLayoutGuide type="bottom" id="0FA-ee-gwA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gdU-dA-mbP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zv-is-dES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="-621"/>
+        </scene>
+        <!--Schedule Form View Controller-->
+        <scene sceneID="PgI-1c-rBZ">
+            <objects>
+                <viewController title="Schedule Form View Controller" id="EFl-9J-lCC" customClass="ScheduleFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yXG-rh-Wkd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Loo-uR-W7t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v9x-wu-kUd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="vaq-hb-OHC" kind="show" identifier="checkout" id="OA6-WW-a3d"/>
+                        <segue destination="ew8-7y-cqV" kind="show" identifier="paymentInformation" id="iBH-Lz-4Ar"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bz1-g3-0rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="133"/>
+        </scene>
+        <!--Checkout-->
+        <scene sceneID="glu-53-AcM">
+            <objects>
+                <viewController title="Checkout" id="vaq-hb-OHC" customClass="CheckoutFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PNH-0a-XKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="n8a-I9-7Wb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EcW-Xa-HKU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Kd-UJ-Udu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="133"/>
+        </scene>
+        <!--Appointments-->
+        <scene sceneID="Qie-YU-ASi">
+            <objects>
+                <viewController title="Appointments" id="5py-eE-2kj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Fz-it-dQw"/>
+                        <viewControllerLayoutGuide type="bottom" id="pI0-0b-OiB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GIZ-Zz-plI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Item 2" id="osk-9y-OBk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFl-zh-OBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022" y="1169"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F0N-Rx-6jh">
+            <objects>
+                <navigationController id="Rc7-46-eLM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDo-5i-55S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vsI-in-nsV" kind="relationship" relationship="rootViewController" id="ACE-HM-bmu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLP-sg-2Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2040" y="133"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zfg-iH-LVs">
+            <objects>
+                <tabBarController id="vsI-in-nsV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rRp-FI-rhS"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yI4-Bc-vLD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5py-eE-2kj" kind="relationship" relationship="viewControllers" id="rZ3-SF-qDm"/>
+                        <segue destination="MMf-p8-nH0" kind="relationship" relationship="viewControllers" id="z4f-1h-oUJ"/>
+                        <segue destination="H1Y-lA-2fF" kind="relationship" relationship="viewControllers" id="cbT-Sm-nOx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJ8-ym-ewe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022" y="133"/>
+        </scene>
+        <!--Appointments-->
+        <scene sceneID="hoL-wh-Cv5">
+            <objects>
+                <viewController id="H1Y-lA-2fF" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gi6-TV-FeX"/>
+                        <viewControllerLayoutGuide type="bottom" id="nil-88-OHi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Plh-GG-26C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Appointments" id="Mtn-6l-gd3"/>
+                    <connections>
+                        <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLa-ap-6xK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="988"/>
+        </scene>
+        <!--Appointment Detail Form View Controller-->
+        <scene sceneID="vxA-sb-zbi">
+            <objects>
+                <viewController id="j45-JG-enJ" customClass="AppointmentDetailFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="COJ-ig-LpT"/>
+                        <viewControllerLayoutGuide type="bottom" id="OXN-yN-wMQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3fG-R4-ByF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lE5-mL-dYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="988"/>
+        </scene>
+    </scenes>
 </document>

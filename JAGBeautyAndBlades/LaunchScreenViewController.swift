@@ -8,6 +8,3 @@
 
 //import Cocoa
 
-class LaunchScreenViewController: UIViewController {
-
-}

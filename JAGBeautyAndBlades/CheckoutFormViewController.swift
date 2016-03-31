@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import XLForm
 
 class CheckoutFormViewController: XLFormViewController {
 
+    var customer:HCCustomer?
+    var appointment:HCAppointment?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,23 @@ class CheckoutFormViewController: XLFormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initializeForm()
+        // appointment = HCAppointment()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initializeForm()
+        // appointment = HCAppointment()
+    }
+    
+    
+    func initializeForm() {
+        
+        // display summary of appointment
+    }
     /*
     // MARK: - Navigation
 

@@ -8,20 +8,21 @@
 import Auk
 import UIKit
 import XLForm
+import RealmSwift
+import Alamofire
 //import UIColor_Hex_Swift
 
 class BasicSignupViewController: XLFormViewController {
-    
     
     var validationIsOn = true
     
     var userType:UserType?
     var personType:String = ""
-    var provider:HCProvider?
+  //  var provider:HCProvider?
     var customer:HCCustomer = HCCustomer()
     var isProviderType:Bool = false
     var formMode:FormMode?
-    
+  //  var alamofireRequest:Alamofire.Response?
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -31,7 +32,6 @@ class BasicSignupViewController: XLFormViewController {
         super.init(coder: aDecoder)
         initializeForm()
     }
-    
     
     func initializeForm() {
         
@@ -54,16 +54,16 @@ class BasicSignupViewController: XLFormViewController {
         let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
         let isProfessionalArray = ["I am a Service Provider", XLFormRowDescriptorTypeBooleanCheck]
-        let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
+      //  let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
         // create array of rows
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, referralCodeArray, nextArray]
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, nextArray] //referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
      
             row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
             
-            row.cellConfig.setObject(kSilverColor, forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
@@ -77,7 +77,7 @@ class BasicSignupViewController: XLFormViewController {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
-                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textField.textColor")
+                row.cellConfig.setObject(UIColor.blackColor(), forKey: "textField.textColor")
             }
             if (row.tag == kFirstName || row.tag == kLastName) {
                 row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^\\w*$"))
@@ -104,34 +104,70 @@ class BasicSignupViewController: XLFormViewController {
     
     }
     
-    func didTouchNextButton() {
-        // do validation
-        
-        // go to next screen or not depending on validation result
-    }
-    
     func nextButtonPressed() {
         
         if validationIsOn {
-            let result:Bool = validateForm(self)
             
-            if (result) {
+            if (validateForm(self)) {
                 synchronizeData()
-                // make json object
-                // send to server
-                // return to scroll view
-                sendCustomerSignUpInfoSuccessful(customer)
-            //    performSegueWithIdentifier("ProfessionalDetail", sender: nil)
+             //   alamofireRequest = sendCustomerSignUpInfo(customer)
+                registerWithServer()
          
             }
         } else {
-       //     synchronizeData()
-            
-          //  performSegueWithIdentifier("ProfessionalDetail", sender: nil)
+       
         }
         
     }
     
+    func registerWithServer() {
+        Alamofire.request(.POST, kCustomerSignUpURL, parameters:["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber])
+            
+            .validate()
+            
+            .responseJSON { response in
+                switch response.result {
+                    
+                    //response.result {
+                case .Success(let JSON):
+                    print(response)
+                    
+                    /*
+                        Grab the token
+                        Add the token to the NSUserDefaults
+                    */
+                    
+                    Alamofire.request(.POST, kAPITokenURL, parameters:["username":self.customer.email,"password":self.customer.password])
+                    
+                        .responseJSON { response in
+                            
+                            switch response.result {
+                                
+                                //response.result {
+                            case .Success(let JSON):
+                                print(response)
+                                
+                                if let something = JSON.valueForKey("token") as? String {
+                                    self.customer.token = something
+                                    // Add token to nsuserdefaults
+                                    NSUserDefaults.standardUserDefaults().setObject(something, forKey: kJAGToken)
+                                    // pop view to dashboard
+                                    self.performSegueWithIdentifier("main", sender: nil)
+                                }
+                                
+                            case .Failure(let error):
+                                
+                                break
+                            }
+                    }
+                case .Failure(let error):
+                    
+                    break
+                    }
+                }
+                
+
+    }
     func synchronizeData() {
         
         if let firstName = form.formRowWithTag(kFirstName)?.value as? String {
@@ -171,20 +207,6 @@ class BasicSignupViewController: XLFormViewController {
         
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-     
-        self.inputViewController?.view.backgroundColor = UIColor.blackColor()
-   //     self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.backgroundColor = kSilverColor
-        self.navigationItem.hidesBackButton = true
-       
-        if (userType == UserType.Provider && formMode == FormMode.CreateMode) {
-            provider = HCProvider()
-        }
-    }
-    
     override func viewWillAppear(animated: Bool) {
   
     }
@@ -201,14 +223,14 @@ class BasicSignupViewController: XLFormViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "ProfessionalDetail" {
-            if let svc = segue.destinationViewController as? ProfessionalDetailSignUpViewController {
-                
-                if let provider = provider {
-                svc.provider = provider
-                }
+        if segue.identifier == "main" {
+            if let svc = segue.destinationViewController as? LoginFormViewController {
+                svc.customer = customer
             }
-        }
-    }
 
+        }
+
+    }
+    
+    
 }

@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   sampleAppointments.plist
-   JAGForMen
-
-   Created by Abraham Brovold on 3/9/16.
-   Copyright (c) 2016 Hill Country Angel Network. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<dict>
+		<key>service_requests</key>
+		<array>
+			<dict>
+				<key>Service</key>
+				<dict>
+					<key>service_line_price</key>
+					<string>45</string>
+					<key>name</key>
+					<string>Express Hair Cut and Neck Clean Up</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Service</key>
+				<dict>
+					<key>service_line_price</key>
+					<string>25</string>
+					<key>name</key>
+					<string>Beard or Mustache Trim</string>
+				</dict>
+			</dict>
+		</array>
+		<key>address</key>
+		<dict>
+			<key>zip_code</key>
+			<string>78701</string>
+			<key>state</key>
+			<string>TX</string>
+			<key>city</key>
+			<string>Austin</string>
+			<key>line1</key>
+			<string>1400 Rio Grand Street</string>
+			<key>line2</key>
+			<string>202</string>
+		</dict>
+		<key>category</key>
+		<dict/>
+		<key>status</key>
+		<string>making</string>
+	</dict>
+</array>
 </plist>

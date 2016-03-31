@@ -30,20 +30,32 @@ class JAGPreviewViewController: UIViewController, UIScrollViewDelegate {
         
         self.title = "JAG For Men"
         
-        var signUpButton = UIBarButtonItem(title: "Sign Up", style: UIBarButtonItemStyle.Plain, target: self, action: "signUpClicked")
         
-    //    signUpButton.tintColor = kPurpleColor
-      // navigationItem.
-        self.navigationItem.setRightBarButtonItem(signUpButton, animated: true)
+       
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        var signUpButton = UIBarButtonItem(title: "Sign Up", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(JAGPreviewViewController.signUpClicked))
+        
+        //    signUpButton.tintColor = kPurpleColor
+        // navigationItem.
+        
+        if (NSUserDefaults.standardUserDefaults().objectForKey("AccountHasBeenCreated") as? Bool != true) {
+            self.navigationItem.setRightBarButtonItem(signUpButton, animated: true)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func signUpClicked() {
+        if (NSUserDefaults.standardUserDefaults().objectForKey("AccountHasBeenCreated") as? Bool == true) {
+            let alert = UIAlertController(title: "You've already created an account", message: "Please go www.jagformen.com for booking and more information", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         self.performSegueWithIdentifier("SignUp", sender: nil)
     }
     private func showInitialImage() {

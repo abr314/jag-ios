@@ -17,7 +17,7 @@ class HCCustomer: Object {
     dynamic var isProfessional = false
     dynamic var password = ""
     dynamic var referralCode = ""
-    
+    dynamic var token = ""
     // additional questions
     // address, payment information, D/L
 

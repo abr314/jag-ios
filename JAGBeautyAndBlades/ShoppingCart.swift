@@ -9,5 +9,6 @@
 import UIKit
 
 class ShoppingCart: NSObject {
-
+    static let sharedInstance = ShoppingCart()
+    var appointments = []
 }

@@ -1,3 +1,4 @@
+
 //
 //  ServicesCollectionViewCell.swift
 //  JAGForMen
@@ -9,5 +10,9 @@
 import UIKit
 
 class ServicesCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var serviceLabel: ServicesLabel!
+    @IBOutlet weak var cellImage: UIImageView!
+    
     
 }

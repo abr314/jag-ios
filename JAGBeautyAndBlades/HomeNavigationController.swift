@@ -6,8 +6,5 @@
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
-class HomeNavigationController: UINavigationController {
-
-}

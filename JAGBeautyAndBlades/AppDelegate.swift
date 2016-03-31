@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import UIColor_Hex_Swift
-
-
-
+//import UIColor_Hex_Swift
+import Locksmith
 
 @UIApplicationMain
 
@@ -21,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UITableView.appearance().backgroundColor = UIColor.blackColor()
-       UINavigationBar.appearance().backgroundColor = kSilverColor
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+       UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
+  //      UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
      
         
 
@@ -47,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 */
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
