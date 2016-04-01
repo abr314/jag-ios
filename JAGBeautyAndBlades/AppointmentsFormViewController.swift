@@ -35,14 +35,73 @@ class AppointmentsFormViewController: XLFormViewController {
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-       
+        var appointmentsMaking = [JSON]()
+        var appointmentsCreated = [JSON]()
+        var appointmentsConfirmed = [JSON]()
+        var appointmentsCancelled = [JSON]()
+        
+        
+        for appointment in appointments {
+            
+            let status = appointment.1["status"].stringValue
+        //    let he = appointment[1]["status"]
+          //  print(appointment[1]["status"].stringValue)
+            let jsonObj = appointment.1
+            if status == "created" {
+            
+                appointmentsCreated.append(jsonObj)
+            }
+            
+            if status == "confirmed" {
+                appointmentsConfirmed.append(jsonObj)
+            }
+            
+            if status == "making" {
+                appointmentsMaking.append(jsonObj)
+            }
+        }
         form = XLFormDescriptor(title: "Appointments")
         
         form.assignFirstResponderOnShow = true
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("Making")
+        section = XLFormSectionDescriptor.formSectionWithTitle("Created")
+        
+        for jsonObject in appointmentsCreated {
+            //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
+            let name = jsonObject["category"]["display_name"].stringValue
+            let price = jsonObject["appointment_price"].intValue
+            let titleString = "\(name) - $\(price) - Date - StartTime7"
+            print(titleString)
+            row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeText, title: titleString)
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            row.disabled = true
+            section.addFormRow(row)
+        }
+        
         form.addFormSection(section)
-
+        
+        section = XLFormSectionDescriptor.formSectionWithTitle("Confirmed")
+        
+        for jsonObject in appointmentsConfirmed {
+          //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
+          let name = jsonObject["category"]["display_name"].stringValue
+          let price = jsonObject["appointment_price"].intValue
+          let titleString = "\(name) - $\(price) - Date - StartTime7"
+          print(titleString)
+          row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeText, title: titleString)
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            row.disabled = true
+          section.addFormRow(row)
+        }
+        form.addFormSection(section)
+        
+        /*
         let sectionNames = []
         let makingSectionArray = []
         let firstNameArray = ["Express Haircut and Neck Trim", XLFormRowDescriptorTypeButton]
@@ -112,7 +171,7 @@ class AppointmentsFormViewController: XLFormViewController {
             
             section.addFormRow(row)
         }
-        
+        */
         self.form = form
     }
     
@@ -135,10 +194,10 @@ class AppointmentsFormViewController: XLFormViewController {
        // return false
         
         
-        
+        initializeForm()
         super.viewDidLoad()
      //   updateData()
-        initializeForm()
+        
         if let font = UIFont(name: kHeaderFont, size: 25) {
             
             self.navigationController?.navigationBar.titleTextAttributes =

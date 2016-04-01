@@ -742,11 +742,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
-            timestampString = "481219386.706558"
+            timestampString = "481227050.835203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
             <Locations>
@@ -1126,7 +1126,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "481220776.796013"
+                  timestampString = "481230385.769419"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -1141,7 +1141,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "481220776.796113"
+                  timestampString = "481230385.769524"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -1190,11 +1190,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1206,11 +1206,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1222,11 +1222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
             <Locations>
@@ -1285,11 +1285,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1301,11 +1301,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1317,11 +1317,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
             <Locations>
@@ -1365,11 +1365,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
+            timestampString = "481221927.462113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1640,102 +1640,6 @@
             timestampString = "481169729.082175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.ScheduleFormViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "JAGBeautyAndBlades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.799228"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "3826">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.ScheduleFormViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "JAGBeautyAndBlades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.799374"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "66">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
-            timestampString = "481169729.082175"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.ScheduleFormViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "JAGBeautyAndBlades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.800154"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "3826">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.ScheduleFormViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "JAGBeautyAndBlades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.800274"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "66">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
-            timestampString = "481169729.082175"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "dropInViewController(_:didSucceedWithTokenization:)"
@@ -1829,7 +1733,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.803701"
+                  timestampString = "481230385.775627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -1844,7 +1748,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.803809"
+                  timestampString = "481230385.775734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -1859,7 +1763,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.803888"
+                  timestampString = "481230385.775821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -1956,38 +1860,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
-            timestampString = "481175485.425396"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
-            landmarkName = "bookNowPressed()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
-            timestampString = "481217864.591891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "bookNowPressed()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
             timestampString = "481217864.591891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -2004,12 +1876,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.807817"
+                  timestampString = "481230385.77846"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "389"
                   endingLineNumber = "389"
-                  offsetFromSymbolStart = "5144">
+                  offsetFromSymbolStart = "5147">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2019,7 +1891,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/ScheduleFormViewController.swift"
-                  timestampString = "481220776.807952"
+                  timestampString = "481230385.778563"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "390"
@@ -2027,22 +1899,6 @@
                   offsetFromSymbolStart = "209">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
-            timestampString = "481217864.591891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "bookNowPressed()"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2128,23 +1984,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
-            timestampString = "481220272.523137"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/ServicesCollectionViewController.swift"
@@ -2164,12 +2004,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
-            timestampString = "481220616.090679"
+            timestampString = "481227050.835203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JAGBeautyAndBlades.AppointmentsFormViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "JAGBeautyAndBlades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+                  timestampString = "481230385.77985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "1720">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JAGBeautyAndBlades.AppointmentsFormViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "JAGBeautyAndBlades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+                  timestampString = "481230385.779954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "1847">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+            timestampString = "481224954.445217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "initializeForm()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+            timestampString = "481227050.835203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "initializeForm()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+            timestampString = "481227050.835203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "initializeForm()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/AppointmentsFormViewController.swift"
+            timestampString = "481227050.835203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "initializeForm()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/ScheduleFormViewController.swift"
+            timestampString = "481229077.647063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "bookNowPressed()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

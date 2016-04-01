@@ -15,7 +15,7 @@ class ServicesCollectionViewController: UICollectionViewController {
      var cellImages = [String]()
      var cellLabels = [String]()
      var webCellNames = [String]()
-     var shoppingCart = [HCAppointment]()
+  //   var shoppingCart = [HCAppointment]()
      var selectedCellTitle = ""
      var selectedCellName = ""
      var servicesJSON:JSON = JSON.null
@@ -84,14 +84,6 @@ class ServicesCollectionViewController: UICollectionViewController {
         }
         
        
-        let barViewControllers = self.tabBarController?.viewControllers
-       
-        if let vc = barViewControllers as? [UIViewController]? {
-            if let appointmentsViewController = vc![2] as? AppointmentsFormViewController {
-                appointmentsViewController.appointments = appointmentsJSON
-            }
-            
-        }
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
         self.view.backgroundColor = UIColor.whiteColor()

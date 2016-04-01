@@ -152,6 +152,25 @@
             </objects>
             <point key="canvasLocation" x="2102" y="133"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aTd-iY-fHY">
+            <objects>
+                <tabBarController id="ate-Z7-5l5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WgV-0e-z58"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nPy-aV-DzE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MMf-p8-nH0" kind="relationship" relationship="viewControllers" id="U5J-kN-Xoh"/>
+                        <segue destination="H1Y-lA-2fF" kind="relationship" relationship="viewControllers" id="IwL-nd-CN3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nd2-Lj-lyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1382" y="133"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="Qie-YU-ASi">
             <objects>
@@ -180,32 +199,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vsI-in-nsV" kind="relationship" relationship="rootViewController" id="ACE-HM-bmu"/>
+                        <segue destination="ate-Z7-5l5" kind="relationship" relationship="rootViewController" id="gxj-DN-XfT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLP-sg-2Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2040" y="133"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Zfg-iH-LVs">
-            <objects>
-                <tabBarController id="vsI-in-nsV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="rRp-FI-rhS"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="yI4-Bc-vLD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="5py-eE-2kj" kind="relationship" relationship="viewControllers" id="rZ3-SF-qDm"/>
-                        <segue destination="MMf-p8-nH0" kind="relationship" relationship="viewControllers" id="z4f-1h-oUJ"/>
-                        <segue destination="H1Y-lA-2fF" kind="relationship" relationship="viewControllers" id="cbT-Sm-nOx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GJ8-ym-ewe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1022" y="133"/>
         </scene>
         <!--Appointments-->
         <scene sceneID="hoL-wh-Cv5">
@@ -220,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Appointments" id="Mtn-6l-gd3"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" id="Mtn-6l-gd3"/>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
                             <nil key="action"/>

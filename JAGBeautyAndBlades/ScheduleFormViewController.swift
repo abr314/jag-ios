@@ -384,15 +384,13 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
              Booking and Category are required
             */
             
-            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2016-09-22T13:12:00Z","requested_end_by":"2016-09-22T18:12:00Z","id":appointmentID,"category":categoryID, "booking":bookingNumber])
+            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2013-02-04T22:44","requested_end_by":"2013-02-04T22:44","id":appointmentID,"category":categoryID, "booking":bookingNumber])
                 
                 .responseString { response in
                     print(response)
                     switch response.result {
                     case .Success(let json):
                         print(response)
-             //       let jsonParas = JSON(paras)
-                     // add address
                         var line1con = ""
                         var line2con = ""
                         var zip = ""
