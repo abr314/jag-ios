@@ -52,12 +52,13 @@ typedef void(^XLOnChangeBlock)(id __nullable oldValue,id __nullable newValue,XLF
 @property (nonatomic, nullable) id value;
 @property (nullable) Class valueTransformer;
 @property UITableViewCellStyle cellStyle;
-@property (nullable) id otherValue;
+
 @property (copy, nullable) XLOnChangeBlock onChangeBlock;
 
 @property (nonatomic, readonly, nonnull) NSMutableDictionary * cellConfig;
 @property (nonatomic, readonly, nonnull) NSMutableDictionary * cellConfigIfDisabled;
 @property (nonatomic, readonly, nonnull) NSMutableDictionary * cellConfigAtConfigure;
+@property (nullable) id otherValue;
 
 @property (nonnull) id disabled;
 -(BOOL)isDisabled;

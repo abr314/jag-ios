@@ -30,7 +30,8 @@ public class Auk {
 
   */
   public var settings = AukSettings()
-
+  
+    
   /**
 
   Shows a local image in the scroll view.
@@ -62,6 +63,56 @@ public class Auk {
       AukPageVisibility.tellPagesAboutTheirVisibility(scrollView, settings: settings)
     }
   }
+  
+  /**
+   
+   Replaces an image on a given page.
+   
+   - parameter pageIndex: the index of the image to change. Does nothing if the index is less than zero ir greater than the largest index.
+   - parameter image: Image to be shown in the scroll view.
+   - parameter accessibilityLabel: Text describing the image that will be spoken in accessibility mode.
+   For example: "Picture of a pony standing in a flower pot.".
+   
+   */
+  public func updateAt(pageIndex:Int, image: UIImage, accessibilityLabel: String? = nil) {
+    if let scrollView = scrollView,
+      page = AukScrollViewContent.pageAt(pageIndex, scrollView: scrollView) {
+      
+      page.prepareForReuse()
+      page.accessibilityLabel = accessibilityLabel
+      page.show(image: image, settings: settings)
+    }
+  }
+  
+  /**
+   
+   Downloads an image and uses it to replace an image on a given page. The current image is replaced when the new image has finished downloading. Use `Moa.settings.cache` property to configure image caching.
+   
+   - parameter pageIndex: the index of the image to change. Does nothing if the index is less than zero ir greater than the largest index.
+   - parameter url: Url of the image to be shown.
+   - parameter accessibilityLabel: Text describing the image that will be spoken in accessibility mode.
+   For example: "Picture of a pony standing in a flower pot.".
+   
+   */
+  public func updateAt(pageIndex: Int, url: String, accessibilityLabel: String? = nil) {
+    if let scrollView = scrollView,
+      page = AukScrollViewContent.pageAt(pageIndex, scrollView: scrollView) {
+      
+      var updateSettings = settings
+      
+      // Use current image as a placeholder in order to avoid abrupt change
+      // while the new one is being downloaded
+      if let currentImage = page.imageView?.image {
+          updateSettings.placeholderImage = currentImage
+      }
+      
+      page.prepareForReuse()
+      page.accessibilityLabel = accessibilityLabel
+      page.show(url: url, settings: updateSettings)
+      
+      AukPageVisibility.tellPagesAboutTheirVisibility(scrollView, settings: settings)
+    }
+  }
 
   /**
 
@@ -85,7 +136,7 @@ public class Auk {
   This function can be used for animating the scroll view content during orientation change. It is called in viewWillTransitionToSize and inside animateAlongsideTransition animation block.
 
       override func viewWillTransitionToSize(size: CGSize,
-      withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
 
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
 
@@ -128,7 +179,7 @@ public class Auk {
 
   */
   public func scrollToNextPage(cycle cycle: Bool, animated: Bool) {
-    if let scrollView = scrollView {
+    if let scrollView = scrollView, currentPageIndex = currentPageIndex {
       AukScrollTo.scrollToNextPage(scrollView, cycle: cycle, animated: animated,
         currentPageIndex: currentPageIndex, numberOfPages: numberOfPages)
     }
@@ -152,7 +203,7 @@ public class Auk {
 
   */
   public func scrollToPreviousPage(cycle cycle: Bool, animated: Bool) {
-    if let scrollView = scrollView {
+    if let scrollView = scrollView, currentPageIndex = currentPageIndex {
       AukScrollTo.scrollToPreviousPage(scrollView, cycle: cycle, animated: animated,
         currentPageIndex: currentPageIndex, numberOfPages: numberOfPages)
     }
@@ -173,7 +224,10 @@ public class Auk {
     }
 
     pageIndicatorContainer?.updateNumberOfPages(numberOfPages)
-    pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
+    
+    if let currentPageIndex = currentPageIndex {
+      pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
+    }
   }
 
   /// Returns the current number of pages.
@@ -202,31 +256,40 @@ public class Auk {
 
   /**
 
-  Returns the current page index. If pages are being scrolled and there are two of them on screen the page index will indicate the page that occupies bigger portion of the screen at the moment.
+  Returns the current page index. If pages are being scrolled and there are two of them on screen the page index will indicate the page that occupies bigger portion of the screen at the moment. Returns nil if there are no pages. If scrolled way to the left or right beyond the pages it will return zero or the last index respectively.
 
   */
-  public var currentPageIndex: Int {
+  public var currentPageIndex: Int? {
+    if numberOfPages == 0 { return nil }
+    
     if let scrollView = scrollView {
       let width = Double(scrollView.bounds.size.width)
       let offset = Double(scrollView.contentOffset.x)
+      
+      if width == 0 {
+        print("Auk WARNING: scroll view has zero width.")
+        return nil
+      }
       
       var value = Int(round(offset / width))
       
       // Page # 0 is the rightmost in the right-to-left language layout
       if RightToLeft.isRightToLeft(scrollView) {
         value = numberOfPages - value - 1
-        if value < 0 { value = 0 }
       }
+      
+      if value < 0 { value = 0 }
+      if value > numberOfPages - 1 { value = numberOfPages - 1 }
       
       return value
     }
 
-    return 0
+    return nil
   }
 
   /**
 
-  Starts auto scrolling of the pages with the given delay in seconds.
+  Starts auto scrolling of the pages with the given delay in seconds. Auto scrolling stops when the user starts scrolling manually.
 
   - parameter delaySeconds: Amount of time in second each page is visible before scrolling to the next.
 
@@ -295,7 +358,7 @@ public class Auk {
     scrollView?.showsHorizontalScrollIndicator = settings.showsHorizontalScrollIndicator
     scrollView?.pagingEnabled = settings.pagingEnabled
   }
-
+    
   /// Create a page, add it to the scroll view content and layout.
   private func createPage(accessibilityLabel: String? = nil) -> AukPage {
     let page = AukPage()
@@ -316,8 +379,10 @@ public class Auk {
     }
 
     pageIndicatorContainer?.updateNumberOfPages(numberOfPages)
-    pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
     
+    if let currentPageIndex = currentPageIndex {
+      pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
+    }
 
     return page
   }
@@ -325,7 +390,10 @@ public class Auk {
   func onScroll() {
     if let scrollView = scrollView {
       AukPageVisibility.tellPagesAboutTheirVisibility(scrollView, settings: settings)
-      pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
+      
+      if let currentPageIndex = currentPageIndex {
+        pageIndicatorContainer?.updateCurrentPage(currentPageIndex)
+      }
     }
   }
 

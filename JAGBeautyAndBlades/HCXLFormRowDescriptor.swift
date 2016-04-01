@@ -7,7 +7,12 @@
 //
 
 import UIKit
+import XLForm
 
 class HCXLFormRowDescriptor: XLFormRowDescriptor {
-
+    var value2:AnyObject?
+    
+   // override func init {
+  //  self.
+  //  }
 }

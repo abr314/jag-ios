@@ -25,6 +25,8 @@ class ServiceDetailFormViewController: XLFormViewController {
     var checkedServicesTags = [String]()
     var serviceRequets = [HCServiceRequest]()
     var customer:HCCustomer?
+    var bookingID = 0
+    var categoryID = 0
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -221,19 +223,23 @@ class ServiceDetailFormViewController: XLFormViewController {
                /// let name = subJson["name"]
                 let name:String = newService.1["name"].stringValue
                 let serviceId:Int = newService.1["id"].intValue
+                var price:String = newService.1["price_tiers"][priceTier-1]["price"].stringValue
+                price.characters.dropLast(3)
+                
                 print(name)
                 print(service)
                 print(serviceId)
-                
+                print(price)
                 serviceRequest.requestedTier = priceTier
                 
-                if let num = appointmentID {
-                    serviceRequest.appointmentID = num
-                }
+                
+                serviceRequest.appointmentID = appointmentID!
+                
                 
                 if (name == service) {
                 serviceRequest.serviceName = name
                 serviceRequest.serviceID = serviceId
+                serviceRequest.serviceLinePrice = price
                 var itemExists = false
                     if (serviceRequets.count > 0){
                         for requests in serviceRequets {
@@ -340,6 +346,22 @@ class ServiceDetailFormViewController: XLFormViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        appointment.serviceRequests = serviceRequets
+        // send appointment to next VC
+        if appointmentID != 0 {
+            appointment.appointmentID = appointmentID!
+        }
+        if bookingID != 0 {
+            appointment.bookingNumber = bookingID
+        }
+        
+        if (segue.identifier == "schedule") {
+            let vc:ScheduleFormViewController = segue.destinationViewController as! ScheduleFormViewController
+        //    let indexPath = self.tableView.indexPathForSelectedRow()
+            vc.appointment = appointment
+            vc.categoryID = categoryID
+            // pass data to next view
+        }
     }
     
     }

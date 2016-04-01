@@ -106,15 +106,16 @@
 		2A9BF63D1C86508D00F281EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE71C4D626900660047 /* Assets.xcassets */; };
 		2AA0FB821CAB9BAF009BCCCC /* HCServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB41C4E9FC70097316E /* HCServiceRequest.swift */; };
 		2AA0FB831CAB9BB0009BCCCC /* HCServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB41C4E9FC70097316E /* HCServiceRequest.swift */; };
-		2AA284DE1C63C1670021B99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA284DD1C63C1670021B99E /* Main.storyboard */; };
 		2AA284E11C63CC900021B99E /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA284E01C63CC900021B99E /* Raleway-Regular.ttf */; };
 		2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA284E21C63CCCC0021B99E /* Roboto-Regular.ttf */; };
 		2AA822251C4D7910001A117C /* HCCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA822241C4D7910001A117C /* HCCustomer.swift */; };
 		2AA822261C4D7910001A117C /* HCCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA822241C4D7910001A117C /* HCCustomer.swift */; };
 		2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */; };
 		2ABB0EA31C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */; };
-		2ABB0EA51C9B875E00A36697 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB0EA41C9B875E00A36697 /* ShoppingCart.swift */; };
-		2ABB0EA61C9B875E00A36697 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB0EA41C9B875E00A36697 /* ShoppingCart.swift */; };
+		2AD2BFF91CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */; };
+		2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */; };
+		2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
+		2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
 		2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
@@ -224,13 +225,13 @@
 		2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCNetworkConnection.swift; sourceTree = "<group>"; };
 		2A9BF6311C8614AA00F281EF /* JAGURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAGURLs.swift; sourceTree = "<group>"; };
 		2AA0FB811CAB3620009BCCCC /* JAGBeautyAndBlades-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JAGBeautyAndBlades-Bridging-Header.h"; sourceTree = "<group>"; };
-		2AA284DD1C63C1670021B99E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2AA284E01C63CC900021B99E /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		2AA284E21C63CCCC0021B99E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2AA8221E1C4D78C7001A117C /* HCProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCProvider.swift; sourceTree = "<group>"; };
 		2AA822241C4D7910001A117C /* HCCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCCustomer.swift; sourceTree = "<group>"; };
 		2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailFormViewController.swift; sourceTree = "<group>"; };
-		2ABB0EA41C9B875E00A36697 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCXLFormRowDescriptor.swift; sourceTree = "<group>"; };
+		2AD2BFFB1CADFB290065B8FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderServicesHandler.swift; sourceTree = "<group>"; };
 		2ADA05461C72357D00839564 /* ServiceTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceTypes.plist; sourceTree = "<group>"; };
 		2ADC30861C501B79006773AE /* BasicSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicSignupViewController.swift; sourceTree = "<group>"; };
@@ -323,7 +324,6 @@
 				2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */,
 				2A853A421C96339F0066F70C /* ServicesCollectionViewController.xib */,
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
-				2ABB0EA41C9B875E00A36697 /* ShoppingCart.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
 				2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */,
 			);
@@ -441,8 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				2A7B4CE41C4D626900660047 /* SignUp.storyboard */,
-				2AA284DD1C63C1670021B99E /* Main.storyboard */,
 				2A7B4CE91C4D626900660047 /* LaunchScreen.storyboard */,
+				2AD2BFFB1CADFB290065B8FB /* Main.storyboard */,
 				2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */,
 				2A36301D1C84DC4400168AC2 /* LaunchScreenViewController.swift */,
 				2A853A341C96152E0066F70C /* Dashboard.storyboard */,
@@ -488,6 +488,7 @@
 				2A1094151C65828A008192FF /* HCBrowseServicesTableViewCell.swift */,
 				2A1094261C687273008192FF /* HCMessagePreviewTableViewCell.swift */,
 				2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */,
+				2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -679,8 +680,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2A7B4CEB1C4D626900660047 /* LaunchScreen.storyboard in Resources */,
-				2AA284DE1C63C1670021B99E /* Main.storyboard in Resources */,
 				2A36300F1C821D0D00168AC2 /* cufflinks.jpeg in Resources */,
 				2A853A461C96339F0066F70C /* ServicesCollectionViewController.xib in Resources */,
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
@@ -722,6 +723,7 @@
 				2ADA05481C72357D00839564 /* ServiceTypes.plist in Resources */,
 				2A853A471C96339F0066F70C /* ServicesCollectionViewController.xib in Resources */,
 				2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */,
+				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
 				2A3630251C84DDF900168AC2 /* iPhone 6.png in Resources */,
 			);
@@ -837,6 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD2BFF91CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */,
 				2A9BF62F1C860D9300F281EF /* HCNetworkConnection.swift in Sources */,
 				2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */,
@@ -860,7 +863,6 @@
 				2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */,
 				2A018EF21C62289200437513 /* LocationsMapViewController.swift in Sources */,
 				2AFEB2661C57DE9A00697A3C /* HCTimeSlot.swift in Sources */,
-				2ABB0EA51C9B875E00A36697 /* ShoppingCart.swift in Sources */,
 				2A7A8BCB1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */,
 				2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */,
 				2A853A3E1C9621C60066F70C /* ServicesLabel.swift in Sources */,
@@ -898,9 +900,9 @@
 				2A2AAB501C8FE24A00E8F2B7 /* JAGAccountHelper.swift in Sources */,
 				2AE5ADDB1C6414DC007BD715 /* LoginFormViewController.swift in Sources */,
 				2A903A5D1C74E7A400FA5C80 /* ServiceTypes.swift in Sources */,
+				2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */,
 				2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */,
-				2ABB0EA61C9B875E00A36697 /* ShoppingCart.swift in Sources */,
 				2A10941B1C6824BC008192FF /* HCBrowseServicesTableViewCell.swift in Sources */,
 				2A9BF62C1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
 				2A10941A1C6821C6008192FF /* AvailabilityViewForm.swift in Sources */,

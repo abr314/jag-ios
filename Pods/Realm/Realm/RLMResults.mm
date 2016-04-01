@@ -30,7 +30,7 @@
 #import "RLMUtil.hpp"
 
 #import "results.hpp"
-#import "external_commit_helper.hpp"
+#import "impl/external_commit_helper.hpp"
 
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -136,6 +136,7 @@ static const int RLMEnumerationBufferSize = 16;
         else if (_tableView.is_row_attached(index)) {
             accessor->_row = (*_objectSchema.table)[_tableView.get_source_ndx(index)];
         }
+        RLMInitializeSwiftAccessorGenerics(accessor);
         _strongBuffer[batchCount] = accessor;
         batchCount++;
     }

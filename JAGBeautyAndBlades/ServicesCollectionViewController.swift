@@ -24,6 +24,7 @@ class ServicesCollectionViewController: UICollectionViewController {
      var bookingID = 0
      var appointmentCategory = 0
      var appointmentID = 0
+     var categoryID = 0
  //   @IBOutlet weak var servicesCell: ServicesCollectionViewCell!
     
     override func viewWillAppear(animated: Bool) {
@@ -43,9 +44,8 @@ class ServicesCollectionViewController: UICollectionViewController {
         
         let headers = ["Authorization":  "Token  \(token)"]
       
-        Alamofire.request(.GET, kServiceCategoriesURL).responseJSON
-            
-        { response in switch response.result {
+        Alamofire.request(.GET, kServiceCategoriesURL).responseJSON {
+            response in switch response.result {
             case .Success(let json):
                 let response = json as? JSON
                 self.servicesJSON = JSON(json)
@@ -53,13 +53,13 @@ class ServicesCollectionViewController: UICollectionViewController {
                 }
         }
         
-        Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON
-        
-            { response in switch response.result {
+        Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+            response in switch response.result {
                 
             case .Success(let json):
                 let response = json as? JSON
                 self.appointmentsJSON = JSON(json)
+                print("APPOINTMENTS:\(self.appointmentsJSON)")
             case .Failure(let error): break
                 
                 }
@@ -124,6 +124,8 @@ class ServicesCollectionViewController: UICollectionViewController {
                 svc.services = servicesJSON
                 svc.newName = selectedCellName
                 svc.appointmentID = appointmentID
+                svc.bookingID = bookingID
+                svc.categoryID = categoryID
             }
         }
     }
@@ -160,7 +162,7 @@ class ServicesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedCellTitle = cellLabels[indexPath.row]
         selectedCellName = webCellNames[indexPath.row]
-        let categoryID = servicesJSON[indexPath.row]["id"].intValue
+        categoryID = servicesJSON[indexPath.row]["id"].intValue
         let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
       //  let parameters = ["":""]
         Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
@@ -173,14 +175,18 @@ class ServicesCollectionViewController: UICollectionViewController {
                 
                 
                 
-               Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":categoryID], encoding: .JSON).responseJSON
+               Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":self.categoryID], encoding: .JSON).responseJSON
                 { response in switch response.result {
                     case .Success(let json):
                      //   let newJSON = json
                         // Get and set appointment ID
                         let nJSON:JSON = JSON(json)
                         self.appointmentID = nJSON["id"].intValue
+                        self.bookingID = nJSON["booking"].intValue
+                        
+                        
            //             let appID = newJSON["id"].intValue
+                        print(nJSON["booking"].stringValue)
                         self.performSegueWithIdentifier("procedures", sender: nil)
                     case .Failure(let error): break
                     

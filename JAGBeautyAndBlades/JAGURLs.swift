@@ -12,7 +12,7 @@ import Foundation
 let kRealURL = "https://jagbeautyandblades.com/"
 let kTestURL = "http://127.0.0.1:8000/"
 
-var URL = kTestURL
+var URL = kRealURL
 
 //let realURL = true
 
@@ -25,4 +25,8 @@ let kCreateBookingURL = "\(URL)api/bookings/bookings/create/"
 let kCreateAppointmentURL = "\(URL)api/bookings/appointments/create/"
 let kCreateServiceRequestURL = "\(URL)api/bookings/servicerequests/create/"
 let kRequestBraintreeClientTokenURL = "\(URL)api/profiles/user/"//<user_id>/clienttoken/"
-
+let kSiteUserInfoURL = "\(URL)api/profiles/siteuser/"
+let kCheckoutURL = "\(URL)api/bookings/checkout/"
+let kCompleteBookingURL = "\(URL)api/booking/complete/"
+let kAppointmentUpdateURL = "\(URL)api/bookings/appointments/update/"
+let kAddressCreateOnAppointmentURL = "\(URL)api/address/create/"

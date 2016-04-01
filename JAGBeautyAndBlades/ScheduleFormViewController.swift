@@ -10,44 +10,137 @@ import UIKit
 import XLForm
 import Braintree
 import Alamofire
+import SwiftyJSON
 
-class ScheduleFormViewController: XLFormViewController {
+extension NSDateFormatter {
+    convenience init(dateFormat: String) {
+        self.init()
+        self.dateFormat = dateFormat
+    }
+}
+
+extension NSDate {
+    struct Date {
+        static let formatterShortDate = NSDateFormatter(dateFormat: "YYYY-MM-DDTHH:mm")
+    }
+    var shortDate: String {
+        return Date.formatterShortDate.stringFromDate(self)
+    }
+}
+
+class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDelegate {
 
     var appointment:HCAppointment?
     var braintreeClient: BTAPIClient?
     var customer: HCCustomer?
+    var customerID = String()
+    var braintreeToken = ""
+    var clientNonce = ""
+    var bookingID = 0
+    var categoryID = 0
+    /* 
+        To Do:
+            Set address and time frame
+    */
+    
+    func dropInViewController(viewController: BTDropInViewController, didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce) {
+        // ...
+        
+        clientNonce = paymentMethodNonce.nonce
+        // send to server and get confirmation
+        var token = ""
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey(kJAGToken)
+        {
+            token = name
+        }
+        let headers = ["Authorization":  "Token  \(token)"]
+        var parameter = ["":""]
+        let newParameters = ["":""]
+        if let newParameter = appointment?.bookingNumber {
+            parameter = ["booking_id":"\(newParameter)","nonce":"\(clientNonce)"]
+            bookingID = newParameter
+        }
+        
+        Alamofire.request(.POST, kCheckoutURL, headers:headers, parameters:parameter)
+            
+            .validate()
+            
+            .responseJSON { response in
+                switch response.result {
+                    case .Success(let json):
+                        print(response)
+                        // call compete booking
+                        let parameters = ["id":self.bookingID]
+                        // add address and time to appointment
+                        Alamofire.request(.POST, kCompleteBookingURL, parameters: parameters, headers:headers)
+                            .responseJSON { response in
+                                switch response.result {
+                                    case .Success(let json):
+                                        print(json)
+                                    case .Failure(let error):
+                                        print(error)
+                                }
+                    }
+                    case .Failure(let error):
+                        print(error)
+                        
+                    break
+                }
+            }
+        dismissViewControllerAnimated(true, completion: nil)
+        // booking completed page, transition back to dashboard
+    }
+    
+    func dropInViewControllerDidCancel(viewController: BTDropInViewController) {
+        // ...
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
         
-        let clientTokenURL = NSURL(string: "https://braintree-sample-merchant.herokuapp.com/client_token")!
-     //   let clientTokenRequest = NSMutableURLRequest(URL: clientTokenURL)!
-  //      clientTokenRequest.setValue("text/plain", forHTTPHeaderField: "Accept")
+        var token = ""
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey(kJAGToken)
+            {
+                token = name
+            }
         
-        if let customer = self.customer {
+        let headers = ["Authorization":  "Token  \(token)"]
+        print("TOKEN: \(token)")
+        // get customer ID
+       // let customerIDResponse:Response = Response()
+        Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
             
-        /*
-            Alamofire.request(.GET, "\(kRequestBraintreeClientTokenURL)\(customer.id)/clienttoken/", parameters:  ["username":customer.email,"password":customer.password])
+            .validate()
+            
             .responseJSON { response in
                 switch response.result {
-                case .Success(let JSON):
-                print(response)
-            /*
-  */
-            if let something = JSON.valueForKey("token") as? String {
-                self.customer.token = something
-                // Add token to nsuserdefaults
-                NSUserDefaults.standardUserDefaults().setObject(something, forKey: kJAGToken)
-                // pop view to dashboard
-                self.performSegueWithIdentifier("main", sender: nil)
-            }
- 
+                    
+                //response.result {
+                case .Success(let json):
+                    let newResponse = JSON(json)// {
+                    print("userInfo \(newResponse["detail"]["id"])")
+                    self.customerID = newResponse["detail"]["id"].stringValue
+                    print(self.customerID)
+                    // get customer token
+                    Alamofire.request(.GET, "\(kRequestBraintreeClientTokenURL)\(self.customerID)/clienttoken/", headers: headers).responseJSON { response in
+                        switch response.result {
+                            case .Success(let responsJSON):
+                                print(responsJSON["detail"])
+                                if let newToken = responsJSON["detail"]["client_token"] as? String {
+                                    self.braintreeToken = newToken
+                                    self.braintreeClient = BTAPIClient(authorization: newToken)
+                                }
+                            case .Failure(let error):
+                                break
+                            }
+                    }
                 case .Failure(let error):
-            
-                break
+                    break
                 }
- */
-            }
+        }
         
         // Do any additional setup after loading the view.
         initializeForm()
@@ -81,6 +174,13 @@ class ScheduleFormViewController: XLFormViewController {
         // Section 1 Start and End Time
         
         section = XLFormSectionDescriptor.formSectionWithTitle("")
+        
+        /**
+         Add a tag and XLFormRowDescriptorType to an array to add a row.
+         
+         let exampleArray = [kRowTag, RowDescriptorType]
+         
+        */
         
         let startTimeArray = [kStartTime, XLFormRowDescriptorTypeTimeInline]
         let endTimeArray = [kEndTime, XLFormRowDescriptorTypeTimeInline]
@@ -241,24 +341,129 @@ class ScheduleFormViewController: XLFormViewController {
     
     func bookNowPressed() {
         if (validationSuccessful()) {
-            appointment = HCAppointment()
+          //  appointment = HCAppointment()
             synchronizeData()
-            // add to provider availability array
+            // update appointment with address and time info
+            var token = ""
+
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let name = defaults.stringForKey(kJAGToken)
+            {
+                token = name
+            }
+            let headers = ["Authorization":  "Token  \(token)"]
             
-    //        professional?.availabilities.append(availability)
+            let appointmentStart = appointment?.requestedStartBy
+            var reqAppSta = ""
+         //   appointmentStart?.characters.dropLast(3)
+            if let startTime = appointmentStart {
+               reqAppSta = "2016-09-22T12:12"
+            }
+            //reqAppSta.characters.dropLast(3)
+            let appointmentEnd = appointment?.requestedEndBy
             
-           // self.dismissViewControllerAnimated(true, completion: nil)
+            var reqAppEnd = ""
+            if let end = appointmentStart {
+                reqAppEnd = "2016-09-22T16:12"
+            }
+           // reqAppEnd.characters.dropLast(3)
+            print(reqAppEnd)
+          //  var reqAppEnd = ""
+            var appointmentID = 0
+            var bookingNumber = 0
+            if let new = appointment?.bookingNumber {
+                bookingNumber = new
+                print("bookingnumber:\(bookingNumber)")
+            }
+            if let new = appointment?.appointmentID {
+                appointmentID = new
+            }
+            let appointmendRequestURL = "\(kAppointmentUpdateURL)\(appointmentID)/"
+            print("\(appointmendRequestURL)")
+            /**
+             Booking and Category are required
+            */
+            let paras = ["requested_start_by":"2016-09-22T13:12","requested_end_by":"2016-09-22T16:12","id":appointmentID,"category":categoryID, "booking":bookingNumber]
+       //     let jsonParas = p
+            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2016-09-22T13:12","requested_end_by":"2016-09-22T18:12","id":appointmentID,"category":categoryID, "booking":bookingNumber])
+                
+                .responseString { response in
+                    print(response)
+                    switch response.result {
+                    case .Success(let json):
+                        print(response)
+                    let paras = ["appointment":"\(self.appointment!.appointmentID)","line1":"test2 street place","line2":"test!","city":"austin","state":"texas","zip_code":"23457"]
+                    let jsonParas = JSON(paras)
+                     // add address
+                        Alamofire.request(.POST, kAddressCreateOnAppointmentURL, headers:headers, parameters: ["appointment":"\(self.appointment!.appointmentID)","line1":"222 street place","line2":"appointmentID!","city":"austin","state":"texas","zip_code":"23457"])
+                           // print(appointmentID)
+                            .responseString { response in
+                                switch response.result {
+                                case .Success(let json):
+                                print(response)
+                                case .Failure(let json):
+                                print(response)
+                                break
+                                }
+                            }
+                    case .Failure(let error):
+                        print(error)
+                        print(appointmentID)
+                        break
+                    }
+            }
+ 
+            var parameter = ["":""]
+            // call braintree
+            
+            // If you haven't already, create and retain a `BTAPIClient` instance with a
+            // tokenization key OR a client token from your server.
+            // Typically, you only need to do this once per session.
+            // braintreeClient = BTAPIClient(authorization: aClientToken)
+            
+            // Create a BTDropInViewController
+            let dropInViewController = BTDropInViewController(APIClient: braintreeClient!)
+            dropInViewController.delegate = self
+            var paymentRequest = BTPaymentRequest()
+         
+            if let string = appointment?.appointmentPrice {
+               paymentRequest.displayAmount = "$\(string)"
+            }
+            
+            
+            paymentRequest.summaryDescription = "Ships in five days"
+            paymentRequest.summaryTitle = "Total"
+            paymentRequest.callToActionText = "Book Now"
+
+            dropInViewController.paymentRequest = paymentRequest
+            
+            // This is where you might want to customize your view controller (see below)
+            
+            // The way you present your BTDropInViewController instance is up to you.
+            // In this example, we wrap it in a new, modally-presented navigation controller:
+            dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: UIBarButtonSystemItem.Cancel,
+                target: self, action: #selector(ScheduleFormViewController.userDidCancelPayment))
+            let navigationController = UINavigationController(rootViewController: dropInViewController)
+            presentViewController(navigationController, animated: true, completion: nil)
         }
     }
     
-    func synchronizeData () {
+    func userDidCancelPayment() {
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    private func synchronizeData () {
         //   let startTime:NSDate = NSDate()
         
         if let startTime:NSDate = form.formRowWithTag(kStartTime)?.value as? NSDate {
-            
-            let time = formatHourAndMinuteToString(startTime)
-            
-            appointment?.requestedStartBy = formatHourAndMinuteToString(startTime)
+          //  let soethign = formatterShortDate
+           // let time = startTime.stringValue//formatHourAndMinuteToString(startTime)
+            let time = startTime.shortDate
+            appointment?.requestedStartBy = time //formatHourAndMinuteToString(startTime)
             
         }
         
@@ -293,18 +498,6 @@ class ScheduleFormViewController: XLFormViewController {
         if let zip:Int = form.formRowWithTag(kZipCode)?.value as? Int {
             appointment?.address.zipcode = "\(zip)"
         }
-        
-        /*
-        if let endTime = form.formRowWithTag("EndTime")?.value as? NSDate {
-            let timeString:String = formatHourAndMinuteToString(endTime)
-            availability.endTime = timeString
-        }
-        
-        if let allDayEnabled = form.formRowWithTag("All-Day")?.value as? Bool {
-            availability.allDay = allDayEnabled
-        }
-        */
-        
     }
     /*
     // MARK: - Navigation

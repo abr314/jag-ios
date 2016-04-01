@@ -81,7 +81,7 @@ class JAGPreviewViewController: UIViewController, UIScrollViewDelegate {
             return nil
         }
         
-        return descriptionLabels[scrollView.auk.currentPageIndex]
+        return descriptionLabels[scrollView.auk.currentPageIndex!]
     }
     
     @IBAction func onAutoscrollTapped(sender: AnyObject) {

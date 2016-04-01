@@ -18,6 +18,7 @@ class HCCustomer: Object {
     dynamic var password = ""
     dynamic var referralCode = ""
     dynamic var token = ""
+    var customerID = ""
     // additional questions
     // address, payment information, D/L
 

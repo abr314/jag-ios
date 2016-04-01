@@ -27,6 +27,6 @@ class HCAppointment: NSObject {
     var bookingNumber = 0
     var idNumber = 0
     var paymentConfirmed = false
-    
+    var serviceRequests = [HCServiceRequest]()
   //  var category = 0
 }

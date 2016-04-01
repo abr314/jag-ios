@@ -34,7 +34,7 @@ Simply add two files to your project:
 
 **Setup with Carthage (iOS 8+)**
 
-1. Add `github "evgenyneu/Auk" ~> 2.0` to your Cartfile.
+1. Add `github "evgenyneu/Auk" ~> 2.1` to your Cartfile.
 2. Run `carthage update`.
 3. Add `moa` and `Auk` frameworks into your project.
 
@@ -43,11 +43,16 @@ Simply add two files to your project:
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'Auk', '~> 2.0'
+    pod 'Auk', '~> 2.1'
+
+#### Setup in Xcode 7 prior to Xcode 7.3
+
+If you can not run Swift 2.2 please use `2.0` library version number for both Carthage and CocoaPods
+or use the previous [AukDistrib](https://github.com/evgenyneu/Auk/blob/2.0.19/Distrib/AukDistrib.swift).
 
 #### Setup in Xcode 6
 
-Auk is written in Swift 2.0 for Xcode 7. See [Swift 1.2 setup instuctions](https://github.com/evgenyneu/Auk/wiki/Setup-with-Xcode-6-and-Swift-1.2) for Xcode 6 projects.
+Auk is written in Swift 2.2 for Xcode 7. See [Swift 1.2 setup instuctions](https://github.com/evgenyneu/Auk/wiki/Setup-with-Xcode-6-and-Swift-1.2) for Xcode 6 projects.
 
 ## Usage
 
@@ -74,7 +79,7 @@ scrollView.auk.removeAll()
 // Return the number of pages in the scroll view
 scrollView.auk.numberOfPages
 
-// Get the index of the current page
+// Get the index of the current page or nil if there are no pages
 scrollView.auk.currentPageIndex
 
 // Return currently displayed images
@@ -104,6 +109,8 @@ scrollView.auk.startAutoScroll(delaySeconds: 3)
 scrollView.auk.stopAutoScroll()
 ```
 
+Note that auto scrolling stops when the user starts scrolling manually.
+
 #### Accessibility
 
 One can pass an image description when calling the `show` methods. This description will be spoken by the device in accessibility mode for the current image on screen.
@@ -113,13 +120,28 @@ One can pass an image description when calling the `show` methods. This descript
 scrollView.auk.show(url: "http://site.com/bird.jpg", accessibilityLabel: "Picture of a bird.")
 ```
 
+#### Replacing existing image
+
+One can change existing image by calling `updateAt` methods and supplying the page index.
+
+```Swift
+// Replace the image on a given page with a remote image.
+// The current image is replaced after the new image has finished downloading.
+scrollView.auk.updateAt(0, url: "http://site.com/bird.jpg")
+
+// Replace the image on a given page with a local image.
+if let image = UIImage(named: "bird.jpg") {
+  scrollView.auk.updateAt(1, image: image)
+}
+```
+
 ## Loading images from insecure HTTP hosts
 
 If your remote image URLs are not *https* you will need to [add an exception](http://evgenii.com/blog/loading-data-from-non-secure-hosts-in-ios9-with-nsurlsession/) to the **Info.plist** file. This will allow the App Transport Security to load the images from insecure HTTP hosts.
 
 ## Configuration
 
-Use the `auk.settings` property to configure behavior and appearance of the scroll view before showing the images. See the [configuration manual](https://github.com/evgenyneu/Auk/wiki/Auk-configuration) for the complete list of configuration options.
+Use the `auk.settings` property to configure behavior and appearance of the scroll view **before showing the images**. See the [configuration manual](https://github.com/evgenyneu/Auk/wiki/Auk-configuration) for the complete list of configuration options.
 
 ```Swift
 // Make the images fill entire page
@@ -130,6 +152,9 @@ scrollView.auk.settings.pageControl.backgroundColor = UIColor.grayColor().colorW
 
 // Show placeholder image while remote image is being downloaded.
 scrollView.auk.settings.placeholderImage = UIImage(named: "placeholder.jpg")
+
+// Show an image after specifying the settings
+scrollView.auk.show(url: "http://site.com/bird.jpg")
 ```
 
 ## Size change animation
@@ -183,7 +208,12 @@ Here is what you need to do to add an image tap handler to the scroll view.
 
 ## Demo app
 
-The project includes a demo iOS app.
+The project includes a demo iOS app. If you are seeing the following build error it probably means you are running an older Xcode version.
+
+> Module file was created by an older version of the compiler; rebuild 'moa' and try again
+
+To fix it, install the latest Xcode or [install Carthage](https://github.com/Carthage/Carthage) and run `carthage update` command from the project root directory.
+
 
 <img src='https://raw.githubusercontent.com/evgenyneu/Auk/master/Graphics/Screenshots/auk_demo_ios_app_2.jpg' width='414' alt='Auk pages scroll view demo iOS app'>
 
@@ -198,7 +228,12 @@ Here is a list of other image slideshow libraries for iOS.
 * [nicklockwood/SwipeView](https://github.com/nicklockwood/SwipeView)
 * [paritsohraval100/PJR-ScrollView-Slider](https://github.com/paritsohraval100/PJR-ScrollView-Slider)
 
-## Credits
+
+## Thanks 👍
+
+* [eyaldar](https://github.com/eyaldar) added `updateAt` method.
+
+## Image credits
 
 * The Great Auk drawing by John James Audubon, 1827-1838. Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:341_Great_Auk.jpg).
 * Great auk with juvenile drawing by John Gerrard Keulemans, circa 1900. Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Great_auk_with_juvenile.jpg).
