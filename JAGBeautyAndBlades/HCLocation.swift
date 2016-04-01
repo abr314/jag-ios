@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
-class HCLocation: Object {
+
+class HCLocation: NSObject {
 
 }

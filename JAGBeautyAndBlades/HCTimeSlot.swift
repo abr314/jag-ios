@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import RealmSwift
 
-class HCTimeSlot: Object {
+
+class HCTimeSlot: NSObject {
     dynamic var startTime = ""
     dynamic var endTime = ""
     dynamic var dayNumber = DayOfWeek.Monday.dayNumber

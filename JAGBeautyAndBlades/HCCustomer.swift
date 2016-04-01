@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import RealmSwift
 
-class HCCustomer: Object {
+
+class HCCustomer: NSObject {
     dynamic var firstName = ""
     dynamic var lastName = ""
     dynamic var phoneNumber = ""

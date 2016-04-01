@@ -12,8 +12,6 @@ pod 'Alamofire', '~> 3.0'
 
 pod 'XLForm', '~> 3.0'
 
-pod 'RealmSwift'
-
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 pod 'DZNEmptyDataSet'

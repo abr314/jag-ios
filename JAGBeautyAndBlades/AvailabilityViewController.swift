@@ -8,7 +8,7 @@
 
 import UIKit
 import XLForm
-import RealmSwift
+
 
 class AvailabilityViewController: XLFormViewController {
 // sections are days of the week

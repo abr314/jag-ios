@@ -219,7 +219,6 @@
 		2A88CCCB1C5BCCBB00D38DB7 /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
 		2A903A5B1C74E7A400FA5C80 /* ServiceTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTypes.swift; sourceTree = "<group>"; };
 		2A903A5E1C74ECD600FA5C80 /* HCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCService.swift; sourceTree = "<group>"; };
-		2A903A621C74FEE600FA5C80 /* RLMStringWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMStringWrapper.swift; sourceTree = "<group>"; };
 		2A903A651C75033600FA5C80 /* SelectServicesFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectServicesFormViewController.swift; sourceTree = "<group>"; };
 		2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCJSONSerializer.swift; sourceTree = "<group>"; };
 		2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCNetworkConnection.swift; sourceTree = "<group>"; };
@@ -432,7 +431,6 @@
 		2A903A611C74FEB400FA5C80 /* Realm Wrappers */ = {
 			isa = PBXGroup;
 			children = (
-				2A903A621C74FEE600FA5C80 /* RLMStringWrapper.swift */,
 			);
 			name = "Realm Wrappers";
 			sourceTree = "<group>";

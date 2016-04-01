@@ -383,19 +383,31 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             /**
              Booking and Category are required
             */
-            let paras = ["requested_start_by":"2016-09-22T13:12","requested_end_by":"2016-09-22T16:12","id":appointmentID,"category":categoryID, "booking":bookingNumber]
-       //     let jsonParas = p
-            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2016-09-22T13:12","requested_end_by":"2016-09-22T18:12","id":appointmentID,"category":categoryID, "booking":bookingNumber])
+            
+            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2016-09-22T13:12:00Z","requested_end_by":"2016-09-22T18:12:00Z","id":appointmentID,"category":categoryID, "booking":bookingNumber])
                 
                 .responseString { response in
                     print(response)
                     switch response.result {
                     case .Success(let json):
                         print(response)
-                    let paras = ["appointment":"\(self.appointment!.appointmentID)","line1":"test2 street place","line2":"test!","city":"austin","state":"texas","zip_code":"23457"]
-                    let jsonParas = JSON(paras)
+             //       let jsonParas = JSON(paras)
                      // add address
-                        Alamofire.request(.POST, kAddressCreateOnAppointmentURL, headers:headers, parameters: ["appointment":"\(self.appointment!.appointmentID)","line1":"222 street place","line2":"appointmentID!","city":"austin","state":"texas","zip_code":"23457"])
+                        var line1con = ""
+                        var line2con = ""
+                        var zip = ""
+                        if let line1 = self.appointment?.address.line1 {
+                            line1con = line1
+                        }
+                        
+                        if let line2 = self.appointment?.address.line2 {
+                            line2con = line2
+                        }
+                        
+                        if let zip1 = self.appointment?.address.zipcode {
+                            zip = zip1
+                        }
+                        Alamofire.request(.POST, kAddressCreateOnAppointmentURL, headers:headers, parameters: ["appointment":"\(self.appointment!.appointmentID)","line1":line1con,"line2":line2con,"city":"austin","state":"texas","zip_code":zip])
                            // print(appointmentID)
                             .responseString { response in
                                 switch response.result {

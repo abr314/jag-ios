@@ -14,7 +14,8 @@ class AppointmentsFormViewController: XLFormViewController {
     var customer:HCCustomer?
     var array:Array<AnyObject>?
    
-    var appointments = Array<JSON>()
+    var appointments = JSON.null
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -35,7 +36,7 @@ class AppointmentsFormViewController: XLFormViewController {
         var row : XLFormRowDescriptor
         
        
-        form = XLFormDescriptor(title: "JAG for Men")
+        form = XLFormDescriptor(title: "Appointments")
         
         form.assignFirstResponderOnShow = true
         

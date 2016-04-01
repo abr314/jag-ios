@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class HCProvider: Object {
+class HCProvider: NSObject {
     dynamic var firstName = ""
     dynamic var lastName = ""
     dynamic var phoneNumber = ""

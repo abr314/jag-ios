@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class HCLicense: Object {
+class HCLicense: NSObject {
 
     dynamic var name = ""
     dynamic var IDstring = ""

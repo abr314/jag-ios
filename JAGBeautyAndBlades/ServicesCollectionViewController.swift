@@ -25,14 +25,15 @@ class ServicesCollectionViewController: UICollectionViewController {
      var appointmentCategory = 0
      var appointmentID = 0
      var categoryID = 0
+     var appointmentsDownloaded = false
  //   @IBOutlet weak var servicesCell: ServicesCollectionViewCell!
     
     override func viewWillAppear(animated: Bool) {
      
     }
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+         super.viewDidLoad()
         // download the service types dictionary
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -57,19 +58,37 @@ class ServicesCollectionViewController: UICollectionViewController {
             response in switch response.result {
                 
             case .Success(let json):
-                let response = json as? JSON
+           //     let response = json as? JSON
                 self.appointmentsJSON = JSON(json)
                 print("APPOINTMENTS:\(self.appointmentsJSON)")
+                self.appointmentsDownloaded = true
+               // if let tab = self.tabBarController?.viewControllers {
+              //  var thirdTab = tab[3] as! AppointmentsFormViewController
+              //      thirdTab.appointments = self.appointmentsJSON
+             //   }
+                if let appointmentsVC = self.tabBarController?.viewControllers {
+                    for vc in appointmentsVC {
+                        
+                        if vc.title == "Appointments" {
+                            if let appointmentVC = vc as? AppointmentsFormViewController {
+                                appointmentVC.appointments = self.appointmentsJSON
+                                
+                            }
+                        }
+                    }
+                    
+                }
             case .Failure(let error): break
                 
                 }
         }
         
+       
         let barViewControllers = self.tabBarController?.viewControllers
        
         if let vc = barViewControllers as? [UIViewController]? {
             if let appointmentsViewController = vc![2] as? AppointmentsFormViewController {
-                appointmentsViewController.appointments.append(appointmentsJSON)
+                appointmentsViewController.appointments = appointmentsJSON
             }
             
         }

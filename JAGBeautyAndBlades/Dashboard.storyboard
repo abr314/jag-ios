@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="2102" y="133"/>
         </scene>
-        <!--Appointments-->
+        <!--Item 2-->
         <scene sceneID="Qie-YU-ASi">
             <objects>
-                <viewController title="Appointments" id="5py-eE-2kj" sceneMemberID="viewController">
+                <viewController id="5py-eE-2kj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Fz-it-dQw"/>
                         <viewControllerLayoutGuide type="bottom" id="pI0-0b-OiB"/>
@@ -210,7 +210,7 @@
         <!--Appointments-->
         <scene sceneID="hoL-wh-Cv5">
             <objects>
-                <viewController id="H1Y-lA-2fF" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appointments" id="H1Y-lA-2fF" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gi6-TV-FeX"/>
                         <viewControllerLayoutGuide type="bottom" id="nil-88-OHi"/>
@@ -220,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Appointments" id="Mtn-6l-gd3"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Appointments" id="Mtn-6l-gd3"/>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
                             <nil key="action"/>

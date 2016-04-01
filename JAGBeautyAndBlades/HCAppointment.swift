@@ -7,22 +7,22 @@
 //
 
 import UIKit
-import RealmSwift
+
 
 class HCAppointment: NSObject {
-    dynamic var appointmentID = 0
-    dynamic var booking = ""
-    dynamic var category = 0
-    dynamic var customer = ""
-    dynamic var serviceProvider = ""
+    var appointmentID = 0
+    var booking = ""
+    var category = 0
+    var customer = ""
+    var serviceProvider = ""
     var address = HCAddress() 
-    dynamic var requestedStartBy = ""
-    dynamic var requestedEndBy = ""
-    dynamic var appointmentPrice = ""
-    dynamic var actualStartTime = ""
-    dynamic var actualEndTime = ""
-    dynamic var confirmedCustomer = false
-    dynamic var confirmedProvider = false
+    var requestedStartBy = ""
+    var requestedEndBy = ""
+    var appointmentPrice = ""
+    var actualStartTime = ""
+    var actualEndTime = ""
+    var confirmedCustomer = false
+    var confirmedProvider = false
     var date = ""
     var bookingNumber = 0
     var idNumber = 0

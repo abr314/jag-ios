@@ -23,11 +23,6 @@ PODS:
   - DZNEmptyDataSet (1.7.3)
   - Locksmith (2.0.8)
   - moa (2.1.7)
-  - Realm (0.98.6):
-    - Realm/Headers (= 0.98.6)
-  - Realm/Headers (0.98.6)
-  - RealmSwift (0.98.6):
-    - Realm (= 0.98.6)
   - SwiftyJSON (2.3.2)
   - UIColor_Hex_Swift (2.1)
   - XLForm (3.1.1)
@@ -38,7 +33,6 @@ DEPENDENCIES:
   - Braintree
   - DZNEmptyDataSet
   - Locksmith
-  - RealmSwift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - UIColor_Hex_Swift (~> 2.1)
   - XLForm (~> 3.0)
@@ -59,8 +53,6 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
   moa: bf5704e649973fdefbcebe7bfa1aa21cdd3292b4
-  Realm: 44803f35418c5d89b27825a564247fcd190de37e
-  RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   UIColor_Hex_Swift: e91dc51f6bf252ec7bf74c8704ceedeeb7640c1c
   XLForm: c9ee7e0f859341279bfd894f9589a9d25c23e4df
