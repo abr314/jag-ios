@@ -75,7 +75,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Price Tier")
         
-        row = XLFormRowDescriptor(tag: "PriceTier", rowType: XLFormRowDescriptorTypeSelectorPickerViewInline, title: "Price Tier")
+        row = XLFormRowDescriptor(tag: "PriceTier", rowType: XLFormRowDescriptorTypeSelectorPickerViewInline, title: "Skill Level")
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")

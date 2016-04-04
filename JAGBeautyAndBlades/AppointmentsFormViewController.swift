@@ -26,8 +26,6 @@ class AppointmentsFormViewController: XLFormViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initializeForm()
-    //    initializeForm()
-      //  results = JSON("")
     }
     
     func initializeForm() {
@@ -39,7 +37,6 @@ class AppointmentsFormViewController: XLFormViewController {
         var appointmentsCreated = [JSON]()
         var appointmentsConfirmed = [JSON]()
         var appointmentsCancelled = [JSON]()
-        
         
         for appointment in appointments {
             
@@ -88,7 +85,7 @@ class AppointmentsFormViewController: XLFormViewController {
                 
             }
             print(titleString)
-            row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeButton, title: titleString)
+            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: fontSize)!, forKey: "textLabel.font")
@@ -159,7 +156,7 @@ class AppointmentsFormViewController: XLFormViewController {
           let price = jsonObject["appointment_price"].intValue
         //  var startTime = ""
           var titleString = "\(name) - $\(price)"
-        
+          let appointmentID = jsonObject["id"].intValue
           if let time = jsonObject["requested_start_by"].stringValue as? String {
             var startTime = time
         
@@ -171,7 +168,7 @@ class AppointmentsFormViewController: XLFormViewController {
             }
             
          print(titleString)
-          row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeText, title: titleString)
+          row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
@@ -181,77 +178,6 @@ class AppointmentsFormViewController: XLFormViewController {
         }
         form.addFormSection(section)
         
-        /*
-        let sectionNames = []
-        let makingSectionArray = []
-        let firstNameArray = ["Express Haircut and Neck Trim", XLFormRowDescriptorTypeButton]
-        let lastNameArray = ["Beard or Mustache Trim", XLFormRowDescriptorTypeButton]
-        let arrayOfRows = [firstNameArray, lastNameArray]
-       // let phoneNumberArray = [kPhone, XLFormRowDescriptorTypeText]
-      //  results[0]["service_requests"]
-        
-        for rowStrings in arrayOfRows {
-            
-            row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
-            
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            // add row customizations here
-    
-            
-            section.addFormRow(row)
-        }
-        
-        section = XLFormSectionDescriptor.formSectionWithTitle("Created")
-        form.addFormSection(section)
-        
-   //     let sectionNames = []
-   //     let makingSectionArray = []
-        let nameArray = ["Express Haircut and Neck Trim", XLFormRowDescriptorTypeButton]
-        let lameArray = ["Beard or Mustache Trim", XLFormRowDescriptorTypeButton]
-        let arrayOf = [nameArray, lameArray]
-        // let phoneNumberArray = [kPhone, XLFormRowDescriptorTypeText]
-        //  results[0]["service_requests"]
-        
-        for rowStrings in arrayOf {
-            
-            row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
-            
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            // add row customizations here
-            
-            
-            section.addFormRow(row)
-        }
-        
-        section = XLFormSectionDescriptor.formSectionWithTitle("Confirmed")
-        form.addFormSection(section)
-        
-        let narray = ["Express Haircut and Neck Trim", XLFormRowDescriptorTypeButton]
-        let lArray = ["Beard or Mustache Trim", XLFormRowDescriptorTypeButton]
-        let arrayO = [narray, lArray]
-        // let phoneNumberArray = [kPhone, XLFormRowDescriptorTypeText]
-        //  results[0]["service_requests"]
-        
-        for rowStrings in arrayOf {
-            
-            row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
-            row.action.formSelector = "showDetail"
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            // add row customizations here
-            
-            
-            section.addFormRow(row)
-        }
-        */
         self.form = form
     }
     
@@ -271,9 +197,7 @@ class AppointmentsFormViewController: XLFormViewController {
             results = JSON(NSArray(contentsOfFile:path)!)
           //  return true
         }
-       // return false
-        
-        
+            
         initializeForm()
         super.viewDidLoad()
      //   updateData()

@@ -53,10 +53,11 @@ class BasicSignupViewController: XLFormViewController {
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
         let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
-        let isProfessionalArray = ["I am a Service Provider", XLFormRowDescriptorTypeBooleanCheck]
+        let isProfessionalArray = ["I am a Service Provider", XLFormRowDescriptorTypeBooleanSwitch]
+        let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
       //  let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
         // create array of rows
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, nextArray] //referralCodeArray, nextArray]
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, nextArray, cancelArray] //referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -73,7 +74,7 @@ class BasicSignupViewController: XLFormViewController {
                 row.action.formSelector = "nextButtonPressed"
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
             }
-            if (row.tag != "Register Now" && row.tag != "I am a Service Provider") {
+            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel") {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -95,6 +96,11 @@ class BasicSignupViewController: XLFormViewController {
                 let string = "I am a Service Provider"
                 row.required = false
            //     row.hidden = "$string == 0"
+            }
+            if (row.tag == "Cancel") {
+               row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                self?.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
             
             section.addFormRow(row)
@@ -121,6 +127,11 @@ class BasicSignupViewController: XLFormViewController {
     }
     
     func registerWithServer() {
+        var url = ""
+        
+        if isProviderType == true {
+       //     url = kpro
+        }
         Alamofire.request(.POST, kCustomerSignUpURL, parameters:["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber])
             
             .validate()

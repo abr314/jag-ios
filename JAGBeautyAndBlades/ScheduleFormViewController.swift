@@ -19,7 +19,7 @@ extension NSDate {
             formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)
             formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
             formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss:SSX"
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:SSX"
             return formatter
         }()
     }
@@ -371,14 +371,14 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                 reqAppEnd = "2016-09-22T16:12"
             }
            // reqAppEnd.characters.dropLast(3)
-            print(reqAppEnd)
+       //     print(reqAppEnd)
           //  var reqAppEnd = ""
             var appointmentID = 0
             var bookingNumber = 0
             var appPrice = ""
             if let new = appointment?.bookingNumber {
                 bookingNumber = new
-                print("bookingnumber:\(bookingNumber)")
+         //       print("bookingnumber:\(bookingNumber)")
             }
             if let new = appointment?.appointmentID {
                 appointmentID = new
@@ -388,10 +388,10 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             /**
              Booking and Category are required
             */
-            var requestedStartBy = NSDate()
+            var requestedStartBy = ""
             
             if let time = appointment?.requestedStartBy {
-                requestedStartBy = time
+                requestedStartBy = time.formattedISO8601
             }
             
             var requestedEndBy = NSDate()
@@ -404,11 +404,14 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             if let price = appointment?.appointmentPrice {
                 appPrice = price
             }
+            let new = "2016-04-03T16:30:00Z"
+          //  let startTime = appointment.
             let newHeader = ["requested_start_by": "2016-04-03T16:30:00Z","requested_end_by":"2016-04-03T16:30:00Z","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":[:], "address":[:], "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price": appPrice, "actual_start_time":[:],"actual_end_time":[:], "customer":"\(customerID)"]
             
-            
+            print(requestedStartBy)
+            print(new)
         //    let newHeader = JSON(["Authorization":  "Token  \(token)","Content-Type":"application/json"])
-            Alamofire.request(.PUT, appointmendRequestURL, headers:["Authorization":  "Token  \(token)"], parameters: ["requested_start_by": "2016-04-03T16:30:00Z","requested_end_by":"2016-04-03T16:30:00Z","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price": appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
+            Alamofire.request(.PUT, appointmendRequestURL, headers:["Authorization":  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
                 
                 .responseString { response in
                     print(response)
@@ -468,7 +471,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             }
             
             
-            paymentRequest.summaryDescription = "Ships in five days"
+            paymentRequest.summaryDescription = "Your appointment"
             paymentRequest.summaryTitle = "Total"
             paymentRequest.callToActionText = "Book Now"
 
