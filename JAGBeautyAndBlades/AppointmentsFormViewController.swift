@@ -8,7 +8,7 @@
 
 import XLForm
 import SwiftyJSON
-
+import Alamofire
 class AppointmentsFormViewController: XLFormViewController {
     var results:JSON?
     var customer:HCCustomer?
@@ -66,18 +66,86 @@ class AppointmentsFormViewController: XLFormViewController {
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Created")
         
+       
         for jsonObject in appointmentsCreated {
             //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
             let name = jsonObject["category"]["display_name"].stringValue
             let price = jsonObject["appointment_price"].intValue
-            let titleString = "\(name) - $\(price) - Date - StartTime7"
+            var titleString = "\(name) - $\(price)"
+            let appointmentID = jsonObject["id"].intValue
+            var fontSize = CGFloat()
+            fontSize = 17
+            if let time = jsonObject["requested_start_by"].stringValue as? String {
+               var startTime = time
+                
+                startTime = String(startTime.characters.dropLast(10))
+                titleString = titleString + " - \(startTime)"
+                if titleString.characters.count > 23 {
+                    fontSize = 14
+                }
+                print(startTime)
+                print(titleString)
+                
+            }
             print(titleString)
-            row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeText, title: titleString)
+            row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: fontSize)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.disabled = true
+            row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
+            row.cellConfig["accessoryType"] = UITableViewCellAccessoryType.DisclosureIndicator.rawValue
+            
+            var token = ""
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let name = defaults.stringForKey(kJAGToken)
+            {
+                token = name
+            }
+            row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                let alertController = UIAlertController(title: nil, message: "Would you like to cancel this appointment?", preferredStyle: .ActionSheet)
+                
+                let cancelAction = UIAlertAction(title: "No, keep this appointment", style: .Cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+                
+                let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
+                    print(action)
+                    let headers = ["Authorization":  "Token  \(token)"]
+                    Alamofire.request(.DELETE, "\(kDeleteAppointmentURL)\(appointmentID)/", headers:headers)
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success(let json):
+                                print(json)
+                                Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                                    response in switch response.result {
+                                        
+                                    case .Success(let json):
+                                        
+                                        self?.appointments = JSON(json)
+                                        print("APPOINTMENTS:\(self?.appointments)")
+                                      //  self.appointmentsDownloaded = true
+                                        self?.initializeForm()
+                                    case .Failure(let error): break
+                                        
+                                    }
+                                }
+                                
+                            case .Failure(let error):
+                                print(error)
+                            }
+                    }
+                }
+                alertController.addAction(destroyAction)
+                
+                self!.presentViewController(alertController, animated: true) {
+                    // ...
+                }
+            }
+            // action sheet with delete option. if it is deleted, call the delete endpoint, reload JSON, reload table
+           // row.disabled = true
+            
             section.addFormRow(row)
         }
         
@@ -89,8 +157,20 @@ class AppointmentsFormViewController: XLFormViewController {
           //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
           let name = jsonObject["category"]["display_name"].stringValue
           let price = jsonObject["appointment_price"].intValue
-          let titleString = "\(name) - $\(price) - Date - StartTime7"
-          print(titleString)
+        //  var startTime = ""
+          var titleString = "\(name) - $\(price)"
+        
+          if let time = jsonObject["requested_start_by"].stringValue as? String {
+            var startTime = time
+        
+            startTime = String(startTime.characters.dropLast(10))
+            titleString = titleString + " - \(startTime)"
+            print(startTime)
+            print(titleString)
+          
+            }
+            
+         print(titleString)
           row = XLFormRowDescriptor(tag:name, rowType: XLFormRowDescriptorTypeText, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")

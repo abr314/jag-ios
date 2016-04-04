@@ -58,14 +58,11 @@ class ServicesCollectionViewController: UICollectionViewController {
             response in switch response.result {
                 
             case .Success(let json):
-           //     let response = json as? JSON
+           
                 self.appointmentsJSON = JSON(json)
                 print("APPOINTMENTS:\(self.appointmentsJSON)")
                 self.appointmentsDownloaded = true
-               // if let tab = self.tabBarController?.viewControllers {
-              //  var thirdTab = tab[3] as! AppointmentsFormViewController
-              //      thirdTab.appointments = self.appointmentsJSON
-             //   }
+               
                 if let appointmentsVC = self.tabBarController?.viewControllers {
                     for vc in appointmentsVC {
                         

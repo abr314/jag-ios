@@ -116,6 +116,12 @@
 		2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */; };
 		2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
 		2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
+		2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */; };
+		2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */; };
+		2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */; };
+		2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */; };
+		2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */; };
+		2AD2C0061CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */; };
 		2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
@@ -231,6 +237,9 @@
 		2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailFormViewController.swift; sourceTree = "<group>"; };
 		2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCXLFormRowDescriptor.swift; sourceTree = "<group>"; };
 		2AD2BFFB1CADFB290065B8FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled-50.png"; sourceTree = "<group>"; };
+		2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled-20.png"; sourceTree = "<group>"; };
+		2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ServiceBellFilled-20.png"; sourceTree = "<group>"; };
 		2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderServicesHandler.swift; sourceTree = "<group>"; };
 		2ADA05461C72357D00839564 /* ServiceTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceTypes.plist; sourceTree = "<group>"; };
 		2ADC30861C501B79006773AE /* BasicSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicSignupViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +345,9 @@
 				2AE5ADE51C64448D007BD715 /* Large Services Cells */,
 				2A3630231C84DDF900168AC2 /* iPhone 6.png */,
 				2A505B001C4EE66100023F1F /* jag_logo_lg.png */,
+				2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */,
+				2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */,
+				2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -685,9 +697,12 @@
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
+				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
+				2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2A3630301C85F16400168AC2 /* spa.jpg in Resources */,
 				2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */,
 				2A3630241C84DDF900168AC2 /* iPhone 6.png in Resources */,
+				2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
 				2A3630361C85F2B000168AC2 /* training.jpg in Resources */,
 				2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */,
 				2A3630271C85EEAB00168AC2 /* lathershave.jpg in Resources */,
@@ -715,6 +730,7 @@
 				2A3630101C821D0D00168AC2 /* cufflinks.jpeg in Resources */,
 				2A2AAB5D1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
 				2A853A3B1C9620CE0066F70C /* service-barber.jpg in Resources */,
+				2AD2C0061CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
 				2A3630281C85EEAB00168AC2 /* lathershave.jpg in Resources */,
 				2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */,
 				2A3630371C85F2B000168AC2 /* training.jpg in Resources */,
@@ -722,7 +738,9 @@
 				2A853A471C96339F0066F70C /* ServicesCollectionViewController.xib in Resources */,
 				2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
+				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
+				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 				2A3630251C84DDF900168AC2 /* iPhone 6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

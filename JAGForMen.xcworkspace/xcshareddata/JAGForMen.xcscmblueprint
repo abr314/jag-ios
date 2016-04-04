@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "24491023940A282F14DB8676B7E6A5C741470623",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7B376ADEF507828074288850417E77BD97EC7AF1" : 0,
+    "24491023940A282F14DB8676B7E6A5C741470623" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A208C8A9-F4CB-472F-BA27-98714EE33948",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7B376ADEF507828074288850417E77BD97EC7AF1" : "JAGBeautyAndBlades\/stylize\/",
+    "24491023940A282F14DB8676B7E6A5C741470623" : "JAGBeautyAndBlades\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JAGForMen",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "JAGForMen.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/jagbeautyandbladesinc\/jag-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "24491023940A282F14DB8676B7E6A5C741470623"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alexfish\/stylize.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B376ADEF507828074288850417E77BD97EC7AF1"
+    }
+  ]
+}

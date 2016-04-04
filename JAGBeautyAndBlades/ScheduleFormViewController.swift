@@ -12,21 +12,21 @@ import Braintree
 import Alamofire
 import SwiftyJSON
 
-extension NSDateFormatter {
-    convenience init(dateFormat: String) {
-        self.init()
-        self.dateFormat = dateFormat
-    }
-}
-
 extension NSDate {
     struct Date {
-        static let formatterShortDate = NSDateFormatter(dateFormat: "YYYY-MM-DDTHH:mm")
+        static let formatterISO8601: NSDateFormatter = {
+            let formatter = NSDateFormatter()
+            formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)
+            formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+            formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss:SSX"
+            return formatter
+        }()
     }
-    var shortDate: String {
-        return Date.formatterShortDate.stringFromDate(self)
-    }
+    var formattedISO8601: String { return Date.formatterISO8601.stringFromDate(self) }
 }
+
+//NSDate().formattedISO8601  // "2015-12-22T18:22:57.345Z"
 
 class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDelegate {
 
@@ -78,6 +78,20 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                 switch response.result {
                                     case .Success(let json):
                                         print(json)
+                                    // booking completed, push back to root VC
+                                        let alertController = UIAlertController(title: "Booking Completed", message: "Your appointment has been successfully booked. You will recieve a confirmation via SMS once a service provider has accepted your ticket.", preferredStyle: .Alert)
+                                        
+                                        let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                                            // pop to root
+                                            self.navigationController?.popToRootViewControllerAnimated(true)
+                                            
+                                            
+                                        }
+                                        
+                                        alertController.addAction(cancelAction)
+                                        self.presentViewController(alertController, animated: true) {
+                                            // ...
+                                    }
                                     case .Failure(let error):
                                         print(error)
                                 }
@@ -182,8 +196,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
          
         */
         
-        let startTimeArray = [kStartTime, XLFormRowDescriptorTypeTimeInline]
-        let endTimeArray = [kEndTime, XLFormRowDescriptorTypeTimeInline]
+        let startTimeArray = [kStartTime, XLFormRowDescriptorTypeDateTimeInline]
+        let endTimeArray = [kEndTime, XLFormRowDescriptorTypeDateTimeInline]
         
         let arrayOfRows = [startTimeArray, endTimeArray]
         
@@ -199,17 +213,6 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         
         form.addFormSection(section)
         
-        
-        section = XLFormSectionDescriptor.formSectionWithTitle("")
-        row = XLFormRowDescriptor(tag: "Date", rowType: XLFormRowDescriptorTypeDate, title: "Date")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-        row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-        row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-        
-        section.addFormRow(row)
-        
-        form.addFormSection(section)
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Address")
         
@@ -261,8 +264,9 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     
     func validationSuccessful() -> Bool {
         
+        // turned off
         if (!validateStringMinutesForDifference()) {
-            return false
+           // return false
         }
         
         return true
@@ -371,6 +375,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
           //  var reqAppEnd = ""
             var appointmentID = 0
             var bookingNumber = 0
+            var appPrice = ""
             if let new = appointment?.bookingNumber {
                 bookingNumber = new
                 print("bookingnumber:\(bookingNumber)")
@@ -383,11 +388,33 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             /**
              Booking and Category are required
             */
+            var requestedStartBy = NSDate()
             
-            Alamofire.request(.PUT, appointmendRequestURL, headers:headers, parameters: ["requested_start_by":"2013-02-04T22:44","requested_end_by":"2013-02-04T22:44","id":appointmentID,"category":categoryID, "booking":bookingNumber])
+            if let time = appointment?.requestedStartBy {
+                requestedStartBy = time
+            }
+            
+            var requestedEndBy = NSDate()
+            
+            if let time = appointment?.requestedEndBy {
+                requestedEndBy = time
+                print(time.formattedISO8601)
+            }
+            
+            if let price = appointment?.appointmentPrice {
+                appPrice = price
+            }
+            let newHeader = ["requested_start_by": "2016-04-03T16:30:00Z","requested_end_by":"2016-04-03T16:30:00Z","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":[:], "address":[:], "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price": appPrice, "actual_start_time":[:],"actual_end_time":[:], "customer":"\(customerID)"]
+            
+            
+        //    let newHeader = JSON(["Authorization":  "Token  \(token)","Content-Type":"application/json"])
+            Alamofire.request(.PUT, appointmendRequestURL, headers:["Authorization":  "Token  \(token)"], parameters: ["requested_start_by": "2016-04-03T16:30:00Z","requested_end_by":"2016-04-03T16:30:00Z","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price": appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
                 
                 .responseString { response in
                     print(response)
+                    print(response.result.description)
+                    
+                    
                     switch response.result {
                     case .Success(let json):
                         print(response)
@@ -472,17 +499,15 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         if let startTime:NSDate = form.formRowWithTag(kStartTime)?.value as? NSDate {
           //  let soethign = formatterShortDate
            // let time = startTime.stringValue//formatHourAndMinuteToString(startTime)
-            let time = startTime.shortDate
-            appointment?.requestedStartBy = time //formatHourAndMinuteToString(startTime)
+        //    let time = startTime.shortDate
+    
+            appointment?.requestedStartBy = startTime
             
         }
         
         if let endTime:NSDate = form.formRowWithTag(kEndTime)?.value as? NSDate {
             
-            let time = formatHourAndMinuteToString(endTime)
-            
-            let timeString:String = formatHourAndMinuteToString(endTime)
-            appointment?.requestedEndBy = timeString
+            appointment?.requestedEndBy = endTime
             
         }
         

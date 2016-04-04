@@ -16,8 +16,8 @@ class HCAppointment: NSObject {
     var customer = ""
     var serviceProvider = ""
     var address = HCAddress() 
-    var requestedStartBy = ""
-    var requestedEndBy = ""
+    var requestedStartBy = NSDate()
+    var requestedEndBy = NSDate()
     var appointmentPrice = ""
     var actualStartTime = ""
     var actualEndTime = ""

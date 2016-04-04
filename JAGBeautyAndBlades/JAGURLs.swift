@@ -30,3 +30,4 @@ let kCheckoutURL = "\(URL)api/bookings/checkout/"
 let kCompleteBookingURL = "\(URL)api/booking/complete/"
 let kAppointmentUpdateURL = "\(URL)api/bookings/appointments/update/"
 let kAddressCreateOnAppointmentURL = "\(URL)api/address/create/"
+let kDeleteAppointmentURL = "\(URL)api/bookings/appointments/delete/" // <appointment_id>/

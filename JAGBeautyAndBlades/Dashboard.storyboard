@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="MMf-p8-nH0" id="cp8-t0-SCH"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Services" id="jKm-Lb-Q1i"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="jKm-Lb-Q1i"/>
                     <navigationItem key="navigationItem" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
@@ -209,17 +209,18 @@
         <!--Appointments-->
         <scene sceneID="hoL-wh-Cv5">
             <objects>
-                <viewController title="Appointments" id="H1Y-lA-2fF" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appointments" automaticallyAdjustsScrollViewInsets="NO" id="H1Y-lA-2fF" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gi6-TV-FeX"/>
                         <viewControllerLayoutGuide type="bottom" id="nil-88-OHi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Plh-GG-26C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" id="Mtn-6l-gd3"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3"/>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
                             <nil key="action"/>
@@ -249,4 +250,8 @@
             <point key="canvasLocation" x="595" y="988"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CalendarFilled-20.png" width="20" height="20"/>
+        <image name="ServiceBellFilled-20.png" width="20" height="20"/>
+    </resources>
 </document>
