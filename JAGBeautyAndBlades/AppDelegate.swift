@@ -18,15 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        UITableView.appearance().backgroundColor = UIColor.blackColor()
-       UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
+       // UITableView.appearance().backgroundColor = UIColor.blackColor()
+     //  UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
   //      UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
      
         
 
         if let font = UIFont(name: kHeaderFont, size: 20) {
     
-            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:UIColor.whiteColor()]
+    //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:UIColor.whiteColor()]
             
         }
         /*

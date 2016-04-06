@@ -65,11 +65,9 @@ class ServicesCollectionViewController: UICollectionViewController {
                
                 if let appointmentsVC = self.tabBarController?.viewControllers {
                     for vc in appointmentsVC {
-                        
                         if vc.title == "Appointments" {
                             if let appointmentVC = vc as? AppointmentsFormViewController {
                                 appointmentVC.appointments = self.appointmentsJSON
-                                
                             }
                         }
                     }
@@ -87,12 +85,12 @@ class ServicesCollectionViewController: UICollectionViewController {
         // Register cell classes
   //      self.collectionView!.registerClass(ServicesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        cellImages = ["service-barber.jpg",
-                     "service-cosmetic.jpg",
-                     "service-massage.jpg",
-                     "service-nails.jpg",
-                     "service-spa.jpg",
-                     "service-trainer.jpg"]
+        cellImages = ["HairMan.png",
+                      "CosmoMan.png",
+                      "MassageMan.png",
+                      "NailApp.png",
+                      "SpaApp.png",
+                      "TrainerApp.png"]
         
         cellLabels = ["Barber",
                       "Cosmetic",
@@ -100,6 +98,7 @@ class ServicesCollectionViewController: UICollectionViewController {
                       "Nails",
                       "Spa",
                       "Training"]
+        
         webCellNames = ["hair",
                         "cosmetic",
                         "massage",
@@ -157,11 +156,13 @@ class ServicesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! ServicesCollectionViewCell
         // Configure the cell
         let image = UIImage(named: cellImages[indexPath.row])
-        let text = cellLabels[indexPath.row]
         
-        cell.serviceLabel.font = UIFont(name: kHeaderFont, size: 20)
+      //  let text = cellLabels[indexPath.row]
+        
+    //    cell.serviceLabel.font = UIFont(name: kHeaderFont, size: 20)
         cell.cellImage?.image = image
-        cell.serviceLabel.text = text
+        
+      //  cell.serviceLabel.text = text
         return cell
     }
 

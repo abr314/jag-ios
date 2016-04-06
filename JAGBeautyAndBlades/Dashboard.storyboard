@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rc7-46-eLM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -16,7 +17,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZh-CF-FTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="-840"/>
+            <point key="canvasLocation" x="610" y="-680"/>
+        </scene>
+        <!--Services-->
+        <scene sceneID="5kM-Rw-JHX">
+            <objects>
+                <tableViewController id="kFa-fX-XRN" customClass="ServicesTableViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9w-tB-41i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="92" id="r8b-sp-pty" customClass="ServicesTableViewCell" customModule="JAGBeautyAndBlades" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r8b-sp-pty" id="B5J-UT-gjI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AXS-1T-RAe">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="AXS-1T-RAe" secondAttribute="height" multiplier="120:11" constant="-398.18181818181813" id="Ycc-Qr-bhx"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="AXS-1T-RAe" secondAttribute="trailing" id="53L-KD-cab"/>
+                                        <constraint firstItem="AXS-1T-RAe" firstAttribute="top" secondItem="B5J-UT-gjI" secondAttribute="top" id="g0G-1W-hrF"/>
+                                        <constraint firstItem="AXS-1T-RAe" firstAttribute="leading" secondItem="B5J-UT-gjI" secondAttribute="leading" id="jGj-8R-2pF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="AXS-1T-RAe" id="u4Q-XO-0He"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kFa-fX-XRN" id="Gw3-tj-Pvh"/>
+                            <outlet property="delegate" destination="kFa-fX-XRN" id="bkn-AU-YTe"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="Bya-Bi-uOf"/>
+                    <connections>
+                        <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="HhC-x2-Biq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrg-EL-A0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="-680"/>
         </scene>
         <!--Services-->
         <scene sceneID="UrN-Rp-Lzm">
@@ -27,34 +76,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s9I-m1-kBb">
-                            <size key="itemSize" width="225" height="170"/>
+                            <size key="itemSize" width="538.5" height="170"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="30" minY="30" maxX="30" maxY="30"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="XVA-iH-1sT" customClass="ServicesCollectionViewCell" customModule="JAGBeautyAndBlades" customModuleProvider="target">
-                                <rect key="frame" x="30" y="94" width="225" height="170"/>
+                                <rect key="frame" x="31" y="94" width="538.5" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="225" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="538.5" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNe-Ar-DbA">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="170"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YNe-Ar-DbA">
+                                            <rect key="frame" x="0.0" y="0.0" width="539" height="170"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-f2-doT" customClass="ServicesLabel" customModule="JAGBeautyAndBlades" customModuleProvider="target">
-                                            <rect key="frame" x="69" y="8" width="86" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="YNe-Ar-DbA" firstAttribute="top" secondItem="XVA-iH-1sT" secondAttribute="top" id="OvV-13-OeQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="YNe-Ar-DbA" secondAttribute="bottom" id="RIi-zx-dfZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="YNe-Ar-DbA" secondAttribute="trailing" id="i9V-gi-3GH"/>
+                                    <constraint firstItem="YNe-Ar-DbA" firstAttribute="leading" secondItem="XVA-iH-1sT" secondAttribute="leading" id="nUv-f1-a4v"/>
+                                </constraints>
+                                <size key="customSize" width="538.5" height="170"/>
                                 <connections>
                                     <outlet property="cellImage" destination="YNe-Ar-DbA" id="3w2-7F-u1C"/>
-                                    <outlet property="serviceLabel" destination="zZi-f2-doT" id="agV-B2-Xbt"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -71,7 +120,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1r-sh-QI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="133"/>
+            <point key="canvasLocation" x="-217" y="133"/>
         </scene>
         <!--Service Detail Form View Controller-->
         <scene sceneID="mgH-k5-nyY">
@@ -163,13 +212,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="MMf-p8-nH0" kind="relationship" relationship="viewControllers" id="U5J-kN-Xoh"/>
-                        <segue destination="H1Y-lA-2fF" kind="relationship" relationship="viewControllers" id="IwL-nd-CN3"/>
+                        <segue destination="MMf-p8-nH0" kind="relationship" relationship="viewControllers" id="QEz-Ri-6AL"/>
+                        <segue destination="H1Y-lA-2fF" kind="relationship" relationship="viewControllers" id="NRK-Ej-ddg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nd2-Lj-lyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1382" y="133"/>
+            <point key="canvasLocation" x="-1208" y="237"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="Qie-YU-ASi">
@@ -254,4 +303,7 @@
         <image name="CalendarFilled-20.png" width="20" height="20"/>
         <image name="ServiceBellFilled-20.png" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="f3n-E4-k6t"/>
+    </inferredMetricsTieBreakers>
 </document>

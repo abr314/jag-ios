@@ -56,7 +56,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         }
         let headers = ["Authorization":  "Token  \(token)"]
         var parameter = ["":""]
-        let newParameters = ["":""]
+     //   let newParameters = ["":""]
         if let newParameter = appointment?.bookingNumber {
             parameter = ["booking_id":"\(newParameter)","nonce":"\(clientNonce)"]
             bookingID = newParameter
@@ -69,7 +69,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             .responseJSON { response in
                 switch response.result {
                     case .Success(let json):
-                        print(response)
+                        print(json)
                         // call compete booking
                         let parameters = ["id":self.bookingID]
                         // add address and time to appointment
@@ -84,8 +84,6 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                         let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
                                             // pop to root
                                             self.navigationController?.popToRootViewControllerAnimated(true)
-                                            
-                                            
                                         }
                                         
                                         alertController.addAction(cancelAction)
@@ -185,34 +183,6 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         
         let form:XLFormDescriptor = XLFormDescriptor(title: "Schedule")
         
-        // Section 1 Start and End Time
-        
-        section = XLFormSectionDescriptor.formSectionWithTitle("")
-        
-        /**
-         Add a tag and XLFormRowDescriptorType to an array to add a row.
-         
-         let exampleArray = [kRowTag, RowDescriptorType]
-         
-        */
-        
-        let startTimeArray = [kStartTime, XLFormRowDescriptorTypeDateTimeInline]
-        let endTimeArray = [kEndTime, XLFormRowDescriptorTypeDateTimeInline]
-        
-        let arrayOfRows = [startTimeArray, endTimeArray]
-        
-        for rows in arrayOfRows {
-            row = XLFormRowDescriptor(tag: rows[0], rowType: rows[1], title: rows[0])
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            
-            section.addFormRow(row)
-        }
-        
-        form.addFormSection(section)
-        
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Address")
         
@@ -238,10 +208,37 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         }
         
         form.addFormSection(section)
+        // Section 1 Start and End Time
         
         section = XLFormSectionDescriptor.formSectionWithTitle("")
         
-        row = XLFormRowDescriptor(tag: "Book", rowType: XLFormRowDescriptorTypeButton, title: "Book Now")
+        /**
+         Add a tag and XLFormRowDescriptorType to an array to add a row.
+         
+         let exampleArray = [kRowTag, RowDescriptorType]
+         
+        */
+        
+        let startTimeArray = [kStartTime, XLFormRowDescriptorTypeDateTimeInline]
+        let endTimeArray = [kEndTime, XLFormRowDescriptorTypeDateTimeInline]
+        
+        let arrayOfRows = [startTimeArray, endTimeArray]
+        
+        for rows in arrayOfRows {
+            row = XLFormRowDescriptor(tag: rows[0], rowType: rows[1], title: rows[0])
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            row.value = nil
+            section.addFormRow(row)
+        }
+        
+        form.addFormSection(section)
+        
+        section = XLFormSectionDescriptor.formSectionWithTitle("")
+        
+        row = XLFormRowDescriptor(tag: "Book", rowType: XLFormRowDescriptorTypeButton, title: "To Payment")
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
@@ -264,9 +261,26 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     
     func validationSuccessful() -> Bool {
         
+        print(NSDate())
+        if (self.appointment?.requestedStartBy == NSDate()) {
+            
+        }
         // turned off
-        if (!validateStringMinutesForDifference()) {
-           // return false
+        if (form.formRowWithTag(kStartTime)?.value == nil || form.formRowWithTag(kEndTime)?.value == nil || form.formRowWithTag(kFirstLine)?.value == nil || form.formRowWithTag(kSecondLine)?.value == nil || form.formRowWithTag(kZipCode)?.value == nil) {
+            
+            let alertController = UIAlertController(title: "Invalid Booking", message: "Please complete all fields before continuing", preferredStyle: .Alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+                return false
+            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+                
+            }
+            
         }
         
         return true
@@ -344,8 +358,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     }
     
     func bookNowPressed() {
-        if (validationSuccessful()) {
-          //  appointment = HCAppointment()
+        if (validationSuccessful() == true) {
+          
             synchronizeData()
             // update appointment with address and time info
             var token = ""
@@ -358,21 +372,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             let headers = ["Authorization":  "Token  \(token)"]
             
             let appointmentStart = appointment?.requestedStartBy
-            var reqAppSta = ""
-         //   appointmentStart?.characters.dropLast(3)
-            if let startTime = appointmentStart {
-               reqAppSta = "2016-09-22T12:12"
-            }
-            //reqAppSta.characters.dropLast(3)
-            let appointmentEnd = appointment?.requestedEndBy
             
-            var reqAppEnd = ""
-            if let end = appointmentStart {
-                reqAppEnd = "2016-09-22T16:12"
-            }
-           // reqAppEnd.characters.dropLast(3)
-       //     print(reqAppEnd)
-          //  var reqAppEnd = ""
+        
             var appointmentID = 0
             var bookingNumber = 0
             var appPrice = ""
@@ -404,13 +405,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             if let price = appointment?.appointmentPrice {
                 appPrice = price
             }
-            let new = "2016-04-03T16:30:00Z"
-          //  let startTime = appointment.
-            let newHeader = ["requested_start_by": "2016-04-03T16:30:00Z","requested_end_by":"2016-04-03T16:30:00Z","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":[:], "address":[:], "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price": appPrice, "actual_start_time":[:],"actual_end_time":[:], "customer":"\(customerID)"]
-            
-            print(requestedStartBy)
-            print(new)
-        //    let newHeader = JSON(["Authorization":  "Token  \(token)","Content-Type":"application/json"])
+        
             Alamofire.request(.PUT, appointmendRequestURL, headers:["Authorization":  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
                 
                 .responseString { response in
@@ -440,9 +435,9 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                             .responseString { response in
                                 switch response.result {
                                 case .Success(let json):
-                                print(response)
+                                print(json)
                                 case .Failure(let json):
-                                print(response)
+                                print(json)
                                 break
                                 }
                             }
@@ -487,6 +482,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             let navigationController = UINavigationController(rootViewController: dropInViewController)
             presentViewController(navigationController, animated: true, completion: nil)
         }
+        
+        
     }
     
     func userDidCancelPayment() {

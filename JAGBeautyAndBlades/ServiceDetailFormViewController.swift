@@ -17,7 +17,6 @@ class ServiceDetailFormViewController: XLFormViewController {
     var runningTotal = 0
     var appointment = HCAppointment()
     var service = ""
- //   var serviceDetailDictionary = NSArray()
     var priceTier = 3
     var newString = ""
     var newName = ""
@@ -27,6 +26,7 @@ class ServiceDetailFormViewController: XLFormViewController {
     var customer:HCCustomer?
     var bookingID = 0
     var categoryID = 0
+ 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -41,10 +41,8 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         super.viewDidLoad()
         
-        
-    //    serviceDetailDictionary = ServiceTypes().proceduresForServiceName(service)
-        
         // Do any additional setup after loading the view.
+        
         for (key, object) in services {
             //Do something you want
             let name = object["name"]
@@ -52,11 +50,8 @@ class ServiceDetailFormViewController: XLFormViewController {
             if (name.stringValue == newName) {
               services = object
             }
-            
-            let jsonString = services["services"][0]//["name"]
         }
-     //   let jsonString = services["services"]//[0]//["name"]
-
+ 
         initializeForm()
     }
     func buildForm() {
@@ -83,9 +78,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         row.selectorOptions = [1, 2, 3, 4, 5]
         row.value = priceTier
-        // row.cellConfig.setObject(kPurpleColor, forKey: "stepControl.textLabel.textColor")
-        
-        
+    
         section.addFormRow(row)
         
         form.addFormSection(section)
@@ -112,18 +105,17 @@ class ServiceDetailFormViewController: XLFormViewController {
             let cellString:String = "\(procedureName) - \(procedureTime) mins. - $\(procedurePrice)"
             
             row = XLFormRowDescriptor(tag: "\(procedureName)", rowType: XLFormRowDescriptorTypeBooleanCheck, title: "\(cellString)")
-        //    row.value = procedurePrice
-            
+ 
             row.otherValue = Int(procedurePrice)
             
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            //    row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+      
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
             if (cellString.characters.count > 43) {
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 10)!, forKey: "textLabel.font")
-            // first rows are clickable cells for the procedures
+       
             }
             section.addFormRow(row)
             
@@ -137,11 +129,10 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         row = XLFormRowDescriptor(tag: "Total Price", rowType:XLFormRowDescriptorTypeText)
         
-        
         row.title = "Total Price: $\(runningTotal)"
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-       row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+        row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
         row.disabled = true
         
@@ -155,26 +146,21 @@ class ServiceDetailFormViewController: XLFormViewController {
         row.title = "Add to Cart"
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-        //    row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         section.addFormRow(row)
         row.action.formSelector = #selector(ServiceDetailFormViewController.addAndPop)
         form.addFormSection(section)
         self.form = form
-
-
     }
     
     func validateForm() {
         
     }
     func addAndPop() {
-    //    var appointment = HCAppointment()
         if (runningTotal == 0) {
             // Add error message
             let alertController = UIAlertController(title: "No Services Selected", message: "Please select at least 1 service to proceed.", preferredStyle: .Alert)
-            
             
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
                 // ...
@@ -187,40 +173,29 @@ class ServiceDetailFormViewController: XLFormViewController {
             return
         }
         appointment.appointmentPrice = "\(runningTotal)"
-        // synchronize form and add services to cart
         
+        let formRows = self.form.formSections[1].formRows
         
-   //     var something = [XLFormRowDescriptor?]()
-        var  something = self.form.formSections[1].formRows //as? [
-        
-        var selectedAppointments = Array<String>()
-        var i = 0
-        for row in something {
-        //    if let descriptor = row as? XLFormRowDescriptor {
+          for row in formRows {
+      
             if let newRow = row as? XLFormRowDescriptor{
               
                 let value = newRow.value as? Int
                 print(value)
                 print(newRow.tag)
-       //         let tag = newRow.tag as? String
+      
                 if value == 1 {
                     checkedServicesTags.append(newRow.tag!)
-                    
                 }
-                
             }
-            
-            }
-        
-        // create service requests
-        
+        }
+    
         for service in checkedServicesTags {
-          //  let newService = HCServiceRequest()
-          var serviceRequest = HCServiceRequest()
+
+            let serviceRequest = HCServiceRequest()
             
             for newService in services["services"] {
-                //Do something you want
-               /// let name = subJson["name"]
+                
                 let name:String = newService.1["name"].stringValue
                 let serviceId:Int = newService.1["id"].intValue
                 var price:String = newService.1["price_tiers"][priceTier-1]["price"].stringValue
@@ -230,17 +205,15 @@ class ServiceDetailFormViewController: XLFormViewController {
                 print(service)
                 print(serviceId)
                 print(price)
+              
                 serviceRequest.requestedTier = priceTier
-                
-                
                 serviceRequest.appointmentID = appointmentID!
                 
-                
                 if (name == service) {
-                serviceRequest.serviceName = name
-                serviceRequest.serviceID = serviceId
-                serviceRequest.serviceLinePrice = price
-                var itemExists = false
+                    serviceRequest.serviceName = name
+                    serviceRequest.serviceID = serviceId
+                    serviceRequest.serviceLinePrice = price
+                    var itemExists = false
                     if (serviceRequets.count > 0){
                         for requests in serviceRequets {
                             if requests.serviceName == name {
@@ -249,18 +222,11 @@ class ServiceDetailFormViewController: XLFormViewController {
                         }
                     }
                     if itemExists == false {
-                        
                       print(serviceRequest.serviceName)
                       serviceRequets.append(serviceRequest)
                     }
-                    
-                
                 }
-                
             }
-            
-            // send service requests to server
-            
         }
         
         var creationSuccessful = false
@@ -268,26 +234,19 @@ class ServiceDetailFormViewController: XLFormViewController {
             Alamofire.request(.POST, kCreateServiceRequestURL, parameters:["appointment":appointmentID!,"service":request.serviceID,"requested_price_tier":priceTier])
             .responseJSON { response in
                 switch response.result {
-                    
-                //response.result {
-                case .Success(let JSON):
-                    print(response)
-                    creationSuccessful = true
-                    
-                case .Failure(let error):
-                    
+                    case .Success(let JSON):
+                        print(JSON)
+                        creationSuccessful = true
+                    case .Failure(let _):
                     break
                 }
             }
-            
         }
        self.performSegueWithIdentifier("schedule", sender: nil)
         if creationSuccessful == true {
             
 
         }
-        // segue to schedule
-     //   performSegueWithIdentifier("schedule", sender: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -311,8 +270,6 @@ class ServiceDetailFormViewController: XLFormViewController {
             var row = self.form.formRowWithTag("Total Price")
             row?.title = "Total Price: $\(runningTotal)"
             self.reloadFormRow(row)
-      //      self.tableView.reloadData()
-      //     initializeForm()
         }
         
         
@@ -329,12 +286,8 @@ class ServiceDetailFormViewController: XLFormViewController {
         if formRow.tag != "PriceTier" && formRow.tag != "Total Price" && formRow.tag != "Add" {
             if let value = newValue as? Int {
                 if value == 1 {
-                  //  let tag = formRow?.tag as String
-                //    if let string = String(formRow.tag!)  {
                     checkedServicesTags.append(formRow.tag!)
-                  //      }
                 }
-                
             }
         }
     }
@@ -347,7 +300,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         appointment.serviceRequests = serviceRequets
-        // send appointment to next VC
+     
         if appointmentID != 0 {
             appointment.appointmentID = appointmentID!
         }
@@ -357,10 +310,10 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         if (segue.identifier == "schedule") {
             let vc:ScheduleFormViewController = segue.destinationViewController as! ScheduleFormViewController
-        //    let indexPath = self.tableView.indexPathForSelectedRow()
+      
             vc.appointment = appointment
             vc.categoryID = categoryID
-            // pass data to next view
+       
         }
     }
     

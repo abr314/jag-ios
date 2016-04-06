@@ -91,14 +91,13 @@
         <scene sceneID="1gb-JG-nDy">
             <objects>
                 <navigationController id="nmz-gm-8cf" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tcr-Bf-UGJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -169,7 +168,6 @@
                     <view key="view" contentMode="scaleToFill" id="s9x-QM-aQI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="o6d-x8-h47"/>
                     <connections>
@@ -188,7 +186,7 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" id="zDw-ea-kBU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VW-3U-V3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.5" y="1354"/>
+            <point key="canvasLocation" x="126" y="1387"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="4JE-cv-GL0">
@@ -196,7 +194,7 @@
                 <viewControllerPlaceholder storyboardName="SignUp" id="8xk-CV-EvZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPq-Mf-mvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303" y="1436"/>
+            <point key="canvasLocation" x="-316" y="1387"/>
         </scene>
         <!--Appointments Form View Controller-->
         <scene sceneID="hQ4-sg-rsF">
@@ -217,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c40-bg-dP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1736"/>
+            <point key="canvasLocation" x="70" y="1736"/>
         </scene>
         <!--Appointment Detail Form View Controller-->
         <scene sceneID="8Hn-tl-KWc">

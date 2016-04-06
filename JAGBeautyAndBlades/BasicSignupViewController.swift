@@ -8,7 +8,6 @@
 import Auk
 import UIKit
 import XLForm
-
 import Alamofire
 //import UIColor_Hex_Swift
 
@@ -53,11 +52,13 @@ class BasicSignupViewController: XLFormViewController {
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
         let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
-        let isProfessionalArray = ["I am a Service Provider", XLFormRowDescriptorTypeBooleanSwitch]
+        let isProfessionalArray = ["My Role", XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
       //  let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
         // create array of rows
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, nextArray, cancelArray] //referralCodeArray, nextArray]
+       
+        
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray,nextArray, cancelArray] //referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -73,8 +74,9 @@ class BasicSignupViewController: XLFormViewController {
             if (row.tag == "Register Now") {
                 row.action.formSelector = "nextButtonPressed"
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
+                row.cellConfig.setObject(kPurpleColor, forKey: "textLabel.textColor")
             }
-            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel") {
+            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != "My Role") {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -92,10 +94,9 @@ class BasicSignupViewController: XLFormViewController {
                 row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
             }
             
-            if (row.tag == "Referral Code") {
-                let string = "I am a Service Provider"
-                row.required = false
-           //     row.hidden = "$string == 0"
+            if (row.tag == "My Role") {
+                row.selectorOptions = ["Customer", "Professional"]
+                row.value = "Customer"
             }
             if (row.tag == "Cancel") {
                row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
@@ -127,12 +128,13 @@ class BasicSignupViewController: XLFormViewController {
     }
     
     func registerWithServer() {
-        var url = ""
+        var url = kCustomerSignUpURL
         
         if isProviderType == true {
-       //     url = kpro
+            url = kProSignUpURL
         }
-        Alamofire.request(.POST, kCustomerSignUpURL, parameters:["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber])
+        
+        Alamofire.request(.POST, url, parameters:["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber])
             
             .validate()
             
@@ -153,8 +155,7 @@ class BasicSignupViewController: XLFormViewController {
                         .responseJSON { response in
                             
                             switch response.result {
-                                
-                                //response.result {
+                               
                             case .Success(let JSON):
                                 print(response)
                                 
@@ -201,9 +202,13 @@ class BasicSignupViewController: XLFormViewController {
             customer.email = email
         }
         
-        if let isPro = form.formRowWithTag("I am a Service Provider")?.value as? Bool {
-            customer.isProfessional = isPro
-            
+        if let isPro = form.formRowWithTag("My Role")?.value as? String {
+            if isPro == "Professional" {
+                isProviderType == true
+            }
+            if isPro == "Customer" {
+                isProviderType == false
+            }
         }
         
         if let password = form.formRowWithTag(kPassword)?.value as? String {
