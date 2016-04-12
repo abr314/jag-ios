@@ -38,6 +38,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     var clientNonce = ""
     var bookingID = 0
     var categoryID = 0
+    var contentInset = UIEdgeInsets()
+
     /* 
         To Do:
             Set address and time frame
@@ -79,10 +81,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                     case .Success(let json):
                                         print(json)
                                     // booking completed, push back to root VC
-                                        let alertController = UIAlertController(title: "Booking Completed", message: "Your appointment has been successfully booked. You will recieve a confirmation via SMS once a service provider has accepted your ticket.", preferredStyle: .Alert)
+                                        let alertController = UIAlertController(title: "Watch your phone for text confirmation", message: "You will recieve a confirmation via SMS/Text once a service provider has accepted your ticket. Your booking is not confirmed until you recieve this message.", preferredStyle: .Alert)
                                         
                                         let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
                                             // pop to root
+                                            
                                             self.navigationController?.popToRootViewControllerAnimated(true)
                                         }
                                         
@@ -110,7 +113,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
+       // super.viewDidLoad()
         
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -145,11 +148,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                     self.braintreeToken = newToken
                                     self.braintreeClient = BTAPIClient(authorization: newToken)
                                 }
-                            case .Failure(let error):
+                            case .Failure(_):
                                 break
                             }
                     }
-                case .Failure(let error):
+                case .Failure(_):
                     break
                 }
         }
@@ -371,7 +374,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             }
             let headers = ["Authorization":  "Token  \(token)"]
             
-            let appointmentStart = appointment?.requestedStartBy
+         //   let appointmentStart = appointment?.requestedStartBy
             
         
             var appointmentID = 0
@@ -414,7 +417,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                     
                     
                     switch response.result {
-                    case .Success(let json):
+                    case .Success(_):
                         print(response)
                         var line1con = ""
                         var line2con = ""
@@ -448,7 +451,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                     }
             }
  
-            var parameter = ["":""]
+           // var parameter = ["":""]
             // call braintree
             
             // If you haven't already, create and retain a `BTAPIClient` instance with a
@@ -466,7 +469,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             }
             
             
-            paymentRequest.summaryDescription = "Your appointment"
+            paymentRequest.summaryDescription = ""
             paymentRequest.summaryTitle = "Total"
             paymentRequest.callToActionText = "Book Now"
 
@@ -534,7 +537,16 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             appointment?.address.zipcode = "\(zip)"
         }
     }
-    /*
+    
+    override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!) {
+        super.formRowDescriptorValueHasChanged(formRow, oldValue: oldValue, newValue: newValue)
+        if formRow.tag ==  kEndTime {
+            let indexPath = NSIndexPath(forRow: 0, inSection: 2)
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+        }
+    }
+    
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

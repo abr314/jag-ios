@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
         
 
-        if let font = UIFont(name: kHeaderFont, size: 20) {
+    //    if let font = UIFont(name: kHeaderFont, size: 20) {
     
     //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:UIColor.whiteColor()]
             
-        }
+    //    }
         /*
         let fontFamilyNames = UIFont.familyNames()
         for familyName in fontFamilyNames {

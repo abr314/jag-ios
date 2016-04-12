@@ -19,7 +19,7 @@ class AppointmentsFormViewController: XLFormViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
-        let token = customer?.token
+      //  let token = customer?.token
         
     }
     
@@ -36,13 +36,12 @@ class AppointmentsFormViewController: XLFormViewController {
         var appointmentsMaking = [JSON]()
         var appointmentsCreated = [JSON]()
         var appointmentsConfirmed = [JSON]()
-        var appointmentsCancelled = [JSON]()
-        
+    
         for appointment in appointments {
             
             let status = appointment.1["status"].stringValue
-        //    let he = appointment[1]["status"]
-          //  print(appointment[1]["status"].stringValue)
+      
+      
             let jsonObj = appointment.1
             if status == "created" {
             
@@ -110,7 +109,7 @@ class AppointmentsFormViewController: XLFormViewController {
                 let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
                     print(action)
                     let headers = ["Authorization":  "Token  \(token)"]
-                    Alamofire.request(.DELETE, "\(kDeleteAppointmentURL)\(appointmentID)/", headers:headers)
+                    Alamofire.request(.POST, kAppointmentCancelURL, parameters:["appointment_id":"\(appointmentID)"], headers:headers)
                         .responseJSON { response in
                             switch response.result {
                             case .Success(let json):
@@ -124,7 +123,7 @@ class AppointmentsFormViewController: XLFormViewController {
                                         print("APPOINTMENTS:\(self?.appointments)")
                                       //  self.appointmentsDownloaded = true
                                         self?.initializeForm()
-                                    case .Failure(let error): break
+                                    case .Failure( _): break
                                         
                                     }
                                 }
@@ -185,7 +184,9 @@ class AppointmentsFormViewController: XLFormViewController {
         performSegueWithIdentifier("showDetail", sender: nil)
     }
       override func viewDidLoad() {
-    
+        self.navigationController?.navigationBar.translucent = false
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+      //  self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
         
         let prefs = NSUserDefaults.standardUserDefaults()
         if let string = prefs.objectForKey("JAGAppointmentsJSON") {
@@ -202,12 +203,12 @@ class AppointmentsFormViewController: XLFormViewController {
         super.viewDidLoad()
      //   updateData()
         
-        if let font = UIFont(name: kHeaderFont, size: 25) {
+    //    if let font = UIFont(name: kHeaderFont, size: 25) {
             
       //      self.navigationController?.navigationBar.titleTextAttributes =
         //        [NSFontAttributeName: font,
           //          NSForegroundColorAttributeName: UIColor.whiteColor()]
-        }
+    //    }
         
       //  self.tableView.backgroundColor = UIColor.whiteColor()
       //  self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()

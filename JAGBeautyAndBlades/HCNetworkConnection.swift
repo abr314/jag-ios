@@ -56,7 +56,7 @@ func retrieveAuthToken(email:String, password:String) -> String {
             case .Success(let JSON):
                     print(response)
                 
-                    let something = JSON.valueForKey("token")
+                    _ = JSON.valueForKey("token")
                                 
                     if let string = response.result.value?.valueForKey("token") as? String {
                         newString = string

@@ -26,15 +26,10 @@ class ServicesCollectionViewController: UICollectionViewController {
      var appointmentID = 0
      var categoryID = 0
      var appointmentsDownloaded = false
+     var hasBeenTapped = false
  //   @IBOutlet weak var servicesCell: ServicesCollectionViewCell!
     
     override func viewWillAppear(animated: Bool) {
-     
-    }
-    override func viewDidLoad() {
-        
-         super.viewDidLoad()
-        // download the service types dictionary
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
         if let name = defaults.stringForKey(kJAGToken)
@@ -44,25 +39,15 @@ class ServicesCollectionViewController: UICollectionViewController {
         }
         
         let headers = ["Authorization":  "Token  \(token)"]
-      
-        Alamofire.request(.GET, kServiceCategoriesURL).responseJSON {
-            response in switch response.result {
-            case .Success(let json):
-                let response = json as? JSON
-                self.servicesJSON = JSON(json)
-            case .Failure(let error): break
-                }
-        }
-        
         Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
             response in switch response.result {
                 
             case .Success(let json):
-           
+                
                 self.appointmentsJSON = JSON(json)
                 print("APPOINTMENTS:\(self.appointmentsJSON)")
                 self.appointmentsDownloaded = true
-               
+                
                 if let appointmentsVC = self.tabBarController?.viewControllers {
                     for vc in appointmentsVC {
                         if vc.title == "Appointments" {
@@ -73,12 +58,28 @@ class ServicesCollectionViewController: UICollectionViewController {
                     }
                     
                 }
-            case .Failure(let error): break
+            case .Failure(_): break
+                
+            }
+        }
+    }
+    override func viewDidLoad() {
+        
+         super.viewDidLoad()
+        // download the service types dictionary
+        hasBeenTapped = false
+        
+      
+        Alamofire.request(.GET, kServiceCategoriesURL).responseJSON {
+            response in switch response.result {
+            case .Success(let json):
+            //    let response = json as? JSON
+                self.servicesJSON = JSON(json)
+            case .Failure(_): break
                 
                 }
         }
         
-       
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
         self.view.backgroundColor = UIColor.whiteColor()
@@ -130,9 +131,13 @@ class ServicesCollectionViewController: UICollectionViewController {
                 svc.service = selectedCellTitle
                 svc.services = servicesJSON
                 svc.newName = selectedCellName
+                svc.customerToken = customerToken
                 svc.appointmentID = appointmentID
                 svc.bookingID = bookingID
+ 
                 svc.categoryID = categoryID
+ 
+                hasBeenTapped = false
             }
         }
     }
@@ -169,11 +174,14 @@ class ServicesCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
         selectedCellTitle = cellLabels[indexPath.row]
         selectedCellName = webCellNames[indexPath.row]
         categoryID = servicesJSON[indexPath.row]["id"].intValue
         let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
       //  let parameters = ["":""]
+        /*
         Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
             { response in switch response.result {
                 
@@ -197,17 +205,24 @@ class ServicesCollectionViewController: UICollectionViewController {
            //             let appID = newJSON["id"].intValue
                         print(nJSON["booking"].stringValue)
                         self.performSegueWithIdentifier("procedures", sender: nil)
+                        self.hasBeenTapped = false
                     case .Failure(let error): break
                     
                     }
                 
                 }
-                
-                
-
             case .Failure(let error): break
                 
                 }
+        }
+    */
+     //   self.performSegueWithIdentifier("procedures", sender: nil)
+        if hasBeenTapped == true {
+            return
+        }
+        if hasBeenTapped == false {
+            hasBeenTapped = true
+            performSegueWithIdentifier("procedures", sender: nil)
         }
     }
     // Uncomment this method to specify if the specified item should be highlighted during tracking

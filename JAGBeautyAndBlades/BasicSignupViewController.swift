@@ -72,7 +72,7 @@ class BasicSignupViewController: XLFormViewController {
             // add row customizations here
             
             if (row.tag == "Register Now") {
-                row.action.formSelector = "nextButtonPressed"
+                row.action.formSelector = #selector(BasicSignupViewController.nextButtonPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
                 row.cellConfig.setObject(kPurpleColor, forKey: "textLabel.textColor")
             }
@@ -142,7 +142,7 @@ class BasicSignupViewController: XLFormViewController {
                 switch response.result {
                     
                     //response.result {
-                case .Success(let JSON):
+                case .Success(_):
                     print(response)
                     
                     /*
@@ -167,13 +167,21 @@ class BasicSignupViewController: XLFormViewController {
                                     self.performSegueWithIdentifier("main", sender: nil)
                                 }
                                 
-                            case .Failure(let error):
+                            case .Failure(_):
                                 
                                 break
                             }
                     }
-                case .Failure(let error):
+                case .Failure(_):
+                    let alertController = UIAlertController(title: nil, message: "There was a server error with signup. Please revise your information and try again.", preferredStyle: .ActionSheet)
                     
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                     break
                     }
                 }
@@ -204,10 +212,10 @@ class BasicSignupViewController: XLFormViewController {
         
         if let isPro = form.formRowWithTag("My Role")?.value as? String {
             if isPro == "Professional" {
-                isProviderType == true
+                isProviderType = true
             }
             if isPro == "Customer" {
-                isProviderType == false
+                isProviderType = false
             }
         }
         

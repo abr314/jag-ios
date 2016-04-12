@@ -26,15 +26,16 @@ class ServiceDetailFormViewController: XLFormViewController {
     var customer:HCCustomer?
     var bookingID = 0
     var categoryID = 0
- 
+    var customerToken = ""
+    var bookingInProgress = false
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        initializeForm()
+    //    initializeForm()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initializeForm()
+      //  initializeForm()
     }
     
     override func viewDidLoad() {
@@ -51,7 +52,7 @@ class ServiceDetailFormViewController: XLFormViewController {
               services = object
             }
         }
- 
+    
         initializeForm()
     }
     func buildForm() {
@@ -228,25 +229,87 @@ class ServiceDetailFormViewController: XLFormViewController {
                 }
             }
         }
-        
-        var creationSuccessful = false
-        for request in serviceRequets {
-            Alamofire.request(.POST, kCreateServiceRequestURL, parameters:["appointment":appointmentID!,"service":request.serviceID,"requested_price_tier":priceTier])
-            .responseJSON { response in
-                switch response.result {
-                    case .Success(let JSON):
-                        print(JSON)
-                        creationSuccessful = true
-                    case .Failure(let _):
-                    break
+         let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
+        Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
+            { response in switch response.result {
+                
+            case .Success(let json):
+                //   let newResponse = json //as? JSON
+                let newJSON:JSON = JSON(json)
+                let cusID = newJSON["id"].intValue
+                Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":self.categoryID], encoding: .JSON).responseJSON
+                    { response in switch response.result {
+                    case .Success(let json):
+                        //   let newJSON = json
+                        // Get and set appointment ID
+                        let nJSON:JSON = JSON(json)
+                        self.appointmentID = nJSON["id"].intValue
+                        self.bookingID = nJSON["booking"].intValue
+                        self.appointment.appointmentID = nJSON["id"].intValue
+                        self.appointment.bookingNumber = nJSON["booking"].intValue
+                        print(nJSON["booking"].stringValue)
+                     
+                        self.bookingInProgress = true
+                        for request in self.serviceRequets {
+                            Alamofire.request(.POST, kCreateServiceRequestURL, parameters:["appointment":self.appointmentID!,"service":request.serviceID,"requested_price_tier":self.priceTier])
+                                .responseJSON { response in
+                                    switch response.result {
+                                    case .Success(let JSON):
+                                        print(JSON)
+                                     //   creationSuccessful = true
+                                    case .Failure(_):
+                                        break
+                                    }
+                            }
+                        }
+                    case .Failure(_): break
+                        
+                        }
+                        
                 }
-            }
+            case .Failure(_): break
+                
+                }
         }
+        /*
+        let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
+        //  let parameters = ["":""]
+        Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
+            { response in switch response.result {
+                
+            case .Success(let json):
+                //   let newResponse = json //as? JSON
+                let newJSON:JSON = JSON(json)
+                let cusID = newJSON["id"].intValue
+                
+                Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":self.categoryID], encoding: .JSON).responseJSON
+                    { response in switch response.result {
+                    case .Success(let json):
+                        //   let newJSON = json
+                        // Get and set appointment ID
+                        let nJSON:JSON = JSON(json)
+                        self.appointmentID = nJSON["id"].intValue
+                        self.bookingID = nJSON["booking"].intValue
+                        
+                        print(nJSON["booking"].stringValue)
+                      //  self.performSegueWithIdentifier("procedures", sender: nil)
+                      //  self.hasBeenTapped = false
+                    case .Failure(let error): break
+                        
+                        }
+                        
+                }
+            case .Failure(let error): break
+                
+                }
+        }
+        */
+        
        self.performSegueWithIdentifier("schedule", sender: nil)
-        if creationSuccessful == true {
+      //  if creationSuccessful == true {
             
 
-        }
+      //  }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

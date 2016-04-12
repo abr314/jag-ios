@@ -46,7 +46,7 @@ class ServicesTableViewController: UITableViewController {
             case .Success(let json):
                 let response = json as? JSON
                 self.servicesJSON = JSON(json)
-            case .Failure(let error): break
+            case .Failure(_): break
             }
         }
         

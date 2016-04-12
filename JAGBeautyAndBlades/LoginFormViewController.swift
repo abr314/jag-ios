@@ -56,15 +56,15 @@ class LoginFormViewController: XLFormViewController {
             // add row customizations here
             
             if (row.tag == kLogin) {
-                row.action.formSelector = "loginButtonPressed"
+                row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
             }
             if (row.tag == kBookNow) {
-                row.action.formSelector = "bookNowPressed"
+                row.action.formSelector = #selector(LoginFormViewController.bookNowPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
             }
             
             if (row.tag == kSignUp) {
-                row.action.formSelector = "signUpPressed"
+                row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
             }
             if (row.tag != kBookNow && row.tag != kSignUp && row.tag != kLogin) {
@@ -86,13 +86,6 @@ class LoginFormViewController: XLFormViewController {
         }
         
         self.form = form
-        // email
-        
-        // password
-        
-        // book now
-        
-        // sign up
     }
     
     func userAlreadyExist() -> Bool {
@@ -158,46 +151,27 @@ class LoginFormViewController: XLFormViewController {
         if (result) {
             
             if let email = form.formRowWithTag(kEmail)?.value as? String, password = form.formRowWithTag(kPassword)?.value as? String {
-                // provider?.email = email
-              //  email = email
-                let defaults = NSUserDefaults.standardUserDefaults()
-                
-                
-                let string = retrieveAuthToken(email, password: password) as String
-             
+            
                 Alamofire.request(.POST, kAPITokenURL, parameters:["username":email,"password":password])
                     
                     .validate()
                     
                     .responseJSON { response in
                         switch response.result {
-                            
-                            //response.result {
                         case .Success(let JSON):
                             print(response)
-                            
-                            let something = JSON.valueForKey("token")
-                            
+                
                             if let string = response.result.value?.valueForKey("token") as? String {
-                             //   newString = string
-                                
+                         
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 self.performSegueWithIdentifier("appointments", sender:self)
-
                             }
-                        case .Failure(let error):
-                            break
-                        }
-                }
-                
+                        case .Failure(_): break }
+                    }
             }
-           
-            
         }
     }
-    
-   
     
     // MARK: - Navigation
 
