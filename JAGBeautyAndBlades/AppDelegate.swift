@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import UIColor_Hex_Swift
+import Fabric
+import Crashlytics
 import Locksmith
 
 @UIApplicationMain
@@ -18,31 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-       // UITableView.appearance().backgroundColor = UIColor.blackColor()
-     //  UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
-  //      UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-     
-        
-
-    //    if let font = UIFont(name: kHeaderFont, size: 20) {
-    
-    //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:font, NSForegroundColorAttributeName:UIColor.whiteColor()]
-            
-    //    }
-        /*
-        let fontFamilyNames = UIFont.familyNames()
-        for familyName in fontFamilyNames {
-            print("------------------------------")
-            print("Font Family Name = [\(familyName)]")
-            let names = UIFont.fontNamesForFamilyName(familyName as String)
-            print("Font Names = [\(names)]")
-        }
-        
-        let serviceTypes = ServiceTypes()
-        
-        let newArray = serviceTypes.licensesForServiceName(ServiceCategoryType.kHairType.rawValue)
-    //    let something = newArray[0]
-*/
+       Fabric.with([Crashlytics.self])
         return true
     }
     

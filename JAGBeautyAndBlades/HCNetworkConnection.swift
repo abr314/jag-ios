@@ -64,7 +64,7 @@ func retrieveAuthToken(email:String, password:String) -> String {
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject("\(string)", forKey: kJAGToken)
                     }
-            case .Failure(let error):
+            case .Failure(_):
                  break
             }
         }

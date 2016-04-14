@@ -5,20 +5,6 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="Pfq-bX-QIL">
-            <objects>
-                <navigationController id="gAU-xY-x6T" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zdT-za-Rek"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="foF-aO-cSx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EZh-CF-FTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="610" y="-680"/>
-        </scene>
         <!--Services-->
         <scene sceneID="5kM-Rw-JHX">
             <objects>
@@ -219,25 +205,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nd2-Lj-lyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1208" y="237"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="Qie-YU-ASi">
-            <objects>
-                <viewController id="5py-eE-2kj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Fz-it-dQw"/>
-                        <viewControllerLayoutGuide type="bottom" id="pI0-0b-OiB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GIZ-Zz-plI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Item 2" id="osk-9y-OBk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aFl-zh-OBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1022" y="1169"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F0N-Rx-6jh">

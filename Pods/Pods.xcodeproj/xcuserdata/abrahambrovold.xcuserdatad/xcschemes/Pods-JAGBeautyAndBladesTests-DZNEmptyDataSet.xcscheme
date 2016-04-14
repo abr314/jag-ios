@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C5E2E229D2C442FBA3E5B292'
+               BlueprintIdentifier = 'F9174B7E96B652DEB632BCB0'
                BlueprintName = 'Pods-JAGBeautyAndBladesTests-DZNEmptyDataSet'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-JAGBeautyAndBladesTests-DZNEmptyDataSet.a'>

@@ -10,10 +10,7 @@ import UIKit
 import SwiftyTimer
 class InitialViewController: UIViewController {
 
- //   @IBOutlet weak var pageTitle: UILabel!
-  //  @IBOutlet weak var visualEffect: UIVisualEffectView!
-//    @IBOutlet weak var backgroundImage: UIImageView!
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
         self.navigationController?.navigationBar.translucent = false
@@ -36,14 +33,10 @@ class InitialViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        //       blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-     //   self.view.addSubview(blurEffectView)
- //       self.backgroundImage.hidden = false
         
-        
-   //     presentViewController(nc, animated: true, completion: nil)
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

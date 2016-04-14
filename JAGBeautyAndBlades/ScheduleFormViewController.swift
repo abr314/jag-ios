@@ -26,8 +26,6 @@ extension NSDate {
     var formattedISO8601: String { return Date.formatterISO8601.stringFromDate(self) }
 }
 
-//NSDate().formattedISO8601  // "2015-12-22T18:22:57.345Z"
-
 class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDelegate {
 
     var appointment:HCAppointment?

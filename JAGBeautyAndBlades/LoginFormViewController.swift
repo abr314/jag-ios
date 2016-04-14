@@ -158,7 +158,7 @@ class LoginFormViewController: XLFormViewController {
                     
                     .responseJSON { response in
                         switch response.result {
-                        case .Success(let JSON):
+                        case .Success(_):
                             print(response)
                 
                             if let string = response.result.value?.valueForKey("token") as? String {
