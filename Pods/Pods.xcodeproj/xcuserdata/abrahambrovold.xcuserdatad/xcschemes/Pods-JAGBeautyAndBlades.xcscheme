@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A9EB89801EA6CD75C372CF75'
+               BlueprintIdentifier = '8805680F9553D00D39DD2F30'
                BlueprintName = 'Pods-JAGBeautyAndBlades'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_JAGBeautyAndBlades.framework'>

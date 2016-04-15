@@ -16,7 +16,7 @@ pod 'XLForm', '~> 3.0'
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
-pod 'DZNEmptyDataSet'
+
 
 pod 'Auk', '~> 2.0'
 
@@ -29,7 +29,7 @@ end
 
 target 'JAGBeautyAndBladesTests' do
 pod 'XLForm', '~> 3.0'
-pod 'DZNEmptyDataSet'
+
 end
 
 target 'JAGBeautyAndBladesUITests' do

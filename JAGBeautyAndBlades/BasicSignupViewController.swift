@@ -145,7 +145,7 @@ class BasicSignupViewController: XLFormViewController {
                 case .Success(_):
                     print(response)
                     
-                    /*
+                    /**
                         Grab the token
                         Add the token to the NSUserDefaults
                     */
@@ -191,22 +191,22 @@ class BasicSignupViewController: XLFormViewController {
     func synchronizeData() {
         
         if let firstName = form.formRowWithTag(kFirstName)?.value as? String {
-      //      provider?.firstName = firstName
+    
             customer.firstName = firstName
         }
         
         if let lastName = form.formRowWithTag(kLastName)?.value as? String {
-        //    provider?.lastName = lastName
+    
             customer.lastName = lastName
         }
         
         if let phoneNumber = form.formRowWithTag(kPhone)?.value as? String {
-          //  provider?.phoneNumber = phoneNumber
+    
             customer.phoneNumber = phoneNumber
         }
         
         if let email = form.formRowWithTag(kEmail)?.value as? String {
-           // provider?.email = email
+    
             customer.email = email
         }
         

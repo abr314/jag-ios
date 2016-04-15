@@ -15,7 +15,6 @@ class ServicesCollectionViewController: UICollectionViewController {
      var cellImages = [String]()
      var cellLabels = [String]()
      var webCellNames = [String]()
-  //   var shoppingCart = [HCAppointment]()
      var selectedCellTitle = ""
      var selectedCellName = ""
      var servicesJSON:JSON = JSON.null
@@ -27,7 +26,6 @@ class ServicesCollectionViewController: UICollectionViewController {
      var categoryID = 0
      var appointmentsDownloaded = false
      var hasBeenTapped = false
- //   @IBOutlet weak var servicesCell: ServicesCollectionViewCell!
     
     override func viewWillAppear(animated: Bool) {
         var token = ""
@@ -69,10 +67,10 @@ class ServicesCollectionViewController: UICollectionViewController {
         // download the service types dictionary
         hasBeenTapped = false
         
-        self.title = "JAG For Men"
+        self.title = "JAG"
         self.edgesForExtendedLayout = UIRectEdge.None
-        navigationController?.title = "JAG For Men"
-        navigationItem.title = "Jag For Men"
+        navigationController?.title = "JAG"
+        navigationItem.title = "JAG"
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.blackColor()]
   //      UINavigationBar.appearance().bartin
         
@@ -162,14 +160,12 @@ class ServicesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ServicesCollectionViewCell {
-    //    let cell = ServicesCollectionViewCell()
+ 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! ServicesCollectionViewCell
         // Configure the cell
         let image = UIImage(named: cellImages[indexPath.row])
         
-      //  let text = cellLabels[indexPath.row]
-        
-    //    cell.serviceLabel.font = UIFont(name: kHeaderFont, size: 20)
+     
         cell.cellImage?.image = image
         
       //  cell.serviceLabel.text = text
@@ -183,8 +179,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         selectedCellTitle = cellLabels[indexPath.row]
         selectedCellName = webCellNames[indexPath.row]
         categoryID = servicesJSON[indexPath.row]["id"].intValue
-     //   let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
-      
+
         if hasBeenTapped == true {
             return
         }

@@ -34,22 +34,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JAGBeautyAndBlades-DZNEmptyDataSet.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-JAGBeautyAndBlades-XLForm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-JAGBeautyAndBlades.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JAGBeautyAndBladesTests-DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,7 +72,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04885E9F15F6E84A6E41F3FC2555D7B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0AE2B1D53B2D66B3CBEEA1462EB93F8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1127AA57B219B7C7F80AA0F8B7C2AA29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C9F93C0A4519A01BA2A1680C55516E8</key>
+		<key>39BA491EFD68C767A41644C4174AF2AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44146C4572E17EAF39BBAAF7FDD331A9</key>
+		<key>62F3A6D0530728B8211C1075A2CDDF9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,11 +112,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83C3552288B802E70913F6147EBEEA71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>92943306EC8070DF9CD02ECD505D2CD5</key>
 		<dict>
 			<key>primary</key>
@@ -127,27 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97089472E43A55C581A683B34F58B12E</key>
+		<key>BF1BCFCA1D71F0A0A6369170E8B468C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9A6EAD8668A4742A7897D7AA790AC1D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE4C9BEF358E99AF2CD85F9AFC5DC2BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C3A3041B7157820CC79BF8D432743066</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C8749F8E98CCFCA742F109B854B7F1EB</key>
+		<key>C23F61C5D7BB74CD09AF9B9466756F6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

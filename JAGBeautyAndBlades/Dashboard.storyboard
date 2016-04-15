@@ -100,7 +100,7 @@
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="jKm-Lb-Q1i"/>
-                    <navigationItem key="navigationItem" title="Jag For Men" id="WEx-nY-XCU"/>
+                    <navigationItem key="navigationItem" title="JAG" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
                     </connections>
@@ -188,11 +188,11 @@
             </objects>
             <point key="canvasLocation" x="2102" y="133"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar-->
         <scene sceneID="aTd-iY-fHY">
             <objects>
-                <tabBarController id="ate-Z7-5l5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WgV-0e-z58"/>
+                <tabBarController title="Tab Bar" id="ate-Z7-5l5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="JAG" id="WgV-0e-z58"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="nPy-aV-DzE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

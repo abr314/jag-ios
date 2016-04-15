@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6352E3CD561F571847977CB0'
+               BlueprintIdentifier = '85EE724CA57CEB0677768B8F'
                BlueprintName = 'Auk'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Auk.framework'>
