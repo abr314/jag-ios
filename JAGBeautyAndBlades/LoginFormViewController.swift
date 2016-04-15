@@ -136,7 +136,11 @@ class LoginFormViewController: XLFormViewController {
         // validate email and password and check for login
         // check email, if the not empty, validate. if valid, pass data to next controller
         // UserType is Unknown
-        performSegueWithIdentifier("SignUp", sender: nil)
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            self.performSegueWithIdentifier("SignUp",sender: self)
+        })
+      //  performSegueWithIdentifier("SignUp", sender: nil)
     }
     
     func bookNowPressed() {

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireNetworkActivityIndicator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Auk.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1127AA57B219B7C7F80AA0F8B7C2AA29</key>
+		<key>228FFC4E78F899B58C33C57F31513A8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39BA491EFD68C767A41644C4174AF2AF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>62F3A6D0530728B8211C1075A2CDDF9E</key>
+		<key>3A502C4A78B72F0D5717E8BEFAD7D5B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C23F61C5D7BB74CD09AF9B9466756F6E</key>
+		<key>C498BFBDC0B60C2B01C4C00EC471527C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB2FDA42CEB400E64012D15C7FABE319</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E97BDDCCFF16A910C000E8B1D89C9277</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F54B5D6807FE10B370A42075415C530A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

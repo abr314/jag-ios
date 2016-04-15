@@ -25,6 +25,8 @@ pod 'Locksmith'
 pod 'UIColor_Hex_Swift', '~> 2.1'
 
 pod 'Braintree'
+
+pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
 end
 
 target 'JAGBeautyAndBladesTests' do

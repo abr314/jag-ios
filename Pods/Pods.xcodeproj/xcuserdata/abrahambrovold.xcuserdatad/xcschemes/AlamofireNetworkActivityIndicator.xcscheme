@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8A8574ADC5583882D09E3C98'
-               BlueprintName = 'Pods-JAGBeautyAndBlades-XLForm'
+               BlueprintIdentifier = 'F95947B605EC478983747EA8'
+               BlueprintName = 'AlamofireNetworkActivityIndicator'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XLForm.framework'>
+               BuildableName = 'AlamofireNetworkActivityIndicator.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
