@@ -32,6 +32,22 @@ class BasicSignupViewController: XLFormViewController {
         initializeForm()
     }
     
+    override func viewDidLoad() {
+        self.navigationController?.navigationBar.translucent = false
+        self.edgesForExtendedLayout = UIRectEdge.None
+        self.automaticallyAdjustsScrollViewInsets = false
+         super.viewDidLoad()
+
+    }
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section > 0 {
+            return 10
+        }
+        
+        return 30
+    }
+
     func initializeForm() {
         
         let form : XLFormDescriptor
@@ -75,12 +91,15 @@ class BasicSignupViewController: XLFormViewController {
                 row.action.formSelector = #selector(BasicSignupViewController.nextButtonPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
                 row.cellConfig.setObject(kPurpleColor, forKey: "textLabel.textColor")
+                section = XLFormSectionDescriptor.formSectionWithTitle(" ")
+                form.addFormSection(section)
             }
             if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != "My Role") {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
                 row.cellConfig.setObject(UIColor.blackColor(), forKey: "textField.textColor")
+                
             }
             if (row.tag == kFirstName || row.tag == kLastName) {
                 row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^\\w*$"))
@@ -102,6 +121,8 @@ class BasicSignupViewController: XLFormViewController {
                row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
                 self?.dismissViewControllerAnimated(true, completion: nil)
                 }
+                section = XLFormSectionDescriptor.formSectionWithTitle(" ")
+                form.addFormSection(section)
             }
             
             section.addFormRow(row)

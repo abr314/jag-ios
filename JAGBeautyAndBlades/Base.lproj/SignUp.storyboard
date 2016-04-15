@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController title="ViewLocations" id="gZz-7t-zA8" customClass="ViewLocationsTableViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dhE-vt-xGv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -55,16 +55,17 @@
         <!--BasicSignUp-->
         <scene sceneID="29I-jo-DUG">
             <objects>
-                <viewController storyboardIdentifier="BasicSignUp" title="BasicSignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mhz-W5-6vg" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasicSignUp" title="BasicSignUp" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mhz-W5-6vg" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AiC-kC-tKW"/>
                         <viewControllerLayoutGuide type="bottom" id="6No-wV-AaL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tvo-Qs-K3t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="gYa-hG-GtN"/>
                     <connections>
                         <segue destination="oBR-rO-yMK" kind="show" identifier="ProfessionalDetail" animates="NO" id="ZVv-Pe-KFB"/>
@@ -84,7 +85,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qfq-LD-WMO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HBE-pE-U31">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -107,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eOc-u5-cqZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LWi-W1-NwL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -133,7 +134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xSg-JD-Mwg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3re-Vx-qWe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -152,7 +153,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Fwc-Xm-BqA" detailTextLabel="YD7-oV-0r2" style="IBUITableViewCellStyleValue1" id="24S-Ud-7u0">
-                                <rect key="frame" x="0.0" y="48" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="24S-Ud-7u0" id="bvl-1K-ce0">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -198,7 +199,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3t5-NU-24l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aWr-L1-qLA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -210,17 +211,15 @@
         <!--Navigation Controller-->
         <scene sceneID="dW1-d7-6C9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c5r-w3-Hk1" sceneMemberID="viewController">
+                <navigationController id="c5r-w3-Hk1" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.25" contentMode="scaleToFill" translucent="NO" id="b5w-fT-eQw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="b5w-fT-eQw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="PFMonumentaPro-Metallica" family="PF Monumenta Pro" pointSize="16"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

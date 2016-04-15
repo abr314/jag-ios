@@ -201,18 +201,6 @@ class AppointmentsFormViewController: XLFormViewController {
             
         initializeForm()
         super.viewDidLoad()
-     //   updateData()
-        
-    //    if let font = UIFont(name: kHeaderFont, size: 25) {
-            
-      //      self.navigationController?.navigationBar.titleTextAttributes =
-        //        [NSFontAttributeName: font,
-          //          NSForegroundColorAttributeName: UIColor.whiteColor()]
-    //    }
-        
-      //  self.tableView.backgroundColor = UIColor.whiteColor()
-      //  self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-      //  self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-        
+             
     }
 }

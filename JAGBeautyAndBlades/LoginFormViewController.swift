@@ -31,8 +31,6 @@ class LoginFormViewController: XLFormViewController {
        
         form = XLFormDescriptor(title: "JAG for Men")
         
-        form.assignFirstResponderOnShow = true
-        
         section = XLFormSectionDescriptor.formSectionWithTitle("")
         
         form.addFormSection(section)
@@ -57,11 +55,14 @@ class LoginFormViewController: XLFormViewController {
             
             if (row.tag == kLogin) {
                 row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
+               
             }
             
             if (row.tag == kSignUp) {
                 row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
+                section = XLFormSectionDescriptor.formSectionWithTitle(" ")
+                form.addFormSection(section)
             }
             if (row.tag != kSignUp && row.tag != kLogin) {
                 row.required = true
@@ -86,6 +87,15 @@ class LoginFormViewController: XLFormViewController {
     
     func userAlreadyExist() -> Bool {
         return NSUserDefaults.standardUserDefaults().objectForKey(kJAGToken) != nil
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 2 {
+            return 30
+        }
+        
+        return 20
     }
     
     override func viewDidLoad() {
