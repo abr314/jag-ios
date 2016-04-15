@@ -10,6 +10,7 @@ import UIKit
 import XLForm
 import SwiftyJSON
 import Alamofire
+
 class ServiceDetailFormViewController: XLFormViewController {
     
     
@@ -23,6 +24,7 @@ class ServiceDetailFormViewController: XLFormViewController {
     var appointmentID:Int?
     var checkedServicesTags = [String]()
     var serviceRequets = [HCServiceRequest]()
+    var categoryImageName = ""
     var customer:HCCustomer?
     var bookingID = 0
     var categoryID = 0
@@ -38,9 +40,40 @@ class ServiceDetailFormViewController: XLFormViewController {
       //  initializeForm()
     }
     
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0 {
+            
+        
+        let myCustomView = UIImageView()
+        let myImage: UIImage = UIImage(named: categoryImageName)!
+        myCustomView.image = myImage
+            return myCustomView
+        }
+        
+        return nil
+    }
+    
+  override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    if  section == 0 {
+
+        return 80.0
+    }
+    
+    if section == 2 {
+        return 30
+    }
+    
+    if section == 3 {
+        return 10
+    }
+    return 20
+}
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view.
         
@@ -66,7 +99,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         form = XLFormDescriptor(title: "\(service)")
         
-        form.assignFirstResponderOnShow = true
+      //  form.assignFirstResponderOnShow = true
         
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Price Tier")
@@ -84,7 +117,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         form.addFormSection(section)
         // load the procedures in the dictionary for the first rows
-        section = XLFormSectionDescriptor.formSectionWithTitle("Choose a procedure")
+        section = XLFormSectionDescriptor.formSectionWithTitle("Choose a Service")
         
         form.addFormSection(section)
         
@@ -126,7 +159,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         // stepper to increment the desired cost
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("Total Price")
+        section = XLFormSectionDescriptor.formSectionWithTitle("Prices below are all inclusive with built in tip")
         
         row = XLFormRowDescriptor(tag: "Total Price", rowType:XLFormRowDescriptorTypeText)
         
@@ -144,7 +177,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         section = XLFormSectionDescriptor.formSectionWithTitle("")
         
         row = XLFormRowDescriptor(tag: "Add", rowType:XLFormRowDescriptorTypeButton)
-        row.title = "Add to Cart"
+        row.title = "Choose Time and Location"
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
@@ -271,39 +304,6 @@ class ServiceDetailFormViewController: XLFormViewController {
                 
                 }
         }
-        /*
-        let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
-        //  let parameters = ["":""]
-        Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
-            { response in switch response.result {
-                
-            case .Success(let json):
-                //   let newResponse = json //as? JSON
-                let newJSON:JSON = JSON(json)
-                let cusID = newJSON["id"].intValue
-                
-                Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":self.categoryID], encoding: .JSON).responseJSON
-                    { response in switch response.result {
-                    case .Success(let json):
-                        //   let newJSON = json
-                        // Get and set appointment ID
-                        let nJSON:JSON = JSON(json)
-                        self.appointmentID = nJSON["id"].intValue
-                        self.bookingID = nJSON["booking"].intValue
-                        
-                        print(nJSON["booking"].stringValue)
-                      //  self.performSegueWithIdentifier("procedures", sender: nil)
-                      //  self.hasBeenTapped = false
-                    case .Failure(let error): break
-                        
-                        }
-                        
-                }
-            case .Failure(let error): break
-                
-                }
-        }
-        */
         
        self.performSegueWithIdentifier("schedule", sender: nil)
       //  if creationSuccessful == true {

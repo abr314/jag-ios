@@ -17,6 +17,7 @@ class ServicesCollectionViewController: UICollectionViewController {
      var webCellNames = [String]()
      var selectedCellTitle = ""
      var selectedCellName = ""
+     var selectedCellImageName = ""
      var servicesJSON:JSON = JSON.null
      var appointmentsJSON:JSON = JSON.null
      var customerToken = ""
@@ -89,12 +90,12 @@ class ServicesCollectionViewController: UICollectionViewController {
          self.clearsSelectionOnViewWillAppear = true
         self.view.backgroundColor = UIColor.whiteColor()
         
-        cellImages = ["HairMan.png",
-                      "CosmoMan.png",
-                      "MassageMan.png",
-                      "NailApp.png",
-                      "SpaApp.png",
-                      "TrainerApp.png"]
+        cellImages = [kBarberImageString,
+                      kCosmoImageString,
+                      kMassageImageString,
+                      kNailImageString,
+                      kSpaImageString,
+                      kTrainerImageString]
         
         cellLabels = ["Barber",
                       "Cosmetic",
@@ -134,6 +135,7 @@ class ServicesCollectionViewController: UICollectionViewController {
                 svc.service = selectedCellTitle
                 svc.services = servicesJSON
                 svc.newName = selectedCellName
+                svc.categoryImageName = selectedCellImageName
                 svc.customerToken = customerToken
                 svc.appointmentID = appointmentID
                 svc.bookingID = bookingID
@@ -178,6 +180,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         
         selectedCellTitle = cellLabels[indexPath.row]
         selectedCellName = webCellNames[indexPath.row]
+        selectedCellImageName = cellImages[indexPath.row]
         categoryID = servicesJSON[indexPath.row]["id"].intValue
 
         if hasBeenTapped == true {

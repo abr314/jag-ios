@@ -46,6 +46,14 @@ let kFirstLine = "First Line"
 let kSecondLine = "Second Line"
 let kZipCode = "Zip Code"
 let kCityState = "City and State"
+
+let kBarberImageString = "HairMan"
+let kCosmoImageString = "CosmoMan"
+let kMassageImageString = "MassageMan"
+let kNailImageString = "NailApp"
+let kSpaImageString = "SpaApp"
+let kTrainerImageString = "TrainerApp"
+
 let kJAGToken:String = "JAGToken"
 
 let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
