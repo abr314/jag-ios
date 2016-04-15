@@ -59,7 +59,7 @@ class SelectLicenses: XLFormViewController {
                 
                 if (value as! Bool == true) {
                     oneHasBeenPressed = true
-                // ADd license from rawvalue
+              
                     var stringWrapper = RLMStringWrapper()
                     stringWrapper.string = license.rawValue
                     

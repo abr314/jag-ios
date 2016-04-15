@@ -12,9 +12,7 @@
 		2A018EFB1C623E5400437513 /* HCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A018EFA1C623E5400437513 /* HCLocation.swift */; };
 		2A018EFC1C623E5400437513 /* HCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A018EFA1C623E5400437513 /* HCLocation.swift */; };
 		2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A018EFD1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf */; };
-		2A1094161C65828A008192FF /* HCBrowseServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1094151C65828A008192FF /* HCBrowseServicesTableViewCell.swift */; };
 		2A10941A1C6821C6008192FF /* AvailabilityViewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1094191C6821C6008192FF /* AvailabilityViewForm.swift */; };
-		2A10941B1C6824BC008192FF /* HCBrowseServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1094151C65828A008192FF /* HCBrowseServicesTableViewCell.swift */; };
 		2A10941C1C6824C8008192FF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC30881C502D3F006773AE /* Helpers.swift */; };
 		2A10941D1C6824D7008192FF /* HCFontsandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */; };
 		2A10941E1C6824DE008192FF /* HCAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2631C57D70400697A3C /* HCAvailability.swift */; };
@@ -42,8 +40,6 @@
 		2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
 		2A36301E1C84DC4400168AC2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36301D1C84DC4400168AC2 /* LaunchScreenViewController.swift */; };
 		2A36301F1C84DC4400168AC2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36301D1C84DC4400168AC2 /* LaunchScreenViewController.swift */; };
-		2A3630241C84DDF900168AC2 /* iPhone 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3630231C84DDF900168AC2 /* iPhone 6.png */; };
-		2A3630251C84DDF900168AC2 /* iPhone 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3630231C84DDF900168AC2 /* iPhone 6.png */; };
 		2A3630281C85EEAB00168AC2 /* lathershave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3630261C85EEAB00168AC2 /* lathershave.jpg */; };
 		2A4D5FB21C4E9DF90097316E /* HCAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */; };
 		2A4D5FB31C4E9DF90097316E /* HCAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */; };
@@ -103,7 +99,6 @@
 		2AD2C0061CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */; };
 		2AD2C00B1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */; };
 		2AD2C00C1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */; };
-		2AD2C00F1CBD80600065B8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE71C4D626900660047 /* Assets.xcassets */; };
 		2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
@@ -145,12 +140,10 @@
 		2A018EFA1C623E5400437513 /* HCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLocation.swift; sourceTree = "<group>"; };
 		2A018EFD1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PF Monumenta Pro Metallica.ttf"; sourceTree = "<group>"; };
 		2A018EFF1C62734D00437513 /* VerifyInformationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyInformationFormViewController.swift; sourceTree = "<group>"; };
-		2A1094151C65828A008192FF /* HCBrowseServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCBrowseServicesTableViewCell.swift; sourceTree = "<group>"; };
 		2A1094171C67F16A008192FF /* Stylize.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = Stylize.xcworkspace; path = stylize/Stylize.xcworkspace; sourceTree = "<group>"; };
 		2A1094191C6821C6008192FF /* AvailabilityViewForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewForm.swift; sourceTree = "<group>"; };
 		2A1094211C6831E3008192FF /* AvailabilityFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityFormViewController.swift; sourceTree = "<group>"; };
 		2A1094241C686CC9008192FF /* VerifyInformationFormTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyInformationFormTests.swift; sourceTree = "<group>"; };
-		2A1094261C687273008192FF /* HCMessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
 		2A1094291C6873CB008192FF /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		2A16E4C11C612C57001B3EFD /* SelectLicenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLicenses.swift; sourceTree = "<group>"; };
 		2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAddress.swift; sourceTree = "<group>"; };
@@ -229,8 +222,6 @@
 		2ADC30881C502D3F006773AE /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCFormValidator.swift; sourceTree = "<group>"; };
-		2AE5ADDF1C644027007BD715 /* KMDiscoverListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDiscoverListCell.h; sourceTree = "<group>"; };
-		2AE5ADE01C644027007BD715 /* KMDiscoverListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMDiscoverListCell.m; sourceTree = "<group>"; };
 		2AE5ADE61C644648007BD715 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
 		2AE5ADE81C6446E0007BD715 /* BrowseServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseServicesTableViewController.swift; sourceTree = "<group>"; };
 		2AF94B611C51569E00BBE66E /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -302,21 +293,13 @@
 		2A4D5FB81C4EA93F0097316E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2AD2C0111CC0B0B00065B8FB /* Trash */,
 				2AE5ADE41C64438D007BD715 /* Sign Up */,
-				2AF94B611C51569E00BBE66E /* InitialViewController.swift */,
-				2AFEB2691C58014500697A3C /* AddLicenseViewController.swift */,
 				2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */,
-				2AE5ADE81C6446E0007BD715 /* BrowseServicesTableViewController.swift */,
-				2A1094291C6873CB008192FF /* DashboardTableViewController.swift */,
-				2A2AAB551C901E4100E8F2B7 /* HomeNavigationController.swift */,
 				2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */,
-				2A2AAB5E1C913B4A00E8F2B7 /* AppointmentDetailFormViewController.swift */,
 				2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */,
-				2AD2C0071CB3EC4A0065B8FB /* ServicesTableViewController.swift */,
-				2A853A421C96339F0066F70C /* ServicesCollectionViewController.xib */,
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
-				2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -462,6 +445,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		2AD2C0111CC0B0B00065B8FB /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				2AF94B611C51569E00BBE66E /* InitialViewController.swift */,
+				2AE5ADE81C6446E0007BD715 /* BrowseServicesTableViewController.swift */,
+				2AFEB2691C58014500697A3C /* AddLicenseViewController.swift */,
+				2A2AAB551C901E4100E8F2B7 /* HomeNavigationController.swift */,
+				2A853A421C96339F0066F70C /* ServicesCollectionViewController.xib */,
+				2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */,
+				2A2AAB5E1C913B4A00E8F2B7 /* AppointmentDetailFormViewController.swift */,
+				2A1094291C6873CB008192FF /* DashboardTableViewController.swift */,
+				2AD2C0071CB3EC4A0065B8FB /* ServicesTableViewController.swift */,
+			);
+			name = Trash;
+			sourceTree = "<group>";
+		};
 		2ADC30781C4FFADA006773AE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,10 +475,6 @@
 		2AE5ADE21C6442F3007BD715 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2AE5ADDF1C644027007BD715 /* KMDiscoverListCell.h */,
-				2AE5ADE01C644027007BD715 /* KMDiscoverListCell.m */,
-				2A1094151C65828A008192FF /* HCBrowseServicesTableViewCell.swift */,
-				2A1094261C687273008192FF /* HCMessagePreviewTableViewCell.swift */,
 				2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */,
 				2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */,
 				2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */,
@@ -679,12 +674,10 @@
 				2A853A461C96339F0066F70C /* ServicesCollectionViewController.xib in Resources */,
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
-				2AD2C00F1CBD80600065B8FB /* Assets.xcassets in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
 				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 				2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */,
-				2A3630241C84DDF900168AC2 /* iPhone 6.png in Resources */,
 				2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
 				2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */,
 				2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
@@ -713,7 +706,6 @@
 				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
 				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
-				2A3630251C84DDF900168AC2 /* iPhone 6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,7 +851,6 @@
 				2AA0FB821CAB9BAF009BCCCC /* HCServiceRequest.swift in Sources */,
 				2A853A4A1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */,
 				2A36300B1C821C5800168AC2 /* HCPreviewConstants.swift in Sources */,
-				2A1094161C65828A008192FF /* HCBrowseServicesTableViewCell.swift in Sources */,
 				2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */,
 				2A018EF21C62289200437513 /* LocationsMapViewController.swift in Sources */,
 				2AFEB2661C57DE9A00697A3C /* HCTimeSlot.swift in Sources */,
@@ -899,7 +890,6 @@
 				2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */,
 				2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */,
-				2A10941B1C6824BC008192FF /* HCBrowseServicesTableViewCell.swift in Sources */,
 				2A9BF62C1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
 				2A10941A1C6821C6008192FF /* AvailabilityViewForm.swift in Sources */,
 				2AA0FB831CAB9BB0009BCCCC /* HCServiceRequest.swift in Sources */,
@@ -987,7 +977,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

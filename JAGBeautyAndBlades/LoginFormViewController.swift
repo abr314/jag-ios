@@ -39,7 +39,7 @@ class LoginFormViewController: XLFormViewController {
         
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
         let passwordArray = [kPassword, XLFormRowDescriptorTypePassword]
-       // let bookNowArray = [kBookNow, XLFormRowDescriptorTypeButton]
+    
         let signUpArray = [kSignUp, XLFormRowDescriptorTypeButton]
         let loginArray = [kLogin, XLFormRowDescriptorTypeButton]
         
@@ -58,16 +58,12 @@ class LoginFormViewController: XLFormViewController {
             if (row.tag == kLogin) {
                 row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
             }
-            if (row.tag == kBookNow) {
-                row.action.formSelector = #selector(LoginFormViewController.bookNowPressed)
-                row.cellConfig.setObject("", forKey: "self.selectionStyle")
-            }
             
             if (row.tag == kSignUp) {
                 row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
             }
-            if (row.tag != kBookNow && row.tag != kSignUp && row.tag != kLogin) {
+            if (row.tag != kSignUp && row.tag != kLogin) {
                 row.required = true
                 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -136,9 +132,7 @@ class LoginFormViewController: XLFormViewController {
     func bookNowPressed() {
         
         performSegueWithIdentifier("BookNow", sender: nil)
-        // validate email and password and check for login
-        // check email, if the not empty, validate. if valid, pass data to next controller
-        // UserType is customer
+
     }
     
     func loginButtonPressed() {

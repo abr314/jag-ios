@@ -69,7 +69,13 @@ class ServicesCollectionViewController: UICollectionViewController {
         // download the service types dictionary
         hasBeenTapped = false
         
-      
+        self.title = "JAG For Men"
+        self.edgesForExtendedLayout = UIRectEdge.None
+        navigationController?.title = "JAG For Men"
+        navigationItem.title = "Jag For Men"
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.blackColor()]
+  //      UINavigationBar.appearance().bartin
+        
         Alamofire.request(.GET, kServiceCategoriesURL).responseJSON {
             response in switch response.result {
             case .Success(let json):
@@ -80,11 +86,10 @@ class ServicesCollectionViewController: UICollectionViewController {
                 }
         }
         
+        self.automaticallyAdjustsScrollViewInsets = false
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
         self.view.backgroundColor = UIColor.whiteColor()
-        // Register cell classes
-  //      self.collectionView!.registerClass(ServicesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         cellImages = ["HairMan.png",
                       "CosmoMan.png",
@@ -175,48 +180,11 @@ class ServicesCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        
         selectedCellTitle = cellLabels[indexPath.row]
         selectedCellName = webCellNames[indexPath.row]
         categoryID = servicesJSON[indexPath.row]["id"].intValue
-        let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
-      //  let parameters = ["":""]
-        /*
-        Alamofire.request(.POST, kCreateBookingURL, headers: headers, parameters:[:], encoding: .JSON).responseJSON
-            { response in switch response.result {
-                
-            case .Success(let json):
-             //   let newResponse = json //as? JSON
-                let newJSON:JSON = JSON(json)
-                let cusID = newJSON["id"].intValue
-                
-                
-                
-               Alamofire.request(.POST, kCreateAppointmentURL, headers: headers, parameters:["booking":cusID, "category":self.categoryID], encoding: .JSON).responseJSON
-                { response in switch response.result {
-                    case .Success(let json):
-                     //   let newJSON = json
-                        // Get and set appointment ID
-                        let nJSON:JSON = JSON(json)
-                        self.appointmentID = nJSON["id"].intValue
-                        self.bookingID = nJSON["booking"].intValue
-                        
-                        
-           //             let appID = newJSON["id"].intValue
-                        print(nJSON["booking"].stringValue)
-                        self.performSegueWithIdentifier("procedures", sender: nil)
-                        self.hasBeenTapped = false
-                    case .Failure(let error): break
-                    
-                    }
-                
-                }
-            case .Failure(let error): break
-                
-                }
-        }
-    */
-     //   self.performSegueWithIdentifier("procedures", sender: nil)
+     //   let headers = ["Authorization":  "Token  \(customerToken)", "Content-Type":"application/json"]
+      
         if hasBeenTapped == true {
             return
         }
