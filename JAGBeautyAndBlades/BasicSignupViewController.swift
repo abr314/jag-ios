@@ -70,11 +70,12 @@ class BasicSignupViewController: XLFormViewController {
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
         let isProfessionalArray = ["My Role", XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
-      //  let referralCodeArray = ["Referral Code", XLFormRowDescriptorTypeText]
+        let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
         // create array of rows
        
         
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray,nextArray, cancelArray] //referralCodeArray, nextArray]
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, referralCodeArray,
+            nextArray, cancelArray] //referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -150,12 +151,14 @@ class BasicSignupViewController: XLFormViewController {
     
     func registerWithServer() {
         var url = kCustomerSignUpURL
+        var parameters = ["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber, "referral_code":customer.referralCode]
         
-        if isProviderType == true {
+        if isProviderType == false {
             url = kProSignUpURL
+            parameters["referral_code"] = customer.referralCode
         }
         
-        Alamofire.request(.POST, url, parameters:["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber])
+        Alamofire.request(.POST, url, parameters: parameters)
             
             .validate()
             
@@ -245,7 +248,7 @@ class BasicSignupViewController: XLFormViewController {
             customer.password = password
         }
         
-        if let referralCode = form.formRowWithTag("Referral Code")?.value as? String {
+        if let referralCode = form.formRowWithTag("Who were you referred by?")?.value as? String {
             customer.referralCode = referralCode
             
         }

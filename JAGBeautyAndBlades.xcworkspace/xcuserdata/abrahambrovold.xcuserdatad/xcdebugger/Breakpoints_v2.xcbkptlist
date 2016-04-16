@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -722,22 +722,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "synchronizeData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -886,11 +870,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "initializeForm()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1126,7 +1110,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482458224.565916"
+                  timestampString = "482459571.637973"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "179"
@@ -1141,7 +1125,7 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482458224.566009"
+                  timestampString = "482459571.63807"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "179"
@@ -1158,11 +1142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1174,11 +1158,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1302,11 +1286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1318,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
-            timestampString = "482396878.093142"
+            timestampString = "482459063.205582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2076,6 +2060,54 @@
             startingLineNumber = "342"
             endingLineNumber = "342"
             landmarkName = "addAndPop()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
+            timestampString = "482459063.205582"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "synchronizeData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
+            timestampString = "482459348.855774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "registerWithServer()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/BasicSignupViewController.swift"
+            timestampString = "482459441.125558"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "registerWithServer()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
