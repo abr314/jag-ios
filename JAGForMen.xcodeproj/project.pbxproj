@@ -73,7 +73,6 @@
 		2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A903A5E1C74ECD600FA5C80 /* HCService.swift */; };
 		2A9BF62B1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */; };
 		2A9BF62C1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */; };
-		2A9BF62F1C860D9300F281EF /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2A9BF6301C860D9300F281EF /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2A9BF6321C8614AA00F281EF /* JAGURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF6311C8614AA00F281EF /* JAGURLs.swift */; };
 		2A9BF6331C8614AA00F281EF /* JAGURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF6311C8614AA00F281EF /* JAGURLs.swift */; };
@@ -106,6 +105,7 @@
 		2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */; };
 		2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
 		2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
+		2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
@@ -855,7 +855,6 @@
 				2AD2BFF91CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2AD2C00B1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */,
 				2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */,
-				2A9BF62F1C860D9300F281EF /* HCNetworkConnection.swift in Sources */,
 				2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */,
 				2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */,
 				2A62990C1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -875,6 +874,7 @@
 				2A018EF21C62289200437513 /* LocationsMapViewController.swift in Sources */,
 				2AFEB2661C57DE9A00697A3C /* HCTimeSlot.swift in Sources */,
 				2A7A8BCB1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */,
+				2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */,
 				2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */,
 				2A853A3E1C9621C60066F70C /* ServicesLabel.swift in Sources */,
 				2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */,
@@ -1061,7 +1061,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JAGBeautyAndBlades/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hillcountry.JAGBeautyAndBlades;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1078,7 +1078,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JAGBeautyAndBlades/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hillcountry.JAGBeautyAndBlades;
 				PRODUCT_NAME = "$(TARGET_NAME)";

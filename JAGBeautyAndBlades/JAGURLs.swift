@@ -11,8 +11,8 @@ import Foundation
 // SignUp
 let kRealURL = "https://jagbeautyandblades.com/"
 let kTestURL = "http://127.0.0.1:8000/"
-
-var URL = kRealURL
+let kDevelopmentURL = "http://45.55.200.56:8000/"
+var URL = kDevelopmentURL
 
 //let realURL = true
 
@@ -32,3 +32,5 @@ let kAppointmentUpdateURL = "\(URL)api/bookings/appointments/update/"
 let kAddressCreateOnAppointmentURL = "\(URL)api/address/create/"
 let kDeleteAppointmentURL = "\(URL)api/bookings/appointments/delete/" // <appointment_id>/
 let kAppointmentCancelURL = "\(URL)api/bookings/appointments/cancel/"
+let kUpdateAppointmentURL = "\(URL)api/bookings/appointments/update/"
+let kUpdateServiceRequestURL = "\(URL)api/bookings/servicerequests/update/"

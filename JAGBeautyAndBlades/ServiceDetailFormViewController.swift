@@ -30,6 +30,7 @@ class ServiceDetailFormViewController: XLFormViewController {
     var categoryID = 0
     var customerToken = ""
     var bookingInProgress = false
+    var customerID = ""
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     //    initializeForm()
@@ -74,7 +75,43 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         super.viewDidLoad()
         
+        var token = ""
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey(kJAGToken)
+        {
+            token = name
+        }
         
+        let headers = ["Authorization":  "Token  \(token)"]
+        print("TOKEN: \(token)")
+        // get customer ID
+        // let customerIDResponse:Response = Response()
+        
+        /**
+         Braintree is currently disabled in the development build
+         */
+        
+        Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
+            
+            .validate()
+            
+            .responseJSON { response in
+                switch response.result {
+                    
+                //response.result {
+                case .Success(let json):
+                    print(json)
+                    let newResponse = JSON(json)// {
+                    print("userInfo \(newResponse["detail"]["id"])")
+                    self.customerID = newResponse["detail"]["id"].stringValue
+                    print(self.customerID)
+                    
+                case .Failure(let something):
+                 //   break
+                    print(something)
+                    
+                }
+        }
         // Do any additional setup after loading the view.
         
         for (key, object) in services {
@@ -283,13 +320,38 @@ class ServiceDetailFormViewController: XLFormViewController {
                         print(nJSON["booking"].stringValue)
                      
                         self.bookingInProgress = true
+                        
                         for request in self.serviceRequets {
+                            var serviceID = ""
                             Alamofire.request(.POST, kCreateServiceRequestURL, parameters:["appointment":self.appointmentID!,"service":request.serviceID,"requested_price_tier":self.priceTier])
                                 .responseJSON { response in
+                                    
                                     switch response.result {
-                                    case .Success(let JSON):
-                                        print(JSON)
-                                     //   creationSuccessful = true
+                                    case .Success(let object):
+                                        let jsonObject:JSON = JSON(object)
+                                        serviceID = jsonObject["id"].stringValue
+                                        print(serviceID)
+                                        
+                                        
+                                        if let idServ = object["id"] as? String {
+                                            serviceID = idServ
+                                            print(serviceID)
+                                            
+                                        }
+                                        print(serviceID)
+                                        print("\(kUpdateServiceRequestURL)\(serviceID)")
+                                        
+                                        Alamofire.request(.PUT, "\(kUpdateServiceRequestURL)\(serviceID)/", parameters: ["appointment":self.appointmentID!,"service":self.categoryID,"requested_tier":self.priceTier, "id":serviceID])
+                                            .responseJSON { response in
+                                                
+                                                switch response.result {
+                                                case .Success(let JSON):
+                                                    print(JSON)
+                                                    
+                                                case .Failure(let thing):
+                                                    print(thing)
+                                                }
+                                        }
                                     case .Failure(_):
                                         break
                                     }

@@ -33,7 +33,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     var customer: HCCustomer?
     var customerID = String()
     var braintreeToken = ""
-    var clientNonce = ""
+    var clientNonce = "hguff7766f"
     var bookingID = 0
     var categoryID = 0
     var contentInset = UIEdgeInsets()
@@ -124,6 +124,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         print("TOKEN: \(token)")
         // get customer ID
        // let customerIDResponse:Response = Response()
+        
+        /**
+            Braintree is currently disabled in the development build
+        */
+        
         Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
             
             .validate()
@@ -458,6 +463,16 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             // braintreeClient = BTAPIClient(authorization: aClientToken)
             
             // Create a BTDropInViewController
+            
+            
+            /**
+                Braintree is disabled in development build
+            */
+            
+            
+        //    self.navigationController?.popToRootViewControllerAnimated(true)
+            
+            
             let dropInViewController = BTDropInViewController(APIClient: braintreeClient!)
             dropInViewController.delegate = self
             var paymentRequest = BTPaymentRequest()
@@ -472,7 +487,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             paymentRequest.callToActionText = "Book Now"
 
             dropInViewController.paymentRequest = paymentRequest
-            
+ 
             // This is where you might want to customize your view controller (see below)
             
             // The way you present your BTDropInViewController instance is up to you.
@@ -482,6 +497,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                 target: self, action: #selector(ScheduleFormViewController.userDidCancelPayment))
             let navigationController = UINavigationController(rootViewController: dropInViewController)
             presentViewController(navigationController, animated: true, completion: nil)
+            
         }
         
         
