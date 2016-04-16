@@ -29,7 +29,7 @@ public func validateForm(formVC: XLFormViewController) -> Bool {
             let validationStatus : XLFormValidationStatus = error.userInfo[XLValidationStatusErrorKey] as! XLFormValidationStatus
             
             if validationStatus.rowDescriptor!.tag == kEmail ||
-                validationStatus.rowDescriptor!.tag == kPhone || validationStatus.rowDescriptor!.tag == kFirstName || validationStatus.rowDescriptor!.tag == kLastName || validationStatus.rowDescriptor!.tag == kPassword || validationStatus.rowDescriptor!.tag == kFirstLine || validationStatus.rowDescriptor!.tag == kSecondLine || validationStatus.rowDescriptor!.tag == kZipCode || validationStatus.rowDescriptor!.tag == kStartTime || validationStatus.rowDescriptor!.tag == kEndTime {
+                validationStatus.rowDescriptor!.tag == kPhone || validationStatus.rowDescriptor!.tag == kFirstName || validationStatus.rowDescriptor!.tag == kLastName || validationStatus.rowDescriptor!.tag == kPassword || validationStatus.rowDescriptor!.tag == kFirstLine || validationStatus.rowDescriptor!.tag == kZipCode || validationStatus.rowDescriptor!.tag == kStartTime || validationStatus.rowDescriptor!.tag == kEndTime {
                     if let rowDescriptor = validationStatus.rowDescriptor, let indexPath = formVC.form.indexPathOfFormRow(rowDescriptor), let cell = formVC.tableView.cellForRowAtIndexPath(indexPath) {
                         animateCell(cell)
                     }
