@@ -74,8 +74,8 @@ class BasicSignupViewController: XLFormViewController {
         // create array of rows
        
         
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, referralCodeArray,
-            nextArray, cancelArray] //referralCodeArray, nextArray]
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //, referralCodeArray,
+            //referralCodeArray, nextArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -143,8 +143,12 @@ class BasicSignupViewController: XLFormViewController {
                 registerWithServer()
          
             }
+            
         } else {
        
+            
+            
+            
         }
         
     }
@@ -153,7 +157,7 @@ class BasicSignupViewController: XLFormViewController {
         var url = kCustomerSignUpURL
         var parameters = ["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber, "referral_code":customer.referralCode]
         
-        if isProviderType == false {
+        if isProviderType == true {
             url = kProSignUpURL
             parameters["referral_code"] = customer.referralCode
         }
@@ -184,12 +188,21 @@ class BasicSignupViewController: XLFormViewController {
                                 print(response)
                                 
                                 if let something = JSON.valueForKey("token") as? String {
+                                    
+                                    if something == "" {
+                                        
+                                        // error, token is blank ???
+                                    }
                                     self.customer.token = something
                                     // Add token to nsuserdefaults
+                                    
                                     NSUserDefaults.standardUserDefaults().setObject(something, forKey: kJAGToken)
                                     // pop view to dashboard
                                     self.performSegueWithIdentifier("main", sender: nil)
+                                } else {
+                                    
                                 }
+                                
                                 
                             case .Failure(_):
                                 

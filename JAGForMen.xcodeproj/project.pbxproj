@@ -645,6 +645,11 @@
 					2A7B4CDC1C4D626900660047 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = ED7KU3F2V3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2A7B4CF01C4D626900660047 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1063,7 +1068,7 @@
 				INFOPLIST_FILE = JAGBeautyAndBlades/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hillcountry.JAGBeautyAndBlades;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jagformen.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1080,7 +1085,7 @@
 				INFOPLIST_FILE = JAGBeautyAndBlades/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hillcountry.JAGBeautyAndBlades;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jagformen.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

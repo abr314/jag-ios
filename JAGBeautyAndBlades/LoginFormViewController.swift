@@ -152,7 +152,7 @@ class LoginFormViewController: XLFormViewController {
     func loginButtonPressed() {
         // verify fields and signin
         
-        let result:Bool = validateForm(self)
+        let result:Bool = true //validateForm(self)
     //    performSegueWithIdentifier("dashboard", sender: nil)
         
         
@@ -175,7 +175,11 @@ class LoginFormViewController: XLFormViewController {
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 self.performSegueWithIdentifier("appointments", sender:self)
                             }
-                        case .Failure(_): break }
+                        case .Failure(_)://break
+                        print(response)
+                            
+                        
+                        }
                     }
             }
         }
