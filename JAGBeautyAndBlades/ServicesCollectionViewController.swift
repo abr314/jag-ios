@@ -29,6 +29,8 @@ class ServicesCollectionViewController: UICollectionViewController {
      var hasBeenTapped = false
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
         if let name = defaults.stringForKey(kJAGToken)

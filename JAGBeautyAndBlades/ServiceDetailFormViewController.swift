@@ -70,6 +70,16 @@ class ServiceDetailFormViewController: XLFormViewController {
     }
     return 20
 }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        serviceRequets.removeAll()
+        checkedServicesTags.removeAll()
+        runningTotal = 0
+        priceTier = 3
+        initializeForm()
+        
+        
+    }
     
     override func viewDidLoad() {
         
@@ -83,7 +93,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         }
         
         let headers = ["Authorization":  "Token  \(token)"]
-        print("TOKEN: \(token)")
+    //    print("TOKEN: \(token)")
         // get customer ID
         // let customerIDResponse:Response = Response()
         
@@ -100,11 +110,11 @@ class ServiceDetailFormViewController: XLFormViewController {
                     
                 //response.result {
                 case .Success(let json):
-                    print(json)
+                //    print(json)
                     let newResponse = JSON(json)// {
-                    print("userInfo \(newResponse["detail"]["id"])")
+               //     print("userInfo \(newResponse["detail"]["id"])")
                     self.customerID = newResponse["detail"]["id"].stringValue
-                    print(self.customerID)
+                 //   print(self.customerID)
                     
                 case .Failure(let something):
                  //   break
@@ -252,17 +262,19 @@ class ServiceDetailFormViewController: XLFormViewController {
             if let newRow = row as? XLFormRowDescriptor{
               
                 let value = newRow.value as? Int
-                print(value)
-                print(newRow.tag)
-      
+             
                 if value == 1 {
-                    checkedServicesTags.append(newRow.tag!)
+                    checkedServicesTags.append(newRow.title!)
                 }
             }
         }
     
         for service in checkedServicesTags {
-
+            
+            /*
+                Build Service Request Object
+            */
+            
             let serviceRequest = HCServiceRequest()
             
             for newService in services["services"] {
@@ -270,22 +282,26 @@ class ServiceDetailFormViewController: XLFormViewController {
                 let name:String = newService.1["name"].stringValue
                 let serviceId:Int = newService.1["id"].intValue
                 var price:String = newService.1["price_tiers"][priceTier-1]["price"].stringValue
-                price.characters.dropLast(3)
+                let estimatedTime:String = newService.1["estimated_time"].stringValue
+                let newPrice = String(price.characters.dropLast(3))
                 
-                print(name)
-                print(service)
-                print(serviceId)
-                print(price)
+                
+                let title:String = "\(name) - \(estimatedTime) mins. - $\(newPrice)"
+             //   print(name)
+               // print(service)
+              //  print(serviceId)
+              //  print(price)
               
                 serviceRequest.requestedTier = priceTier
                 serviceRequest.appointmentID = appointmentID!
                 
-                if (name == service) {
+                if (title == service) {
                     serviceRequest.serviceName = name
                     serviceRequest.serviceID = serviceId
-                    serviceRequest.serviceLinePrice = price
+                    serviceRequest.serviceLinePrice = newPrice
                     var itemExists = false
                     if (serviceRequets.count > 0){
+            
                         for requests in serviceRequets {
                             if requests.serviceName == name {
                                 itemExists = true
@@ -294,6 +310,8 @@ class ServiceDetailFormViewController: XLFormViewController {
                     }
                     if itemExists == false {
                       print(serviceRequest.serviceName)
+                        
+                        
                       serviceRequets.append(serviceRequest)
                     }
                 }
@@ -317,61 +335,88 @@ class ServiceDetailFormViewController: XLFormViewController {
                         self.bookingID = nJSON["booking"].intValue
                         self.appointment.appointmentID = nJSON["id"].intValue
                         self.appointment.bookingNumber = nJSON["booking"].intValue
-                        print(nJSON["booking"].stringValue)
+                 //       print(nJSON["booking"].stringValue)
                      
                         self.bookingInProgress = true
                         
                         for request in self.serviceRequets {
                             var serviceID = ""
                             Alamofire.request(.POST, kCreateServiceRequestURL, parameters:["appointment":self.appointmentID!,"service":request.serviceID,"requested_price_tier":self.priceTier])
+                                
                                 .responseJSON { response in
+                                    print(response)
+                                    
                                     
                                     switch response.result {
                                     case .Success(let object):
                                         let jsonObject:JSON = JSON(object)
                                         serviceID = jsonObject["id"].stringValue
-                                        print(serviceID)
-                                        
+                                   //     print(serviceID)
+                                        print(response.request?.URL)
+
                                         
                                         if let idServ = object["id"] as? String {
                                             serviceID = idServ
-                                            print(serviceID)
+                                     //       print(serviceID)
                                             
                                         }
                                         print(serviceID)
                                         print("\(kUpdateServiceRequestURL)\(serviceID)")
                                         
-                                        Alamofire.request(.PUT, "\(kUpdateServiceRequestURL)\(serviceID)/", parameters: ["appointment":self.appointmentID!,"service":self.categoryID,"requested_tier":self.priceTier, "id":serviceID])
+                                        
+                                        
+                                        Alamofire.request(.PUT, "\(kUpdateServiceRequestURL)\(serviceID)/", parameters: ["appointment":self.appointmentID!,"service":request.serviceID,"requested_tier":self.priceTier, "id":serviceID])
+                                            
+                                            
+                                            
                                             .responseJSON { response in
+                                                print(response)
+                                                
                                                 
                                                 switch response.result {
                                                 case .Success(let JSON):
                                                     print(JSON)
-                                                    
+                                                    print(response.request?.URL)
+                                                 //   self.creation
                                                 case .Failure(let thing):
                                                     print(thing)
+                                                    print(response.request?.URL)
+
                                                 }
                                         }
-                                    case .Failure(_):
-                                        break
+                                    case .Failure(let error):
+                                        
+                                        print(error)
+                                        print(response.request?.URL)
+
                                     }
                             }
                         }
-                    case .Failure(_): break
+                    case .Failure(let error):
+                        print(error)
+                        print(response.request?.URL)
+
+                   //     break
                         
                         }
                         
                 }
-            case .Failure(_): break
+            case .Failure(let error):
+                print(error)
+                print(response.request?.URL)
+
+                
+              //  break
                 
                 }
+                self.performSegueWithIdentifier("schedule", sender: nil)
         }
         
-       self.performSegueWithIdentifier("schedule", sender: nil)
-      //  if creationSuccessful == true {
-            
+       
+   //     if creationSuccessful == true {
+       //     self.performSegueWithIdentifier("schedule", sender: nil)
 
-      //  }
+     //  }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -404,14 +449,32 @@ class ServiceDetailFormViewController: XLFormViewController {
             if let thisInt = newValue as? Int {
                 priceTier = thisInt
                 runningTotal = 0
+                checkedServicesTags.removeAll()
                 initializeForm()
             }
         }
         
+        
         if formRow.tag != "PriceTier" && formRow.tag != "Total Price" && formRow.tag != "Add" {
             if let value = newValue as? Int {
                 if value == 1 {
-                    checkedServicesTags.append(formRow.tag!)
+                    if !checkedServicesTags.contains( { $0 == formRow.title! } ) {
+                        checkedServicesTags.append(formRow.title!)
+                        
+                        print(checkedServicesTags)
+                        
+                        
+                    }
+                }
+                if value == 0 {
+                    // check if request exists in array
+                    if checkedServicesTags.contains( { $0 == formRow.title! } ) {
+                        //does contain object
+                        
+                        checkedServicesTags = checkedServicesTags.filter() { $0 != formRow.title }
+                        
+                        print(checkedServicesTags)
+                    }
                 }
             }
         }
@@ -425,7 +488,8 @@ class ServiceDetailFormViewController: XLFormViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         appointment.serviceRequests = serviceRequets
-     
+   //     print(serviceRequets)
+        
         if appointmentID != 0 {
             appointment.appointmentID = appointmentID!
         }

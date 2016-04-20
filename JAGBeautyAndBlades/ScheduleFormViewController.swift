@@ -84,7 +84,43 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                         let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
                                             // pop to root
                                             
-                                            self.navigationController?.popToRootViewControllerAnimated(true)
+                                            
+                                            var token = ""
+                                            let defaults = NSUserDefaults.standardUserDefaults()
+                                            if let name = defaults.stringForKey(kJAGToken)
+                                            {
+                                                token = name
+                                           //     customerToken = name
+                                            }
+                                            
+                                            let headers = ["Authorization":  "Token  \(token)"]
+                                            Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                                                response in switch response.result {
+                                                
+                                                case .Success(let json):
+                                                    var appointmentsJSON = JSON.null
+                                                    appointmentsJSON = JSON(json)
+                                                    print("APPOINTMENTS:\(appointmentsJSON)")
+                                                //    appointmentsDownloaded = true
+                                                     self.navigationController?.popToRootViewControllerAnimated(true)
+                                                    if let appointmentsVC = self.tabBarController?.viewControllers {
+                                                        for vc in appointmentsVC {
+                                                            if vc.title == "Appointments" {
+                                                                
+                                                                
+                                                                if let appointmentVC = vc as? AppointmentsFormViewController {
+                                                                    appointmentVC.appointments = appointmentsJSON
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                   
+
+                                                case .Failure(_): break
+                                                    
+                                                }
+                                            }
                                         }
                                         
                                         alertController.addAction(cancelAction)
@@ -122,6 +158,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         
         let headers = ["Authorization":  "Token  \(token)"]
         print("TOKEN: \(token)")
+        print("AppointmentID: \(appointment?.appointmentID)")
+        print(appointment?.serviceRequests)
+        
+        
+        
         // get customer ID
        // let customerIDResponse:Response = Response()
         
@@ -272,7 +313,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             
         }
         // turned off
-        if (form.formRowWithTag(kStartTime)?.value == nil || form.formRowWithTag(kEndTime)?.value == nil || form.formRowWithTag(kFirstLine)?.value == nil || form.formRowWithTag(kSecondLine)?.value == nil || form.formRowWithTag(kZipCode)?.value == nil) {
+        if (form.formRowWithTag(kStartTime)?.value == nil || form.formRowWithTag(kEndTime)?.value == nil || form.formRowWithTag(kFirstLine)?.value == nil || form.formRowWithTag(kZipCode)?.value == nil) {
             
             let alertController = UIAlertController(title: "Invalid Booking", message: "Please complete all fields before continuing", preferredStyle: .Alert)
             
@@ -364,6 +405,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     }
     
     func bookNowPressed() {
+        
+    //    self.navigationController?.popToRootViewControllerAnimated(true)
+        
+     //   return
+        
         if (validationSuccessful() == true) {
           
             synchronizeData()
