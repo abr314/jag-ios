@@ -34,22 +34,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Cosmos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Locksmith.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JAGBeautyAndBlades-XLForm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-JAGBeautyAndBlades.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JAGBeautyAndBladesTests-XLForm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -69,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XLForm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>moa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,12 +77,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04885E9F15F6E84A6E41F3FC2555D7B6</key>
+		<key>0AE2B1D53B2D66B3CBEEA1462EB93F8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0AE2B1D53B2D66B3CBEEA1462EB93F8D</key>
+		<key>174039E1D8133593815219120E08BBBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A502C4A78B72F0D5717E8BEFAD7D5B4</key>
+		<key>5C57D9ACA7BC717BF18B084597E199B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>608B49B5DDACC601EE8044A1931993F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF1BCFCA1D71F0A0A6369170E8B468C7</key>
+		<key>B8CD32FD6632E2E9F75FF878F2E069AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C498BFBDC0B60C2B01C4C00EC471527C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CB2FDA42CEB400E64012D15C7FABE319</key>
+		<key>E3D8969FDEEA312D277DA9738B45B039</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F54B5D6807FE10B370A42075415C530A</key>
+		<key>FF9CCFDEC3F5BE432E8D57A185680894</key>
 		<dict>
 			<key>primary</key>
 			<true/>

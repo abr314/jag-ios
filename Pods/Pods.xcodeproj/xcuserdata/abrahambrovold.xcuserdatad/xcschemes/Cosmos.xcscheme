@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F44BED1A6201D66B8492FA5A'
-               BlueprintName = 'UIColor_Hex_Swift'
+               BlueprintIdentifier = 'C4FFD548143BAFF4744C1D64'
+               BlueprintName = 'Cosmos'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'UIColor_Hex_Swift.framework'>
+               BuildableName = 'Cosmos.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -176,7 +176,7 @@ class LoginFormViewController: XLFormViewController {
                                 self.performSegueWithIdentifier("appointments", sender:self)
                             }
                         case .Failure(_)://break
-                        print(response)
+                        print(response.result)
                             
                         
                         }
