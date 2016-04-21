@@ -105,9 +105,6 @@
 		2AD2C0151CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */; };
 		2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
 		2AD2C01A1CC0BCA60065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
-		2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */; };
-		2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
-		2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
 		2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
 		2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */; };
@@ -180,10 +177,7 @@
 		2A4D5FB41C4E9FC70097316E /* HCServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCServiceRequest.swift; sourceTree = "<group>"; };
 		2A4D5FBD1C4ECBDE0097316E /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCFontsandColors.swift; sourceTree = "<group>"; };
-		2A505B001C4EE66100023F1F /* jag_logo_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jag_logo_lg.png; sourceTree = "<group>"; };
 		2A6298FB1C5EDDCA00AD068D /* AvailabilityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityTableViewController.swift; sourceTree = "<group>"; };
-		2A62990A1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
-		2A62990B1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		2A770D491C52C1C200960766 /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
 		2A770D4A1C52C1C200960766 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutFormViewController.swift; sourceTree = "<group>"; };
@@ -227,8 +221,6 @@
 		2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTableViewCell.swift; sourceTree = "<group>"; };
 		2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplashPage.png; sourceTree = "<group>"; };
-		2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_5_@2x.png"; sourceTree = "<group>"; };
-		2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_6_@2x.png"; sourceTree = "<group>"; };
 		2ADA05431C6B8D1100839564 /* ProviderServicesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderServicesHandler.swift; sourceTree = "<group>"; };
 		2ADA05461C72357D00839564 /* ServiceTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceTypes.plist; sourceTree = "<group>"; };
 		2ADC30861C501B79006773AE /* BasicSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicSignupViewController.swift; sourceTree = "<group>"; };
@@ -325,11 +317,8 @@
 				2A853A381C961EBF0066F70C /* Collection Cell Images */,
 				2AE5ADE51C64448D007BD715 /* Large Services Cells */,
 				2A3630231C84DDF900168AC2 /* iPhone 6.png */,
-				2A505B001C4EE66100023F1F /* jag_logo_lg.png */,
-				2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */,
 				2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */,
 				2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */,
-				2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */,
 				2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */,
 				2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */,
 			);
@@ -503,8 +492,6 @@
 		2AE5ADE31C644322007BD715 /* Other Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A62990A1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.h */,
-				2A62990B1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m */,
 			);
 			name = "Other Custom Views";
 			sourceTree = "<group>";
@@ -696,13 +683,11 @@
 				2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2A853A461C96339F0066F70C /* ServicesCollectionViewController.xib in Resources */,
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
-				2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
 				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 				2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */,
-				2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */,
 				2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */,
 				2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
 				2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */,
@@ -735,7 +720,6 @@
 				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
-				2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
