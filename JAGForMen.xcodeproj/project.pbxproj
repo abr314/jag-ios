@@ -18,6 +18,10 @@
 		2A10941E1C6824DE008192FF /* HCAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2631C57D70400697A3C /* HCAvailability.swift */; };
 		2A10941F1C6824F0008192FF /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
 		2A1094251C686CC9008192FF /* VerifyInformationFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1094241C686CC9008192FF /* VerifyInformationFormTests.swift */; };
+		2A13C24F1CC84F96007E4591 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C24E1CC84F96007E4591 /* UserInformation.swift */; };
+		2A13C2501CC84F96007E4591 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C24E1CC84F96007E4591 /* UserInformation.swift */; };
+		2A13C2521CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */; };
+		2A13C2531CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */; };
 		2A16CFCB1CC5F8E300B94C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE71C4D626900660047 /* Assets.xcassets */; };
 		2A16CFCD1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */; };
 		2A16CFCE1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */; };
@@ -153,6 +157,8 @@
 		2A1094211C6831E3008192FF /* AvailabilityFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityFormViewController.swift; sourceTree = "<group>"; };
 		2A1094241C686CC9008192FF /* VerifyInformationFormTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyInformationFormTests.swift; sourceTree = "<group>"; };
 		2A1094291C6873CB008192FF /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		2A13C24E1CC84F96007E4591 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTabBarViewController.swift; sourceTree = "<group>"; };
 		2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsTableViewController.swift; sourceTree = "<group>"; };
 		2A16E4C11C612C57001B3EFD /* SelectLicenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLicenses.swift; sourceTree = "<group>"; };
 		2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAddress.swift; sourceTree = "<group>"; };
@@ -312,6 +318,7 @@
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
 				2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */,
+				2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -455,6 +462,7 @@
 				2A903A5B1C74E7A400FA5C80 /* ServiceTypes.swift */,
 				2A903A5E1C74ECD600FA5C80 /* HCService.swift */,
 				2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */,
+				2A13C24E1CC84F96007E4591 /* UserInformation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -874,6 +882,7 @@
 				2A2AAB591C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
 				2A2AAB561C901E4100E8F2B7 /* HomeNavigationController.swift in Sources */,
 				2ADC30891C502D3F006773AE /* Helpers.swift in Sources */,
+				2A13C2521CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */,
 				2AA0FB821CAB9BAF009BCCCC /* HCServiceRequest.swift in Sources */,
 				2A853A4A1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */,
 				2A36300B1C821C5800168AC2 /* HCPreviewConstants.swift in Sources */,
@@ -883,6 +892,7 @@
 				2A7A8BCB1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */,
 				2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */,
 				2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */,
+				2A13C24F1CC84F96007E4591 /* UserInformation.swift in Sources */,
 				2A853A3E1C9621C60066F70C /* ServicesLabel.swift in Sources */,
 				2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */,
 				2ADA05441C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */,
@@ -903,6 +913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A018EF31C62289200437513 /* LocationsMapViewController.swift in Sources */,
+				2A13C2531CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */,
 				2A10941E1C6824DE008192FF /* HCAvailability.swift in Sources */,
 				2ADA05451C6B8D1100839564 /* ProviderServicesHandler.swift in Sources */,
 				2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
@@ -917,6 +928,7 @@
 				2A903A5D1C74E7A400FA5C80 /* ServiceTypes.swift in Sources */,
 				2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */,
+				2A13C2501CC84F96007E4591 /* UserInformation.swift in Sources */,
 				2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */,
 				2A9BF62C1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
 				2A10941A1C6821C6008192FF /* AvailabilityViewForm.swift in Sources */,

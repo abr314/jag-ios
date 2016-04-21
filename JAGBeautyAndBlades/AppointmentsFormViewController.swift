@@ -14,7 +14,7 @@ class AppointmentsFormViewController: XLFormViewController {
     var customer:HCCustomer?
     var array:Array<AnyObject>?
    
-    var appointments = JSON.null
+    var appointments:JSON?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -29,6 +29,8 @@ class AppointmentsFormViewController: XLFormViewController {
     }
     
     func initializeForm() {
+        appointments = UserInformation.sharedInstance.appointments
+
         let form : XLFormDescriptor
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
@@ -36,26 +38,32 @@ class AppointmentsFormViewController: XLFormViewController {
         var appointmentsMaking = [JSON]()
         var appointmentsCreated = [JSON]()
         var appointmentsConfirmed = [JSON]()
-    
-        for appointment in appointments {
+        
+      //  var theseAppointments = JSON.null
+        if let app = appointments {
             
-            let status = appointment.1["status"].stringValue
-      
-      
-            let jsonObj = appointment.1
-            if status == "created" {
-            
-                appointmentsCreated.append(jsonObj)
-            }
-            
-            if status == "confirmed" {
-                appointmentsConfirmed.append(jsonObj)
-            }
-            
-            if status == "making" {
-                appointmentsMaking.append(jsonObj)
+            print(app.URL)
+            for appointment in app {
+                
+                let status = appointment.1["status"].stringValue
+                
+                
+                let jsonObj = appointment.1
+                if status == "created" {
+                    
+                    appointmentsCreated.append(jsonObj)
+                }
+                
+                if status == "confirmed" {
+                    appointmentsConfirmed.append(jsonObj)
+                }
+                
+                if status == "making" {
+                    appointmentsMaking.append(jsonObj)
+                }
             }
         }
+        
         form = XLFormDescriptor(title: "Appointments")
         
         form.assignFirstResponderOnShow = true
@@ -120,7 +128,8 @@ class AppointmentsFormViewController: XLFormViewController {
                                     case .Success(let json):
                                         
                                         self?.appointments = JSON(json)
-                                        print("APPOINTMENTS:\(self?.appointments)")
+                                        UserInformation.sharedInstance.appointments = JSON(json)//self.?appointments
+                                   //     print("APPOINTMENTS:\(self?.appointments)")
                                       //  self.appointmentsDownloaded = true
                                         self?.initializeForm()
                                     case .Failure( _): break
@@ -184,10 +193,13 @@ class AppointmentsFormViewController: XLFormViewController {
         performSegueWithIdentifier("showDetail", sender: nil)
     }
       override func viewDidLoad() {
-        self.navigationController?.navigationBar.translucent = false
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-      //  self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        super.viewDidLoad()
+        appointments = UserInformation.sharedInstance.appointments
         
+        self.navigationController?.navigationBar.translucent = false
+      //  let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+      //  self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        /*
         let prefs = NSUserDefaults.standardUserDefaults()
         if let string = prefs.objectForKey("JAGAppointmentsJSON") {
             results = JSON(string)
@@ -198,9 +210,9 @@ class AppointmentsFormViewController: XLFormViewController {
             results = JSON(NSArray(contentsOfFile:path)!)
           //  return true
         }
-            
+          */
         initializeForm()
-        super.viewDidLoad()
+    //    self?.initializeForm()
              
     }
 }

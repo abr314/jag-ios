@@ -11,20 +11,85 @@ import Fabric
 import Crashlytics
 import Locksmith
 import AlamofireNetworkActivityIndicator
+import Alamofire
+import SwiftyJSON
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userInfo = UserInformation.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+     //   userInfo = UserInformation.sharedInstance()
        Fabric.with([Crashlytics.self])
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
+        
+        if (retrieveUserToken().0 == true) {
+            userInfo.token = retrieveUserToken().1
+            
+            let headers = ["Authorization":  "Token  \(userInfo.token)"]
+            Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                response in switch response.result {
+                    
+                case .Success(let json):
+                    
+                    UserInformation.sharedInstance.appointments = JSON(json)
+                    print("APPOINTMENTS:\(self.userInfo.appointments)")
+                //    self.appointmentsDownloaded = true
+                    /*
+                    if let appointmentsVC = self.tabBarController?.viewControllers {
+                        for vc in appointmentsVC {
+                            if vc.title == "Appointments" {
+                                if let appointmentVC = vc as? AppointmentsFormViewController {
+                                    appointmentVC.appointments = UserInformation.sharedInstance.appointments
+                                    //         UserInformation.sharedInstance.appointments = self.appointmentsJSON
+                                }
+                            }
+                        }
+                      */
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        return true
+                    })
+                //    return true
+                    
+                case .Failure(_):
+            //        return true
+                    break
+                }
+            }
+            
+        }
         return true
     }
     
-    
+    func retrieveUserToken() -> (Bool, String) {
+        /**
+ 
+        returns false if no token is found
+         
+        */
+        var token = ""
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+       
+        if let name = defaults.stringForKey(kJAGToken)
+        {
+            if token == "" {
+                print("No token found")
+                return (false, "No token found")
+            }
+            token = name
+            return (true, name)
+      
+        } else {
+            return (false, "No token found")
+        }
+        
+      //  return (false, "error")
+        
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

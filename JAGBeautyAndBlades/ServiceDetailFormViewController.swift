@@ -72,6 +72,7 @@ class ServiceDetailFormViewController: XLFormViewController {
 }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+     //   self.navigationController?.viewWillAppear(true)
         serviceRequets.removeAll()
         checkedServicesTags.removeAll()
         runningTotal = 0

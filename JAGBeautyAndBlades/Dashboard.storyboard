@@ -290,7 +290,7 @@
         <!--Tab Bar-->
         <scene sceneID="aTd-iY-fHY">
             <objects>
-                <tabBarController title="Tab Bar" id="ate-Z7-5l5" sceneMemberID="viewController">
+                <tabBarController title="Tab Bar" id="ate-Z7-5l5" customClass="DashboardTabBarViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="JAG" id="WgV-0e-z58"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="nPy-aV-DzE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

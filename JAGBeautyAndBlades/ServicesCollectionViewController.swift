@@ -19,7 +19,7 @@ class ServicesCollectionViewController: UICollectionViewController {
      var selectedCellName = ""
      var selectedCellImageName = ""
      var servicesJSON:JSON = JSON.null
-     var appointmentsJSON:JSON = JSON.null
+  //   var appointmentsJSON:JSON = JSON.null
      var customerToken = ""
      var bookingID = 0
      var appointmentCategory = 0
@@ -28,9 +28,11 @@ class ServicesCollectionViewController: UICollectionViewController {
      var appointmentsDownloaded = false
      var hasBeenTapped = false
     
+  
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
+       // super.viewWillAppear(true)
+       // self.navigationController?.viewWillAppear(true)
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
         if let name = defaults.stringForKey(kJAGToken)
@@ -45,31 +47,35 @@ class ServicesCollectionViewController: UICollectionViewController {
                 
             case .Success(let json):
                 
-                self.appointmentsJSON = JSON(json)
-                print("APPOINTMENTS:\(self.appointmentsJSON)")
+                UserInformation.sharedInstance.appointments = JSON(json)
+           //     print("APPOINTMENTS:\(UserInformation.sharedInstance.appointments)")
                 self.appointmentsDownloaded = true
-                
+                /*
                 if let appointmentsVC = self.tabBarController?.viewControllers {
                     for vc in appointmentsVC {
                         if vc.title == "Appointments" {
                             if let appointmentVC = vc as? AppointmentsFormViewController {
-                                appointmentVC.appointments = self.appointmentsJSON
+                                appointmentVC.appointments = UserInformation.sharedInstance.appointments
+                       //         UserInformation.sharedInstance.appointments = self.appointmentsJSON
                             }
                         }
                     }
                     
                 }
+            */
             case .Failure(_): break
                 
             }
         }
     }
+    
+  //  svc.initializeForm()
     override func viewDidLoad() {
         
          super.viewDidLoad()
         // download the service types dictionary
         hasBeenTapped = false
-        
+  //      self.delegate = self
         self.title = "JAG"
         self.edgesForExtendedLayout = UIRectEdge.None
         navigationController?.title = "JAG"
@@ -143,7 +149,7 @@ class ServicesCollectionViewController: UICollectionViewController {
                 svc.bookingID = bookingID
  
                 svc.categoryID = categoryID
- 
+                
                 hasBeenTapped = false
             }
         }
@@ -198,7 +204,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         return true
     }
     
-
+    
     /*
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {

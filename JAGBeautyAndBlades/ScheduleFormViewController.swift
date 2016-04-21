@@ -98,25 +98,48 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                                 response in switch response.result {
                                                 
                                                 case .Success(let json):
-                                                    var appointmentsJSON = JSON.null
-                                                    appointmentsJSON = JSON(json)
-                                                    print("APPOINTMENTS:\(appointmentsJSON)")
+                                                //    var appointmentsJSON = JSON.null
+                                               //     appointmentsJSON = JSON(json)
+                                                    
+                                                    
+                                                    dispatch_async(dispatch_get_main_queue(), {
+                                                        UserInformation.sharedInstance.appointments = JSON(json)
+                                                        print(JSON(json))
+                                                    //    print("APPOINTMENTS:\(UserInformation.sharedInstance.appointments)")
+                                                       self.navigationController?.popToRootViewControllerAnimated(true)
+                                                        
+                                                        
+                                                    })
+                                                    
                                                 //    appointmentsDownloaded = true
-                                                     self.navigationController?.popToRootViewControllerAnimated(true)
+                                                    /*
+                                                    if let rvc = self.navigationController?.viewControllers[0] as? ServicesCollectionViewController {
+                                                        rvc.appointmentsJSON = appointmentsJSON
+                                                        
+                                                        
+                                                        
+                                                    }
+                                                    
+                                                    
+                                                    
                                                     if let appointmentsVC = self.tabBarController?.viewControllers {
+                                                        
+                                                        
                                                         for vc in appointmentsVC {
                                                             if vc.title == "Appointments" {
                                                                 
                                                                 
                                                                 if let appointmentVC = vc as? AppointmentsFormViewController {
                                                                     appointmentVC.appointments = appointmentsJSON
+                                                                    UserInformation.sharedInstance.appointments = appointmentsJSON
                                                                 }
                                                             }
                                                         }
                                                         
                                                     }
                                                    
-
+                                                    */
+                                                    
                                                 case .Failure(_): break
                                                     
                                                 }
@@ -159,7 +182,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         let headers = ["Authorization":  "Token  \(token)"]
         print("TOKEN: \(token)")
         print("AppointmentID: \(appointment?.appointmentID)")
-        print(appointment?.serviceRequests)
+   //     print(appointment?.serviceRequests)
         
         
         
