@@ -49,7 +49,6 @@
 		2A4D5FB21C4E9DF90097316E /* HCAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */; };
 		2A4D5FB31C4E9DF90097316E /* HCAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */; };
 		2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */; };
-		2A62990C1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A62990B1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m */; };
 		2A7A8BCB1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */; };
 		2A7A8BCC1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A8BCA1CA3738E009B95F2 /* CheckoutFormViewController.swift */; };
 		2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE01C4D626900660047 /* AppDelegate.swift */; };
@@ -74,7 +73,6 @@
 		2A853A4A1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */; };
 		2A853A4B1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */; };
 		2A853A4C1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */; };
-		2A903A5C1C74E7A400FA5C80 /* ServiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A903A5B1C74E7A400FA5C80 /* ServiceTypes.swift */; };
 		2A903A5D1C74E7A400FA5C80 /* ServiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A903A5B1C74E7A400FA5C80 /* ServiceTypes.swift */; };
 		2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A903A5E1C74ECD600FA5C80 /* HCService.swift */; };
 		2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A903A5E1C74ECD600FA5C80 /* HCService.swift */; };
@@ -123,8 +121,6 @@
 		2AE5ADDE1C642CE4007BD715 /* HCFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */; };
 		2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
 		2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
-		2AFEB2641C57D70400697A3C /* HCAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2631C57D70400697A3C /* HCAvailability.swift */; };
-		2AFEB2661C57DE9A00697A3C /* HCTimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2651C57DE9A00697A3C /* HCTimeSlot.swift */; };
 		3001204940D88A1D991064AA /* libPods-JAGBeautyAndBladesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631D2AF7FD11B2EE26CDA5DB /* libPods-JAGBeautyAndBladesTests.a */; };
 		9187AC4E9AF08CD3EDB4EE29 /* Pods_JAGBeautyAndBlades.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; };
 /* End PBXBuildFile section */
@@ -872,12 +868,10 @@
 				2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */,
 				2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */,
 				2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */,
-				2A62990C1C5EFFE900AD068D /* UIScrollView+EmptyDataSet.m in Sources */,
 				2AA822251C4D7910001A117C /* HCCustomer.swift in Sources */,
 				2AE5ADDA1C6414DC007BD715 /* LoginFormViewController.swift in Sources */,
 				2A7B4CE31C4D626900660047 /* ViewController.swift in Sources */,
 				2AE5ADDD1C642CE4007BD715 /* HCFormValidator.swift in Sources */,
-				2AFEB2641C57D70400697A3C /* HCAvailability.swift in Sources */,
 				2A9BF6321C8614AA00F281EF /* JAGURLs.swift in Sources */,
 				2A2AAB591C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
 				2A2AAB561C901E4100E8F2B7 /* HomeNavigationController.swift in Sources */,
@@ -888,7 +882,6 @@
 				2A36300B1C821C5800168AC2 /* HCPreviewConstants.swift in Sources */,
 				2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */,
 				2A018EF21C62289200437513 /* LocationsMapViewController.swift in Sources */,
-				2AFEB2661C57DE9A00697A3C /* HCTimeSlot.swift in Sources */,
 				2A7A8BCB1CA3738E009B95F2 /* CheckoutFormViewController.swift in Sources */,
 				2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */,
 				2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */,
@@ -900,7 +893,6 @@
 				2ADC30871C501B79006773AE /* BasicSignupViewController.swift in Sources */,
 				2A853A431C96339F0066F70C /* ServicesCollectionViewController.swift in Sources */,
 				2A4D5FB21C4E9DF90097316E /* HCAppointment.swift in Sources */,
-				2A903A5C1C74E7A400FA5C80 /* ServiceTypes.swift in Sources */,
 				2A16CFCD1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */,
 				2A9BF62B1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
 				2A1A0C2C1C9C5F8A002419EA /* HCAddress.swift in Sources */,
