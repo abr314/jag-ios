@@ -49,6 +49,8 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 
                 let jsonObj = appointment.1
+                
+                
                 if status == "created" {
                     
                     appointmentsCreated.append(jsonObj)
