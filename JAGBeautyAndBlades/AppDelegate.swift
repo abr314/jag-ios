@@ -9,8 +9,9 @@
 import UIKit
 import Fabric
 import Crashlytics
-import Locksmith
+//import Locksmith
 import AlamofireNetworkActivityIndicator
+//import Alamofire
 import Alamofire
 import SwiftyJSON
 @UIApplicationMain
@@ -36,26 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print("APPOINTMENTS:\(self.userInfo.appointments)")
-                //    self.appointmentsDownloaded = true
-                    /*
-                    if let appointmentsVC = self.tabBarController?.viewControllers {
-                        for vc in appointmentsVC {
-                            if vc.title == "Appointments" {
-                                if let appointmentVC = vc as? AppointmentsFormViewController {
-                                    appointmentVC.appointments = UserInformation.sharedInstance.appointments
-                                    //         UserInformation.sharedInstance.appointments = self.appointmentsJSON
-                                }
-                            }
-                        }
-                      */
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         return true
                     })
-                //    return true
+                
                     
                 case .Failure(_):
-            //        return true
+           
                     break
                 }
             }

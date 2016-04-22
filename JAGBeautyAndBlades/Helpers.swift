@@ -78,7 +78,7 @@ public func isValidPhone(value: String) -> Bool {
     return result
     
 }
-
+/*
 public enum ServiceCategoryType: String {
     case kHairType = "Hair"
     case kNailsType = "Nails"
@@ -96,7 +96,8 @@ public enum ServiceCategoryType: String {
         return serviceTypes[number]
     }
 }
-
+*/
+/*
 public enum DayOfWeek: String {
     case Monday = "Monday"
     case Tuesday = "Tuesday"
@@ -125,7 +126,9 @@ public enum DayOfWeek: String {
         return days[number]
     }
 }
+*/
 
+/*
 public enum LicenseType: String {
     
    // var servicesProvided:Array<ServiceCategoryType>
@@ -164,4 +167,4 @@ public enum LicenseType: String {
         return licenses[number]
     }
 }
-
+*/

@@ -11,10 +11,10 @@ import UIKit
 
 class HCLicense: NSObject {
 
-    dynamic var name = ""
-    dynamic var IDstring = ""
-    dynamic var picture: NSData? = nil
-    dynamic var licenseType = ""
-    dynamic var state = ""
-    dynamic var isCertified = false
+     var name = ""
+     var IDstring = ""
+     var picture: NSData? = nil
+     var licenseType = ""
+     var state = ""
+     var isCertified = false
 }

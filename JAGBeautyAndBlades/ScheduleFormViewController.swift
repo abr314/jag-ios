@@ -33,7 +33,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     var customer: HCCustomer?
     var customerID = String()
     var braintreeToken = ""
-    var clientNonce = "hguff7766f"
+    var clientNonce = ""
     var bookingID = 0
     var categoryID = 0
     var contentInset = UIEdgeInsets()
@@ -98,14 +98,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                                 response in switch response.result {
                                                 
                                                 case .Success(let json):
-                                                //    var appointmentsJSON = JSON.null
-                                               //     appointmentsJSON = JSON(json)
-                                                    
-                                                    
+                                                
                                                     dispatch_async(dispatch_get_main_queue(), {
                                                         UserInformation.sharedInstance.appointments = JSON(json)
                                                         print(JSON(json))
-                                                    //    print("APPOINTMENTS:\(UserInformation.sharedInstance.appointments)")
+                                                    
                                                        self.navigationController?.popToRootViewControllerAnimated(true)
                                                         
                                                         

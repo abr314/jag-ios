@@ -1046,11 +1046,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
-            timestampString = "482696001.631702"
+            timestampString = "482932993.543953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "loginButtonPressed()"
             landmarkType = "5">
             <Locations>
@@ -1058,31 +1058,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.loginButtonPressed () -&gt; ()"
+                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.157029"
+                  timestampString = "482942158.631671"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183"
-                  offsetFromSymbolStart = "2432">
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "304">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.(loginButtonPressed () -&gt; ()).(closure #1)"
+                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.157166"
+                  timestampString = "482942158.631771"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183"
-                  offsetFromSymbolStart = "2403">
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "428">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1974,12 +1974,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/BasicSignupViewController.swift"
-                  timestampString = "482896575.160613"
+                  timestampString = "482942158.634302"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "215"
                   endingLineNumber = "215"
-                  offsetFromSymbolStart = "1934">
+                  offsetFromSymbolStart = "1500">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1989,12 +1989,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/BasicSignupViewController.swift"
-                  timestampString = "482896575.160719"
+                  timestampString = "482942158.634396"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "217"
                   endingLineNumber = "217"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2102,13 +2102,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
-            timestampString = "482696001.631702"
+            timestampString = "482932993.543953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "loginButtonPressed()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "JAGBeautyAndBlades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
+                  timestampString = "482942158.637885"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JAGBeautyAndBlades.LoginFormViewController.prepareForSegue (__ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "JAGBeautyAndBlades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
+                  timestampString = "482942158.637988"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2118,11 +2150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
-            timestampString = "482695972.847806"
+            timestampString = "482931077.369538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "loginButtonPressed()"
             landmarkType = "5">
             <Locations>
@@ -2134,12 +2166,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.164933"
+                  timestampString = "482942158.638691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
                   endingLineNumber = "172"
-                  offsetFromSymbolStart = "749">
+                  offsetFromSymbolStart = "580">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2149,12 +2181,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.165033"
+                  timestampString = "482942158.638792"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
                   endingLineNumber = "172"
-                  offsetFromSymbolStart = "1375">
+                  offsetFromSymbolStart = "1068">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2182,12 +2214,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.165669"
+                  timestampString = "482942158.639426"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
                   endingLineNumber = "167"
-                  offsetFromSymbolStart = "2401">
+                  offsetFromSymbolStart = "1916">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2197,12 +2229,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/LoginFormViewController.swift"
-                  timestampString = "482896575.165777"
+                  timestampString = "482942158.63952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "138">
+                  offsetFromSymbolStart = "144">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2705,22 +2737,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/DashboardTabBarViewController.swift"
-            timestampString = "482894900.854301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -2757,22 +2773,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JAGBeautyAndBlades/DashboardTabBarViewController.swift"
-            timestampString = "482896020.609645"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "tabBar(_:didSelectItem:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JAGBeautyAndBlades/DashboardTabBarViewController.swift"
             timestampString = "482896413.977395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -2789,12 +2789,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/DashboardTabBarViewController.swift"
-                  timestampString = "482896575.170083"
+                  timestampString = "482942158.642689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "1441">
+                  offsetFromSymbolStart = "1064">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2804,12 +2804,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/DashboardTabBarViewController.swift"
-                  timestampString = "482896575.170199"
+                  timestampString = "482942158.642783"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "1582">
+                  offsetFromSymbolStart = "1172">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2859,6 +2859,86 @@
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "tabBar(_:didSelectItem:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
+            timestampString = "482932173.597542"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "loginButtonPressed()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
+            timestampString = "482931065.616065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "loginButtonPressed()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
+            timestampString = "482931251.63141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "loginButtonPressed()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
+            timestampString = "482931251.63141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "loginButtonPressed()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JAGBeautyAndBlades/LoginFormViewController.swift"
+            timestampString = "482932166.100039"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "loginButtonPressed()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

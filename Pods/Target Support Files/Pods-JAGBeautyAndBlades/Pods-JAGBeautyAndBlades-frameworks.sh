@@ -86,24 +86,18 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-JAGBeautyAndBlades/Alamofire.framework"
   install_framework "Pods-JAGBeautyAndBlades/AlamofireNetworkActivityIndicator.framework"
-  install_framework "Pods-JAGBeautyAndBlades/Auk.framework"
   install_framework "Pods-JAGBeautyAndBlades/Braintree.framework"
   install_framework "Pods-JAGBeautyAndBlades/Cosmos.framework"
-  install_framework "Pods-JAGBeautyAndBlades/Locksmith.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyJSON.framework"
   install_framework "Pods-JAGBeautyAndBlades/UIColor_Hex_Swift.framework"
   install_framework "Pods-JAGBeautyAndBlades/XLForm.framework"
-  install_framework "Pods-JAGBeautyAndBlades/moa.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-JAGBeautyAndBlades/Alamofire.framework"
   install_framework "Pods-JAGBeautyAndBlades/AlamofireNetworkActivityIndicator.framework"
-  install_framework "Pods-JAGBeautyAndBlades/Auk.framework"
   install_framework "Pods-JAGBeautyAndBlades/Braintree.framework"
   install_framework "Pods-JAGBeautyAndBlades/Cosmos.framework"
-  install_framework "Pods-JAGBeautyAndBlades/Locksmith.framework"
   install_framework "Pods-JAGBeautyAndBlades/SwiftyJSON.framework"
   install_framework "Pods-JAGBeautyAndBlades/UIColor_Hex_Swift.framework"
   install_framework "Pods-JAGBeautyAndBlades/XLForm.framework"
-  install_framework "Pods-JAGBeautyAndBlades/moa.framework"
 fi

@@ -10,17 +10,13 @@ use_frameworks!
 
 pod 'Fabric'
 pod 'Crashlytics'
-pod 'Alamofire', '~> 3.0'
+pod 'Alamofire', '~> 3.3'
 
 pod 'XLForm', '~> 3.0'
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 
-
-pod 'Auk', '~> 2.0'
-
-pod 'Locksmith'
 
 pod 'UIColor_Hex_Swift', '~> 2.1'
 

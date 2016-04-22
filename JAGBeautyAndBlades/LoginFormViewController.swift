@@ -106,7 +106,6 @@ class LoginFormViewController: XLFormViewController {
                 customer?.token = string
                 performSegueWithIdentifier("appointments", sender:self)
             }
-        //     = NSUserDefaults.standardUserDefaults().stringForKey(kJAGToken) as? String
         }
         
         super.viewDidLoad()
@@ -166,19 +165,53 @@ class LoginFormViewController: XLFormViewController {
                     
                     .responseJSON { response in
                         switch response.result {
-                        case .Success(_):
+                        case .Success(let object):
                             print(response)
                 
                             if let string = response.result.value?.valueForKey("token") as? String {
-                         
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 self.performSegueWithIdentifier("appointments", sender:self)
                             }
-                        case .Failure(_)://break
-                        print(response.result)
-                            
-                        
+                        case .Failure(let error)://break
+                            print(response.result)
+                            print(error)
+                            print(error.code)
+                            print(error.localizedFailureReason)
+                            let alertController = returnAlertControllerForErrorCode(error.code)
+                            self.presentViewController(alertController, animated: true) {
+                                // ...
+                            }
+                       //     HCErrorMessageManager.returnAlertControllerForErrorCode(<#T##HCErrorMessageManager#>)
+                            /*
+                            if error.code == -1004 {
+                                let alertController = UIAlertController(title: nil, message: "Could not connect to the server. Please try again later.", preferredStyle: .Alert)
+                                
+                                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                                    // ...
+                                }
+                                alertController.addAction(okAction)
+                                
+                                self.presentViewController(alertController, animated: true) {
+                                    // ...
+                                }
+                            }
+                            if error.code == -1009 {
+                                
+                                let alertController = UIAlertController(title: nil, message: "The Internet connection appears to be offline. You must be connected to the internet to use JAG services. Please reconnect and try again.", preferredStyle: .Alert)
+                                
+                                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                                    // ...
+                                }
+                                alertController.addAction(okAction)
+                                
+                                self.presentViewController(alertController, animated: true) {
+                                    // ...
+                                }
+                               
+                                
+                            }
+                            */
                         }
                     }
             }
