@@ -472,12 +472,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/BasicSignupViewController.swift"
-                  timestampString = "483042394.573563"
+                  timestampString = "483043596.994004"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "228"
                   endingLineNumber = "228"
-                  offsetFromSymbolStart = "2645">
+                  offsetFromSymbolStart = "2567">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -487,12 +487,12 @@
                   moduleName = "JAGBeautyAndBlades"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades/BasicSignupViewController.swift"
-                  timestampString = "483042394.573694"
+                  timestampString = "483043596.994132"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "230"
                   endingLineNumber = "230"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "3">
                </Location>
             </Locations>
          </BreakpointContent>
