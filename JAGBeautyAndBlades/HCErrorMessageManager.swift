@@ -24,7 +24,7 @@ import UIKit
        
         if errorCode == -6003 {
             
-            string = "Login failed. Could not authenticate user credentials."
+            string = "Operation failed. Please revise entry and try again."
         }
         let alertController = UIAlertController(title: nil, message: string, preferredStyle: .Alert)
         

@@ -17,11 +17,11 @@ class BasicSignupViewController: XLFormViewController {
     
     var userType:UserType?
     var personType:String = ""
-  //  var provider:HCProvider?
+ 
     var customer:HCCustomer = HCCustomer()
     var isProviderType:Bool = false
     var formMode:FormMode?
-  //  var alamofireRequest:Alamofire.Response?
+ 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -71,11 +71,8 @@ class BasicSignupViewController: XLFormViewController {
         let isProfessionalArray = ["My Role", XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
         let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
-        // create array of rows
-       
-        
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //, referralCodeArray,
-            //referralCodeArray, nextArray]
+    
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //,
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -180,8 +177,9 @@ class BasicSignupViewController: XLFormViewController {
                     
                     Alamofire.request(.POST, kAPITokenURL, parameters:["username":self.customer.email,"password":self.customer.password])
                     
+                      
                         .responseJSON { response in
-                            
+                 //           print(result)
                             switch response.result {
                                
                             case .Success(let JSON):
@@ -204,18 +202,29 @@ class BasicSignupViewController: XLFormViewController {
                                 }
                                 
                                 
-                            case .Failure(_):
+                            case .Failure(let error):
+                                
+                                
+                                
                                 
                                 break
                             }
                     }
-                case .Failure(_):
-                    let alertController = UIAlertController(title: nil, message: "There was a server error with signup. Please revise your information and try again.", preferredStyle: .ActionSheet)
+                case .Failure(let error):
                     
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // ...
-                    }
-                    alertController.addAction(OKAction)
+                    
+                    print(error)
+                    print(error.code)
+                    print(error.domain)
+                    print(response)
+                    
+                    
+                    let alertController = returnAlertControllerForErrorCode(error.code)
+                    /*
+                        Make Custom Alerts
+                    */
+                   
+                //    alertController.addAction(OKAction)
                     self.presentViewController(alertController, animated: true) {
                         // ...
                     }

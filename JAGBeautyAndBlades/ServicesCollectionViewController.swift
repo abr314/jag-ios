@@ -63,7 +63,11 @@ class ServicesCollectionViewController: UICollectionViewController {
                     
                 }
             */
-            case .Failure(_): break
+            case .Failure(let error): //break
+                let alertController = returnAlertControllerForErrorCode(error.code)
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 
             }
         }
@@ -88,8 +92,11 @@ class ServicesCollectionViewController: UICollectionViewController {
             case .Success(let json):
             //    let response = json as? JSON
                 self.servicesJSON = JSON(json)
-            case .Failure(_): break
-                
+            case .Failure(let error): //break
+                let alertController = returnAlertControllerForErrorCode(error.code)
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 }
         }
         

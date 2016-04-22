@@ -406,7 +406,10 @@ class ServiceDetailFormViewController: XLFormViewController {
                 print(error)
                 print(response.request?.URL)
 
-                
+                let alertController = returnAlertControllerForErrorCode(error.code)
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
               //  break
                 
                 }

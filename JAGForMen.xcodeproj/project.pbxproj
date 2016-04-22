@@ -994,7 +994,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jagformen.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "53414f0c-ea66-4827-b142-c181c2e65d90";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1011,7 +1011,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jagformen.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "53414f0c-ea66-4827-b142-c181c2e65d90";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

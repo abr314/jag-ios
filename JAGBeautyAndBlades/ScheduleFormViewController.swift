@@ -153,8 +153,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                     }
                     case .Failure(let error):
                         print(error)
-                        
-                    break
+                        let alertController = returnAlertControllerForErrorCode(error.code)
+                        self.presentViewController(alertController, animated: true) {
+                            // ...
+                    }
+                   // break
                 }
             }
         dismissViewControllerAnimated(true, completion: nil)
@@ -216,8 +219,11 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                 break
                             }
                     }
-                case .Failure(_):
-                    break
+                case .Failure(let error):
+                    let alertController = returnAlertControllerForErrorCode(error.code)
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
         }
         
