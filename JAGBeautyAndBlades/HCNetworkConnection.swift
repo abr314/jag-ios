@@ -5,7 +5,7 @@
 //  Created by Abraham Brovold on 3/1/16.
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
-
+/*
 //import Foundation
 import Alamofire
 import SwiftyJSON
@@ -132,3 +132,5 @@ func retrieveCustomerAppointments(token:String) -> Request? {
     
         return nil
 }
+
+*/

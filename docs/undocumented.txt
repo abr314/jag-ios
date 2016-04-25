@@ -1,25 +1,335 @@
+HCXLFormRowDescriptor.swift
+	class HCXLFormRowDescriptor: XLFormRowDescriptor
+	var value2:AnyObject?
+ServicesTableViewCell.swift
+	class ServicesTableViewCell: UITableViewCell
+	@IBOutlet weak var cellImage: UIImageView!
+	override func awakeFromNib()
+	override func setSelected(selected: Bool, animated: Bool)
+ScheduleFormViewController.swift
+	struct Date
+	static let formatterISO8601: NSDateFormatter =
+	var formattedISO8601: String { return Date.formatterISO8601.stringFromDate(self) }
+	class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDelegate
+	var appointment:HCAppointment?
+	var braintreeClient: BTAPIClient?
+	var customer: HCCustomer?
+	var customerID = String()
+	var braintreeToken = ""
+	var clientNonce = ""
+	var bookingID = 0
+	var categoryID = 0
+	var contentInset = UIEdgeInsets()
+	func dropInViewController(viewController: BTDropInViewController, didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce)
+	func dropInViewControllerDidCancel(viewController: BTDropInViewController)
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+	required init?(coder aDecoder: NSCoder)
+	func initializeForm()
+	func paymentInformationButtonChecked()
+	func validationSuccessful() -> Bool
+	func validateStringMinutesForDifference()-> Bool
+	func formatToMinuteInt(date:NSDate) -> Int
+	func formatHourAndMinuteToString(date:NSDate) -> String
+	func bookNowPressed()
+	func userDidCancelPayment()
+	private func synchronizeData ()
+	override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!)
+ServiceDetailFormViewController.swift
+	class ServiceDetailFormViewController: XLFormViewController
+	var services:JSON = JSON.null
+	var runningTotal = 0
+	var appointment = HCAppointment()
+	var service = ""
+	var priceTier = 3
+	var newString = ""
+	var newName = ""
+	var appointmentID:Int?
+	var checkedServicesTags = [String]()
+	var serviceRequets = [HCServiceRequest]()
+	var categoryImageName = ""
+	var customer:HCCustomer?
+	var bookingID = 0
+	var categoryID = 0
+	var customerToken = ""
+	var bookingInProgress = false
+	var customerID = ""
+	var selectedMainService = HCServiceRequest()
+	var mainServiceHasBeenSelected = false
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+	required init?(coder aDecoder: NSCoder)
+	override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+	override func viewWillAppear(animated: Bool)
+	override func viewDidLoad()
+	func buildForm()
+	func initializeForm()
+	func validateForm()
+	func addAndPop()
+	override func didReceiveMemoryWarning()
+	override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!)
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+HCCustomer.swift
+	class HCCustomer: NSObject
+	var firstName = ""
+	var lastName = ""
+	var phoneNumber = ""
+	var email = ""
+	var isProfessional = false
+	var password = ""
+	var referralCode = ""
+	var token = ""
+	var customerID = ""
+	var preferredAddress:HCAddress?
+	class HCProvider : HCCustomer
+	var image:UIImage?
+	var averageRating = 0
+	var category = ""
+LoginFormViewController.swift
+	var customer:HCCustomer?
+	func initializeForm()
+	func userAlreadyExist() -> Bool
+	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	func signUpPressed()
+	func bookNowPressed()
+	func loginButtonPressed()
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+ViewController.swift
+	class ViewController: UIViewController
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
 HCFormValidator.swift
 	public func validateForm(formVC: XLFormViewController) -> Bool
+	func animateCell(cell: UITableViewCell)
+	func validateFormSuccessful() -> Bool
+JAGURLs.swift
+	let kRealURL = "https://jagbeautyandblades.com/"
+	let kTestURL = "http://127.0.0.1:8000/"
+	let kDevelopmentURL = "http://45.55.200.56:8000/"
+	var URL = kDevelopmentURL
+	let kCustomerSignUpURL = "\(URL)profiles/api/customer/register/"
+	let kProSignUpURL = "\(URL)profiles/api/provider/register/"
+	let kAPITokenURL = "\(URL)api-token-auth/"
+	let kAppointmentsURL = "\(URL)api/bookings/appointments/"
+	let kServiceCategoriesURL = "\(URL)api/services/categories/"
+	let kCreateBookingURL = "\(URL)api/bookings/bookings/create/"
+	let kCreateAppointmentURL = "\(URL)api/bookings/appointments/create/"
+	let kCreateServiceRequestURL = "\(URL)api/bookings/servicerequests/create/"
+	let kRequestBraintreeClientTokenURL = "\(URL)api/profiles/user/"//<user_id>/clienttoken/"
+	let kSiteUserInfoURL = "\(URL)api/profiles/siteuser/"
+	let kCheckoutURL = "\(URL)api/bookings/checkout/"
+	let kCompleteBookingURL = "\(URL)api/booking/complete/"
+	let kAppointmentUpdateURL = "\(URL)api/bookings/appointments/update/"
+	let kAddressCreateOnAppointmentURL = "\(URL)api/address/create/"
+	let kDeleteAppointmentURL = "\(URL)api/bookings/appointments/delete/" // <appointment_id>/
+	let kAppointmentCancelURL = "\(URL)api/bookings/appointments/cancel/"
+	let kUpdateAppointmentURL = "\(URL)api/bookings/appointments/update/"
+	let kUpdateServiceRequestURL = "\(URL)api/bookings/servicerequests/update/"
+AppointmentsFormViewController.swift
+	class AppointmentsFormViewController: XLFormViewController
+	var results:JSON?
+	var customer:HCCustomer?
+	var array:Array<AnyObject>?
+	var appointments:JSON?
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+	required init?(coder aDecoder: NSCoder)
+	func initializeForm()
+	func showDetail()
+	override func viewDidLoad()
 Helpers.swift
+	enum UserType
+	case Provider
+	case Customer
+	enum FormMode
+	case CreateMode
+	case EditMode
+	case ViewMode
+	let kName = "Name"
+	let kLicenseOptions = "License Options"
+	let kProcedures = "Procedures"
+	let kPlist = "plist"
+	let kServiceTypesPlistTitle = "ServiceTypes"
+	let kFirstName = "First Name"
+	let kLastName = "Last Name"
+	let kPhone = "Phone"
+	let kEmail = "Email"
+	let kNext = "Next"
+	let kPassword = "Password"
+	let kBookNow = "Book Now"
+	let kSignUp = "Sign Up"
+	let kLogin = "Login"
+	let kDay = "Day"
+	let kStartTime = "Start Time"
+	let kEndTime = "End Time"
+	let kAllDay = "All-Day"
+	let kSave = "Save"
+	let kCancel = "Cancel"
+	let kSubmit = "Submit"
+	let kFirstLine = "First Line"
+	let kSecondLine = "Second Line"
+	let kZipCode = "Zip Code"
+	let kCityState = "City and State"
+	let kBarberImageString = "HairMan"
+	let kCosmoImageString = "CosmoMan"
+	let kMassageImageString = "MassageMan"
+	let kNailImageString = "NailApp"
+	let kSpaImageString = "SpaApp"
+	let kTrainerImageString = "TrainerApp"
+	let kJAGToken:String = "JAGToken"
+	let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
+	class ServicesManager
+	let servicesArray = NSArray(contentsOfFile: path!)
 	public func isValidPhone(value: String) -> Bool
-	public enum DayOfWeek: String
-	case Monday = "Monday"
-	case Tuesday = "Tuesday"
-	case Wednesday = "Wednesday"
-	case Thursday = "Thursday"
-	case Friday = "Friday"
-	case Saturday = "Saturday"
-	case Sunday = "Sunday"
-	public enum LicenseType: String
-	case BarberType = "Barber"
-	case CosmetologyType = "Cosmetology"
-	case ManicuristType = "Manicurist"
-	case EtheticianType = "Ethetician"
-	case EyeLashExtensionsType = "Eye Lash Extensions"
-	case ManicuristEsthecticianType = "Manicurist/Esthetician"
-	case SprayTansType = "Spray Tans"
-	case MassageType = "Massage"
-	case FitnessType = "Fitness"
-	case YogaType = "Yoga"
-	case PersonalTrainerType = "Personal Training"
-	case count
+DashboardTabBarViewController.swift
+	class DashboardTabBarViewController: UITabBarController
+	var appointments:JSON?
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem)
+HCServiceRequest.swift
+	class HCServiceRequest: NSObject
+	var serviceRequestID = 0
+	var appointmentID = 0
+	var serviceName = ""
+	var requestedTier = 0
+	var serviceLinePrice = ""
+	var serviceID = 0
+ServicesCollectionViewCell.swift
+	class ServicesCollectionViewCell: UICollectionViewCell
+	@IBOutlet weak var serviceLabel: ServicesLabel!
+	@IBOutlet weak var cellImage: UIImageView!
+AppDelegate.swift
+	class AppDelegate: UIResponder, UIApplicationDelegate
+	var window: UIWindow?
+	var userInfo = UserInformation.sharedInstance
+	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+	func retrieveUserToken() -> (Bool, String)
+	func applicationWillResignActive(application: UIApplication)
+	func applicationDidEnterBackground(application: UIApplication)
+	func applicationWillEnterForeground(application: UIApplication)
+	func applicationDidBecomeActive(application: UIApplication)
+	func applicationWillTerminate(application: UIApplication)
+HCFontsandColors.swift
+	let kHeaderFont = "Roboto"
+	let kBodyFont = "Raleway"
+	public convenience init?(hexString: String)
+	let kPrimaryColor:UIColor = UIColor(rgba: "#533A71")
+	let kSecondaryColor:UIColor = UIColor(rgba: "#50C5B7")
+	let kGoldColor:UIColor = UIColor(rgba: "#E4DDCA")
+	let kPurpleColor:UIColor = UIColor(rgba: "#4C0B84")
+	class HCFontsandColors:NSObject
+UserInformation.swift
+	class UserInformation: NSObject
+	static let sharedInstance = UserInformation()
+	var appointments = JSON.null
+	var token = ""
+	var customerProfile:HCCustomer?
+ServicesLabel.swift
+	class ServicesLabel: UILabel
+	required init?(coder aDecoder: NSCoder)
+	override init(frame: CGRect)
+	func setProperties()
+HCLicense.swift
+	class HCLicense: NSObject
+	var name = ""
+	var IDstring = ""
+	var picture: NSData? = nil
+	var licenseType = ""
+	var state = ""
+	var isCertified = false
+HCErrorMessageManager.swift
+	func returnAlertControllerForErrorCode(errorCode: Int) -> UIAlertController
+BasicSignupViewController.swift
+	class BasicSignupViewController: XLFormViewController
+	var validationIsOn = true
+	var userType:UserType?
+	var personType:String = ""
+	var customer:HCCustomer = HCCustomer()
+	var isProviderType:Bool = false
+	var formMode:FormMode?
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+	required init?(coder aDecoder: NSCoder)
+	override func viewDidLoad()
+	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+	func initializeForm()
+	func nextButtonPressed()
+	func registerWithServer()
+	func synchronizeData()
+	override func viewWillAppear(animated: Bool)
+	override func didReceiveMemoryWarning()
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+ServicesCollectionViewController.swift
+	private let reuseIdentifier = "Cell"
+	class ServicesCollectionViewController: UICollectionViewController
+	var cellImages = [String]()
+	var cellLabels = [String]()
+	var webCellNames = [String]()
+	var selectedCellTitle = ""
+	var selectedCellName = ""
+	var selectedCellImageName = ""
+	var servicesJSON:JSON = JSON.null
+	var customerToken = ""
+	var bookingID = 0
+	var appointmentCategory = 0
+	var appointmentID = 0
+	var categoryID = 0
+	var appointmentsDownloaded = false
+	var hasBeenTapped = false
+	override func viewWillAppear(animated: Bool)
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+	override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+	override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ServicesCollectionViewCell
+	override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+	override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool
+	override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool
+	override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool
+	override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?)
+HCAppointment.swift
+	class HCAppointment: NSObject
+	var appointmentID = 0
+	var booking = ""
+	var category = 0
+	var customer = ""
+	var serviceProvider = ""
+	var address = HCAddress()
+	var requestedStartBy = NSDate()
+	var requestedEndBy = NSDate()
+	var appointmentPrice = ""
+	var actualStartTime = ""
+	var actualEndTime = ""
+	var confirmedCustomer = false
+	var confirmedProvider = false
+	var date = ""
+	var bookingNumber = 0
+	var idNumber = 0
+	var paymentConfirmed = false
+	var serviceRequests = [HCServiceRequest]()
+RatingsTableViewController.swift
+	class RatingsTableViewController: UITableViewController
+	@IBOutlet weak var issuesButton: UIButton!
+	@IBOutlet weak var providerNameLabel: UILabel!
+	@IBOutlet weak var starRatingsView: CosmosView!
+	@IBOutlet weak var submitButton: UIButton!
+	@IBOutlet weak var providerImageView: UIImageView!
+	override func viewDidLoad()
+	override func didReceiveMemoryWarning()
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+HCJSONSerializer.swift
+	func createJSONObjectFromCustomer(customer:HCCustomer) -> [String: AnyObject]
+HCAddress.swift
+	class HCAddress: NSObject
+	var appointment = 0
+	var line1 = ""
+	var line2 = ""
+	var city = "Austin"
+	var state = "TX"
+	var zipcode = ""
+HCLocation.swift
+	class HCLocation: NSObject

@@ -1,0 +1,46 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HCXLFormRowDescriptor"
+provides-nominal:
+- "C18JAGBeautyAndBlades21HCXLFormRowDescriptor"
+provides-member:
+- ["C18JAGBeautyAndBlades21HCXLFormRowDescriptor", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "XLFormRowDescriptor"
+- "HCXLFormRowDescriptor"
+- "AnyObject"
+depends-member:
+- ["PSs9AnyObject", ""]
+- ["C18JAGBeautyAndBlades21HCXLFormRowDescriptor", "AnyObject"]
+- ["C18JAGBeautyAndBlades21HCXLFormRowDescriptor", "deinit"]
+- ["C18JAGBeautyAndBlades21HCXLFormRowDescriptor", "init"]
+- ["C18JAGBeautyAndBlades21HCXLFormRowDescriptor", "value2"]
+- !private ["Sq", "deinit"]
+depends-nominal:
+- "PSs9AnyObject"
+- "C18JAGBeautyAndBlades21HCXLFormRowDescriptor"
+- !private "Sq"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades-Bridging-Header.h"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/FABAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/Fabric.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Modules/module.modulemap"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/ANSCompatibility.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Answers.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSStackFrame.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSReport.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Modules/module.modulemap"
+interface-hash: "8dbbf4e4ca337283d67c3741b5bcdfd7"

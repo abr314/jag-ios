@@ -131,8 +131,7 @@ class AppointmentsFormViewController: XLFormViewController {
                                         
                                         self?.appointments = JSON(json)
                                         UserInformation.sharedInstance.appointments = JSON(json)//self.?appointments
-                                   //     print("APPOINTMENTS:\(self?.appointments)")
-                                      //  self.appointmentsDownloaded = true
+                                   
                                         self?.initializeForm()
                                     case .Failure( _): break
                                         
@@ -194,27 +193,12 @@ class AppointmentsFormViewController: XLFormViewController {
     func showDetail() {
         performSegueWithIdentifier("showDetail", sender: nil)
     }
-      override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         appointments = UserInformation.sharedInstance.appointments
         
         self.navigationController?.navigationBar.translucent = false
-      //  let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-      //  self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-        /*
-        let prefs = NSUserDefaults.standardUserDefaults()
-        if let string = prefs.objectForKey("JAGAppointmentsJSON") {
-            results = JSON(string)
-            
-        }
-        
-        if let path = NSBundle.mainBundle().pathForResource("sampleAppointments", ofType:kPlist) {
-            results = JSON(NSArray(contentsOfFile:path)!)
-          //  return true
-        }
-          */
-        initializeForm()
-    //    self?.initializeForm()
-             
+              initializeForm()
     }
 }

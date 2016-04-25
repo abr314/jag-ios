@@ -10,16 +10,26 @@ import UIKit
 
 
 class HCCustomer: NSObject {
-    dynamic var firstName = ""
-    dynamic var lastName = ""
-    dynamic var phoneNumber = ""
-    dynamic var email = ""
-    dynamic var isProfessional = false
-    dynamic var password = ""
-    dynamic var referralCode = ""
-    dynamic var token = ""
+    var firstName = ""
+    var lastName = ""
+    var phoneNumber = ""
+    var email = ""
+    var isProfessional = false
+    var password = ""
+    var referralCode = ""
+    var token = ""
     var customerID = ""
+    var preferredAddress:HCAddress?
     // additional questions
     // address, payment information, D/L
 
+}
+
+class HCProvider : HCCustomer {
+    var image:UIImage?
+    var averageRating = 0
+    var category = ""
+    
+    //var isProfessional: Bool = true
+    
 }

@@ -10,9 +10,17 @@ import UIKit
 import XLForm
 import SwiftyJSON
 import Alamofire
+
+/// This view controller is show on the first start up, or if an authentication token is not found in NSUserDefaults. A user will bypass this VC, directly to the Dashboard/TabBar if a token is found
+
+/**
+ 
+ Login View Controller
+ */
 class LoginFormViewController: XLFormViewController {
+    // MARK: property
     var customer:HCCustomer?
-    
+    /*
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -23,7 +31,13 @@ class LoginFormViewController: XLFormViewController {
         initializeForm()
     }
     
+    */
     func initializeForm() {
+        
+        ///
+        /// intializeForm: This builds the form using the XLForm library. Forms require a tag, title and form type.
+        
+        
         
         let form : XLFormDescriptor
         var section : XLFormSectionDescriptor
@@ -166,7 +180,7 @@ class LoginFormViewController: XLFormViewController {
                     .responseJSON { response in
                         switch response.result {
                         case .Success(let object):
-                            print(response)
+                            print(object)
                 
                             if let string = response.result.value?.valueForKey("token") as? String {
                                 let defaults = NSUserDefaults.standardUserDefaults()

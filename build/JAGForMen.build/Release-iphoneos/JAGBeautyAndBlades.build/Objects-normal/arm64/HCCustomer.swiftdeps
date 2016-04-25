@@ -1,0 +1,197 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HCCustomer"
+- "HCProvider"
+provides-nominal:
+- "C18JAGBeautyAndBlades10HCCustomer"
+- "C18JAGBeautyAndBlades10HCProvider"
+provides-member:
+- ["C18JAGBeautyAndBlades10HCCustomer", ""]
+- ["C18JAGBeautyAndBlades10HCProvider", ""]
+provides-dynamic-lookup:
+- "token"
+- "category"
+- "email"
+- "firstName"
+- "isProfessional"
+- "lastName"
+- "password"
+- "customerID"
+- "averageRating"
+- "image"
+- "referralCode"
+- "preferredAddress"
+- "phoneNumber"
+depends-top-level:
+- "UIImage"
+- "HCProvider"
+- "NSObject"
+- "StringLiteralType"
+- "HCCustomer"
+- "HCAddress"
+- "BooleanLiteralType"
+depends-member:
+- ["PSs9AnyObject", "averageRating"]
+- ["PSs9AnyObject", "category"]
+- ["PSs9AnyObject", "customerID"]
+- ["PSs9AnyObject", "email"]
+- ["PSs9AnyObject", "firstName"]
+- ["PSs9AnyObject", "image"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "isProfessional"]
+- ["PSs9AnyObject", "lastName"]
+- ["PSs9AnyObject", "password"]
+- ["PSs9AnyObject", "phoneNumber"]
+- ["PSs9AnyObject", "preferredAddress"]
+- ["PSs9AnyObject", "referralCode"]
+- ["PSs9AnyObject", "token"]
+- ["PSs9AnyObject", ""]
+- ["PSs11CVarArgType", "averageRating"]
+- ["PSs11CVarArgType", "category"]
+- ["PSs11CVarArgType", "customerID"]
+- ["PSs11CVarArgType", "email"]
+- ["PSs11CVarArgType", "firstName"]
+- ["PSs11CVarArgType", "image"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "isProfessional"]
+- ["PSs11CVarArgType", "lastName"]
+- ["PSs11CVarArgType", "password"]
+- ["PSs11CVarArgType", "phoneNumber"]
+- ["PSs11CVarArgType", "preferredAddress"]
+- ["PSs11CVarArgType", "referralCode"]
+- ["PSs11CVarArgType", "token"]
+- ["PSs11CVarArgType", ""]
+- ["PSs23CustomStringConvertible", "averageRating"]
+- ["PSs23CustomStringConvertible", "category"]
+- ["PSs23CustomStringConvertible", "customerID"]
+- ["PSs23CustomStringConvertible", "email"]
+- ["PSs23CustomStringConvertible", "firstName"]
+- ["PSs23CustomStringConvertible", "image"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "isProfessional"]
+- ["PSs23CustomStringConvertible", "lastName"]
+- ["PSs23CustomStringConvertible", "password"]
+- ["PSs23CustomStringConvertible", "phoneNumber"]
+- ["PSs23CustomStringConvertible", "preferredAddress"]
+- ["PSs23CustomStringConvertible", "referralCode"]
+- ["PSs23CustomStringConvertible", "token"]
+- ["PSs23CustomStringConvertible", ""]
+- ["PSs9Equatable", "averageRating"]
+- ["PSs9Equatable", "category"]
+- ["PSs9Equatable", "customerID"]
+- ["PSs9Equatable", "email"]
+- ["PSs9Equatable", "firstName"]
+- ["PSs9Equatable", "image"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "isProfessional"]
+- ["PSs9Equatable", "lastName"]
+- ["PSs9Equatable", "password"]
+- ["PSs9Equatable", "phoneNumber"]
+- ["PSs9Equatable", "preferredAddress"]
+- ["PSs9Equatable", "referralCode"]
+- ["PSs9Equatable", "token"]
+- ["PSs9Equatable", ""]
+- ["C18JAGBeautyAndBlades10HCCustomer", "HCAddress"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "UIImage"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "averageRating"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "category"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "customerID"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "deinit"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "email"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "firstName"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "image"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "init"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "isProfessional"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "lastName"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "password"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "phoneNumber"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "preferredAddress"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "referralCode"]
+- ["C18JAGBeautyAndBlades10HCCustomer", "token"]
+- ["C18JAGBeautyAndBlades10HCCustomer", ""]
+- ["C18JAGBeautyAndBlades10HCProvider", "UIImage"]
+- ["C18JAGBeautyAndBlades10HCProvider", "averageRating"]
+- ["C18JAGBeautyAndBlades10HCProvider", "category"]
+- ["C18JAGBeautyAndBlades10HCProvider", "deinit"]
+- ["C18JAGBeautyAndBlades10HCProvider", "image"]
+- ["C18JAGBeautyAndBlades10HCProvider", "init"]
+- ["PSs8Hashable", "averageRating"]
+- ["PSs8Hashable", "category"]
+- ["PSs8Hashable", "customerID"]
+- ["PSs8Hashable", "email"]
+- ["PSs8Hashable", "firstName"]
+- ["PSs8Hashable", "image"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "isProfessional"]
+- ["PSs8Hashable", "lastName"]
+- ["PSs8Hashable", "password"]
+- ["PSs8Hashable", "phoneNumber"]
+- ["PSs8Hashable", "preferredAddress"]
+- ["PSs8Hashable", "referralCode"]
+- ["PSs8Hashable", "token"]
+- ["PSs8Hashable", ""]
+- ["CSo8NSObject", "HCAddress"]
+- ["CSo8NSObject", "UIImage"]
+- ["CSo8NSObject", "averageRating"]
+- ["CSo8NSObject", "category"]
+- ["CSo8NSObject", "customerID"]
+- ["CSo8NSObject", "email"]
+- ["CSo8NSObject", "firstName"]
+- ["CSo8NSObject", "image"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "isProfessional"]
+- ["CSo8NSObject", "lastName"]
+- ["CSo8NSObject", "password"]
+- ["CSo8NSObject", "phoneNumber"]
+- ["CSo8NSObject", "preferredAddress"]
+- ["CSo8NSObject", "referralCode"]
+- ["CSo8NSObject", "token"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "averageRating"]
+- ["PSo16NSObjectProtocol", "category"]
+- ["PSo16NSObjectProtocol", "customerID"]
+- ["PSo16NSObjectProtocol", "email"]
+- ["PSo16NSObjectProtocol", "firstName"]
+- ["PSo16NSObjectProtocol", "image"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "isProfessional"]
+- ["PSo16NSObjectProtocol", "lastName"]
+- ["PSo16NSObjectProtocol", "password"]
+- ["PSo16NSObjectProtocol", "phoneNumber"]
+- ["PSo16NSObjectProtocol", "preferredAddress"]
+- ["PSo16NSObjectProtocol", "referralCode"]
+- ["PSo16NSObjectProtocol", "token"]
+- ["PSo16NSObjectProtocol", ""]
+depends-nominal:
+- "PSs9AnyObject"
+- "PSs11CVarArgType"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "C18JAGBeautyAndBlades10HCCustomer"
+- "C18JAGBeautyAndBlades10HCProvider"
+- "PSs8Hashable"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades-Bridging-Header.h"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/FABAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/Fabric.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Modules/module.modulemap"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/ANSCompatibility.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Answers.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSStackFrame.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSReport.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Modules/module.modulemap"
+interface-hash: "efe1fa33cf91d2230f610c6f78daea19"

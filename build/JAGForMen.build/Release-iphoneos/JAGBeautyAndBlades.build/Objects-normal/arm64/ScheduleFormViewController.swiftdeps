@@ -1,0 +1,826 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ScheduleFormViewController"
+provides-nominal:
+- "VE18JAGBeautyAndBladesCSo6NSDate4Date"
+- "C18JAGBeautyAndBlades26ScheduleFormViewController"
+provides-member:
+- ["CSo6NSDate", ""]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", ""]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", ""]
+- ["CSo6NSDate", "Date"]
+- ["CSo6NSDate", "formattedISO8601"]
+provides-dynamic-lookup:
+- "formattedISO8601"
+depends-top-level:
+- !private "-"
+- !private "Dictionary"
+- !private "BTPaymentRequest"
+- !private "dismissViewControllerAnimated"
+- "BTAPIClient"
+- "NSLocale"
+- !private "UIBarButtonItem"
+- !private "kFirstLine"
+- "UIEdgeInsets"
+- !private "XLFormRowDescriptorTypeText"
+- "HCCustomer"
+- !private "presentViewController"
+- "String"
+- "NSDateFormatter"
+- "NSCalendarIdentifierISO8601"
+- !private "UIAlertController"
+- "HCAppointment"
+- !private "print"
+- !private "kCityState"
+- !private "kAppointmentUpdateURL"
+- !private "XLFormDescriptor"
+- "NSBundle"
+- "NSCalendar"
+- "BTDropInViewControllerDelegate"
+- "StringLiteralType"
+- "BTDropInViewController"
+- !private "form"
+- "XLFormViewController"
+- !private "<"
+- !private "UIBarButtonSystemItem"
+- "BTPaymentMethodNonce"
+- !private "kJAGToken"
+- !private "UINavigationController"
+- "NSTimeZone"
+- !private "kPurpleColor"
+- !private "kCheckoutURL"
+- "ScheduleFormViewController"
+- !private "kBodyFont"
+- !private "NSIndexPath"
+- !private "NSUserDefaults"
+- !private ">"
+- !private "kSiteUserInfoURL"
+- !private "kZipCode"
+- !private "XLFormSectionDescriptor"
+- !private "XLFormRowDescriptorTypeNumber"
+- !private "UnicodeScalarType"
+- !private "UIAlertAction"
+- "NSDate"
+- !private "*"
+- !private "BooleanLiteralType"
+- "AnyObject"
+- !private "+"
+- !private "Alamofire"
+- "Int"
+- !private "UIColor"
+- !private "kSecondLine"
+- "Bool"
+- !private "kEndTime"
+- !private "XLFormRowDescriptorTypeButton"
+- !private "Array"
+- !private "kStartTime"
+- !private "||"
+- !private "=="
+- "XLFormRowDescriptor"
+- !private "XLFormRowDescriptorTypeDateTimeInline"
+- "NSCoder"
+- !private "UIFont"
+depends-member:
+- !private ["PSs9AnyObject", "Alamofire"]
+- !private ["PSs9AnyObject", "BTDropInViewController"]
+- !private ["PSs9AnyObject", "BTPaymentRequest"]
+- !private ["PSs9AnyObject", "Date"]
+- !private ["PSs9AnyObject", "Int"]
+- ["PSs9AnyObject", "NSCalendar"]
+- ["PSs9AnyObject", "NSCalendarIdentifierISO8601"]
+- !private ["PSs9AnyObject", "NSDate"]
+- ["PSs9AnyObject", "NSDateFormatter"]
+- !private ["PSs9AnyObject", "NSIndexPath"]
+- ["PSs9AnyObject", "NSLocale"]
+- ["PSs9AnyObject", "NSTimeZone"]
+- !private ["PSs9AnyObject", "NSUserDefaults"]
+- ["PSs9AnyObject", "String"]
+- !private ["PSs9AnyObject", "UIAlertAction"]
+- !private ["PSs9AnyObject", "UIAlertController"]
+- !private ["PSs9AnyObject", "UIBarButtonItem"]
+- !private ["PSs9AnyObject", "UIBarButtonSystemItem"]
+- !private ["PSs9AnyObject", "UIColor"]
+- ["PSs9AnyObject", "UIEdgeInsets"]
+- !private ["PSs9AnyObject", "UIFont"]
+- !private ["PSs9AnyObject", "UINavigationController"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptor"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeButton"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeDateTimeInline"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeNumber"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeText"]
+- !private ["PSs9AnyObject", "XLFormSectionDescriptor"]
+- !private ["PSs9AnyObject", "addAction"]
+- !private ["PSs9AnyObject", "address"]
+- !private ["PSs9AnyObject", "appointment"]
+- !private ["PSs9AnyObject", "appointmentID"]
+- !private ["PSs9AnyObject", "appointmentPrice"]
+- !private ["PSs9AnyObject", "bookingID"]
+- !private ["PSs9AnyObject", "bookingNumber"]
+- !private ["PSs9AnyObject", "braintreeClient"]
+- ["PSs9AnyObject", "calendar"]
+- !private ["PSs9AnyObject", "categoryID"]
+- !private ["PSs9AnyObject", "clientNonce"]
+- !private ["PSs9AnyObject", "components"]
+- !private ["PSs9AnyObject", "currentCalendar"]
+- !private ["PSs9AnyObject", "customerID"]
+- ["PSs9AnyObject", "dateFormat"]
+- !private ["PSs9AnyObject", "dismissViewControllerAnimated"]
+- !private ["PSs9AnyObject", "form"]
+- !private ["PSs9AnyObject", "formatToMinuteInt"]
+- ["PSs9AnyObject", "formattedISO8601"]
+- !private ["PSs9AnyObject", "hour"]
+- ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "initializeForm"]
+- !private ["PSs9AnyObject", "kAppointmentUpdateURL"]
+- !private ["PSs9AnyObject", "kBodyFont"]
+- !private ["PSs9AnyObject", "kCheckoutURL"]
+- !private ["PSs9AnyObject", "kCityState"]
+- !private ["PSs9AnyObject", "kEndTime"]
+- !private ["PSs9AnyObject", "kFirstLine"]
+- !private ["PSs9AnyObject", "kJAGToken"]
+- !private ["PSs9AnyObject", "kPurpleColor"]
+- !private ["PSs9AnyObject", "kSecondLine"]
+- !private ["PSs9AnyObject", "kSiteUserInfoURL"]
+- !private ["PSs9AnyObject", "kStartTime"]
+- !private ["PSs9AnyObject", "kZipCode"]
+- !private ["PSs9AnyObject", "line1"]
+- !private ["PSs9AnyObject", "line2"]
+- ["PSs9AnyObject", "locale"]
+- !private ["PSs9AnyObject", "minute"]
+- !private ["PSs9AnyObject", "month"]
+- !private ["PSs9AnyObject", "presentViewController"]
+- !private ["PSs9AnyObject", "print"]
+- !private ["PSs9AnyObject", "requestedEndBy"]
+- !private ["PSs9AnyObject", "requestedStartBy"]
+- !private ["PSs9AnyObject", "standardUserDefaults"]
+- !private ["PSs9AnyObject", "stringForKey"]
+- !private ["PSs9AnyObject", "stringFromDate"]
+- !private ["PSs9AnyObject", "synchronizeData"]
+- !private ["PSs9AnyObject", "tableView"]
+- ["PSs9AnyObject", "timeZone"]
+- !private ["PSs9AnyObject", "validationSuccessful"]
+- !private ["PSs9AnyObject", "zipcode"]
+- ["PSs9AnyObject", ""]
+- !private ["PSs23ArrayLiteralConvertible", "Day"]
+- !private ["PSs23ArrayLiteralConvertible", "Element"]
+- !private ["PSs23ArrayLiteralConvertible", "Hour"]
+- !private ["PSs23ArrayLiteralConvertible", "Minute"]
+- !private ["PSs23ArrayLiteralConvertible", "Month"]
+- !private ["PSs23ArrayLiteralConvertible", "Year"]
+- !private ["PSs22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["PSs22BidirectionalIndexType", "init"]
+- !private ["PSs21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["PSs21BitwiseOperationsType", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSs11CVarArgType", "Date"]
+- !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- ["PSs11CVarArgType", "NSCalendar"]
+- ["PSs11CVarArgType", "NSCalendarIdentifierISO8601"]
+- ["PSs11CVarArgType", "NSDateFormatter"]
+- ["PSs11CVarArgType", "NSLocale"]
+- ["PSs11CVarArgType", "NSTimeZone"]
+- !private ["PSs11CVarArgType", "addAction"]
+- !private ["PSs11CVarArgType", "address"]
+- !private ["PSs11CVarArgType", "appointmentID"]
+- !private ["PSs11CVarArgType", "appointmentPrice"]
+- !private ["PSs11CVarArgType", "bookingNumber"]
+- ["PSs11CVarArgType", "calendar"]
+- !private ["PSs11CVarArgType", "components"]
+- !private ["PSs11CVarArgType", "currentCalendar"]
+- ["PSs11CVarArgType", "dateFormat"]
+- ["PSs11CVarArgType", "formattedISO8601"]
+- !private ["PSs11CVarArgType", "hour"]
+- ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "line1"]
+- !private ["PSs11CVarArgType", "line2"]
+- ["PSs11CVarArgType", "locale"]
+- !private ["PSs11CVarArgType", "minute"]
+- !private ["PSs11CVarArgType", "month"]
+- !private ["PSs11CVarArgType", "requestedEndBy"]
+- !private ["PSs11CVarArgType", "requestedStartBy"]
+- !private ["PSs11CVarArgType", "standardUserDefaults"]
+- !private ["PSs11CVarArgType", "stringForKey"]
+- !private ["PSs11CVarArgType", "stringFromDate"]
+- ["PSs11CVarArgType", "timeZone"]
+- !private ["PSs11CVarArgType", "zipcode"]
+- !private ["VSs9Character", "deinit"]
+- !private ["PSs14CollectionType", "Key"]
+- !private ["PSs14CollectionType", "Value"]
+- !private ["PSs10Comparable", "IntegerLiteralType"]
+- ["PSs10Comparable", "init"]
+- !private ["PSs28CustomDebugStringConvertible", "Key"]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- !private ["PSs28CustomDebugStringConvertible", "Value"]
+- ["PSs28CustomDebugStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "Date"]
+- !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["PSs23CustomStringConvertible", "Key"]
+- ["PSs23CustomStringConvertible", "NSCalendar"]
+- ["PSs23CustomStringConvertible", "NSCalendarIdentifierISO8601"]
+- ["PSs23CustomStringConvertible", "NSDateFormatter"]
+- ["PSs23CustomStringConvertible", "NSLocale"]
+- ["PSs23CustomStringConvertible", "NSTimeZone"]
+- !private ["PSs23CustomStringConvertible", "Value"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "addAction"]
+- !private ["PSs23CustomStringConvertible", "address"]
+- !private ["PSs23CustomStringConvertible", "appointmentID"]
+- !private ["PSs23CustomStringConvertible", "appointmentPrice"]
+- !private ["PSs23CustomStringConvertible", "bookingNumber"]
+- ["PSs23CustomStringConvertible", "calendar"]
+- !private ["PSs23CustomStringConvertible", "components"]
+- !private ["PSs23CustomStringConvertible", "currentCalendar"]
+- ["PSs23CustomStringConvertible", "dateFormat"]
+- ["PSs23CustomStringConvertible", "formattedISO8601"]
+- !private ["PSs23CustomStringConvertible", "hour"]
+- ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "line1"]
+- !private ["PSs23CustomStringConvertible", "line2"]
+- ["PSs23CustomStringConvertible", "locale"]
+- !private ["PSs23CustomStringConvertible", "minute"]
+- !private ["PSs23CustomStringConvertible", "month"]
+- !private ["PSs23CustomStringConvertible", "requestedEndBy"]
+- !private ["PSs23CustomStringConvertible", "requestedStartBy"]
+- !private ["PSs23CustomStringConvertible", "standardUserDefaults"]
+- !private ["PSs23CustomStringConvertible", "stringForKey"]
+- !private ["PSs23CustomStringConvertible", "stringFromDate"]
+- ["PSs23CustomStringConvertible", "timeZone"]
+- !private ["PSs23CustomStringConvertible", "zipcode"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "NSCalendar"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "NSCalendarIdentifierISO8601"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "NSDateFormatter"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "NSLocale"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "NSTimeZone"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "formatterISO8601"]
+- ["VE18JAGBeautyAndBladesCSo6NSDate4Date", "init"]
+- !private ["VSs10Dictionary", "Key"]
+- !private ["VSs10Dictionary", "Value"]
+- !private ["PSs28DictionaryLiteralConvertible", "Key"]
+- !private ["PSs28DictionaryLiteralConvertible", "Value"]
+- !private ["Sd", "deinit"]
+- !private ["PSs9Equatable", "Alert"]
+- !private ["PSs9Equatable", "Date"]
+- !private ["PSs9Equatable", "Day"]
+- !private ["PSs9Equatable", "Default"]
+- !private ["PSs9Equatable", "Element"]
+- !private ["PSs9Equatable", "Hour"]
+- !private ["PSs9Equatable", "IntegerLiteralType"]
+- !private ["PSs9Equatable", "Minute"]
+- !private ["PSs9Equatable", "Month"]
+- ["PSs9Equatable", "NSCalendar"]
+- ["PSs9Equatable", "NSCalendarIdentifierISO8601"]
+- ["PSs9Equatable", "NSDateFormatter"]
+- ["PSs9Equatable", "NSLocale"]
+- ["PSs9Equatable", "NSTimeZone"]
+- !private ["PSs9Equatable", "Year"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "addAction"]
+- !private ["PSs9Equatable", "address"]
+- !private ["PSs9Equatable", "appointmentID"]
+- !private ["PSs9Equatable", "appointmentPrice"]
+- !private ["PSs9Equatable", "bookingNumber"]
+- ["PSs9Equatable", "calendar"]
+- !private ["PSs9Equatable", "components"]
+- !private ["PSs9Equatable", "currentCalendar"]
+- ["PSs9Equatable", "dateFormat"]
+- ["PSs9Equatable", "formattedISO8601"]
+- !private ["PSs9Equatable", "hour"]
+- ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "line1"]
+- !private ["PSs9Equatable", "line2"]
+- ["PSs9Equatable", "locale"]
+- !private ["PSs9Equatable", "minute"]
+- !private ["PSs9Equatable", "month"]
+- !private ["PSs9Equatable", "requestedEndBy"]
+- !private ["PSs9Equatable", "requestedStartBy"]
+- !private ["PSs9Equatable", "standardUserDefaults"]
+- !private ["PSs9Equatable", "stringForKey"]
+- !private ["PSs9Equatable", "stringFromDate"]
+- ["PSs9Equatable", "timeZone"]
+- !private ["PSs9Equatable", "zipcode"]
+- ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Sf", "deinit"]
+- !private ["PSs16ForwardIndexType", "IntegerLiteralType"]
+- !private ["PSs16ForwardIndexType", "init"]
+- !private ["C18JAGBeautyAndBlades9HCAddress", "line1"]
+- !private ["C18JAGBeautyAndBlades9HCAddress", "line2"]
+- !private ["C18JAGBeautyAndBlades9HCAddress", "zipcode"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "address"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "appointmentID"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "appointmentPrice"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "bookingNumber"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "requestedEndBy"]
+- !private ["C18JAGBeautyAndBlades13HCAppointment", "requestedStartBy"]
+- !private ["PSs8Hashable", "Alert"]
+- !private ["PSs8Hashable", "Date"]
+- !private ["PSs8Hashable", "Default"]
+- !private ["PSs8Hashable", "IntegerLiteralType"]
+- ["PSs8Hashable", "NSCalendar"]
+- ["PSs8Hashable", "NSCalendarIdentifierISO8601"]
+- ["PSs8Hashable", "NSDateFormatter"]
+- ["PSs8Hashable", "NSLocale"]
+- ["PSs8Hashable", "NSTimeZone"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "addAction"]
+- !private ["PSs8Hashable", "address"]
+- !private ["PSs8Hashable", "appointmentID"]
+- !private ["PSs8Hashable", "appointmentPrice"]
+- !private ["PSs8Hashable", "bookingNumber"]
+- ["PSs8Hashable", "calendar"]
+- !private ["PSs8Hashable", "components"]
+- !private ["PSs8Hashable", "currentCalendar"]
+- ["PSs8Hashable", "dateFormat"]
+- ["PSs8Hashable", "formattedISO8601"]
+- !private ["PSs8Hashable", "hour"]
+- ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "line1"]
+- !private ["PSs8Hashable", "line2"]
+- ["PSs8Hashable", "locale"]
+- !private ["PSs8Hashable", "minute"]
+- !private ["PSs8Hashable", "month"]
+- !private ["PSs8Hashable", "requestedEndBy"]
+- !private ["PSs8Hashable", "requestedStartBy"]
+- !private ["PSs8Hashable", "standardUserDefaults"]
+- !private ["PSs8Hashable", "stringForKey"]
+- !private ["PSs8Hashable", "stringFromDate"]
+- ["PSs8Hashable", "timeZone"]
+- !private ["PSs8Hashable", "zipcode"]
+- ["SQ", "deinit"]
+- !private ["PSs9Indexable", "Key"]
+- !private ["PSs9Indexable", "Value"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "deinit"]
+- !private ["Si", "init"]
+- !private ["VSs5Int16", "deinit"]
+- !private ["VSs5Int32", "deinit"]
+- !private ["VSs5Int64", "deinit"]
+- !private ["VSs4Int8", "deinit"]
+- !private ["PSs21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs21IntegerArithmeticType", "init"]
+- !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs25IntegerLiteralConvertible", "init"]
+- !private ["PSs11IntegerType", "IntegerLiteralType"]
+- !private ["PSs11IntegerType", "init"]
+- !private ["PSs14MirrorPathType", "IntegerLiteralType"]
+- ["PSs14MirrorPathType", "init"]
+- !private ["CSo10NSCalendar", "components"]
+- !private ["CSo10NSCalendar", "currentCalendar"]
+- ["CSo10NSCalendar", "init"]
+- !private ["VSC14NSCalendarUnit", "Day"]
+- !private ["VSC14NSCalendarUnit", "Element"]
+- !private ["VSC14NSCalendarUnit", "Hour"]
+- !private ["VSC14NSCalendarUnit", "Minute"]
+- !private ["VSC14NSCalendarUnit", "Month"]
+- !private ["VSC14NSCalendarUnit", "Year"]
+- !private ["PSo8NSCoding", "Date"]
+- ["PSo8NSCoding", "NSCalendar"]
+- ["PSo8NSCoding", "NSCalendarIdentifierISO8601"]
+- ["PSo8NSCoding", "NSDateFormatter"]
+- ["PSo8NSCoding", "NSLocale"]
+- ["PSo8NSCoding", "NSTimeZone"]
+- !private ["PSo8NSCoding", "addAction"]
+- ["PSo8NSCoding", "calendar"]
+- !private ["PSo8NSCoding", "components"]
+- !private ["PSo8NSCoding", "currentCalendar"]
+- ["PSo8NSCoding", "dateFormat"]
+- !private ["PSo8NSCoding", "formattedISO8601"]
+- !private ["PSo8NSCoding", "hour"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "locale"]
+- !private ["PSo8NSCoding", "minute"]
+- !private ["PSo8NSCoding", "month"]
+- !private ["PSo8NSCoding", "stringFromDate"]
+- ["PSo8NSCoding", "timeZone"]
+- !private ["PSo9NSCopying", "Date"]
+- ["PSo9NSCopying", "NSCalendar"]
+- ["PSo9NSCopying", "NSCalendarIdentifierISO8601"]
+- ["PSo9NSCopying", "NSDateFormatter"]
+- ["PSo9NSCopying", "NSLocale"]
+- ["PSo9NSCopying", "NSTimeZone"]
+- ["PSo9NSCopying", "calendar"]
+- !private ["PSo9NSCopying", "components"]
+- !private ["PSo9NSCopying", "currentCalendar"]
+- ["PSo9NSCopying", "dateFormat"]
+- !private ["PSo9NSCopying", "formattedISO8601"]
+- !private ["PSo9NSCopying", "hour"]
+- ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "locale"]
+- !private ["PSo9NSCopying", "minute"]
+- !private ["PSo9NSCopying", "month"]
+- !private ["PSo9NSCopying", "stringFromDate"]
+- ["PSo9NSCopying", "timeZone"]
+- ["CSo6NSDate", "Date"]
+- ["CSo6NSDate", "NSCalendar"]
+- ["CSo6NSDate", "NSCalendarIdentifierISO8601"]
+- ["CSo6NSDate", "NSDateFormatter"]
+- ["CSo6NSDate", "NSLocale"]
+- ["CSo6NSDate", "NSTimeZone"]
+- ["CSo6NSDate", "String"]
+- !private ["CSo6NSDate", "deinit"]
+- ["CSo6NSDate", "formattedISO8601"]
+- !private ["CSo6NSDate", "init"]
+- !private ["CSo16NSDateComponents", "hour"]
+- !private ["CSo16NSDateComponents", "minute"]
+- !private ["CSo16NSDateComponents", "month"]
+- ["CSo15NSDateFormatter", "calendar"]
+- ["CSo15NSDateFormatter", "dateFormat"]
+- ["CSo15NSDateFormatter", "init"]
+- ["CSo15NSDateFormatter", "locale"]
+- !private ["CSo15NSDateFormatter", "stringFromDate"]
+- ["CSo15NSDateFormatter", "timeZone"]
+- !private ["PSo26NSExtensionRequestHandling", "addAction"]
+- !private ["PSo26NSExtensionRequestHandling", "init"]
+- ["CSo11NSFormatter", "calendar"]
+- ["CSo11NSFormatter", "dateFormat"]
+- ["CSo11NSFormatter", "init"]
+- ["CSo11NSFormatter", "locale"]
+- !private ["CSo11NSFormatter", "stringFromDate"]
+- ["CSo11NSFormatter", "timeZone"]
+- !private ["CSo11NSIndexPath", "init"]
+- ["CSo8NSLocale", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "Date"]
+- ["CSo8NSObject", "NSCalendar"]
+- ["CSo8NSObject", "NSCalendarIdentifierISO8601"]
+- ["CSo8NSObject", "NSDateFormatter"]
+- ["CSo8NSObject", "NSLocale"]
+- ["CSo8NSObject", "NSTimeZone"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "addAction"]
+- !private ["CSo8NSObject", "address"]
+- !private ["CSo8NSObject", "appointmentID"]
+- !private ["CSo8NSObject", "appointmentPrice"]
+- !private ["CSo8NSObject", "bookingNumber"]
+- ["CSo8NSObject", "calendar"]
+- !private ["CSo8NSObject", "components"]
+- !private ["CSo8NSObject", "currentCalendar"]
+- ["CSo8NSObject", "dateFormat"]
+- !private ["CSo8NSObject", "deinit"]
+- ["CSo8NSObject", "formattedISO8601"]
+- !private ["CSo8NSObject", "hour"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "line1"]
+- !private ["CSo8NSObject", "line2"]
+- ["CSo8NSObject", "locale"]
+- !private ["CSo8NSObject", "minute"]
+- !private ["CSo8NSObject", "month"]
+- !private ["CSo8NSObject", "requestedEndBy"]
+- !private ["CSo8NSObject", "requestedStartBy"]
+- !private ["CSo8NSObject", "standardUserDefaults"]
+- !private ["CSo8NSObject", "stringForKey"]
+- !private ["CSo8NSObject", "stringFromDate"]
+- ["CSo8NSObject", "timeZone"]
+- !private ["CSo8NSObject", "zipcode"]
+- !private ["PSo16NSObjectProtocol", "Date"]
+- ["PSo16NSObjectProtocol", "NSCalendar"]
+- ["PSo16NSObjectProtocol", "NSCalendarIdentifierISO8601"]
+- ["PSo16NSObjectProtocol", "NSDateFormatter"]
+- ["PSo16NSObjectProtocol", "NSLocale"]
+- ["PSo16NSObjectProtocol", "NSTimeZone"]
+- !private ["PSo16NSObjectProtocol", "addAction"]
+- !private ["PSo16NSObjectProtocol", "address"]
+- !private ["PSo16NSObjectProtocol", "appointmentID"]
+- !private ["PSo16NSObjectProtocol", "appointmentPrice"]
+- !private ["PSo16NSObjectProtocol", "bookingNumber"]
+- ["PSo16NSObjectProtocol", "calendar"]
+- !private ["PSo16NSObjectProtocol", "components"]
+- !private ["PSo16NSObjectProtocol", "currentCalendar"]
+- ["PSo16NSObjectProtocol", "dateFormat"]
+- ["PSo16NSObjectProtocol", "formattedISO8601"]
+- !private ["PSo16NSObjectProtocol", "hour"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "line1"]
+- !private ["PSo16NSObjectProtocol", "line2"]
+- ["PSo16NSObjectProtocol", "locale"]
+- !private ["PSo16NSObjectProtocol", "minute"]
+- !private ["PSo16NSObjectProtocol", "month"]
+- !private ["PSo16NSObjectProtocol", "requestedEndBy"]
+- !private ["PSo16NSObjectProtocol", "requestedStartBy"]
+- !private ["PSo16NSObjectProtocol", "standardUserDefaults"]
+- !private ["PSo16NSObjectProtocol", "stringForKey"]
+- !private ["PSo16NSObjectProtocol", "stringFromDate"]
+- ["PSo16NSObjectProtocol", "timeZone"]
+- !private ["PSo16NSObjectProtocol", "zipcode"]
+- !private ["PSo14NSSecureCoding", "Date"]
+- ["PSo14NSSecureCoding", "NSCalendar"]
+- ["PSo14NSSecureCoding", "NSCalendarIdentifierISO8601"]
+- ["PSo14NSSecureCoding", "NSDateFormatter"]
+- ["PSo14NSSecureCoding", "NSLocale"]
+- ["PSo14NSSecureCoding", "NSTimeZone"]
+- !private ["PSo14NSSecureCoding", "components"]
+- !private ["PSo14NSSecureCoding", "currentCalendar"]
+- !private ["PSo14NSSecureCoding", "formattedISO8601"]
+- !private ["PSo14NSSecureCoding", "hour"]
+- ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "minute"]
+- !private ["PSo14NSSecureCoding", "month"]
+- !private ["CSo8NSString", "deinit"]
+- !private ["CSo8NSString", "init"]
+- ["CSo10NSTimeZone", "init"]
+- !private ["CSo14NSUserDefaults", "standardUserDefaults"]
+- !private ["CSo14NSUserDefaults", "stringForKey"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- !private ["PSs13OptionSetType", "Day"]
+- !private ["PSs13OptionSetType", "Element"]
+- !private ["PSs13OptionSetType", "Hour"]
+- !private ["PSs13OptionSetType", "Minute"]
+- !private ["PSs13OptionSetType", "Month"]
+- !private ["PSs13OptionSetType", "Year"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- ["PSs16OutputStreamType", "init"]
+- !private ["PSs21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["PSs21RandomAccessIndexType", "init"]
+- !private ["PSs16RawRepresentable", "Alert"]
+- !private ["PSs16RawRepresentable", "Day"]
+- !private ["PSs16RawRepresentable", "Default"]
+- !private ["PSs16RawRepresentable", "Element"]
+- !private ["PSs16RawRepresentable", "Hour"]
+- !private ["PSs16RawRepresentable", "Minute"]
+- !private ["PSs16RawRepresentable", "Month"]
+- !private ["PSs16RawRepresentable", "Year"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "Alamofire"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "AnyObject"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "BTAPIClient"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "BTDropInViewController"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "BTPaymentMethodNonce"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "BTPaymentRequest"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "Bool"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "HCAppointment"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "HCCustomer"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "Int"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSBundle"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSCalendar"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSCoder"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSDate"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSDateFormatter"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSIndexPath"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "NSUserDefaults"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "String"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIAlertAction"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIAlertController"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIBarButtonItem"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIBarButtonSystemItem"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIColor"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIEdgeInsets"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UIFont"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "UINavigationController"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormDescriptor"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormRowDescriptor"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormRowDescriptorTypeButton"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormRowDescriptorTypeDateTimeInline"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormRowDescriptorTypeNumber"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormRowDescriptorTypeText"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "XLFormSectionDescriptor"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "appointment"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "bookNowPressed"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "bookingID"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "braintreeClient"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "braintreeToken"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "categoryID"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "clientNonce"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "contentInset"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "customer"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "customerID"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "deinit"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "didReceiveMemoryWarning"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "dismissViewControllerAnimated"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "form"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "formatHourAndMinuteToString"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "formatToMinuteInt"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "init"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "initializeForm"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kAppointmentUpdateURL"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kBodyFont"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kCheckoutURL"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kCityState"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kEndTime"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kFirstLine"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kJAGToken"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kPurpleColor"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kSecondLine"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kSiteUserInfoURL"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kStartTime"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "kZipCode"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "paymentInformationButtonChecked"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "presentViewController"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "print"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "synchronizeData"]
+- !private ["C18JAGBeautyAndBlades26ScheduleFormViewController", "tableView"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "userDidCancelPayment"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "validateStringMinutesForDifference"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "validationSuccessful"]
+- ["C18JAGBeautyAndBlades26ScheduleFormViewController", "viewDidLoad"]
+- !private ["PSs12SequenceType", "Key"]
+- !private ["PSs12SequenceType", "Value"]
+- !private ["PSs14SetAlgebraType", "Day"]
+- !private ["PSs14SetAlgebraType", "Element"]
+- !private ["PSs14SetAlgebraType", "Hour"]
+- !private ["PSs14SetAlgebraType", "Minute"]
+- !private ["PSs14SetAlgebraType", "Month"]
+- !private ["PSs14SetAlgebraType", "Year"]
+- !private ["PSs17SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs17SignedIntegerType", "init"]
+- !private ["PSs16SignedNumberType", "IntegerLiteralType"]
+- !private ["PSs16SignedNumberType", "init"]
+- ["PSs10Streamable", "init"]
+- !private ["PSs10Strideable", "IntegerLiteralType"]
+- !private ["PSs10Strideable", "init"]
+- ["SS", "init"]
+- ["PSs30StringInterpolationConvertible", "init"]
+- ["PSs24StringLiteralConvertible", "init"]
+- !private ["CSo13UIAlertAction", "init"]
+- !private ["OSC18UIAlertActionStyle", "Default"]
+- !private ["CSo17UIAlertController", "addAction"]
+- !private ["CSo17UIAlertController", "init"]
+- !private ["OSC22UIAlertControllerStyle", "Alert"]
+- !private ["PSo21UIAppearanceContainer", "addAction"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- !private ["PSo18UIContentContainer", "addAction"]
+- !private ["PSo18UIContentContainer", "init"]
+- ["VSC12UIEdgeInsets", "init"]
+- !private ["PSo18UIFocusEnvironment", "addAction"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- !private ["CSo11UIResponder", "addAction"]
+- !private ["CSo11UIResponder", "init"]
+- !private ["PSo16UIStateRestoring", "addAction"]
+- !private ["PSo16UIStateRestoring", "init"]
+- !private ["PSo18UITraitEnvironment", "addAction"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- !private ["CSo16UIViewController", "addAction"]
+- !private ["CSo16UIViewController", "init"]
+- !private ["Su", "deinit"]
+- !private ["VSs6UInt16", "deinit"]
+- !private ["VSs6UInt32", "deinit"]
+- !private ["VSs6UInt64", "deinit"]
+- !private ["VSs5UInt8", "deinit"]
+- !private ["Sc", "deinit"]
+- ["PSs31UnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "init"]
+- ["PSs32_BuiltinStringLiteralConvertible", "init"]
+- ["PSs37_BuiltinUTF16StringLiteralConvertible", "init"]
+- ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs16_CocoaStringType", "init"]
+- !private ["PSs14_Incrementable", "IntegerLiteralType"]
+- !private ["PSs14_Incrementable", "init"]
+- !private ["PSs22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs22_IntegerArithmeticType", "init"]
+- !private ["PSs12_IntegerType", "IntegerLiteralType"]
+- !private ["PSs12_IntegerType", "init"]
+- !private ["PSs21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "Key"]
+- !private ["PSs21_ObjectiveCBridgeable", "Value"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["PSs22_RandomAccessAmbiguity", "init"]
+- !private ["PSs12_Reflectable", "Date"]
+- !private ["PSs12_Reflectable", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "Key"]
+- ["PSs12_Reflectable", "NSCalendar"]
+- ["PSs12_Reflectable", "NSCalendarIdentifierISO8601"]
+- ["PSs12_Reflectable", "NSDateFormatter"]
+- ["PSs12_Reflectable", "NSLocale"]
+- ["PSs12_Reflectable", "NSTimeZone"]
+- ["PSs12_Reflectable", "Some"]
+- !private ["PSs12_Reflectable", "Value"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "formattedISO8601"]
+- ["PSs12_Reflectable", "init"]
+- !private ["PSs18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs18_SignedIntegerType", "init"]
+- !private ["PSs11_Strideable", "IntegerLiteralType"]
+- !private ["PSs11_Strideable", "init"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "PSs23ArrayLiteralConvertible"
+- !private "PSs22BidirectionalIndexType"
+- !private "PSs21BitwiseOperationsType"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- "PSs11CVarArgType"
+- !private "VSs9Character"
+- !private "PSs14CollectionType"
+- "PSs10Comparable"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- "VE18JAGBeautyAndBladesCSo6NSDate4Date"
+- !private "VSs10Dictionary"
+- !private "PSs28DictionaryLiteralConvertible"
+- !private "Sd"
+- "PSs9Equatable"
+- "PSs41ExtendedGraphemeClusterLiteralConvertible"
+- !private "Sf"
+- !private "PSs16ForwardIndexType"
+- !private "C18JAGBeautyAndBlades9HCAddress"
+- !private "C18JAGBeautyAndBlades13HCAppointment"
+- "PSs8Hashable"
+- "SQ"
+- !private "PSs9Indexable"
+- !private "Si"
+- !private "VSs5Int16"
+- !private "VSs5Int32"
+- !private "VSs5Int64"
+- !private "VSs4Int8"
+- !private "PSs21IntegerArithmeticType"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs11IntegerType"
+- "PSs14MirrorPathType"
+- "CSo10NSCalendar"
+- !private "VSC14NSCalendarUnit"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo6NSDate"
+- !private "CSo16NSDateComponents"
+- "CSo15NSDateFormatter"
+- !private "PSo26NSExtensionRequestHandling"
+- "CSo11NSFormatter"
+- !private "CSo11NSIndexPath"
+- "CSo8NSLocale"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- "CSo10NSTimeZone"
+- !private "CSo14NSUserDefaults"
+- "PSs21NilLiteralConvertible"
+- !private "PSs13OptionSetType"
+- "Sq"
+- "PSs16OutputStreamType"
+- !private "PSs21RandomAccessIndexType"
+- !private "PSs16RawRepresentable"
+- "C18JAGBeautyAndBlades26ScheduleFormViewController"
+- !private "PSs12SequenceType"
+- !private "PSs14SetAlgebraType"
+- !private "PSs17SignedIntegerType"
+- !private "PSs16SignedNumberType"
+- "PSs10Streamable"
+- !private "PSs10Strideable"
+- "SS"
+- "PSs30StringInterpolationConvertible"
+- "PSs24StringLiteralConvertible"
+- !private "CSo13UIAlertAction"
+- !private "OSC18UIAlertActionStyle"
+- !private "CSo17UIAlertController"
+- !private "OSC22UIAlertControllerStyle"
+- !private "PSo21UIAppearanceContainer"
+- !private "PSo18UIContentContainer"
+- "VSC12UIEdgeInsets"
+- !private "PSo18UIFocusEnvironment"
+- !private "CSo11UIResponder"
+- !private "PSo16UIStateRestoring"
+- !private "PSo18UITraitEnvironment"
+- !private "CSo16UIViewController"
+- !private "Su"
+- !private "VSs6UInt16"
+- !private "VSs6UInt32"
+- !private "VSs6UInt64"
+- !private "VSs5UInt8"
+- !private "Sc"
+- "PSs31UnicodeScalarLiteralConvertible"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- "PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- "PSs32_BuiltinStringLiteralConvertible"
+- "PSs37_BuiltinUTF16StringLiteralConvertible"
+- "PSs39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "PSs16_CocoaStringType"
+- !private "PSs14_Incrementable"
+- !private "PSs22_IntegerArithmeticType"
+- !private "PSs12_IntegerType"
+- "PSs21_ObjectiveCBridgeable"
+- !private "PSs22_RandomAccessAmbiguity"
+- "PSs12_Reflectable"
+- !private "PSs18_SignedIntegerType"
+- !private "PSs11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades-Bridging-Header.h"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/FABAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/Fabric.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Modules/module.modulemap"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/ANSCompatibility.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Answers.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSStackFrame.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSReport.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Modules/module.modulemap"
+interface-hash: "99a01da8800188f1f2a31eca8eb59a45"
