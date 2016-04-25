@@ -31,7 +31,7 @@ class LoginFormViewController: XLFormViewController {
        
         form = XLFormDescriptor(title: "JAG for Men")
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("")
+        section = XLFormSectionDescriptor.formSectionWithTitle("ENTER LOGIN INFORMATION")
         
         form.addFormSection(section)
         
@@ -47,21 +47,29 @@ class LoginFormViewController: XLFormViewController {
             
             row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
             
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            
+            if (!(row.tag == kLogin || row.tag == kSignUp)) {
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+                row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+                row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
+                row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            }
+            
             // add row customizations here
             
             if (row.tag == kLogin) {
+                row.cellConfig.setObject(UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0), forKey: "backgroundColor")
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
                 row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
-               
-            }
-            
-            if (row.tag == kSignUp) {
+            } else if (row.tag == kSignUp) {
+                row.cellConfig.setObject(UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0), forKey: "backgroundColor")
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
                 row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
-                section = XLFormSectionDescriptor.formSectionWithTitle(" ")
+                section = XLFormSectionDescriptor.formSectionWithTitle("NEW TO JAG?")
+                //section.multivaluedRowTemplate!.cellConfig["backgroundColor"] = UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0)
+                
+                
                 form.addFormSection(section)
             }
             if (row.tag != kSignUp && row.tag != kLogin) {
@@ -91,11 +99,21 @@ class LoginFormViewController: XLFormViewController {
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        if section == 2 {
-            return 30
-        }
+//        if section == 1 {
+//            return 30
+//        }
         
-        return 20
+        return 30
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        //header.contentView.backgroundColor = UIColor(red: 0/255, green: 181/255, blue: 229/255, alpha: 1.0) //make the background color light blue
+        header.textLabel?.textAlignment = .Center
+        header.textLabel!.textColor = UIColor.blackColor() //make the text white
+        header.textLabel!.alpha = 0.5 //make the header transparent
+        
     }
     
     override func viewDidLoad() {
@@ -117,9 +135,9 @@ class LoginFormViewController: XLFormViewController {
                     NSForegroundColorAttributeName: UIColor.whiteColor()]
         }
         
-        self.tableView.backgroundColor = UIColor.whiteColor()
+        //self.tableView.backgroundColor = UIColor.whiteColor()
         
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+        //self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
      
     }
     

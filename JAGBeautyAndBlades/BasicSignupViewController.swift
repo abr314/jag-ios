@@ -88,7 +88,8 @@ class BasicSignupViewController: XLFormViewController {
             if (row.tag == "Register Now") {
                 row.action.formSelector = #selector(BasicSignupViewController.nextButtonPressed)
                 row.cellConfig.setObject("", forKey: "self.selectionStyle")
-                row.cellConfig.setObject(kPurpleColor, forKey: "textLabel.textColor")
+                row.cellConfig.setObject(UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0), forKey: "backgroundColor")
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
                 section = XLFormSectionDescriptor.formSectionWithTitle(" ")
                 form.addFormSection(section)
             }
