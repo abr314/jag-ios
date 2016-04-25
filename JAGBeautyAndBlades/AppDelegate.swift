@@ -43,9 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
                 
                     
-                case .Failure(_):
+                case .Failure(let error):
            
-                    break
+                    print(error)
                 }
             }
             
