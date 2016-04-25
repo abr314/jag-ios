@@ -69,6 +69,7 @@ class LoginFormViewController: XLFormViewController {
             
             if (row.tag == kLogin) {
                 row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
+            //    row.disabled = true
                
             }
             
@@ -165,14 +166,30 @@ class LoginFormViewController: XLFormViewController {
     func loginButtonPressed() {
         // verify fields and signin
         
-        let result:Bool = true //validateForm(self)
-    //    performSegueWithIdentifier("dashboard", sender: nil)
+        let result:Bool = validateForm(self)
+    
         
         
         if (result) {
             
             if let email = form.formRowWithTag(kEmail)?.value as? String, password = form.formRowWithTag(kPassword)?.value as? String {
             
+                var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                activityView.color = UIColor.blackColor()
+              //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
+              //  activityIndicator.transform = transform
+                activityView.center = self.view.center
+                activityView.hidesWhenStopped = true
+            //    activityView.activityIndicatorViewStyle = UIActivityIndicatorView.
+                
+                activityView.startAnimating()
+                
+                if activityView.isAnimating() {
+                    
+                    
+                    
+                }
+                self.view.addSubview(activityView)
                 Alamofire.request(.POST, kAPITokenURL, parameters:["username":email,"password":password])
                     
                     .validate()
@@ -186,6 +203,8 @@ class LoginFormViewController: XLFormViewController {
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 self.performSegueWithIdentifier("appointments", sender:self)
+                                activityView.stopAnimating()
+                                
                             }
                         case .Failure(let error)://break
                             print(response.result)
@@ -193,9 +212,11 @@ class LoginFormViewController: XLFormViewController {
                             print(error.code)
                             print(error.localizedFailureReason)
                             let alertController = returnAlertControllerForErrorCode(error.code)
+                            activityView.stopAnimating()
                             self.presentViewController(alertController, animated: true) {
                                 // ...
                             }
+                            
                        //     HCErrorMessageManager.returnAlertControllerForErrorCode(<#T##HCErrorMessageManager#>)
                             /*
                             if error.code == -1004 {

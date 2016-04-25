@@ -38,6 +38,7 @@ class AppointmentsFormViewController: XLFormViewController {
         var appointmentsMaking = [JSON]()
         var appointmentsCreated = [JSON]()
         var appointmentsConfirmed = [JSON]()
+        var appointmentsDone = [JSON]()
         
       //  var theseAppointments = JSON.null
         if let app = appointments {
@@ -62,6 +63,10 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 if status == "making" {
                     appointmentsMaking.append(jsonObj)
+                }
+                
+                if status == "done" {
+                    appointmentsDone.append(jsonObj)
                 }
             }
         }
@@ -187,6 +192,38 @@ class AppointmentsFormViewController: XLFormViewController {
         }
         form.addFormSection(section)
         
+        section = XLFormSectionDescriptor.formSectionWithTitle("Past Appointments")
+        
+        for jsonObject in appointmentsDone {
+            //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
+            let name = jsonObject["category"]["display_name"].stringValue
+            let price = jsonObject["appointment_price"].intValue
+            //  var startTime = ""
+            var titleString = "\(name) - $\(price)"
+            let appointmentID = jsonObject["id"].intValue
+            if let time = jsonObject["requested_start_by"].stringValue as? String {
+                var startTime = time
+                
+                startTime = String(startTime.characters.dropLast(10))
+                titleString = titleString + " - \(startTime)"
+                print(startTime)
+                print(titleString)
+                
+            }
+            
+            print(titleString)
+            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
+            row.cellConfig.setObject(0, forKey: "textLabel.numberOfLines")
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 15)!, forKey: "textLabel.font")
+            row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
+            row.disabled = true
+            section.addFormRow(row)
+        }
+        
+        form.addFormSection(section)
+
         self.form = form
     }
     

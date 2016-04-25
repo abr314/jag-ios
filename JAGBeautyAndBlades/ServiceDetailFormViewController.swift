@@ -247,6 +247,23 @@ class ServiceDetailFormViewController: XLFormViewController {
             }
             return
         }
+        
+        if runningTotal < 35 {
+            // Add error message
+            let alertController = UIAlertController(title: "", message: "Total price for appointment must be at least $35.", preferredStyle: .Alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
+            return
+            
+            
+        }
         appointment.appointmentPrice = "\(runningTotal)"
         
         let formRows = self.form.formSections[1].formRows
