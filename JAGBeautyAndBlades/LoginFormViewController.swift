@@ -20,7 +20,7 @@ import Alamofire
 class LoginFormViewController: XLFormViewController {
     // MARK: property
     var customer:HCCustomer?
-    /*
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -31,7 +31,7 @@ class LoginFormViewController: XLFormViewController {
         initializeForm()
     }
     
-    */
+ 
     func initializeForm() {
         
         ///
