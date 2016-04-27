@@ -17,4 +17,5 @@ class UserInformation: NSObject {
     var appointments = JSON.null
     var token = ""
     var customerProfile:HCCustomer?
+    var userAlreadyExists = false
 }

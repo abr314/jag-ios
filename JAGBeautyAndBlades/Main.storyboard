@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nmz-gm-8cf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nmz-gm-8cf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -91,6 +91,7 @@
                         <segue destination="8xk-CV-EvZ" kind="show" identifier="SignUp" id="oGS-hB-RGf"/>
                         <segue destination="9Dx-Oi-YNC" kind="show" identifier="BookNow" id="w53-mM-Pu2"/>
                         <segue destination="zDw-ea-kBU" kind="show" identifier="appointments" id="DjG-Jq-ual"/>
+                        <segue destination="nKF-6t-j9S" kind="show" identifier="providerAppointments" id="noO-Ap-Slx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbc-de-peH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="-316" y="1387"/>
         </scene>
-        <!--Appointments Form View Controller-->
+        <!--ProviderAppointmentsForm-->
         <scene sceneID="hQ4-sg-rsF">
             <objects>
-                <viewController id="nKF-6t-j9S" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ProviderAppointmentsForm" id="nKF-6t-j9S" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sIF-eL-l2F"/>
                         <viewControllerLayoutGuide type="bottom" id="Jci-JW-w8r"/>
@@ -132,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c40-bg-dP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="1744"/>
+            <point key="canvasLocation" x="-125" y="1810"/>
         </scene>
         <!--Appointment Detail Form View Controller-->
         <scene sceneID="8Hn-tl-KWc">

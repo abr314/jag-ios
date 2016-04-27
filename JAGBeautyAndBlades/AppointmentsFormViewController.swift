@@ -43,7 +43,7 @@ class AppointmentsFormViewController: XLFormViewController {
       //  var theseAppointments = JSON.null
         if let app = appointments {
             
-            print(app.URL)
+      //      print(app.URL)
             for appointment in app {
                 
                 let status = appointment.1["status"].stringValue
@@ -53,7 +53,6 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 
                 if status == "created" {
-                    
                     appointmentsCreated.append(jsonObj)
                 }
                 
@@ -94,11 +93,11 @@ class AppointmentsFormViewController: XLFormViewController {
                 if titleString.characters.count > 23 {
                     fontSize = 14
                 }
-                print(startTime)
-                print(titleString)
+       //         print(startTime)
+         //       print(titleString)
                 
             }
-            print(titleString)
+         //   print(titleString)
             row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
@@ -122,23 +121,21 @@ class AppointmentsFormViewController: XLFormViewController {
                 alertController.addAction(cancelAction)
                 
                 let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
-                    print(action)
+             //       print(action)
                     let headers = ["Authorization":  "Token  \(token)"]
                     Alamofire.request(.POST, kAppointmentCancelURL, parameters:["appointment_id":"\(appointmentID)"], headers:headers)
                         .responseJSON { response in
                             switch response.result {
                             case .Success(let json):
-                                print(json)
+                              //  print(json)
                                 Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
                                     response in switch response.result {
                                         
                                     case .Success(let json):
-                                        
                                         self?.appointments = JSON(json)
                                         UserInformation.sharedInstance.appointments = JSON(json)//self.?appointments
-                                   
                                         self?.initializeForm()
-                                    case .Failure( _): break
+                                    case .Failure(let error): print(error)
                                         
                                     }
                                 }
@@ -154,8 +151,6 @@ class AppointmentsFormViewController: XLFormViewController {
                     // ...
                 }
             }
-            // action sheet with delete option. if it is deleted, call the delete endpoint, reload JSON, reload table
-           // row.disabled = true
             
             section.addFormRow(row)
         }
@@ -176,12 +171,12 @@ class AppointmentsFormViewController: XLFormViewController {
         
             startTime = String(startTime.characters.dropLast(10))
             titleString = titleString + " - \(startTime)"
-            print(startTime)
-            print(titleString)
+       //     print(startTime)
+         //   print(titleString)
           
             }
             
-         print(titleString)
+   //      print(titleString)
           row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
@@ -206,12 +201,12 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 startTime = String(startTime.characters.dropLast(10))
                 titleString = titleString + " - \(startTime)"
-                print(startTime)
-                print(titleString)
+            //    print(startTime)
+              //  print(titleString)
                 
             }
             
-            print(titleString)
+         //   print(titleString)
             row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
             row.cellConfig.setObject(0, forKey: "textLabel.numberOfLines")
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")

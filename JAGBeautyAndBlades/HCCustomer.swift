@@ -20,6 +20,7 @@ class HCCustomer: NSObject {
     var token = ""
     var customerID = ""
     var preferredAddress:HCAddress?
+    var isApprovedProfessional = false
     // additional questions
     // address, payment information, D/L
 

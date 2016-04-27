@@ -101,7 +101,7 @@ class LoginFormViewController: XLFormViewController {
     }
     
     func userAlreadyExist() -> Bool {
-        return NSUserDefaults.standardUserDefaults().objectForKey(kJAGToken) != nil
+        return UserInformation.sharedInstance.token != ""
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -184,11 +184,6 @@ class LoginFormViewController: XLFormViewController {
                 
                 activityView.startAnimating()
                 
-                if activityView.isAnimating() {
-                    
-                    
-                    
-                }
                 self.view.addSubview(activityView)
                 Alamofire.request(.POST, kAPITokenURL, parameters:["username":email,"password":password])
                     
@@ -203,6 +198,7 @@ class LoginFormViewController: XLFormViewController {
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 UserInformation.sharedInstance.token = string
+                                UserInformation.sharedInstance.userAlreadyExists = true
                                 self.performSegueWithIdentifier("appointments", sender:self)
                                 activityView.stopAnimating()
                                 

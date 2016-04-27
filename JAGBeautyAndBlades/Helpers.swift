@@ -54,6 +54,11 @@ let kNailImageString = "NailApp"
 let kSpaImageString = "SpaApp"
 let kTrainerImageString = "TrainerApp"
 
+let kCustomerRoleString = "I am a"
+
+let kCustomerTermString = "Customer"
+let kProviderTermString = "Service Provider"
+
 let kNetworkAuthorizationString = "Authorization"
 
 let kJAGToken:String = "JAGToken"

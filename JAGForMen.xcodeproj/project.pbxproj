@@ -29,7 +29,6 @@
 		2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */; };
 		2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */; };
 		2A2AAB5D1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */; };
-		2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */; };
 		2A3630171C84DB5600168AC2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA284E21C63CCCC0021B99E /* Roboto-Regular.ttf */; };
 		2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A018EFD1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf */; };
 		2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
@@ -96,8 +95,6 @@
 		2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
 		2AD2C01A1CC0BCA60065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
 		2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */; };
-		2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
-		2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
 		2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2AD99E081CCEEE8400659EB0 /* Pods_JAGBeautyAndBlades.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
@@ -157,7 +154,6 @@
 		2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFormViewController.swift; sourceTree = "<group>"; };
 		2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsFormViewController.swift; sourceTree = "<group>"; };
 		2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sampleAppointments.plist; sourceTree = "<group>"; };
-		2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RushStoryboard.storyboard; sourceTree = "<group>"; };
 		2A3630231C84DDF900168AC2 /* iPhone 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone 6.png"; sourceTree = "<group>"; };
 		2A42C9BF1CCA6BBA0007DF4A /* HCErrorMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCErrorMessageManager.swift; sourceTree = "<group>"; };
 		2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAppointment.swift; sourceTree = "<group>"; };
@@ -214,7 +210,6 @@
 		2ADC30881C502D3F006773AE /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCFormValidator.swift; sourceTree = "<group>"; };
-		2AE5ADE61C644648007BD715 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
 		2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 30022D_0_0.ttf; sourceTree = "<group>"; };
 		2AFEB2611C57D1DF00697A3C /* HCLicense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLicense.swift; sourceTree = "<group>"; };
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,21 +254,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A3630061C816A6000168AC2 /* V1 Rush */ = {
-			isa = PBXGroup;
-			children = (
-				2A36300D1C821CC300168AC2 /* Preview Images */,
-			);
-			name = "V1 Rush";
-			sourceTree = "<group>";
-		};
-		2A36300D1C821CC300168AC2 /* Preview Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Preview Images";
-			sourceTree = "<group>";
-		};
 		2A4D5FB81C4EA93F0097316E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +331,6 @@
 		2A7B4CDF1C4D626900660047 /* JAGBeautyAndBlades */ = {
 			isa = PBXGroup;
 			children = (
-				2A3630061C816A6000168AC2 /* V1 Rush */,
 				2A4D5FB81C4EA93F0097316E /* Controller */,
 				2AA8221D1C4D77E0001A117C /* Model */,
 				2ADC30781C4FFADA006773AE /* View */,
@@ -398,7 +377,6 @@
 			children = (
 				2A7B4CE41C4D626900660047 /* SignUp.storyboard */,
 				2AD2BFFB1CADFB290065B8FB /* Main.storyboard */,
-				2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */,
 				2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */,
 				2A853A341C96152E0066F70C /* Dashboard.storyboard */,
 			);
@@ -466,7 +444,6 @@
 		2AE5ADE51C64448D007BD715 /* Large Services Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2AE5ADE61C644648007BD715 /* pexels-photo.jpg */,
 			);
 			name = "Large Services Cells";
 			sourceTree = "<group>";
@@ -638,7 +615,6 @@
 			files = (
 				2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
-				2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
 				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
@@ -671,8 +647,6 @@
 				2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
-				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
-				2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

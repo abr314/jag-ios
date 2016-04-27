@@ -28,14 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (retrieveUserToken().0 == true) {
             
-            
-            
-            userInfo.token = retrieveUserToken().1
-            
             let headers = ["Authorization":  "Token  \(userInfo.token)"]
+            print(headers)
+            
             Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
-                
-                
                 
                 response in switch response.result {
                     
@@ -43,16 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print("APPOINTMENTS:\(self.userInfo.appointments)")
-                   
+                    UserInformation.sharedInstance.userAlreadyExists = true
                 
-                    
                 case .Failure(let error):
            
                     print(error)
                 }
                 
-                
             }
+            
             Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
                 
                 .validate()
@@ -61,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     switch response.result {
                         
-
                         case .Success(let json):
                         
                             print(json)
@@ -71,17 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             print(userTypeInt)
                             let userID = userJSON["detail"]["id"].stringValue
                             
+                            UserInformation.sharedInstance.userAlreadyExists = true
                             if userTypeInt == 0 {
-                                
-                                
-                                
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = false
                             }
                             if userTypeInt == 1 {
-                                
-                                
-                                
-                                
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = true
                             }
                             
@@ -94,10 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         case .Failure(let error):
                
                             print(error)
-                       
                     }
                 }
-            
         }
         
         
@@ -110,31 +96,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         returns false if no token is found
          
         */
-        var token = ""
-        
+ 
         let defaults = NSUserDefaults.standardUserDefaults()
-       
         
         
-        if let name = defaults.stringForKey(kJAGToken)
+        if let token = defaults.stringForKey(kJAGToken)  {
+            UserInformation.sharedInstance.token = token
+        }
+ 
+        if let name = UserInformation.sharedInstance.token as? String
         {
-            
-            
             if name == "" {
                 print("No token found")
                 return (false, "No token found")
             }
-            token = name
             return (true, name)
       
         } else {
-            
-            
-            
             return (false, "No token found")
         }
-        
-      //  return (false, "error")
         
     }
 
