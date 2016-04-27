@@ -202,6 +202,7 @@ class LoginFormViewController: XLFormViewController {
                             if let string = response.result.value?.valueForKey("token") as? String {
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
+                                UserInformation.sharedInstance.token = string
                                 self.performSegueWithIdentifier("appointments", sender:self)
                                 activityView.stopAnimating()
                                 

@@ -71,9 +71,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             print(userTypeInt)
                             let userID = userJSON["detail"]["id"].stringValue
                             
+                            if userTypeInt == 0 {
+                                
+                                
+                                
+                                UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                            }
                             if userTypeInt == 1 {
+                                
+                                
+                                
+                                
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = true
                             }
+                            
                             UserInformation.sharedInstance.customerProfile?.customerID = userID
                         
                             dispatch_async(dispatch_get_main_queue(), {

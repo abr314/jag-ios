@@ -15,10 +15,16 @@ class DashboardTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(UserInformation.sharedInstance.customerProfile?.email)
+        print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
-        
+        if UserInformation.sharedInstance.customerProfile?.isProfessional == false {
+            
+        }
        
+    }
+    override func viewWillAppear(animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,9 +46,6 @@ class DashboardTabBarViewController: UITabBarController {
                 
                 
                 for view in vcs {
-                    
-                    
-                    
                     
                     if view.title == "Appointments" {
                         
