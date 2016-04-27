@@ -54,6 +54,8 @@ let kNailImageString = "NailApp"
 let kSpaImageString = "SpaApp"
 let kTrainerImageString = "TrainerApp"
 
+let kNetworkAuthorizationString = "Authorization"
+
 let kJAGToken:String = "JAGToken"
 
 let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")

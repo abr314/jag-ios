@@ -19,6 +19,9 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+xcuserdatad/
+!xcschemes/xcschememanagement.plist
+
 
 ## Other
 *.moved-aside

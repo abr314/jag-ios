@@ -37,6 +37,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let name = defaults.stringForKey(kJAGToken)
         {
+            
             token = name
             customerToken = name
         }
@@ -79,6 +80,10 @@ class ServicesCollectionViewController: UICollectionViewController {
          super.viewDidLoad()
         // download the service types dictionary
         hasBeenTapped = false
+        
+        /*
+            If  user type is provider, transition to the activities VC and disable services
+        */
   //      self.delegate = self
         self.title = "JAG"
         self.edgesForExtendedLayout = UIRectEdge.None

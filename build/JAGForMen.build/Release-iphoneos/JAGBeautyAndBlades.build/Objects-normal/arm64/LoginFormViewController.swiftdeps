@@ -1,0 +1,264 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "LoginFormViewController"
+provides-nominal:
+- "C18JAGBeautyAndBlades23LoginFormViewController"
+provides-member:
+- ["C18JAGBeautyAndBlades23LoginFormViewController", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "UIStoryboardSegue"
+- !private "XLFormRowDescriptor"
+- !private "performSegueWithIdentifier"
+- !private "XLFormRowDescriptorTypeEmail"
+- "Bool"
+- !private "kEmail"
+- "Int"
+- !private "kLogin"
+- !private "NSForegroundColorAttributeName"
+- !private "Alamofire"
+- !private "kSignUp"
+- !private "XLFormDescriptor"
+- !private "kJAGToken"
+- !private "kHeaderFont"
+- "UITableView"
+- !private "BooleanLiteralType"
+- !private "form"
+- !private "NSFontAttributeName"
+- !private "XLFormRowDescriptorTypePassword"
+- !private "UIFont"
+- !private "kPassword"
+- !private "dispatch_get_main_queue"
+- !private "dispatch_async"
+- !private "kAPITokenURL"
+- "AnyObject"
+- "CGFloat"
+- !private "AppointmentsFormViewController"
+- "XLFormViewController"
+- "HCCustomer"
+- !private "NSUserDefaults"
+- !private "UIColor"
+- !private "!="
+- !private "=="
+- !private "XLFormSectionDescriptor"
+- !private "XLFormRowDescriptorTypeButton"
+- "LoginFormViewController"
+depends-member:
+- !private ["PSs9AnyObject", "Alamofire"]
+- !private ["PSs9AnyObject", "NSFontAttributeName"]
+- !private ["PSs9AnyObject", "NSForegroundColorAttributeName"]
+- !private ["PSs9AnyObject", "NSUserDefaults"]
+- !private ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIFont"]
+- !private ["PSs9AnyObject", "XLFormDescriptor"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeButton"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypeEmail"]
+- !private ["PSs9AnyObject", "XLFormRowDescriptorTypePassword"]
+- !private ["PSs9AnyObject", "XLFormSectionDescriptor"]
+- !private ["PSs9AnyObject", "customer"]
+- !private ["PSs9AnyObject", "deinit"]
+- !private ["PSs9AnyObject", "destinationViewController"]
+- !private ["PSs9AnyObject", "dispatch_async"]
+- !private ["PSs9AnyObject", "dispatch_get_main_queue"]
+- !private ["PSs9AnyObject", "form"]
+- !private ["PSs9AnyObject", "identifier"]
+- !private ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "kAPITokenURL"]
+- !private ["PSs9AnyObject", "kEmail"]
+- !private ["PSs9AnyObject", "kHeaderFont"]
+- !private ["PSs9AnyObject", "kJAGToken"]
+- !private ["PSs9AnyObject", "kLogin"]
+- !private ["PSs9AnyObject", "kPassword"]
+- !private ["PSs9AnyObject", "kSignUp"]
+- !private ["PSs9AnyObject", "navigationController"]
+- !private ["PSs9AnyObject", "navigationItem"]
+- !private ["PSs9AnyObject", "objectForKey"]
+- !private ["PSs9AnyObject", "performSegueWithIdentifier"]
+- !private ["PSs9AnyObject", "standardUserDefaults"]
+- !private ["PSs9AnyObject", "stringForKey"]
+- !private ["PSs9AnyObject", "tableView"]
+- !private ["PSs9AnyObject", "token"]
+- !private ["PSs9AnyObject", "userAlreadyExist"]
+- !private ["PSs9AnyObject", "whiteColor"]
+- ["PSs9AnyObject", ""]
+- !private ["C18JAGBeautyAndBlades30AppointmentsFormViewController", "customer"]
+- !private ["C18JAGBeautyAndBlades30AppointmentsFormViewController", "deinit"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["PSs11CVarArgType", "destinationViewController"]
+- !private ["PSs11CVarArgType", "identifier"]
+- !private ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "objectForKey"]
+- !private ["PSs11CVarArgType", "standardUserDefaults"]
+- !private ["PSs11CVarArgType", "stringForKey"]
+- !private ["PSs11CVarArgType", "token"]
+- !private ["PSs11CVarArgType", "whiteColor"]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "destinationViewController"]
+- !private ["PSs23CustomStringConvertible", "identifier"]
+- !private ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "objectForKey"]
+- !private ["PSs23CustomStringConvertible", "standardUserDefaults"]
+- !private ["PSs23CustomStringConvertible", "stringForKey"]
+- !private ["PSs23CustomStringConvertible", "token"]
+- !private ["PSs23CustomStringConvertible", "whiteColor"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "destinationViewController"]
+- !private ["PSs9Equatable", "identifier"]
+- !private ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "objectForKey"]
+- !private ["PSs9Equatable", "standardUserDefaults"]
+- !private ["PSs9Equatable", "stringForKey"]
+- !private ["PSs9Equatable", "token"]
+- !private ["PSs9Equatable", "whiteColor"]
+- !private ["C18JAGBeautyAndBlades10HCCustomer", "token"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "destinationViewController"]
+- !private ["PSs8Hashable", "identifier"]
+- !private ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "objectForKey"]
+- !private ["PSs8Hashable", "standardUserDefaults"]
+- !private ["PSs8Hashable", "stringForKey"]
+- !private ["PSs8Hashable", "token"]
+- !private ["PSs8Hashable", "whiteColor"]
+- !private ["SQ", "deinit"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "Alamofire"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "AnyObject"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "AppointmentsFormViewController"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "Bool"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "CGFloat"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "HCCustomer"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "Int"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "NSFontAttributeName"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "NSForegroundColorAttributeName"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "NSUserDefaults"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "UIColor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "UIFont"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "UIStoryboardSegue"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "UITableView"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormDescriptor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptor"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypeButton"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypeEmail"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormRowDescriptorTypePassword"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "XLFormSectionDescriptor"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "bookNowPressed"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "customer"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "deinit"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "didReceiveMemoryWarning"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "dispatch_async"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "dispatch_get_main_queue"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "form"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "init"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "initializeForm"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kAPITokenURL"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kEmail"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kHeaderFont"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kJAGToken"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kLogin"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kPassword"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "kSignUp"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "loginButtonPressed"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "navigationController"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "navigationItem"]
+- !private ["C18JAGBeautyAndBlades23LoginFormViewController", "performSegueWithIdentifier"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "prepareForSegue"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "signUpPressed"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "tableView"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "userAlreadyExist"]
+- ["C18JAGBeautyAndBlades23LoginFormViewController", "viewDidLoad"]
+- !private ["PSo8NSCoding", "whiteColor"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "whiteColor"]
+- !private ["CSo8NSObject", "destinationViewController"]
+- !private ["CSo8NSObject", "identifier"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "objectForKey"]
+- !private ["CSo8NSObject", "standardUserDefaults"]
+- !private ["CSo8NSObject", "stringForKey"]
+- !private ["CSo8NSObject", "token"]
+- !private ["CSo8NSObject", "whiteColor"]
+- !private ["PSo16NSObjectProtocol", "destinationViewController"]
+- !private ["PSo16NSObjectProtocol", "identifier"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "objectForKey"]
+- !private ["PSo16NSObjectProtocol", "standardUserDefaults"]
+- !private ["PSo16NSObjectProtocol", "stringForKey"]
+- !private ["PSo16NSObjectProtocol", "token"]
+- !private ["PSo16NSObjectProtocol", "whiteColor"]
+- !private ["PSo14NSSecureCoding", "whiteColor"]
+- !private ["CSo14NSUserDefaults", "objectForKey"]
+- !private ["CSo14NSUserDefaults", "standardUserDefaults"]
+- !private ["CSo14NSUserDefaults", "stringForKey"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- !private ["CSo7UIColor", "whiteColor"]
+- !private ["CSo6UIFont", "init"]
+- !private ["CSo17UIStoryboardSegue", "destinationViewController"]
+- !private ["CSo17UIStoryboardSegue", "identifier"]
+- !private ["CSo16UIViewController", "deinit"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs24_ColorLiteralConvertible", "whiteColor"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["VSs26_OptionalNilComparisonType", "deinit"]
+- ["PSs12_Reflectable", "Some"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "C18JAGBeautyAndBlades30AppointmentsFormViewController"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- !private "V12CoreGraphics7CGFloat"
+- !private "PSs11CVarArgType"
+- "PSs28CustomDebugStringConvertible"
+- !private "PSs23CustomStringConvertible"
+- !private "PSs9Equatable"
+- !private "C18JAGBeautyAndBlades10HCCustomer"
+- !private "PSs8Hashable"
+- !private "SQ"
+- "C18JAGBeautyAndBlades23LoginFormViewController"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo14NSUserDefaults"
+- "PSs21NilLiteralConvertible"
+- "Sq"
+- !private "CSo7UIColor"
+- !private "CSo6UIFont"
+- !private "CSo17UIStoryboardSegue"
+- !private "CSo16UIViewController"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs24_ColorLiteralConvertible"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "VSs26_OptionalNilComparisonType"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/JAGBeautyAndBlades-Bridging-Header.h"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/FABAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Headers/Fabric.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Fabric/iOS/Fabric.framework/Modules/module.modulemap"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/ANSCompatibility.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Answers.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSStackFrame.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSReport.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h"
+- "/Users/abrahambrovold/Documents/repository/jagbbsiosclient/JAGBeautyAndBlades/Pods/Crashlytics/iOS/Crashlytics.framework/Modules/module.modulemap"
+interface-hash: "6d7d93d89b0f860564081eee46887d1d"

@@ -446,6 +446,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             if let name = defaults.stringForKey(kJAGToken)
             {
                 token = name
+                UserInformation.sharedInstance.token = name
             }
             let headers = ["Authorization":  "Token  \(token)"]
             
@@ -484,7 +485,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                 appPrice = price
             }
         
-            Alamofire.request(.PUT, appointmendRequestURL, headers:["Authorization":  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
+            Alamofire.request(.PUT, appointmendRequestURL, headers:[kNetworkAuthorizationString:  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
                 
                 .responseString { response in
                     print(response)

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ServicesCollectionViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ServicesCollectionViewController" class="dashAnchor"></a>
+    <a title="ServicesCollectionViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (0% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ServicesCollectionViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppointmentsFormViewController.html">AppointmentsFormViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicSignupViewController.html">BasicSignupViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DashboardTabBarViewController.html">DashboardTabBarViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCAddress.html">HCAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCAppointment.html">HCAppointment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCCustomer.html">HCCustomer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C18JAGBeautyAndBlades16HCFontsandColors">HCFontsandColors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCLicense.html">HCLicense</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C18JAGBeautyAndBlades10HCLocation">HCLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCProvider.html">HCProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCServiceRequest.html">HCServiceRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HCXLFormRowDescriptor.html">HCXLFormRowDescriptor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginFormViewController.html">LoginFormViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RatingsTableViewController.html">RatingsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScheduleFormViewController.html">ScheduleFormViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServiceDetailFormViewController.html">ServiceDetailFormViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServicesCollectionViewCell.html">ServicesCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServicesCollectionViewController.html">ServicesCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServicesLabel.html">ServicesLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServicesManager.html">ServicesManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ServicesTableViewCell.html">ServicesTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserInformation.html">UserInformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades3URLSS">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades12kAPITokenURLSS">kAPITokenURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades30kAddressCreateOnAppointmentURLSS">kAddressCreateOnAppointmentURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades7kAllDaySS">kAllDay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kAppointmentCancelURLSS">kAppointmentCancelURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kAppointmentUpdateURLSS">kAppointmentUpdateURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades16kAppointmentsURLSS">kAppointmentsURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades18kBarberImageStringSS">kBarberImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades9kBodyFontSS">kBodyFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades8kBookNowSS">kBookNow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades7kCancelSS">kCancel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades12kCheckoutURLSS">kCheckoutURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades10kCityStateSS">kCityState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades19kCompleteBookingURLSS">kCompleteBookingURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades17kCosmoImageStringSS">kCosmoImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kCreateAppointmentURLSS">kCreateAppointmentURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades17kCreateBookingURLSS">kCreateBookingURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades24kCreateServiceRequestURLSS">kCreateServiceRequestURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades18kCustomerSignUpURLSS">kCustomerSignUpURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades4kDaySS">kDay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kDeleteAppointmentURLSS">kDeleteAppointmentURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades15kDevelopmentURLSS">kDevelopmentURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades6kEmailSS">kEmail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades8kEndTimeSS">kEndTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades10kFirstLineSS">kFirstLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades10kFirstNameSS">kFirstName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades10kGoldColorCSo7UIColor">kGoldColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades11kHeaderFontSS">kHeaderFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades9kJAGTokenSS">kJAGToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades9kLastNameSS">kLastName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades15kLicenseOptionsSS">kLicenseOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades6kLoginSS">kLogin</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades19kMassageImageStringSS">kMassageImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades16kNailImageStringSS">kNailImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades5kNameSS">kName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades5kNextSS">kNext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades9kPasswordSS">kPassword</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades6kPhoneSS">kPhone</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades6kPlistSS">kPlist</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades13kPrimaryColorCSo7UIColor">kPrimaryColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades13kProSignUpURLSS">kProSignUpURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades11kProceduresSS">kProcedures</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades12kPurpleColorCSo7UIColor">kPurpleColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades8kRealURLSS">kRealURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades31kRequestBraintreeClientTokenURLSS">kRequestBraintreeClientTokenURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades5kSaveSS">kSave</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades11kSecondLineSS">kSecondLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades15kSecondaryColorCSo7UIColor">kSecondaryColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kServiceCategoriesURLSS">kServiceCategoriesURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades23kServiceTypesPlistTitleSS">kServiceTypesPlistTitle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades7kSignUpSS">kSignUp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades16kSiteUserInfoURLSS">kSiteUserInfoURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades15kSpaImageStringSS">kSpaImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades10kStartTimeSS">kStartTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades7kSubmitSS">kSubmit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades8kTestURLSS">kTestURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades19kTrainerImageStringSS">kTrainerImageString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades21kUpdateAppointmentURLSS">kUpdateAppointmentURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades24kUpdateServiceRequestURLSS">kUpdateServiceRequestURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades8kZipCodeSS">kZipCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBlades4pathGSqSS_">path</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18JAGBeautyAndBladesP33_D4DCB58180783DBE73FCAEEDAD83884D15reuseIdentifierSS">reuseIdentifier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/FormMode.html">FormMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UserType.html">UserType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDate.html">NSDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F18JAGBeautyAndBlades28createJSONObjectFromCustomerFCS_10HCCustomerGVSs10DictionarySSPSs9AnyObject__">createJSONObjectFromCustomer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F18JAGBeautyAndBlades12isValidPhoneFSSSb">isValidPhone(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F18JAGBeautyAndBlades33returnAlertControllerForErrorCodeFSiCSo17UIAlertController">returnAlertControllerForErrorCode(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions/validateForm(_:).html">validateForm(_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ServicesCollectionViewController</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10cellImagesGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/cellImages" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10cellImagesGSaSS_">cellImages</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10cellLabelsGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/cellLabels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10cellLabelsGSaSS_">cellLabels</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController12webCellNamesGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/webCellNames" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController12webCellNamesGSaSS_">webCellNames</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController17selectedCellTitleSS"></a>
+                    <a name="//apple_ref/swift/Property/selectedCellTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController17selectedCellTitleSS">selectedCellTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController16selectedCellNameSS"></a>
+                    <a name="//apple_ref/swift/Property/selectedCellName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController16selectedCellNameSS">selectedCellName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController21selectedCellImageNameSS"></a>
+                    <a name="//apple_ref/swift/Property/selectedCellImageName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController21selectedCellImageNameSS">selectedCellImageName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController12servicesJSONERR"></a>
+                    <a name="//apple_ref/swift/Property/servicesJSON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController12servicesJSONERR">servicesJSON</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13customerTokenSS"></a>
+                    <a name="//apple_ref/swift/Property/customerToken" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13customerTokenSS">customerToken</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController9bookingIDSi"></a>
+                    <a name="//apple_ref/swift/Property/bookingID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController9bookingIDSi">bookingID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController19appointmentCategorySi"></a>
+                    <a name="//apple_ref/swift/Property/appointmentCategory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController19appointmentCategorySi">appointmentCategory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13appointmentIDSi"></a>
+                    <a name="//apple_ref/swift/Property/appointmentID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13appointmentIDSi">appointmentID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10categoryIDSi"></a>
+                    <a name="//apple_ref/swift/Property/categoryID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController10categoryIDSi">categoryID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController22appointmentsDownloadedSb"></a>
+                    <a name="//apple_ref/swift/Property/appointmentsDownloaded" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController22appointmentsDownloadedSb">appointmentsDownloaded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13hasBeenTappedSb"></a>
+                    <a name="//apple_ref/swift/Property/hasBeenTapped" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC18JAGBeautyAndBlades32ServicesCollectionViewController13hasBeenTappedSb">hasBeenTapped</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14viewWillAppearFS0_FSbT_"></a>
+                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14viewWillAppearFS0_FSbT_">viewWillAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController11viewDidLoadFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController11viewDidLoadFS0_FT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController23didReceiveMemoryWarningFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/didReceiveMemoryWarning()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController23didReceiveMemoryWarningFS0_FT_T_">didReceiveMemoryWarning()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Navigation"></a>
+                <a name="//apple_ref/swift/Section/Navigation" class="dashAnchor"></a>
+                <a href="#/Navigation">
+                  <h3 class="section-name">Navigation</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController15prepareForSegueFS0_FTCSo17UIStoryboardSegue6senderGSqPSs9AnyObject___T_"></a>
+                    <a name="//apple_ref/swift/Method/prepareForSegue(_:sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController15prepareForSegueFS0_FTCSo17UIStoryboardSegue6senderGSqPSs9AnyObject___T_">prepareForSegue(_:sender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UICollectionViewDataSource"></a>
+                <a name="//apple_ref/swift/Section/UICollectionViewDataSource" class="dashAnchor"></a>
+                <a href="#/UICollectionViewDataSource">
+                  <h3 class="section-name">UICollectionViewDataSource</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController32numberOfSectionsInCollectionViewFS0_FCSo16UICollectionViewSi"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSectionsInCollectionView(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController32numberOfSectionsInCollectionViewFS0_FCSo16UICollectionViewSi">numberOfSectionsInCollectionView(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView22numberOfItemsInSectionSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView22numberOfItemsInSectionSi_Si">collectionView(_:numberOfItemsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView22cellForItemAtIndexPathCSo11NSIndexPath_CS_26ServicesCollectionViewCell"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView22cellForItemAtIndexPathCSo11NSIndexPath_CS_26ServicesCollectionViewCell">collectionView(_:cellForItemAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UICollectionViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/UICollectionViewDelegate" class="dashAnchor"></a>
+                <a href="#/UICollectionViewDelegate">
+                  <h3 class="section-name">UICollectionViewDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView24didSelectItemAtIndexPathCSo11NSIndexPath_T_"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:didSelectItemAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView24didSelectItemAtIndexPathCSo11NSIndexPath_T_">collectionView(_:didSelectItemAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView30shouldHighlightItemAtIndexPathCSo11NSIndexPath_Sb"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:shouldHighlightItemAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView30shouldHighlightItemAtIndexPathCSo11NSIndexPath_Sb">collectionView(_:shouldHighlightItemAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView32shouldShowMenuForItemAtIndexPathCSo11NSIndexPath_Sb"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:shouldShowMenuForItemAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView32shouldShowMenuForItemAtIndexPathCSo11NSIndexPath_Sb">collectionView(_:shouldShowMenuForItemAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView16canPerformActionV10ObjectiveC8Selector18forItemAtIndexPathCSo11NSIndexPath10withSenderGSqPSs9AnyObject___Sb"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:canPerformAction:forItemAtIndexPath:withSender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView16canPerformActionV10ObjectiveC8Selector18forItemAtIndexPathCSo11NSIndexPath10withSenderGSqPSs9AnyObject___Sb">collectionView(_:canPerformAction:forItemAtIndexPath:withSender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView13performActionV10ObjectiveC8Selector18forItemAtIndexPathCSo11NSIndexPath10withSenderGSqPSs9AnyObject___T_"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:performAction:forItemAtIndexPath:withSender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC18JAGBeautyAndBlades32ServicesCollectionViewController14collectionViewFS0_FTCSo16UICollectionView13performActionV10ObjectiveC8Selector18forItemAtIndexPathCSo11NSIndexPath10withSenderGSqPSs9AnyObject___T_">collectionView(_:performAction:forItemAtIndexPath:withSender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-04-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

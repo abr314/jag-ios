@@ -31,6 +31,9 @@ class ServiceDetailFormViewController: XLFormViewController {
     var customerToken = ""
     var bookingInProgress = false
     var customerID = ""
+    var selectedMainService = HCServiceRequest()
+    var mainServiceHasBeenSelected = false
+  
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     //    initializeForm()
@@ -94,13 +97,6 @@ class ServiceDetailFormViewController: XLFormViewController {
         }
         
         let headers = ["Authorization":  "Token  \(token)"]
-    //    print("TOKEN: \(token)")
-        // get customer ID
-        // let customerIDResponse:Response = Response()
-        
-        /**
-         Braintree is currently disabled in the development build
-         */
         
         Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
             
@@ -109,13 +105,12 @@ class ServiceDetailFormViewController: XLFormViewController {
             .responseJSON { response in
                 switch response.result {
                     
-                //response.result {
                 case .Success(let json):
-                //    print(json)
+         
                     let newResponse = JSON(json)// {
-               //     print("userInfo \(newResponse["detail"]["id"])")
+         
                     self.customerID = newResponse["detail"]["id"].stringValue
-                 //   print(self.customerID)
+         
                     
                 case .Failure(let something):
                  //   break
@@ -146,8 +141,6 @@ class ServiceDetailFormViewController: XLFormViewController {
         var row : XLFormRowDescriptor
         
         form = XLFormDescriptor(title: "\(service)")
-        
-      //  form.assignFirstResponderOnShow = true
         
         
         section = XLFormSectionDescriptor.formSectionWithTitle("Price Tier")
@@ -254,6 +247,23 @@ class ServiceDetailFormViewController: XLFormViewController {
             }
             return
         }
+        
+        if runningTotal < 35 {
+            // Add error message
+            let alertController = UIAlertController(title: "", message: "Total price for appointment must be at least $35.", preferredStyle: .Alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
+            return
+            
+            
+        }
         appointment.appointmentPrice = "\(runningTotal)"
         
         let formRows = self.form.formSections[1].formRows
@@ -288,11 +298,6 @@ class ServiceDetailFormViewController: XLFormViewController {
                 
                 
                 let title:String = "\(name) - \(estimatedTime) mins. - $\(newPrice)"
-             //   print(name)
-               // print(service)
-              //  print(serviceId)
-              //  print(price)
-              
                 serviceRequest.requestedTier = priceTier
                 serviceRequest.appointmentID = appointmentID!
                 
@@ -336,7 +341,7 @@ class ServiceDetailFormViewController: XLFormViewController {
                         self.bookingID = nJSON["booking"].intValue
                         self.appointment.appointmentID = nJSON["id"].intValue
                         self.appointment.bookingNumber = nJSON["booking"].intValue
-                 //       print(nJSON["booking"].stringValue)
+            
                      
                         self.bookingInProgress = true
                         
@@ -352,13 +357,13 @@ class ServiceDetailFormViewController: XLFormViewController {
                                     case .Success(let object):
                                         let jsonObject:JSON = JSON(object)
                                         serviceID = jsonObject["id"].stringValue
-                                   //     print(serviceID)
+                                
                                         print(response.request?.URL)
 
                                         
                                         if let idServ = object["id"] as? String {
                                             serviceID = idServ
-                                     //       print(serviceID)
+                               
                                             
                                         }
                                         print(serviceID)
@@ -416,11 +421,6 @@ class ServiceDetailFormViewController: XLFormViewController {
                 self.performSegueWithIdentifier("schedule", sender: nil)
         }
         
-       
-   //     if creationSuccessful == true {
-       //     self.performSegueWithIdentifier("schedule", sender: nil)
-
-     //  }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -430,8 +430,12 @@ class ServiceDetailFormViewController: XLFormViewController {
     override func formRowDescriptorValueHasChanged(formRow: XLFormRowDescriptor!, oldValue: AnyObject!, newValue: AnyObject!) {
         super.formRowDescriptorValueHasChanged(formRow, oldValue: oldValue, newValue: newValue)
      
+        if mainServiceHasBeenSelected == false {
+            // set formRow as the main service
+            // load add-on form
+        }
         if formRow.tag != "PriceTier" {
-            if let string = formRow.otherValue as? Int {//as? String {
+            if let string = formRow.otherValue as? Int {
              
                 if (newValue as? Bool == true) {
                     runningTotal = runningTotal + string
@@ -463,7 +467,14 @@ class ServiceDetailFormViewController: XLFormViewController {
             if let value = newValue as? Int {
                 if value == 1 {
                     if !checkedServicesTags.contains( { $0 == formRow.title! } ) {
+                        
+                        // if main isn't selected, make this main
                         checkedServicesTags.append(formRow.title!)
+                        
+                        if mainServiceHasBeenSelected == false {
+                            // set formRow as the main service
+                            // load add-on form
+                        }
                         
                         print(checkedServicesTags)
                         

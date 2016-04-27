@@ -30,29 +30,80 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         
         if (retrieveUserToken().0 == true) {
+            
+            
+            
             userInfo.token = retrieveUserToken().1
             
             let headers = ["Authorization":  "Token  \(userInfo.token)"]
             Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                
+                
+                
                 response in switch response.result {
                     
                 case .Success(let json):
                     
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print("APPOINTMENTS:\(self.userInfo.appointments)")
-                    
-                    dispatch_async(dispatch_get_main_queue(), {
-                        return true
-                    })
+                   
                 
                     
-                case .Failure(_):
+                case .Failure(let error):
            
-                    break
+                    print(error)
                 }
+                
+                
             }
+            Alamofire.request(.GET, kSiteUserInfoURL, headers:headers)
+                
+                .validate()
+                
+                .responseJSON { response in
+                    
+                    switch response.result {
+                        
+
+                        case .Success(let json):
+                        
+                            print(json)
+                            let userJSON = JSON(json)
+                            print(userJSON)
+                            let userTypeInt = userJSON["detail"]["user_type"].intValue
+                            print(userTypeInt)
+                            let userID = userJSON["detail"]["id"].stringValue
+                            
+                            if userTypeInt == 0 {
+                                
+                                
+                                
+                                UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                            }
+                            if userTypeInt == 1 {
+                                
+                                
+                                
+                                
+                                UserInformation.sharedInstance.customerProfile?.isProfessional = true
+                            }
+                            
+                            UserInformation.sharedInstance.customerProfile?.customerID = userID
+                        
+                            dispatch_async(dispatch_get_main_queue(), {
+                                return true
+                            })
+            
+                        case .Failure(let error):
+               
+                            print(error)
+                       
+                    }
+                }
             
         }
+        
+        
         return true
     }
     
@@ -66,9 +117,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let defaults = NSUserDefaults.standardUserDefaults()
        
+        
+        
         if let name = defaults.stringForKey(kJAGToken)
         {
-            if token == "" {
+            
+            
+            if name == "" {
                 print("No token found")
                 return (false, "No token found")
             }
@@ -76,6 +131,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return (true, name)
       
         } else {
+            
+            
+            
             return (false, "No token found")
         }
         
