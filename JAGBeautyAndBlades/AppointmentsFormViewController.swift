@@ -13,7 +13,7 @@ class AppointmentsFormViewController: XLFormViewController {
     var results:JSON?
     var customer:HCCustomer?
     var array:Array<AnyObject>?
-   
+    var chosenAppointment:JSON?
     var appointments:JSON?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -79,6 +79,7 @@ class AppointmentsFormViewController: XLFormViewController {
        
         for jsonObject in appointmentsCreated {
             //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
+            
             let name = jsonObject["category"]["display_name"].stringValue
             let price = jsonObject["appointment_price"].intValue
             var titleString = "\(name) - $\(price)"
@@ -112,6 +113,27 @@ class AppointmentsFormViewController: XLFormViewController {
             {
                 token = name
             }
+  //       //   row.action.formSelector = #selector(AppointmentsFormViewController.setChosenAppointment(_:))
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self?.chosenAppointment = jsonObject
+                   // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                    self?.performSegueWithIdentifier("showDetails", sender: nil)
+                    
+                })
+              //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
+           
+            // create block for adding the row object to chosenappointment 
+            
+            
+            /* 
+                                Block For Cancelling Appointment
+             
             row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
                 let alertController = UIAlertController(title: nil, message: "Would you like to cancel this appointment?", preferredStyle: .ActionSheet)
                 
@@ -144,14 +166,18 @@ class AppointmentsFormViewController: XLFormViewController {
                                 print(error)
                             }
                     }
+                    
+ 
                 }
+ 
                 alertController.addAction(destroyAction)
                 
                 self!.presentViewController(alertController, animated: true) {
                     // ...
                 }
+ 
             }
-            
+            */
             section.addFormRow(row)
         }
         
@@ -222,10 +248,24 @@ class AppointmentsFormViewController: XLFormViewController {
         self.form = form
     }
     
+    func appointmentCellPressed() {
+        // bring transition to the detail view
+    }
     func showDetail() {
-        performSegueWithIdentifier("showDetail", sender: nil)
+        performSegueWithIdentifier("showDetails", sender: nil)
     }
     
+    func setChosenAppointment(appointment: JSON) {
+        chosenAppointment = appointment
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "showDetails" {
+            if let vc = segue.destinationViewController as? AppointmentDetailFormViewController {
+                vc.appointmentJson = chosenAppointment
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         appointments = UserInformation.sharedInstance.appointments

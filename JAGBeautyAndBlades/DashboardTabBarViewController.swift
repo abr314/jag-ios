@@ -39,21 +39,11 @@ class DashboardTabBarViewController: UITabBarController {
         
         
         if item.title == "Appointments" {
-            
-            
             if let vcs = viewControllers {
-            
-                
-                
                 for view in vcs {
-                    
                     if view.title == "Appointments" {
-                        
-                        
                         if let vcc = view as? AppointmentsFormViewController {
                             vcc.initializeForm()
-                            
-                            
                         }
                     }
                 }

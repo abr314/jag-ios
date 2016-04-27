@@ -97,6 +97,8 @@
 		2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */; };
 		2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
 		2AD99E081CCEEE8400659EB0 /* Pods_JAGBeautyAndBlades.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AD99E0A1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */; };
+		2AD99E0B1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
 		2ADA05481C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
 		2ADC30871C501B79006773AE /* BasicSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC30861C501B79006773AE /* BasicSignupViewController.swift */; };
@@ -205,6 +207,7 @@
 		2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplashPage.png; sourceTree = "<group>"; };
 		2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_5_@2x.png"; sourceTree = "<group>"; };
 		2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_6_@2x.png"; sourceTree = "<group>"; };
+		2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDetailFormViewController.swift; sourceTree = "<group>"; };
 		2ADA05461C72357D00839564 /* ServiceTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceTypes.plist; sourceTree = "<group>"; };
 		2ADC30861C501B79006773AE /* BasicSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicSignupViewController.swift; sourceTree = "<group>"; };
 		2ADC30881C502D3F006773AE /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 				2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */,
 				2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */,
 				2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */,
+				2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */,
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
 				2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */,
@@ -776,6 +780,7 @@
 				2AD2BFF91CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2AD2C00B1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */,
 				2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */,
+				2AD99E0A1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */,
 				2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */,
 				2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */,
 				2AA822251C4D7910001A117C /* HCCustomer.swift in Sources */,
@@ -812,6 +817,7 @@
 				2A13C2531CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */,
 				2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
 				2A4D5FB31C4E9DF90097316E /* HCAppointment.swift in Sources */,
+				2AD99E0B1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */,
 				2A018EFC1C623E5400437513 /* HCLocation.swift in Sources */,
 				2A1094251C686CC9008192FF /* VerifyInformationFormTests.swift in Sources */,
 				2A7B4CF61C4D626900660047 /* JAGBeautyAndBladesTests.swift in Sources */,

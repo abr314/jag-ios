@@ -68,11 +68,11 @@ class BasicSignupViewController: XLFormViewController {
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
         let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
-        let isProfessionalArray = [kCustomerRoleString, XLFormRowDescriptorTypeSelectorPickerViewInline]
+    //    let isProfessionalArray = [kCustomerRoleString, XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
-        let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
+  //      let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
     
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, isProfessionalArray, nextArray, cancelArray] //,
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //,
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {

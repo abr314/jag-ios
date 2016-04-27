@@ -339,7 +339,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3"/>
                     <connections>
-                        <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
+                        <segue destination="j45-JG-enJ" kind="show" identifier="showDetails" id="XVD-FG-MX6">
                             <nil key="action"/>
                         </segue>
                     </connections>
