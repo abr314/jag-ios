@@ -103,6 +103,7 @@
                     <navigationItem key="navigationItem" title="JAG" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
+                        <segue destination="H1Y-lA-2fF" kind="show" identifier="proAppointments" id="sSn-mc-49F"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1r-sh-QI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,5 +374,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="f3n-E4-k6t"/>
+        <segue reference="sSn-mc-49F"/>
     </inferredMetricsTieBreakers>
 </document>

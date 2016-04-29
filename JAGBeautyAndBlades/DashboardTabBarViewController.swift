@@ -18,7 +18,9 @@ class DashboardTabBarViewController: UITabBarController {
         print(UserInformation.sharedInstance.customerProfile?.email)
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
-        if UserInformation.sharedInstance.customerProfile?.isProfessional == false {
+        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
+            self.tabBar.items?.dropFirst()
+            
             
         }
        

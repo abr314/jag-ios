@@ -181,6 +181,8 @@ class BasicSignupViewController: XLFormViewController {
                                    
                                     UserInformation.sharedInstance.token = token
                                     UserInformation.sharedInstance.userAlreadyExists = true
+                                    UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                                    NSUserDefaults.standardUserDefaults().setObject("customer", forKey: "role")
                                     NSUserDefaults.standardUserDefaults().setObject(token, forKey: kJAGToken)
                                     
                                     // pop view to dashboard

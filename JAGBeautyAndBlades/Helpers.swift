@@ -35,6 +35,24 @@ enum AppointmentStatus : String {
     
 }
 
+func appointmentStatusToReadableString(status:AppointmentStatus) -> String {
+    
+    if status == .Created {
+        return "Pending Acceptance"
+    }
+    
+    if status == .Confirmed {
+        return "Confirmed"
+    }
+    
+    if status == .Done {
+        return "Appointment Completed"
+    }
+    
+    return ""
+    
+}
+
 func stringToAppointmentStatus(string:String) -> AppointmentStatus {
     
     let array = [AppointmentStatus.Making, AppointmentStatus.Created, AppointmentStatus.Confirmed, AppointmentStatus.InProgress, AppointmentStatus.Unrated, AppointmentStatus.Done]

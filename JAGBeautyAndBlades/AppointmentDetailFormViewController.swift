@@ -36,6 +36,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
     var services = JSON.null
     var priceTier:Int?
     var token = ""
+    var user = HCCustomer()
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initializeForm()
@@ -95,10 +96,10 @@ class AppointmentDetailFormViewController: XLFormViewController {
         // Appointment Status
         section = XLFormSectionDescriptor.formSectionWithTitle("Appointment Status")
         
-        row = XLFormRowDescriptor(tag: "Appointment Status", rowType: XLFormRowDescriptorTypeText, title: "Status")
+        row = XLFormRowDescriptor(tag: "Appointment Status", rowType: XLFormRowDescriptorTypeText, title: "Status -")
         
-        if let string = appointmentStatus?.rawValue.capitalizedString {
-           row.value = String(string)
+        if let status = appointmentStatus {
+           row.value = appointmentStatusToReadableString(status)
         }
     
         print(appointmentStatus?.rawValue)
@@ -108,13 +109,13 @@ class AppointmentDetailFormViewController: XLFormViewController {
         form.addFormSection(section)
         // Provider / Customer Name
         section = XLFormSectionDescriptor.formSectionWithTitle("")
-        var user = HCCustomer()
-        if let some = UserInformation.sharedInstance.customerProfile {
+    //    var user = HCCustomer()
+      //  if let some = UserInformation.sharedInstance.customerProfile {
             
         
-            user = some
-        }
-        row = XLFormRowDescriptor(tag: "AppointmentWith", rowType: XLFormRowDescriptorTypeText, title: "Appointment With")
+        //    user = some
+       // }
+        row = XLFormRowDescriptor(tag: "AppointmentWith", rowType: XLFormRowDescriptorTypeText, title: "Appointment With -")
        
         if user.isProfessional == false {
             let name = appointmentJson["service_provider"]["first_name"].stringValue
@@ -124,6 +125,9 @@ class AppointmentDetailFormViewController: XLFormViewController {
         }
         
         if user.isProfessional == true {
+            
+            
+            
             let name = appointmentJson["customer"]["first_name"].stringValue
             row.value = name
             row.disabled = true
@@ -165,12 +169,12 @@ class AppointmentDetailFormViewController: XLFormViewController {
            // dictionaryOfTimeStrings[kEndTime] = actualEndTimeString
       //  }
         
-        row = XLFormRowDescriptor(tag: kStartTime, rowType: XLFormRowDescriptorTypeText, title: kStartTime)
+        row = XLFormRowDescriptor(tag: kStartTime, rowType: XLFormRowDescriptorTypeText, title: "\(kStartTime) -")
         row.value = dictionaryOfTimeStrings[kStartTime]
         row.disabled = true
         section.addFormRow(row)
         
-        row = XLFormRowDescriptor(tag: kEndTime, rowType: XLFormRowDescriptorTypeText, title: kEndTime)
+        row = XLFormRowDescriptor(tag: kEndTime, rowType: XLFormRowDescriptorTypeText, title: "\(kEndTime) -")
         row.value = dictionaryOfTimeStrings[kEndTime]
         row.disabled = true
         section.addFormRow(row)
@@ -218,21 +222,21 @@ class AppointmentDetailFormViewController: XLFormViewController {
             row.disabled = true
            
             if  arrayRow == kFirstLine {
-                row = XLFormRowDescriptor(tag: kFirstLine, rowType: XLFormRowDescriptorTypeText, title: kFirstLine)
+                row = XLFormRowDescriptor(tag: kFirstLine, rowType: XLFormRowDescriptorTypeText, title: "\(kFirstLine) -")
                 row.value = line1Value
             }
             if  arrayRow == kSecondLine {
-                row = XLFormRowDescriptor(tag: kSecondLine, rowType: XLFormRowDescriptorTypeText, title: kSecondLine)
+                row = XLFormRowDescriptor(tag: kSecondLine, rowType: XLFormRowDescriptorTypeText, title: "\(kSecondLine) -")
                 row.value = line2Value
             }
             
             if  arrayRow == kZipCode {
-                row = XLFormRowDescriptor(tag: kZipCode, rowType: XLFormRowDescriptorTypeText, title: kZipCode)
+                row = XLFormRowDescriptor(tag: kZipCode, rowType: XLFormRowDescriptorTypeText, title: "\(kZipCode) -")
                 row.value = zipCodeValue
             }
             
             if  arrayRow == kCityState {
-                row = XLFormRowDescriptor(tag: kCityState, rowType: XLFormRowDescriptorTypeText, title: kCityState)
+                row = XLFormRowDescriptor(tag: kCityState, rowType: XLFormRowDescriptorTypeText, title: "\(kCityState) -")
                 row.value = "\(cityValue), \(stateValue)"
             }
             row.disabled = true
@@ -362,7 +366,12 @@ class AppointmentDetailFormViewController: XLFormViewController {
         row.cellConfig.setObject(UIColor.redColor(), forKey: "textLabel.textColor")
         section.addFormRow(row)
         
-        if appointmentStatus != AppointmentStatus.Done && !user.isProfessional{
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.stringForKey("role")
+        if appointmentStatus != AppointmentStatus.Done && defaults.stringForKey("role") != "pro" {
+            
+            
             form.addFormSection(section)
         }
         
@@ -372,6 +381,14 @@ class AppointmentDetailFormViewController: XLFormViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let profile = UserInformation.sharedInstance.customerProfile {
+            
+            user = profile
+            
+            
+        }
+     //   user =
         token = UserInformation.sharedInstance.token
         appointmentID = appointmentJson["id"].stringValue
         // Do any additional setup after loading the view.

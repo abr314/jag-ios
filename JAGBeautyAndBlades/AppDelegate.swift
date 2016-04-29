@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        Fabric.with([Crashlytics.self])
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         
+        
+        
+    //    UserInformation.sharedInstance.devEnviroment = kDevelopmentURL
+        
         if (retrieveUserToken().0 == true) {
             
             let headers = ["Authorization":  "Token  \(userInfo.token)"]
@@ -65,19 +69,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             print(userTypeInt)
                             let userID = userJSON["detail"]["id"].stringValue
                             
+                            
+                            
+                          //  dispatch_async(dispatch_get_main_queue(), {
+                                
+                            
+                            
+                            let defaults = NSUserDefaults.standardUserDefaults()
                             UserInformation.sharedInstance.userAlreadyExists = true
                             if userTypeInt == 0 {
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                                defaults.setObject("customer", forKey: "role")
+                                
                             }
                             if userTypeInt == 1 {
+                                
+                                
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = true
+                               
+                                
+                                defaults.setObject("pro", forKey: "role")
                             }
-                            
+                          //  })
                             UserInformation.sharedInstance.customerProfile?.customerID = userID
                         
-                            dispatch_async(dispatch_get_main_queue(), {
-                                return true
-                            })
+                        
+                            
+                        
+                             
+                           // dispatch_async(dispatch_get_main_queue(), {
+                             //   return true
+                           // })
             
                         case .Failure(let error):
                
@@ -102,6 +124,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let token = defaults.stringForKey(kJAGToken)  {
             UserInformation.sharedInstance.token = token
+        }
+        
+        if let value = defaults.stringForKey("role") {
+            if value == "customer" {
+                UserInformation.sharedInstance.customerProfile?.isProfessional = false
+            }
+            if value == "pro" {
+                UserInformation.sharedInstance.customerProfile?.isProfessional = true
+            }
         }
  
         if let name = UserInformation.sharedInstance.token as? String

@@ -18,4 +18,5 @@ class UserInformation: NSObject {
     var token = ""
     var customerProfile:HCCustomer?
     var userAlreadyExists = false
+    var devEnviroment:String?
 }

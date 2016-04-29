@@ -115,6 +115,11 @@ class LoginFormViewController: XLFormViewController {
     
     override func viewDidLoad() {
     
+        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
+            
+            
+            performSegueWithIdentifier("providerAppointments", sender:self)
+        }
         if (userAlreadyExist()) {
             
             if let string = NSUserDefaults.standardUserDefaults().stringForKey(kJAGToken) {
@@ -138,6 +143,9 @@ class LoginFormViewController: XLFormViewController {
      
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -191,7 +199,10 @@ class LoginFormViewController: XLFormViewController {
                     
                     .responseJSON { response in
                         switch response.result {
+       
+                        
                         case .Success(let object):
+                         
                             print(object)
                 
                             if let string = response.result.value?.valueForKey("token") as? String {
@@ -204,6 +215,8 @@ class LoginFormViewController: XLFormViewController {
                                 
                             }
                         case .Failure(let error)://break
+                            
+                            
                             print(response.result)
                             print(error)
                             print(error.code)
