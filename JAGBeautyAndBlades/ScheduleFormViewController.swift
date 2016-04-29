@@ -506,7 +506,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             // Create a BTDropInViewController
             
             
-            /**
+            /**hh
                 Braintree is disabled in development build
             */
             

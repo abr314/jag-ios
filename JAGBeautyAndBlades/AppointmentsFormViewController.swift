@@ -119,12 +119,12 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 [weak self] (sender: XLFormRowDescriptor!) -> Void in
                 
-                dispatch_async(dispatch_get_main_queue(), {
+           //     dispatch_async(dispatch_get_main_queue(), {
                     self?.chosenAppointment = jsonObject
                    // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
                     self?.performSegueWithIdentifier("showDetails", sender: nil)
-                    
-                })
+              //      stringToAppointmentStatus(String(json["status"].stringValue.capitalizedString))
+             //   })
               //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
             }
            
@@ -203,12 +203,27 @@ class AppointmentsFormViewController: XLFormViewController {
             }
             
    //      print(titleString)
-          row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
+          row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.disabled = true
+            row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
+            row.cellConfig["accessoryType"] = UITableViewCellAccessoryType.DisclosureIndicator.rawValue
+            row.disabled = false
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+                //     dispatch_async(dispatch_get_main_queue(), {
+                self?.chosenAppointment = jsonObject
+                // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                self?.performSegueWithIdentifier("showDetails", sender: nil)
+                
+                //   })
+                //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
           section.addFormRow(row)
         }
         form.addFormSection(section)
@@ -233,15 +248,31 @@ class AppointmentsFormViewController: XLFormViewController {
             }
             
          //   print(titleString)
-            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
+            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(0, forKey: "textLabel.numberOfLines")
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 15)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.disabled = true
+            row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
+            row.cellConfig["accessoryType"] = UITableViewCellAccessoryType.DisclosureIndicator.rawValue
+            row.disabled = false
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+                //     dispatch_async(dispatch_get_main_queue(), {
+                self?.chosenAppointment = jsonObject
+                // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                self?.performSegueWithIdentifier("showDetails", sender: nil)
+                
+                //   })
+                //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
             section.addFormRow(row)
         }
+        
         
         form.addFormSection(section)
 
@@ -262,9 +293,37 @@ class AppointmentsFormViewController: XLFormViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "showDetails" {
             if let vc = segue.destinationViewController as? AppointmentDetailFormViewController {
-                vc.appointmentJson = chosenAppointment
+                if let json = chosenAppointment {
+                    vc.appointmentJson = json
+                    
+                    
+                    vc.categoryName = String(json["category"]["name"].stringValue.capitalizedString)
+                    
+                    vc.appointmentStatus = stringToAppointmentStatus(json["status"].stringValue)
+                    vc.price = json["appointment_price"].stringValue
+                 //   vc.appointmentStatus = String(json["status"].stringValue.capitalizedString)
+                    vc.services = chosenAppointment!["service_requests"]
+                    print(chosenAppointment)
+                    
+                    if let appointment = chosenAppointment {
+                  //      vc.price = appointment["appointment_price"].stringValue
+                        
+                       vc.services = appointment["service_requests"]
+                        
+                    }
+              ///      print(chosenAppointment!["appointment_price"])
+                    
+                    vc.priceTier = json["requested_tier"].intValue
+                }
+                
             }
         }
+    }
+    override func viewDidAppear(animated: Bool) {
+        
+        
+        initializeForm()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
