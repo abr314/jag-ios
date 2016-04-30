@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.statusBarHidden = false;
         application.statusBarStyle = .LightContent;
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()] 
         Fabric.with([Crashlytics.self])
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         

@@ -33,10 +33,22 @@ class BasicSignupViewController: XLFormViewController {
     }
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.translucent = false
-        self.edgesForExtendedLayout = UIRectEdge.None
-        self.automaticallyAdjustsScrollViewInsets = false
-         super.viewDidLoad()
+        
+        super.viewDidLoad()
+        
+        if let font = UIFont(name: kHeaderFont, size: 25) {
+            
+            self.navigationController?.navigationBar.titleTextAttributes =
+                [NSFontAttributeName: font,
+                 NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        self.tableView?.backgroundView = UIImageView(image: UIImage(named: "ManSplash.png"))
+        self.navigationItem.setHidesBackButton(true, animated:false);
+        self.tableView.scrollEnabled = false
 
     }
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -45,7 +57,7 @@ class BasicSignupViewController: XLFormViewController {
             return 10
         }
         
-        return 30
+        return 10
     }
 
     func initializeForm() {
@@ -54,10 +66,10 @@ class BasicSignupViewController: XLFormViewController {
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-        form = XLFormDescriptor(title: "Sign Up")
+        form = XLFormDescriptor(title: "JAG for Men")
         
-        form.assignFirstResponderOnShow = true
-        section = XLFormSectionDescriptor.formSectionWithTitle("Please Enter this Basic Information")
+        form.assignFirstResponderOnShow = false
+        section = XLFormSectionDescriptor.formSectionWithTitle("")//("Please Enter this Basic Information")
   
         form.addFormSection(section)
       
@@ -79,7 +91,7 @@ class BasicSignupViewController: XLFormViewController {
      
             row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
             
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.whiteColor().colorWithAlphaComponent(0.8), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
@@ -117,8 +129,9 @@ class BasicSignupViewController: XLFormViewController {
                 row.value = "Customer"
             }
             if (row.tag == "Cancel") {
-               row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
-                self?.dismissViewControllerAnimated(true, completion: nil)
+                row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
+                row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                self?.navigationController?.popViewControllerAnimated(false)
                 }
                 section = XLFormSectionDescriptor.formSectionWithTitle(" ")
                 form.addFormSection(section)
@@ -197,7 +210,7 @@ class BasicSignupViewController: XLFormViewController {
                                     
                                     NSUserDefaults.standardUserDefaults().setObject(something, forKey: kJAGToken)
                                     // pop view to dashboard
-                                    self.performSegueWithIdentifier("main", sender: nil)
+                                    self.performSegueWithIdentifier("appointmentsFromSignup", sender: nil)
                                 } else {
                                     
                                 }
@@ -279,7 +292,7 @@ class BasicSignupViewController: XLFormViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-  
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -303,5 +316,7 @@ class BasicSignupViewController: XLFormViewController {
 
     }
     
-    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }

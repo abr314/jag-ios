@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import UIColor_Hex_Swift
 
-let kHeaderFont = "Roboto"
+let kHeaderFont = "PFMonumentaPro-Metallica"
+let kJagFont = "PFMonumentaPro-Metallica"
 let kBodyFont = "Raleway"
 
 extension UIColor {
@@ -42,7 +43,7 @@ extension UIColor {
 }
 
 let kPrimaryColor:UIColor = UIColor(rgba: "#533A71")
-let kSecondaryColor:UIColor = UIColor(rgba: "#50C5B7")
+let kSecondaryColor:UIColor = UIColor(rgba: "#E4DDCA") // Old color #50C5B7
 let kGoldColor:UIColor = UIColor(rgba: "#E4DDCA")
 let kPurpleColor:UIColor = UIColor(rgba: "#4C0B84")
 
