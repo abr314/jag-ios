@@ -13,7 +13,7 @@ class AppointmentsFormViewController: XLFormViewController {
     var results:JSON?
     var customer:HCCustomer?
     var array:Array<AnyObject>?
-   
+    var chosenAppointment:JSON?
     var appointments:JSON?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -43,7 +43,7 @@ class AppointmentsFormViewController: XLFormViewController {
       //  var theseAppointments = JSON.null
         if let app = appointments {
             
-            print(app.URL)
+      //      print(app.URL)
             for appointment in app {
                 
                 let status = appointment.1["status"].stringValue
@@ -53,7 +53,6 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 
                 if status == "created" {
-                    
                     appointmentsCreated.append(jsonObj)
                 }
                 
@@ -80,6 +79,7 @@ class AppointmentsFormViewController: XLFormViewController {
        
         for jsonObject in appointmentsCreated {
             //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
+            
             let name = jsonObject["category"]["display_name"].stringValue
             let price = jsonObject["appointment_price"].intValue
             var titleString = "\(name) - $\(price)"
@@ -94,11 +94,11 @@ class AppointmentsFormViewController: XLFormViewController {
                 if titleString.characters.count > 23 {
                     fontSize = 14
                 }
-                print(startTime)
-                print(titleString)
+       //         print(startTime)
+         //       print(titleString)
                 
             }
-            print(titleString)
+         //   print(titleString)
             row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
@@ -113,6 +113,27 @@ class AppointmentsFormViewController: XLFormViewController {
             {
                 token = name
             }
+  //       //   row.action.formSelector = #selector(AppointmentsFormViewController.setChosenAppointment(_:))
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+           //     dispatch_async(dispatch_get_main_queue(), {
+                    self?.chosenAppointment = jsonObject
+                   // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                    self?.performSegueWithIdentifier("showDetails", sender: nil)
+              //      stringToAppointmentStatus(String(json["status"].stringValue.capitalizedString))
+             //   })
+              //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
+           
+            // create block for adding the row object to chosenappointment 
+            
+            
+            /* 
+                                Block For Cancelling Appointment
+             
             row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
                 let alertController = UIAlertController(title: nil, message: "Would you like to cancel this appointment?", preferredStyle: .ActionSheet)
                 
@@ -122,23 +143,21 @@ class AppointmentsFormViewController: XLFormViewController {
                 alertController.addAction(cancelAction)
                 
                 let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
-                    print(action)
+             //       print(action)
                     let headers = ["Authorization":  "Token  \(token)"]
                     Alamofire.request(.POST, kAppointmentCancelURL, parameters:["appointment_id":"\(appointmentID)"], headers:headers)
                         .responseJSON { response in
                             switch response.result {
                             case .Success(let json):
-                                print(json)
+                              //  print(json)
                                 Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
                                     response in switch response.result {
                                         
                                     case .Success(let json):
-                                        
                                         self?.appointments = JSON(json)
                                         UserInformation.sharedInstance.appointments = JSON(json)//self.?appointments
-                                   
                                         self?.initializeForm()
-                                    case .Failure( _): break
+                                    case .Failure(let error): print(error)
                                         
                                     }
                                 }
@@ -147,16 +166,18 @@ class AppointmentsFormViewController: XLFormViewController {
                                 print(error)
                             }
                     }
+                    
+ 
                 }
+ 
                 alertController.addAction(destroyAction)
                 
                 self!.presentViewController(alertController, animated: true) {
                     // ...
                 }
+ 
             }
-            // action sheet with delete option. if it is deleted, call the delete endpoint, reload JSON, reload table
-           // row.disabled = true
-            
+            */
             section.addFormRow(row)
         }
         
@@ -176,18 +197,33 @@ class AppointmentsFormViewController: XLFormViewController {
         
             startTime = String(startTime.characters.dropLast(10))
             titleString = titleString + " - \(startTime)"
-            print(startTime)
-            print(titleString)
+       //     print(startTime)
+         //   print(titleString)
           
             }
             
-         print(titleString)
-          row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
+   //      print(titleString)
+          row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.disabled = true
+            row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
+            row.cellConfig["accessoryType"] = UITableViewCellAccessoryType.DisclosureIndicator.rawValue
+            row.disabled = false
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+                //     dispatch_async(dispatch_get_main_queue(), {
+                self?.chosenAppointment = jsonObject
+                // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                self?.performSegueWithIdentifier("showDetails", sender: nil)
+                
+                //   })
+                //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
           section.addFormRow(row)
         }
         form.addFormSection(section)
@@ -206,31 +242,89 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 startTime = String(startTime.characters.dropLast(10))
                 titleString = titleString + " - \(startTime)"
-                print(startTime)
-                print(titleString)
+            //    print(startTime)
+              //  print(titleString)
                 
             }
             
-            print(titleString)
-            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeText, title: titleString)
+         //   print(titleString)
+            row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
             row.cellConfig.setObject(0, forKey: "textLabel.numberOfLines")
             row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: 15)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.disabled = true
+            row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
+            row.cellConfig["accessoryType"] = UITableViewCellAccessoryType.DisclosureIndicator.rawValue
+            row.disabled = false
+            
+            row.action.formBlock = {
+                
+                [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                
+                //     dispatch_async(dispatch_get_main_queue(), {
+                self?.chosenAppointment = jsonObject
+                // row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+                self?.performSegueWithIdentifier("showDetails", sender: nil)
+                
+                //   })
+                //  row.action.formSelector = #selector(AppointmentsFormViewController.showDetail)
+            }
             section.addFormRow(row)
         }
+        
         
         form.addFormSection(section)
 
         self.form = form
     }
     
+    func appointmentCellPressed() {
+        // bring transition to the detail view
+    }
     func showDetail() {
-        performSegueWithIdentifier("showDetail", sender: nil)
+        performSegueWithIdentifier("showDetails", sender: nil)
     }
     
+    func setChosenAppointment(appointment: JSON) {
+        chosenAppointment = appointment
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "showDetails" {
+            if let vc = segue.destinationViewController as? AppointmentDetailFormViewController {
+                if let json = chosenAppointment {
+                    vc.appointmentJson = json
+                    
+                    
+                    vc.categoryName = String(json["category"]["name"].stringValue.capitalizedString)
+                    
+                    vc.appointmentStatus = stringToAppointmentStatus(json["status"].stringValue)
+                    vc.price = json["appointment_price"].stringValue
+                 //   vc.appointmentStatus = String(json["status"].stringValue.capitalizedString)
+                    vc.services = chosenAppointment!["service_requests"]
+                    print(chosenAppointment)
+                    
+                    if let appointment = chosenAppointment {
+                  //      vc.price = appointment["appointment_price"].stringValue
+                        
+                       vc.services = appointment["service_requests"]
+                        
+                    }
+              ///      print(chosenAppointment!["appointment_price"])
+                    
+                    vc.priceTier = json["requested_tier"].intValue
+                }
+                
+            }
+        }
+    }
+    override func viewDidAppear(animated: Bool) {
+        
+        
+        initializeForm()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         appointments = UserInformation.sharedInstance.appointments

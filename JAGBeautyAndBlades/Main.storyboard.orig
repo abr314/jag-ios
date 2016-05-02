@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nmz-gm-8cf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1gb-JG-nDy">
+            <objects>
+                <navigationController id="nmz-gm-8cf" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Tcr-Bf-UGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="57d-IP-AP6" kind="relationship" relationship="rootViewController" id="RvG-34-Z5y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5T-mi-HTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="32"/>
+        </scene>
+        <!--LoginForm-->
+        <scene sceneID="jTv-7I-Mhn">
+            <objects>
+                <viewController title="LoginForm" id="57d-IP-AP6" customClass="LoginFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RHq-X6-dak"/>
+                        <viewControllerLayoutGuide type="bottom" id="b65-ab-B3k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s9x-QM-aQI">
+                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o6d-x8-h47"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <segue destination="zDw-ea-kBU" kind="show" identifier="appointments" id="DjG-Jq-ual"/>
+<<<<<<< HEAD
+                        <segue destination="k7v-TV-Q6W" kind="show" identifier="SignUp" animates="NO" id="z4L-4f-cPJ"/>
+=======
+                        <segue destination="nKF-6t-j9S" kind="show" identifier="providerAppointments" id="noO-Ap-Slx"/>
+>>>>>>> newmaster
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cbc-de-peH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-208" y="958"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="rqI-wd-EqX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="zDw-ea-kBU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VW-3U-V3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="1387"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="4Q9-0m-7bP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="Io9-bI-Do2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LIw-eZ-NBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="2342"/>
+        </scene>
+<<<<<<< HEAD
+        <!--Basic Signup View Controller-->
+        <scene sceneID="eTq-q4-skq">
+            <objects>
+                <viewController id="k7v-TV-Q6W" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+=======
+        <!--ProviderAppointmentsForm-->
+        <scene sceneID="hQ4-sg-rsF">
+            <objects>
+                <viewController title="ProviderAppointmentsForm" id="nKF-6t-j9S" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+>>>>>>> newmaster
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pMb-AQ-4MS"/>
+                        <viewControllerLayoutGuide type="bottom" id="DjW-ta-iPt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w1O-qp-FnP">
+                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Io9-bI-Do2" kind="show" identifier="appointmentsFromSignup" id="JTC-PL-MMK"/>
+                    </connections>
+                </viewController>
+<<<<<<< HEAD
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Ol-4l1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c40-bg-dP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-125" y="1810"/>
+        </scene>
+        <!--Appointment Detail Form View Controller-->
+        <scene sceneID="8Hn-tl-KWc">
+            <objects>
+                <viewController id="NCC-xj-x3l" customClass="AppointmentDetailFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adU-bV-8oa"/>
+                        <viewControllerLayoutGuide type="bottom" id="a9i-2F-Ug4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hBX-Yg-Nnu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgn-bm-wxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> newmaster
+            </objects>
+            <point key="canvasLocation" x="-342" y="1875"/>
+        </scene>
+    </scenes>
+</document>

@@ -41,12 +41,36 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <segue destination="zDw-ea-kBU" kind="show" identifier="appointments" id="DjG-Jq-ual"/>
-                        <segue destination="k7v-TV-Q6W" kind="show" identifier="SignUp" animates="NO" id="z4L-4f-cPJ"/>
+                        <segue destination="nKF-6t-j9S" kind="show" identifier="providerAppointments" id="noO-Ap-Slx"/>
+                        <segue destination="0ea-qm-jFS" kind="push" identifier="SignUp" animates="NO" id="GHn-fv-sMe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbc-de-peH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-208" y="958"/>
+        </scene>
+        <!--Basic Signup View Controller-->
+        <scene sceneID="aU3-n5-DNF">
+            <objects>
+                <viewController id="0ea-qm-jFS" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OhZ-3Q-6jH"/>
+                        <viewControllerLayoutGuide type="bottom" id="RYa-yD-XNp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lTT-rj-48y">
+                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hYm-Nx-mft"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <segue destination="3St-Vb-LB0" kind="show" identifier="dashboardFromSignup" id="woR-pQ-yWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwa-05-TUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-208" y="1759"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="rqI-wd-EqX">
@@ -54,7 +78,7 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" id="zDw-ea-kBU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VW-3U-V3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="1387"/>
+            <point key="canvasLocation" x="739" y="713"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="4Q9-0m-7bP">
@@ -62,12 +86,12 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" id="Io9-bI-Do2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIw-eZ-NBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="2342"/>
+            <point key="canvasLocation" x="1241" y="1286"/>
         </scene>
-        <!--Basic Signup View Controller-->
-        <scene sceneID="eTq-q4-skq">
+        <!--ProviderAppointmentsForm-->
+        <scene sceneID="hQ4-sg-rsF">
             <objects>
-                <viewController id="k7v-TV-Q6W" customClass="BasicSignupViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ProviderAppointmentsForm" id="nKF-6t-j9S" customClass="AppointmentsFormViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pMb-AQ-4MS"/>
                         <viewControllerLayoutGuide type="bottom" id="DjW-ta-iPt"/>
@@ -83,7 +107,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Ol-4l1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="1875"/>
+            <point key="canvasLocation" x="739" y="1286"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="c2g-8x-YpM">
+            <objects>
+                <viewControllerPlaceholder id="3St-Vb-LB0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGa-5h-pM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617.5" y="1878"/>
         </scene>
     </scenes>
 </document>

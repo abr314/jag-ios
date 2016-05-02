@@ -104,40 +104,9 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                                         print(JSON(json))
                                                     
                                                        self.navigationController?.popToRootViewControllerAnimated(true)
-                                                        
-                                                        
                                                     })
-                                                    
-                                                //    appointmentsDownloaded = true
-                                                    /*
-                                                    if let rvc = self.navigationController?.viewControllers[0] as? ServicesCollectionViewController {
-                                                        rvc.appointmentsJSON = appointmentsJSON
-                                                        
-                                                        
-                                                        
-                                                    }
-                                                    
-                                                    
-                                                    
-                                                    if let appointmentsVC = self.tabBarController?.viewControllers {
-                                                        
-                                                        
-                                                        for vc in appointmentsVC {
-                                                            if vc.title == "Appointments" {
-                                                                
-                                                                
-                                                                if let appointmentVC = vc as? AppointmentsFormViewController {
-                                                                    appointmentVC.appointments = appointmentsJSON
-                                                                    UserInformation.sharedInstance.appointments = appointmentsJSON
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    }
-                                                   
-                                                    */
-                                                    
-                                                case .Failure(_): break
+                            
+                                                case .Failure(let error): print(error)
                                                     
                                                 }
                                             }
@@ -147,8 +116,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                                         self.presentViewController(alertController, animated: true) {
                                             // ...
                                     }
-                                    case .Failure(let error):
-                                        print(error)
+                                    case .Failure(let error): print(error)
                                 }
                     }
                     case .Failure(let error):
@@ -538,7 +506,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             // Create a BTDropInViewController
             
             
-            /**
+            /**hh
                 Braintree is disabled in development build
             */
             

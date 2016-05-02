@@ -103,6 +103,7 @@
                     <navigationItem key="navigationItem" title="JAG" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
+                        <segue destination="H1Y-lA-2fF" kind="show" identifier="proAppointments" id="sSn-mc-49F"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1r-sh-QI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,6 +319,7 @@
         <scene sceneID="F0N-Rx-6jh">
             <objects>
                 <navigationController id="Rc7-46-eLM" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDo-5i-55S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,7 +355,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3"/>
                     <connections>
-                        <segue destination="j45-JG-enJ" kind="show" identifier="showDetail" id="XVD-FG-MX6">
+                        <segue destination="j45-JG-enJ" kind="show" identifier="showDetails" id="XVD-FG-MX6">
                             <nil key="action"/>
                         </segue>
                     </connections>
@@ -386,6 +388,7 @@
         <image name="ServiceBellFilled-20.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NRK-Ej-ddg"/>
         <segue reference="f3n-E4-k6t"/>
     </inferredMetricsTieBreakers>
 </document>

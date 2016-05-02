@@ -35,10 +35,12 @@ class DashboardTabBarViewController: UITabBarController {
         print(UserInformation.sharedInstance.customerProfile?.email)
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
-        if UserInformation.sharedInstance.customerProfile?.isProfessional == false {
+        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
+            self.tabBar.items?.dropFirst()
+            
             
         }
-        //UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Black, animated: true)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,21 +67,11 @@ class DashboardTabBarViewController: UITabBarController {
         
         
         if item.title == "Appointments" {
-            
-            
             if let vcs = viewControllers {
-            
-                
-                
                 for view in vcs {
-                    
                     if view.title == "Appointments" {
-                        
-                        
                         if let vcc = view as? AppointmentsFormViewController {
                             vcc.initializeForm()
-                            
-                            
                         }
                     }
                 }

@@ -19,6 +19,53 @@ enum FormMode {
     case ViewMode
 }
 
+enum AppointmentStatus : String {
+    case Making = "making"
+    case Created = "created"
+    case Confirmed = "confirmed"
+    case InProgress = "in_progress"
+    case Unrated = "unrated"
+    case Done = "done"
+    case Empty = ""
+    
+  //  var title = ""
+    
+    
+    
+    
+}
+
+func appointmentStatusToReadableString(status:AppointmentStatus) -> String {
+    
+    if status == .Created {
+        return "Pending Acceptance"
+    }
+    
+    if status == .Confirmed {
+        return "Confirmed"
+    }
+    
+    if status == .Done {
+        return "Appointment Completed"
+    }
+    
+    return ""
+    
+}
+
+func stringToAppointmentStatus(string:String) -> AppointmentStatus {
+    
+    let array = [AppointmentStatus.Making, AppointmentStatus.Created, AppointmentStatus.Confirmed, AppointmentStatus.InProgress, AppointmentStatus.Unrated, AppointmentStatus.Done]
+ //   var err: NSError?
+    for item in array {
+       
+        if item.rawValue == string {
+            return item
+        }
+    }
+    return AppointmentStatus.Empty
+    
+}
 let kName = "Name"
 let kLicenseOptions = "License Options"
 let kProcedures = "Procedures"
@@ -46,6 +93,10 @@ let kFirstLine = "First Line"
 let kSecondLine = "Second Line"
 let kZipCode = "Zip Code"
 let kCityState = "City and State"
+let kRequestedStartTime = "Requested Start Time"
+let kRequestedEndTime = "Requested End Time"
+let kActualStartTime = "Actual Start Time"
+let kActualEndTime = "Actual End Time"
 
 let kBarberImageString = "HairMan"
 let kCosmoImageString = "CosmoMan"
@@ -53,6 +104,11 @@ let kMassageImageString = "MassageMan"
 let kNailImageString = "NailApp"
 let kSpaImageString = "SpaApp"
 let kTrainerImageString = "TrainerApp"
+
+let kCustomerRoleString = "I am a"
+
+let kCustomerTermString = "Customer"
+let kProviderTermString = "Service Provider"
 
 let kNetworkAuthorizationString = "Authorization"
 

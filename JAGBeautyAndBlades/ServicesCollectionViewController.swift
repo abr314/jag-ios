@@ -33,6 +33,17 @@ class ServicesCollectionViewController: UICollectionViewController {
         super.viewWillAppear(true)
        // super.viewWillAppear(true)
        // self.navigationController?.viewWillAppear(true)
+        
+        if let object = UserInformation.sharedInstance.customerProfile {
+            if object.isProfessional == true {
+                
+                
+                
+                
+              performSegueWithIdentifier("proAppointments", sender: nil)
+                // transition to appointment form VC
+            }
+        }
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
         if let name = defaults.stringForKey(kJAGToken)
@@ -85,6 +96,8 @@ class ServicesCollectionViewController: UICollectionViewController {
             If  user type is provider, transition to the activities VC and disable services
         */
   //      self.delegate = self
+        
+        
         self.title = "JAG"
         self.edgesForExtendedLayout = UIRectEdge.None
         navigationController?.title = "JAG"
@@ -187,6 +200,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         // Configure the cell
         let image = UIImage(named: cellImages[indexPath.row])
         
+        
      
         cell.cellImage?.image = image
         
@@ -202,7 +216,38 @@ class ServicesCollectionViewController: UICollectionViewController {
         selectedCellName = webCellNames[indexPath.row]
         selectedCellImageName = cellImages[indexPath.row]
         categoryID = servicesJSON[indexPath.row]["id"].intValue
-
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.objectForKey("role") as? String == "pro" {
+            
+        
+        
+      //  if let cus = UserInformation.sharedInstance.customerProfile {
+        
+            
+        //    if cus.isProfessional == true {
+                
+                
+                let alertController = UIAlertController(title: "", message: "Booking is currently for customers only. Please sign-up on the website with a customer account and book your appointment there.", preferredStyle: .Alert)
+            
+           // let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                // ...
+           // }
+         //   alertController.addAction(cancelAction)
+            
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+                }
+                alertController.addAction(OKAction)
+            
+                self.presentViewController(alertController, animated: true) {
+                // ...
+                }
+           //     return
+    //        }
+        }
+        
         if hasBeenTapped == true {
             return
         }

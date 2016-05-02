@@ -71,6 +71,7 @@ class LoginFormViewController: XLFormViewController {
             } else {
                 row.cellConfig.setObject(kPrimaryColor, forKey: "backgroundColor")
                 row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
+                
             }
             
             // add row customizations here
@@ -104,7 +105,7 @@ class LoginFormViewController: XLFormViewController {
     }
     
     func userAlreadyExist() -> Bool {
-        return NSUserDefaults.standardUserDefaults().objectForKey(kJAGToken) != nil
+        return UserInformation.sharedInstance.token != ""
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -133,8 +134,11 @@ class LoginFormViewController: XLFormViewController {
     
     override func viewDidLoad() {
     
-        UIApplication.sharedApplication().statusBarHidden = true
-        
+        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
+            
+            
+            performSegueWithIdentifier("providerAppointments", sender:self)
+        }
         if (userAlreadyExist()) {
             
             if let string = NSUserDefaults.standardUserDefaults().stringForKey(kJAGToken) {
@@ -157,8 +161,13 @@ class LoginFormViewController: XLFormViewController {
         self.navigationController?.navigationBar.translucent = true
         self.tableView?.backgroundView = UIImageView(image: UIImage(named: "ManSplash.png"))
         self.tableView.scrollEnabled = false
+        
+        UIApplication.sharedApplication().statusBarHidden = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -178,11 +187,6 @@ class LoginFormViewController: XLFormViewController {
       //  performSegueWithIdentifier("SignUp", sender: nil)
     }
     
-    func bookNowPressed() {
-        
-        performSegueWithIdentifier("BookNow", sender: nil)
-
-    }
     
     func loginButtonPressed() {
         // verify fields and signin
@@ -205,11 +209,6 @@ class LoginFormViewController: XLFormViewController {
                 
                 activityView.startAnimating()
                 
-                if activityView.isAnimating() {
-                    
-                    
-                    
-                }
                 self.view.addSubview(activityView)
                 Alamofire.request(.POST, kAPITokenURL, parameters:["username":email,"password":password])
                     
@@ -217,18 +216,24 @@ class LoginFormViewController: XLFormViewController {
                     
                     .responseJSON { response in
                         switch response.result {
+       
+                        
                         case .Success(let object):
+                         
                             print(object)
                 
                             if let string = response.result.value?.valueForKey("token") as? String {
                                 let defaults = NSUserDefaults.standardUserDefaults()
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 UserInformation.sharedInstance.token = string
+                                UserInformation.sharedInstance.userAlreadyExists = true
                                 self.performSegueWithIdentifier("appointments", sender:self)
                                 activityView.stopAnimating()
                                 
                             }
                         case .Failure(let error)://break
+                            
+                            
                             print(response.result)
                             print(error)
                             print(error.code)

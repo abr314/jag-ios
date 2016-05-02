@@ -49,6 +49,8 @@ class BasicSignupViewController: XLFormViewController {
         self.tableView?.backgroundView = UIImageView(image: UIImage(named: "ManSplash.png"))
         self.navigationItem.setHidesBackButton(true, animated:false);
         self.tableView.scrollEnabled = false
+        
+        UIApplication.sharedApplication().statusBarHidden = true
 
     }
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -80,9 +82,9 @@ class BasicSignupViewController: XLFormViewController {
         let emailArray = [kEmail, XLFormRowDescriptorTypeEmail]
         let passwordArray = [ kPassword, XLFormRowDescriptorTypePassword]
         let nextArray = ["Register Now", XLFormRowDescriptorTypeButton]
-        let isProfessionalArray = ["My Role", XLFormRowDescriptorTypeSelectorPickerViewInline]
+    //    let isProfessionalArray = [kCustomerRoleString, XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
-        let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
+  //      let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
     
         let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //,
         // add array of rows to form with parameters
@@ -105,7 +107,7 @@ class BasicSignupViewController: XLFormViewController {
                 section = XLFormSectionDescriptor.formSectionWithTitle(" ")
                 form.addFormSection(section)
             }
-            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != "My Role") {
+            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != kCustomerRoleString) {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -124,9 +126,9 @@ class BasicSignupViewController: XLFormViewController {
                 row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
             }
             
-            if (row.tag == "My Role") {
-                row.selectorOptions = ["Customer", "Professional"]
-                row.value = "Customer"
+            if (row.tag == kCustomerRoleString) {
+                row.selectorOptions = [kCustomerTermString, kProviderTermString]
+                row.value = kCustomerTermString
             }
             if (row.tag == "Cancel") {
                 row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
@@ -152,25 +154,17 @@ class BasicSignupViewController: XLFormViewController {
                 synchronizeData()
              //   alamofireRequest = sendCustomerSignUpInfo(customer)
                 registerWithServer()
-         
             }
-            
-        } else {
-       
-            
-            
-            
         }
-        
     }
     
     func registerWithServer() {
         var url = kCustomerSignUpURL
-        var parameters = ["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber, "referral_code":customer.referralCode]
+        let parameters = ["email":customer.email,"password":customer.password,"first_name":customer.firstName,"last_name":customer.lastName, "phone":customer.phoneNumber, "referral_code":customer.referralCode]
         
         if isProviderType == true {
             url = kProSignUpURL
-            parameters["referral_code"] = customer.referralCode
+            UserInformation.sharedInstance.customerProfile?.isProfessional = true
         }
         
         Alamofire.request(.POST, url, parameters: parameters)
@@ -181,7 +175,7 @@ class BasicSignupViewController: XLFormViewController {
                 switch response.result {
                     
                     //response.result {
-                case .Success(_):
+                case .Success(let json):
                     print(response)
                     
                     /**
@@ -199,29 +193,34 @@ class BasicSignupViewController: XLFormViewController {
                             case .Success(let JSON):
                                 print(response)
                                 
-                                if let something = JSON.valueForKey("token") as? String {
+                                if let token = JSON.valueForKey("token") as? String {
+                                   
+                                    UserInformation.sharedInstance.token = token
+                                    UserInformation.sharedInstance.userAlreadyExists = true
+                                    UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                                    NSUserDefaults.standardUserDefaults().setObject("customer", forKey: "role")
+                                    NSUserDefaults.standardUserDefaults().setObject(token, forKey: kJAGToken)
                                     
-                                    if something == "" {
-                                        
-                                        // error, token is blank ???
-                                    }
-                                    self.customer.token = something
-                                    // Add token to nsuserdefaults
-                                    
-                                    NSUserDefaults.standardUserDefaults().setObject(something, forKey: kJAGToken)
                                     // pop view to dashboard
-                                    self.performSegueWithIdentifier("appointmentsFromSignup", sender: nil)
-                                } else {
+                                    if self.isProviderType == true {
+                                        
+                                        
+                                        
+                                        
+                                        self.performSegueWithIdentifier("providerAppointments", sender: nil)
+                                    }
                                     
+                                    if self.isProviderType == false {
+                                        
+                                        
+                                        
+                                        self.performSegueWithIdentifier("dashboardFromSignup", sender: nil)
+                                    }
                                 }
-                                
                                 
                             case .Failure(let error):
                                 
-                                
-                                
-                                
-                                break
+                                print(error)
                             }
                     }
                 case .Failure(let error):
@@ -270,11 +269,11 @@ class BasicSignupViewController: XLFormViewController {
             customer.email = email
         }
         
-        if let isPro = form.formRowWithTag("My Role")?.value as? String {
-            if isPro == "Professional" {
+        if let isPro = form.formRowWithTag(kCustomerRoleString)?.value as? String {
+            if isPro == kProviderTermString{
                 isProviderType = true
             }
-            if isPro == "Customer" {
+            if isPro == kCustomerRoleString {
                 isProviderType = false
             }
         }

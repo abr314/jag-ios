@@ -31,7 +31,6 @@
 		2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */; };
 		2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */; };
 		2A2AAB5D1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */; };
-		2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */; };
 		2A3630171C84DB5600168AC2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA284E21C63CCCC0021B99E /* Roboto-Regular.ttf */; };
 		2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A018EFD1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf */; };
 		2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
@@ -52,7 +51,6 @@
 		2A853A3E1C9621C60066F70C /* ServicesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A3D1C9621C60066F70C /* ServicesLabel.swift */; };
 		2A853A3F1C9621C60066F70C /* ServicesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A3D1C9621C60066F70C /* ServicesLabel.swift */; };
 		2A853A401C9621C60066F70C /* ServicesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A3D1C9621C60066F70C /* ServicesLabel.swift */; };
-		2A853A431C96339F0066F70C /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */; };
 		2A853A441C96339F0066F70C /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */; };
 		2A853A451C96339F0066F70C /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */; };
 		2A853A4A1C9637CB0066F70C /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A853A491C9637CB0066F70C /* ServicesCollectionViewCell.swift */; };
@@ -97,9 +95,9 @@
 		2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
 		2AD2C01A1CC0BCA60065B8FB /* ManSplashPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */; };
 		2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */; };
-		2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
-		2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */; };
 		2AD2C0201CC148690065B8FB /* HCNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */; };
+		2AD99E0A1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */; };
+		2AD99E0B1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */; };
 		2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
 		2ADA05481C72357D00839564 /* ServiceTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ADA05461C72357D00839564 /* ServiceTypes.plist */; };
 		2ADC30871C501B79006773AE /* BasicSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC30861C501B79006773AE /* BasicSignupViewController.swift */; };
@@ -111,6 +109,7 @@
 		2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
 		2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
 		3001204940D88A1D991064AA /* libPods-JAGBeautyAndBladesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631D2AF7FD11B2EE26CDA5DB /* libPods-JAGBeautyAndBladesTests.a */; };
+		4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */; };
 		4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */; };
 		4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B28A1CD3E67200FD4153 /* ManSplash.png */; };
 		9187AC4E9AF08CD3EDB4EE29 /* Pods_JAGBeautyAndBlades.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; };
@@ -147,7 +146,6 @@
 		2A2AAB521C9004D300E8F2B7 /* UserPersistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistanceHelper.swift; sourceTree = "<group>"; };
 		2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsFormViewController.swift; sourceTree = "<group>"; };
 		2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sampleAppointments.plist; sourceTree = "<group>"; };
-		2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RushStoryboard.storyboard; sourceTree = "<group>"; };
 		2A3630231C84DDF900168AC2 /* iPhone 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone 6.png"; sourceTree = "<group>"; };
 		2A42C9BF1CCA6BBA0007DF4A /* HCErrorMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCErrorMessageManager.swift; sourceTree = "<group>"; };
 		2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAppointment.swift; sourceTree = "<group>"; };
@@ -199,16 +197,17 @@
 		2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplashPage.png; sourceTree = "<group>"; };
 		2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_5_@2x.png"; sourceTree = "<group>"; };
 		2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_portrait_6_@2x.png"; sourceTree = "<group>"; };
+		2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDetailFormViewController.swift; sourceTree = "<group>"; };
 		2ADA05461C72357D00839564 /* ServiceTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceTypes.plist; sourceTree = "<group>"; };
 		2ADC30861C501B79006773AE /* BasicSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicSignupViewController.swift; sourceTree = "<group>"; };
 		2ADC30881C502D3F006773AE /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCFormValidator.swift; sourceTree = "<group>"; };
-		2AE5ADE61C644648007BD715 /* pexels-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pexels-photo.jpg"; sourceTree = "<group>"; };
 		2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 30022D_0_0.ttf; sourceTree = "<group>"; };
 		2AFEB2611C57D1DF00697A3C /* HCLicense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLicense.swift; sourceTree = "<group>"; };
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
 		47D0F05AB3B8D751609BC8B1 /* Pods-JAGBeautyAndBladesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewController.swift; sourceTree = "<group>"; };
 		4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JagAppLaunchImage.png; sourceTree = "<group>"; };
 		4C85B28A1CD3E67200FD4153 /* ManSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplash.png; sourceTree = "<group>"; };
 		553398393F2875F882D88F5F /* Pods-JAGBeautyAndBladesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,21 +250,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A3630061C816A6000168AC2 /* V1 Rush */ = {
-			isa = PBXGroup;
-			children = (
-				2A36300D1C821CC300168AC2 /* Preview Images */,
-			);
-			name = "V1 Rush";
-			sourceTree = "<group>";
-		};
-		2A36300D1C821CC300168AC2 /* Preview Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Preview Images";
-			sourceTree = "<group>";
-		};
 		2A4D5FB81C4EA93F0097316E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,8 +257,9 @@
 				2AE5ADE41C64438D007BD715 /* Sign Up */,
 				2AE5ADD91C6414DC007BD715 /* LoginFormViewController.swift */,
 				2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */,
-				2A853A411C96339F0066F70C /* ServicesCollectionViewController.swift */,
+				2AD99E091CD161E200659EB0 /* AppointmentDetailFormViewController.swift */,
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
+				4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
 				2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */,
 				2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */,
@@ -346,7 +331,6 @@
 		2A7B4CDF1C4D626900660047 /* JAGBeautyAndBlades */ = {
 			isa = PBXGroup;
 			children = (
-				2A3630061C816A6000168AC2 /* V1 Rush */,
 				2A4D5FB81C4EA93F0097316E /* Controller */,
 				2AA8221D1C4D77E0001A117C /* Model */,
 				2ADC30781C4FFADA006773AE /* View */,
@@ -393,7 +377,6 @@
 			children = (
 				2A7B4CE41C4D626900660047 /* SignUp.storyboard */,
 				2AD2BFFB1CADFB290065B8FB /* Main.storyboard */,
-				2A3630031C816A1900168AC2 /* RushStoryboard.storyboard */,
 				2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */,
 				2A853A341C96152E0066F70C /* Dashboard.storyboard */,
 			);
@@ -461,7 +444,6 @@
 		2AE5ADE51C64448D007BD715 /* Large Services Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2AE5ADE61C644648007BD715 /* pexels-photo.jpg */,
 			);
 			name = "Large Services Cells";
 			sourceTree = "<group>";
@@ -633,7 +615,6 @@
 			files = (
 				2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */,
-				2AD2C01E1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
@@ -668,8 +649,6 @@
 				2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
 				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
-				2A3630051C816A1900168AC2 /* RushStoryboard.storyboard in Resources */,
-				2AD2C01F1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png in Resources */,
 				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,7 +777,9 @@
 			files = (
 				2AD2BFF91CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2AD2C00B1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */,
+				4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */,
 				2A903A5F1C74ECD600FA5C80 /* HCService.swift in Sources */,
+				2AD99E0A1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */,
 				2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */,
 				2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */,
 				2AA822251C4D7910001A117C /* HCCustomer.swift in Sources */,
@@ -819,7 +800,6 @@
 				2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */,
 				2A42C9C01CCA6BBA0007DF4A /* HCErrorMessageManager.swift in Sources */,
 				2ADC30871C501B79006773AE /* BasicSignupViewController.swift in Sources */,
-				2A853A431C96339F0066F70C /* ServicesCollectionViewController.swift in Sources */,
 				2A4D5FB21C4E9DF90097316E /* HCAppointment.swift in Sources */,
 				2A16CFCD1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */,
 				2A9BF62B1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
@@ -835,6 +815,7 @@
 				2A13C2531CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */,
 				2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
 				2A4D5FB31C4E9DF90097316E /* HCAppointment.swift in Sources */,
+				2AD99E0B1CD161E200659EB0 /* AppointmentDetailFormViewController.swift in Sources */,
 				2A018EFC1C623E5400437513 /* HCLocation.swift in Sources */,
 				2A1094251C686CC9008192FF /* VerifyInformationFormTests.swift in Sources */,
 				2A7B4CF61C4D626900660047 /* JAGBeautyAndBladesTests.swift in Sources */,
