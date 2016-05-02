@@ -20,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var userInfo = UserInformation.sharedInstance
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
      //   userInfo = UserInformation.sharedInstance()
+        
         
         application.statusBarHidden = false;
         application.statusBarStyle = .LightContent;

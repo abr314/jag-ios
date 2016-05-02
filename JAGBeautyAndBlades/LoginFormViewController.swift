@@ -54,51 +54,73 @@ class LoginFormViewController: XLFormViewController {
     
         let signUpArray = [kSignUp, XLFormRowDescriptorTypeButton]
         let loginArray = [kLogin, XLFormRowDescriptorTypeButton]
+        let signUpNote = [kSignUpNote, XLFormRowDescriptorTypeTextView]
         
-        let arrayOfRows = [emailArray, passwordArray, loginArray, signUpArray] //bookNowArray, signUpArray]
+        let arrayOfRows = [emailArray, passwordArray, loginArray, signUpArray]//, signUpNote] //bookNowArray, signUpArray]
         
         for rowStrings in arrayOfRows {
             
             row = XLFormRowDescriptor(tag: rowStrings[0], rowType: rowStrings[1], title: rowStrings[0])
             
             
-            if (!(row.tag == kLogin || row.tag == kSignUp)) {
+            if (!(row.tag == kLogin || row.tag == kSignUp || row.tag == kSignUpNote)) {
                 row.cellConfig.setObject(UIColor.whiteColor().colorWithAlphaComponent(0.8), forKey: "backgroundColor")
                 row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
                 row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
                 row.required = true
+                
+                if (row.tag == kPhone) {
+                    row.addValidator(XLFormRegexValidator(msg: "At least 6, max 32 characters", andRegexString: "^[2-9][0-9]{9}$"))
+                }
+                
+                if (row.tag == kEmail) {
+                    row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
+                }
+                
+                section.addFormRow(row)
             } else {
                 row.cellConfig.setObject(kPrimaryColor, forKey: "backgroundColor")
                 row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
                 
+                if (row.tag == kLogin) {
+                    
+                    row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
+                } else if (row.tag == kSignUp) {
+                    row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
+                    row.cellConfig.setObject("", forKey: "self.selectionStyle")
+                    section = XLFormSectionDescriptor.formSectionWithTitle("")
+                    //section.multivaluedRowTemplate!.cellConfig["backgroundColor"] = UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0)
+                    
+                    form.addFormSection(section)
+                    
+                } else if (row.tag == kSignUpNote) {
+                    
+                    
+                    
+                    row.cellConfig.setObject(UIColor.clearColor(), forKey: "backgroundColor")
+                    row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
+                    row.cellConfig.setObject(UIFont(name: kBodyFont, size: 12)!, forKey: "textLabel.font")
+                    row.cellConfig.setObject(UIColor.clearColor(), forKey: "self.tintColor")
+                    //row.cellConfigAtConfigure.setObject(kSignUpNote, forKey: "textLabel.text")
+                    //row.cellConfig.setValue(NSLineBreakMode.ByWordWrapping, forKey: "textContainer.lineBreakMode")
+                    //row.cellConfig.setObject(@(NSLineBreakMode.ByWordWrapping), forKey: "textContainer.lineBreakMode")
+                    //row.cellConfig.setObject(UIDataDetectorTypes.All, forKey: "dataDetectorTypes")
+                    
+                }
+
+                section.addFormRow(row)
+//                if (row.tag == kSignUp) {
+//                    section = XLFormSectionDescriptor.formSectionWithTitle(kSignUpNote)
+//                    form.addFormSection(section)
+//                }
             }
             
             // add row customizations here
             
-            if (row.tag == kLogin) {
-                
-                row.action.formSelector = #selector(LoginFormViewController.loginButtonPressed)
-            } else if (row.tag == kSignUp) {
-                row.action.formSelector = #selector(LoginFormViewController.signUpPressed)
-                row.cellConfig.setObject("", forKey: "self.selectionStyle")
-                section = XLFormSectionDescriptor.formSectionWithTitle("")
-                //section.multivaluedRowTemplate!.cellConfig["backgroundColor"] = UIColor(red: 81/255.0, green: 6/255.0, blue: 133/255.0, alpha: 1.0)
-                
-                
-                form.addFormSection(section)
-            }
-
             
-            if (row.tag == kPhone) {
-                row.addValidator(XLFormRegexValidator(msg: "At least 6, max 32 characters", andRegexString: "^[2-9][0-9]{9}$"))
-            }
             
-            if (row.tag == kEmail) {
-                row.addValidator(XLFormRegexValidator(msg: "", andRegexString: "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"))
-            }
             
-            section.addFormRow(row)
         }
         
         self.form = form
@@ -110,11 +132,14 @@ class LoginFormViewController: XLFormViewController {
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        if section == 0 {
+
+        switch section {
+        case 0:
             return (self.view.frame.size.height * 1/4)
+        default:
+            return 30
         }
         
-        return 30
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -123,10 +148,10 @@ class LoginFormViewController: XLFormViewController {
         //header.contentView.backgroundColor = UIColor(red: 0/255, green: 181/255, blue: 229/255, alpha: 1.0) //make the background color light blue
         header.textLabel?.textAlignment = .Center
         header.textLabel!.textColor = UIColor.whiteColor() //make the text white
-        header.textLabel!.alpha = 0.5 //make the header transparent
+        //header.textLabel!.alpha = 1. //make the header transparent
         
-        if section == 0 {
-            let font = UIFont(name: kHeaderFont, size: 30)
+        if section == 2 {
+            let font = UIFont(name: kBodyFont, size: 14)
             header.textLabel?.font = font
         }
         
@@ -162,7 +187,7 @@ class LoginFormViewController: XLFormViewController {
         self.tableView?.backgroundView = UIImageView(image: UIImage(named: "ManSplash.png"))
         self.tableView.scrollEnabled = false
         
-        UIApplication.sharedApplication().statusBarHidden = true
+        //UIApplication.sharedApplication().statusBarHidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -296,5 +321,7 @@ class LoginFormViewController: XLFormViewController {
             }
         }
     }
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }

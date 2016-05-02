@@ -15,22 +15,14 @@ class DashboardTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.title = "JAG"
-        
-        
-        if let navBarFont = UIFont(name: kJagFont, size: 30) {
-            let titleLabel = UILabel()
-            titleLabel.text = "JAG"
-            titleLabel.font = navBarFont
-            titleLabel.textColor = kPrimaryColor
-            self.navigationController?.navigationItem.titleView = titleLabel
-//            let navBarAttributesDictionary = [
-//                NSForegroundColorAttributeName: UIColor.whiteColor(),
-//                NSFontAttributeName: navBarFont
-//            ]
-//            self.navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-        }
+
+        //if let navBarFont = UIFont(name: kJagFont, size: 30) {
+        self.title = "JAG"
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: kPrimaryColor,
+            NSFontAttributeName: UIFont(name: kJagFontFilled, size: 28)!
+        ]
+
         
         print(UserInformation.sharedInstance.customerProfile?.email)
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
@@ -43,17 +35,7 @@ class DashboardTabBarViewController: UITabBarController {
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        if let navBarFont = UIFont(name: kJagFont, size: 30) {
-            self.title = "JAG"
-                        let navBarAttributesDictionary = [
-                            NSForegroundColorAttributeName: UIColor.whiteColor(),
-                            NSFontAttributeName: navBarFont
-                        ]
-                        self.navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-        }
-
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -50,7 +50,7 @@ class BasicSignupViewController: XLFormViewController {
         self.navigationItem.setHidesBackButton(true, animated:false);
         self.tableView.scrollEnabled = false
         
-        UIApplication.sharedApplication().statusBarHidden = true
+        //UIApplication.sharedApplication().statusBarHidden = true
 
     }
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -315,7 +315,7 @@ class BasicSignupViewController: XLFormViewController {
 
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }

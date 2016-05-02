@@ -12,6 +12,7 @@ import UIColor_Hex_Swift
 
 let kHeaderFont = "PFMonumentaPro-Metallica"
 let kJagFont = "PFMonumentaPro-Metallica"
+let kJagFontFilled = "PFMonumentaPro-Regular"
 let kBodyFont = "Raleway"
 
 extension UIColor {
@@ -42,10 +43,23 @@ extension UIColor {
     }
 }
 
+extension UIImage {
+    func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(CGRectMake(0, 0, size.width, size.height))
+        var image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
+
 let kPrimaryColor:UIColor = UIColor(rgba: "#533A71")
+let kLightGray:UIColor = UIColor(rgba: "#EAEAEA")
 let kSecondaryColor:UIColor = UIColor(rgba: "#E4DDCA") // Old color #50C5B7
 let kGoldColor:UIColor = UIColor(rgba: "#E4DDCA")
 let kPurpleColor:UIColor = UIColor(rgba: "#4C0B84")
+
 
 
 class HCFontsandColors:NSObject {

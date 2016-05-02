@@ -41,7 +41,6 @@
 		2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */; };
 		2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE01C4D626900660047 /* AppDelegate.swift */; };
 		2A7B4CE31C4D626900660047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE21C4D626900660047 /* ViewController.swift */; };
-		2A7B4CE61C4D626900660047 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE41C4D626900660047 /* SignUp.storyboard */; };
 		2A7B4CF61C4D626900660047 /* JAGBeautyAndBladesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CF51C4D626900660047 /* JAGBeautyAndBladesTests.swift */; };
 		2A7B4D011C4D626900660047 /* JAGBeautyAndBladesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4D001C4D626900660047 /* JAGBeautyAndBladesUITests.swift */; };
 		2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A853A341C96152E0066F70C /* Dashboard.storyboard */; };
@@ -110,6 +109,8 @@
 		2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
 		3001204940D88A1D991064AA /* libPods-JAGBeautyAndBladesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631D2AF7FD11B2EE26CDA5DB /* libPods-JAGBeautyAndBladesTests.a */; };
 		4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */; };
+		4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */; };
+		4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */; };
 		4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */; };
 		4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B28A1CD3E67200FD4153 /* ManSplash.png */; };
 		9187AC4E9AF08CD3EDB4EE29 /* Pods_JAGBeautyAndBlades.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; };
@@ -157,7 +158,6 @@
 		2A7B4CDD1C4D626900660047 /* JAGBeautyAndBlades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAGBeautyAndBlades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7B4CE01C4D626900660047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A7B4CE21C4D626900660047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2A7B4CE51C4D626900660047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		2A7B4CE71C4D626900660047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7B4CEC1C4D626900660047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A7B4CF11C4D626900660047 /* JAGBeautyAndBladesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAGBeautyAndBladesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +208,8 @@
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
 		47D0F05AB3B8D751609BC8B1 /* Pods-JAGBeautyAndBladesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewController.swift; sourceTree = "<group>"; };
+		4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PF Monumenta Pro Regular.ttf"; sourceTree = "<group>"; };
+		4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ServiceBellFilled-50.png"; sourceTree = "<group>"; };
 		4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JagAppLaunchImage.png; sourceTree = "<group>"; };
 		4C85B28A1CD3E67200FD4153 /* ManSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplash.png; sourceTree = "<group>"; };
 		553398393F2875F882D88F5F /* Pods-JAGBeautyAndBladesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */,
 				2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */,
 				2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */,
+				4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */,
 				2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */,
 			);
 			name = Images;
@@ -375,7 +378,6 @@
 		2AA284DF1C63C1720021B99E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				2A7B4CE41C4D626900660047 /* SignUp.storyboard */,
 				2AD2BFFB1CADFB290065B8FB /* Main.storyboard */,
 				2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */,
 				2A853A341C96152E0066F70C /* Dashboard.storyboard */,
@@ -461,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				2A018EFD1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf */,
+				4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */,
 				2AA284E21C63CCCC0021B99E /* Roboto-Regular.ttf */,
 				2AA284E01C63CC900021B99E /* Raleway-Regular.ttf */,
 				2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */,
@@ -618,8 +621,10 @@
 				2A018EFE1C6267DA00437513 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
+				4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */,
 				4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */,
 				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
+				4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled-50.png in Resources */,
 				2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
 				2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */,
 				2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */,
@@ -630,7 +635,6 @@
 				2AD2C0141CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */,
 				2AA284E11C63CC900021B99E /* Raleway-Regular.ttf in Resources */,
 				2A16CFCB1CC5F8E300B94C97 /* Assets.xcassets in Resources */,
-				2A7B4CE61C4D626900660047 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,17 +875,6 @@
 			targetProxy = 2A7B4CFD1C4D626900660047 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2A7B4CE41C4D626900660047 /* SignUp.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A7B4CE51C4D626900660047 /* Base */,
-			);
-			name = SignUp.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A7B4D031C4D626900660047 /* Debug */ = {

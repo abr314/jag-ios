@@ -57,10 +57,11 @@
         <scene sceneID="UrN-Rp-Lzm">
             <objects>
                 <collectionViewController title="Services Collection View" automaticallyAdjustsScrollViewInsets="NO" id="MMf-p8-nH0" customClass="ServicesCollectionViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qjw-4A-9AO">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="qjw-4A-9AO">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s9I-m1-kBb">
                             <size key="itemSize" width="538.5" height="170"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -99,8 +100,10 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="jKm-Lb-Q1i"/>
-                    <navigationItem key="navigationItem" title="JAG" id="WEx-nY-XCU"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="jKm-Lb-Q1i">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-7"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
                         <segue destination="H1Y-lA-2fF" kind="show" identifier="proAppointments" id="sSn-mc-49F"/>
@@ -212,7 +215,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7a-XQ-her">
                                                     <rect key="frame" x="109" y="23" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -293,15 +296,16 @@
             <objects>
                 <tabBarController title="Tab Bar" id="ate-Z7-5l5" customClass="DashboardTabBarViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WgV-0e-z58"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="nPy-aV-DzE">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" id="nPy-aV-DzE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.31764705879999999" green="0.023529411760000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.32549019607843138" green="0.22745098039215686" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -319,7 +323,6 @@
         <scene sceneID="F0N-Rx-6jh">
             <objects>
                 <navigationController id="Rc7-46-eLM" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDo-5i-55S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,7 +356,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-6"/>
+                    </tabBarItem>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetails" id="XVD-FG-MX6">
                             <nil key="action"/>
@@ -388,7 +393,7 @@
         <image name="ServiceBellFilled-20.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NRK-Ej-ddg"/>
         <segue reference="f3n-E4-k6t"/>
+        <segue reference="sSn-mc-49F"/>
     </inferredMetricsTieBreakers>
 </document>

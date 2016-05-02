@@ -97,12 +97,11 @@ class ServicesCollectionViewController: UICollectionViewController {
         */
   //      self.delegate = self
         
+        UITabBar.appearance().selectionIndicatorImage = UIImage().makeImageWithColorAndSize(kPrimaryColor, size: CGSizeMake(((self.tabBarController?.tabBar.frame.width)!/2) - 0, (self.tabBarController?.tabBar.frame.height)! - 0))
+        self.collectionView?.backgroundColor = UIColor.whiteColor()
         
-        self.title = "JAG"
         self.edgesForExtendedLayout = UIRectEdge.None
-        navigationController?.title = "JAG"
-        navigationItem.title = "JAG"
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.blackColor()]
+        //self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : kPrimaryColor]
   //      UINavigationBar.appearance().bartin
         
         Alamofire.request(.GET, kServiceCategoriesURL).responseJSON {
@@ -119,9 +118,10 @@ class ServicesCollectionViewController: UICollectionViewController {
         }
         
         self.automaticallyAdjustsScrollViewInsets = false
+        self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
-        self.view.backgroundColor = UIColor.whiteColor()
+        //self.view.backgroundColor = UIColor.whiteColor()
         
         cellImages = [kBarberImageString,
                       kCosmoImageString,
