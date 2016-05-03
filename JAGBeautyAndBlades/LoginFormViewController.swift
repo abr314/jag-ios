@@ -144,7 +144,9 @@ class LoginFormViewController: XLFormViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
+        recognizer.numberOfTapsRequired = 3
+        self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
     }
     
 
@@ -280,5 +282,10 @@ class LoginFormViewController: XLFormViewController {
         }
     }
     
+    func enableDebugTools() {
+        let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+        let version = nsObject as? String
+        self.title = version
+    }
 
 }
