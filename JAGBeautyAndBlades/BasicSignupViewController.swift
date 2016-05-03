@@ -9,6 +9,7 @@
 import UIKit
 import XLForm
 import Alamofire
+import Crashlytics
 //import UIColor_Hex_Swift
 
 class BasicSignupViewController: XLFormViewController {
@@ -178,6 +179,16 @@ class BasicSignupViewController: XLFormViewController {
                 case .Success(let json):
                     print(response)
                     
+                    
+                    //Log to Fabric
+                    let formatter = NSDateFormatter()//.timeStyle = .ShortStyle
+                    formatter.timeStyle = .ShortStyle
+                    formatter.dateStyle = .ShortStyle
+                    formatter.timeZone = NSTimeZone(abbreviation: "CST")
+                    let dateString = formatter.stringFromDate(NSDate())
+                    Answers.logSignUpWithMethod("Email",
+                        success: true,
+                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
                     /**
                         Grab the token
                         Add the token to the NSUserDefaults
@@ -231,6 +242,15 @@ class BasicSignupViewController: XLFormViewController {
                     print(error.domain)
                     print(response)
                     
+                    //Log to Fabric
+                    let formatter = NSDateFormatter()//.timeStyle = .ShortStyle
+                    formatter.timeStyle = .ShortStyle
+                    formatter.dateStyle = .ShortStyle
+                    formatter.timeZone = NSTimeZone(abbreviation: "CST")
+                    let dateString = formatter.stringFromDate(NSDate())
+                    Answers.logSignUpWithMethod("Email",
+                        success: true,
+                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
                     
                     let alertController = returnAlertControllerForErrorCode(error.code)
                     /*
@@ -318,4 +338,10 @@ class BasicSignupViewController: XLFormViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    func getAppVersionString () -> String {
+        let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+        let version = nsObject as? String
+        return version!
+    }
+    
 }

@@ -10,6 +10,8 @@ import UIKit
 import XLForm
 import SwiftyJSON
 import Alamofire
+import Fabric
+import Crashlytics
 
 /// This view controller is show on the first start up, or if an authentication token is not found in NSUserDefaults. A user will bypass this VC, directly to the Dashboard/TabBar if a token is found
 
@@ -191,7 +193,9 @@ class LoginFormViewController: XLFormViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
+        recognizer.numberOfTapsRequired = 3
+        self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
     }
     
 
@@ -256,6 +260,14 @@ class LoginFormViewController: XLFormViewController {
                                 activityView.stopAnimating()
                                 
                             }
+                            //Log to Fabric
+                            let formatter = NSDateFormatter()//.timeStyle = .ShortStyle
+                            formatter.timeStyle = .ShortStyle
+                            let dateString = formatter.stringFromDate(NSDate())
+                            Answers.logLoginWithMethod("Email",
+                                success: true,
+                                customAttributes: ["username":email, "password" : password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
+                            
                         case .Failure(let error)://break
                             
                             
@@ -299,6 +311,15 @@ class LoginFormViewController: XLFormViewController {
                                 
                             }
                             */
+                            //Log to Fabric
+                            let formatter = NSDateFormatter()//.timeStyle = .ShortStyle
+                            formatter.timeStyle = .ShortStyle
+                            formatter.dateStyle = .ShortStyle
+                            formatter.timeZone = NSTimeZone(abbreviation: "CST")
+                            let dateString = formatter.stringFromDate(NSDate())
+                            Answers.logLoginWithMethod("Email",
+                                success: false,
+                                customAttributes: ["username":email, "password" : password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
                         }
                     }
             }
@@ -324,4 +345,16 @@ class LoginFormViewController: XLFormViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func enableDebugTools() {
+        
+        self.title = getAppVersionString()
+    }
+    
+    func getAppVersionString () -> String {
+        let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+        let version = nsObject as? String
+        return version!
+    }
+
 }
