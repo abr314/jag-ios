@@ -244,7 +244,7 @@ class ServicesCollectionViewController: UICollectionViewController {
                 self.presentViewController(alertController, animated: true) {
                 // ...
                 }
-           //     return
+                return
     //        }
         }
         

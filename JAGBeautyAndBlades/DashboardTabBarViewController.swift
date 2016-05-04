@@ -22,6 +22,7 @@ class DashboardTabBarViewController: UITabBarController {
             NSForegroundColorAttributeName: kPrimaryColor,
             NSFontAttributeName: UIFont(name: kJagFontFilled, size: 28)!
         ]
+        //self.navigationItem.leftBarButtonItem?.background
 
         
         print(UserInformation.sharedInstance.customerProfile?.email)
