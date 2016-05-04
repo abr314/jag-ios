@@ -26,6 +26,11 @@ import UIKit
             
             string = "Operation failed. Please revise entry and try again."
         }
+        
+        if errorCode == -7003 {
+            
+            string = "Empty Token. Please contact Jag support."
+        }
         let alertController = UIAlertController(title: nil, message: string, preferredStyle: .Alert)
         
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in

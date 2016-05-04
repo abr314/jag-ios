@@ -259,6 +259,11 @@ class LoginFormViewController: XLFormViewController {
                                 self.performSegueWithIdentifier("appointments", sender:self)
                                 activityView.stopAnimating()
                                 
+                            } else {
+                                let alertController = returnAlertControllerForErrorCode(-7003)
+                                self.presentViewController(alertController, animated: true) {
+                                    // ...
+                                }
                             }
                             //Log to Fabric
                             let formatter = NSDateFormatter()//.timeStyle = .ShortStyle

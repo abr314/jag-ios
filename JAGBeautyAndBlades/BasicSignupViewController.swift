@@ -227,6 +227,11 @@ class BasicSignupViewController: XLFormViewController {
                                         
                                         self.performSegueWithIdentifier("dashboardFromSignup", sender: nil)
                                     }
+                                } else {
+                                    let alertController = returnAlertControllerForErrorCode(-7003)
+                                    self.presentViewController(alertController, animated: true) {
+                                        // ...
+                                    }
                                 }
                                 
                             case .Failure(let error):
