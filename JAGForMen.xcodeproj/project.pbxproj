@@ -81,12 +81,10 @@
 		2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */; };
 		2AD2BFFC1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
 		2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFB1CADFB290065B8FB /* Main.storyboard */; };
-		2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */; };
-		2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */; };
-		2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */; };
-		2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */; };
-		2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */; };
-		2AD2C0061CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */; };
+		2AD2C0021CB245640065B8FB /* CalendarFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled.png */; };
+		2AD2C0031CB245640065B8FB /* CalendarFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0011CB245640065B8FB /* CalendarFilled.png */; };
+		2AD2C0051CB245A30065B8FB /* ServiceBellFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled.png */; };
+		2AD2C0061CB245A30065B8FB /* ServiceBellFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0041CB245A30065B8FB /* ServiceBellFilled.png */; };
 		2AD2C00B1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */; };
 		2AD2C00C1CB3EDAD0065B8FB /* ServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */; };
 		2AD2C0141CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */; };
@@ -108,9 +106,10 @@
 		2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
 		2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
 		3001204940D88A1D991064AA /* libPods-JAGBeautyAndBladesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631D2AF7FD11B2EE26CDA5DB /* libPods-JAGBeautyAndBladesTests.a */; };
+		4C6E8DD81CDD2D310002577E /* CalendarFilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */; };
 		4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */; };
 		4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */; };
-		4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */; };
+		4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled@2x.png */; };
 		4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */; };
 		4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C85B28A1CD3E67200FD4153 /* ManSplash.png */; };
 		9187AC4E9AF08CD3EDB4EE29 /* Pods_JAGBeautyAndBlades.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991518A7A72BDF57BE8FA455 /* Pods_JAGBeautyAndBlades.framework */; };
@@ -189,9 +188,8 @@
 		2ACD3D0E1CC92DA3005E4EAD /* AlamofireNetworkActivityIndicator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireNetworkActivityIndicator.framework; path = "../../../../Library/Developer/Xcode/DerivedData/JAGForMen-enktxwozzrczkxdqkaeuxuupdjfl/Build/Products/Debug-iphoneos/AlamofireNetworkActivityIndicator.framework"; sourceTree = "<group>"; };
 		2AD2BFF81CADD8150065B8FB /* HCXLFormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCXLFormRowDescriptor.swift; sourceTree = "<group>"; };
 		2AD2BFFB1CADFB290065B8FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled-50.png"; sourceTree = "<group>"; };
-		2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled-20.png"; sourceTree = "<group>"; };
-		2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ServiceBellFilled-20.png"; sourceTree = "<group>"; };
+		2AD2C0011CB245640065B8FB /* CalendarFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarFilled.png; sourceTree = "<group>"; };
+		2AD2C0041CB245A30065B8FB /* ServiceBellFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ServiceBellFilled.png; sourceTree = "<group>"; };
 		2AD2C00A1CB3EDAD0065B8FB /* ServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTableViewCell.swift; sourceTree = "<group>"; };
 		2AD2C0131CC0B6310065B8FB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplashPage.png; sourceTree = "<group>"; };
@@ -207,9 +205,10 @@
 		2AFEB2611C57D1DF00697A3C /* HCLicense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLicense.swift; sourceTree = "<group>"; };
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
 		47D0F05AB3B8D751609BC8B1 /* Pods-JAGBeautyAndBladesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled@2x.png"; sourceTree = "<group>"; };
 		4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewController.swift; sourceTree = "<group>"; };
 		4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PF Monumenta Pro Regular.ttf"; sourceTree = "<group>"; };
-		4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ServiceBellFilled-50.png"; sourceTree = "<group>"; };
+		4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ServiceBellFilled@2x.png"; sourceTree = "<group>"; };
 		4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JagAppLaunchImage.png; sourceTree = "<group>"; };
 		4C85B28A1CD3E67200FD4153 /* ManSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManSplash.png; sourceTree = "<group>"; };
 		553398393F2875F882D88F5F /* Pods-JAGBeautyAndBladesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,11 +279,11 @@
 				2A505B001C4EE66100023F1F /* jag_logo_lg.png */,
 				2AD2C01B1CC0BD950065B8FB /* iphone_portrait_5_@2x.png */,
 				2AD2C0181CC0BCA00065B8FB /* ManSplashPage.png */,
-				2AD2BFFE1CB2451E0065B8FB /* CalendarFilled-50.png */,
 				2AD2C01D1CC0BE0C0065B8FB /* iphone_portrait_6_@2x.png */,
-				2AD2C0041CB245A30065B8FB /* ServiceBellFilled-20.png */,
-				4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled-50.png */,
-				2AD2C0011CB245640065B8FB /* CalendarFilled-20.png */,
+				2AD2C0041CB245A30065B8FB /* ServiceBellFilled.png */,
+				4C7C43DB1CD8158C000E5F21 /* ServiceBellFilled@2x.png */,
+				2AD2C0011CB245640065B8FB /* CalendarFilled.png */,
+				4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -623,13 +622,13 @@
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
 				4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */,
 				4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */,
-				2AD2C0021CB245640065B8FB /* CalendarFilled-20.png in Resources */,
-				4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled-50.png in Resources */,
-				2AD2BFFF1CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
+				2AD2C0021CB245640065B8FB /* CalendarFilled.png in Resources */,
+				4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled@2x.png in Resources */,
 				2AD2C0191CC0BCA00065B8FB /* ManSplashPage.png in Resources */,
 				2AD2C01C1CC0BD950065B8FB /* iphone_portrait_5_@2x.png in Resources */,
+				4C6E8DD81CDD2D310002577E /* CalendarFilled@2x.png in Resources */,
 				2ADA05471C72357D00839564 /* ServiceTypes.plist in Resources */,
-				2AD2C0051CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
+				2AD2C0051CB245A30065B8FB /* ServiceBellFilled.png in Resources */,
 				2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */,
 				2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
 				2AD2C0141CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */,
@@ -646,14 +645,13 @@
 				2A853A361C96152E0066F70C /* Dashboard.storyboard in Resources */,
 				2A2AAB5D1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
 				2AD2C01A1CC0BCA60065B8FB /* ManSplashPage.png in Resources */,
-				2AD2C0061CB245A30065B8FB /* ServiceBellFilled-20.png in Resources */,
+				2AD2C0061CB245A30065B8FB /* ServiceBellFilled.png in Resources */,
 				2AD2C0151CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */,
 				2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */,
 				2ADA05481C72357D00839564 /* ServiceTypes.plist in Resources */,
 				2A3630181C84DB5C00168AC2 /* PF Monumenta Pro Metallica.ttf in Resources */,
 				2AD2BFFD1CADFB290065B8FB /* Main.storyboard in Resources */,
-				2AD2C0001CB2451E0065B8FB /* CalendarFilled-50.png in Resources */,
-				2AD2C0031CB245640065B8FB /* CalendarFilled-20.png in Resources */,
+				2AD2C0031CB245640065B8FB /* CalendarFilled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

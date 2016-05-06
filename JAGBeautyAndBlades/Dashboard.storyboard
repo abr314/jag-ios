@@ -44,7 +44,7 @@
                             <outlet property="delegate" destination="kFa-fX-XRN" id="bkn-AU-YTe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="Bya-Bi-uOf"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled.png" id="Bya-Bi-uOf"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="HhC-x2-Biq"/>
                     </connections>
@@ -100,7 +100,7 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled-20.png" id="jKm-Lb-Q1i">
+                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled.png" id="jKm-Lb-Q1i">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-7"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="WEx-nY-XCU"/>
@@ -360,7 +360,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled-20.png" id="Mtn-6l-gd3">
+                    <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled.png" id="Mtn-6l-gd3">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-6"/>
                     </tabBarItem>
                     <connections>
@@ -393,8 +393,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CalendarFilled-20.png" width="20" height="20"/>
-        <image name="ServiceBellFilled-20.png" width="20" height="20"/>
+        <image name="CalendarFilled.png" width="20" height="20"/>
+        <image name="ServiceBellFilled.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="f3n-E4-k6t"/>
