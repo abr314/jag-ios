@@ -188,7 +188,7 @@ class BasicSignupViewController: XLFormViewController {
                     let dateString = formatter.stringFromDate(NSDate())
                     Answers.logSignUpWithMethod("Email",
                         success: true,
-                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
+                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : getAppVersionString(), "timeStamp" : dateString])
                     /**
                         Grab the token
                         Add the token to the NSUserDefaults
@@ -255,7 +255,7 @@ class BasicSignupViewController: XLFormViewController {
                     let dateString = formatter.stringFromDate(NSDate())
                     Answers.logSignUpWithMethod("Email",
                         success: true,
-                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
+                        customAttributes: ["username":self.customer.email, "password" : self.customer.password, "appVersion" : getAppVersionString(), "timeStamp" : dateString])
                     
                     let alertController = returnAlertControllerForErrorCode(error.code)
                     /*
@@ -342,11 +342,6 @@ class BasicSignupViewController: XLFormViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-    func getAppVersionString () -> String {
-        let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
-        let version = nsObject as? String
-        return version!
     }
     
 }

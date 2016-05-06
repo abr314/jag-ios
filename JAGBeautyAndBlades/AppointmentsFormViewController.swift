@@ -91,9 +91,9 @@ class AppointmentsFormViewController: XLFormViewController {
                 
                 startTime = String(startTime.characters.dropLast(10))
                 titleString = titleString + " - \(startTime)"
-                if titleString.characters.count > 23 {
-                    fontSize = 14
-                }
+//                if titleString.characters.count > 23 {
+//                    fontSize = 14
+//                }
        //         print(startTime)
          //       print(titleString)
                 

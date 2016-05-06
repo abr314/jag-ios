@@ -137,6 +137,12 @@ public func isValidPhone(value: String) -> Bool {
     return result
     
 }
+
+public func getAppVersionString () -> String {
+    let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
+    let version = nsObject as? String
+    return version!
+}
 /*
 public enum ServiceCategoryType: String {
     case kHairType = "Hair"

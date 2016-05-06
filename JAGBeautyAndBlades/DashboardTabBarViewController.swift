@@ -34,9 +34,11 @@ class DashboardTabBarViewController: UITabBarController {
             
         }
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
+        recognizer.numberOfTapsRequired = 5
+        self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,6 +74,10 @@ class DashboardTabBarViewController: UITabBarController {
     }
     */
 
+    func enableDebugTools() {
+        
+        navigationItem.title = getAppVersionString()
+    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.Default

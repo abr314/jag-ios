@@ -187,11 +187,11 @@ class ServiceDetailFormViewController: XLFormViewController {
             row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
       
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
-            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
-            if (cellString.characters.count > 43) {
-                row.cellConfig.setObject(UIFont(name: kBodyFont, size: 10)!, forKey: "textLabel.font")
-       
-            }
+            row.cellConfig.setObject(UIFont(name: kBodyFont, size: 12)!, forKey: "textLabel.font")
+//            if (cellString.characters.count > 43) {
+//                row.cellConfig.setObject(UIFont(name: kBodyFont, size: 10)!, forKey: "textLabel.font")
+//       
+//            }
             section.addFormRow(row)
             
             newString = cellString

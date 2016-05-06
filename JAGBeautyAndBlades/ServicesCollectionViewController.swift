@@ -109,6 +109,7 @@ class ServicesCollectionViewController: UICollectionViewController {
             case .Success(let json):
             //    let response = json as? JSON
                 self.servicesJSON = JSON(json)
+                //print(json)
             case .Failure(let error): //break
                 let alertController = returnAlertControllerForErrorCode(error.code)
                 self.presentViewController(alertController, animated: true) {
@@ -124,24 +125,24 @@ class ServicesCollectionViewController: UICollectionViewController {
         //self.view.backgroundColor = UIColor.whiteColor()
         
         cellImages = [kBarberImageString,
-                      kCosmoImageString,
-                      kMassageImageString,
                       kNailImageString,
+                      kMassageImageString,
                       kSpaImageString,
+                      kCosmoImageString,
                       kTrainerImageString]
         
         cellLabels = ["Barber",
-                      "Cosmetic",
-                      "Massage",
                       "Nails",
+                      "Massage",
                       "Spa",
+                      "Cosmetic",
                       "Training"]
         
         webCellNames = ["hair",
-                        "cosmetic",
-                        "massage",
                         "nails",
+                        "massage",
                         "spa",
+                        "cosmetic",
                         "trainers"]
         
         // Do any additional setup after loading the view.
@@ -283,5 +284,6 @@ class ServicesCollectionViewController: UICollectionViewController {
         
     }
 
+    
     
 }

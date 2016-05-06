@@ -13,7 +13,7 @@ import UIColor_Hex_Swift
 let kHeaderFont = "PFMonumentaPro-Metallica"
 let kJagFont = "PFMonumentaPro-Metallica"
 let kJagFontFilled = "PFMonumentaPro-Regular"
-let kBodyFont = "Raleway"
+let kBodyFont = "Arial"
 
 extension UIColor {
     public convenience init?(hexString: String) {

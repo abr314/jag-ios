@@ -194,7 +194,7 @@ class LoginFormViewController: XLFormViewController {
     
     override func viewWillAppear(animated: Bool) {
         let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
-        recognizer.numberOfTapsRequired = 3
+        recognizer.numberOfTapsRequired = 5
         self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
     }
     
@@ -271,7 +271,7 @@ class LoginFormViewController: XLFormViewController {
                             let dateString = formatter.stringFromDate(NSDate())
                             Answers.logLoginWithMethod("Email",
                                 success: true,
-                                customAttributes: ["username":email, "password" : password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
+                                customAttributes: ["username":email, "password" : password, "appVersion" : getAppVersionString(), "timeStamp" : dateString])
                             
                         case .Failure(let error)://break
                             
@@ -324,7 +324,7 @@ class LoginFormViewController: XLFormViewController {
                             let dateString = formatter.stringFromDate(NSDate())
                             Answers.logLoginWithMethod("Email",
                                 success: false,
-                                customAttributes: ["username":email, "password" : password, "appVersion" : self.getAppVersionString(), "timeStamp" : dateString])
+                                customAttributes: ["username":email, "password" : password, "appVersion" : getAppVersionString(), "timeStamp" : dateString])
                         }
                     }
             }
@@ -356,10 +356,6 @@ class LoginFormViewController: XLFormViewController {
         self.title = getAppVersionString()
     }
     
-    func getAppVersionString () -> String {
-        let nsObject: AnyObject? = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]
-        let version = nsObject as? String
-        return version!
-    }
+    
 
 }
