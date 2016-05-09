@@ -120,7 +120,9 @@ class BasicSignupViewController: XLFormViewController {
             }
             
             if (row.tag == kPhone) {
-                row.addValidator(XLFormRegexValidator(msg: "At least 6, max 32 characters", andRegexString: "^[2-9][0-9]{9}$"))
+                row.addValidator(XLFormRegexValidator(msg: "At least 10, max 10 characters", andRegexString: "^[2-9][0-9]{9}$"))
+                row.cellConfig.setObject(self, forKey: "textField.delegate")
+                row.cellConfig.setValue(323, forKey: "textField.tag")
             }
             
             if (row.tag == kEmail) {
@@ -340,8 +342,31 @@ class BasicSignupViewController: XLFormViewController {
 
     }
     
+    override func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.tag == 323 {
+            let textFieldLength = textField.text?.characters.count
+            
+            if range.location < textFieldLength {
+                return true
+            }
+            if textFieldLength > 9 {
+                return false
+            }
+            if string.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil {
+                return true
+            } else {
+                return false
+            }
+
+        }
+        
+        return true
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
     
 }

@@ -327,6 +327,9 @@ class AppointmentsFormViewController: XLFormViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "APPOINTMENTS"
+        
         appointments = UserInformation.sharedInstance.appointments
         
         self.navigationController?.navigationBar.translucent = false

@@ -103,7 +103,7 @@
                     <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled.png" id="jKm-Lb-Q1i">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-7"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="WEx-nY-XCU"/>
+                    <navigationItem key="navigationItem" title="SERVICES" id="WEx-nY-XCU"/>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
                         <segue destination="H1Y-lA-2fF" kind="show" identifier="proAppointments" id="sSn-mc-49F"/>
@@ -363,6 +363,7 @@
                     <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled.png" id="Mtn-6l-gd3">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-6"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" title="APPOINTMENTS" id="epE-lJ-iej"/>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetails" id="XVD-FG-MX6">
                             <nil key="action"/>

@@ -92,6 +92,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         // download the service types dictionary
         hasBeenTapped = false
         
+        self.title = "SERVICES"
         /*
             If  user type is provider, transition to the activities VC and disable services
         */
@@ -109,7 +110,7 @@ class ServicesCollectionViewController: UICollectionViewController {
             case .Success(let json):
             //    let response = json as? JSON
                 self.servicesJSON = JSON(json)
-                //print(json)
+                print(json)
             case .Failure(let error): //break
                 let alertController = returnAlertControllerForErrorCode(error.code)
                 self.presentViewController(alertController, animated: true) {

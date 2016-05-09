@@ -17,7 +17,7 @@ class DashboardTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
-        self.title = "JAG"
+        self.title = "Services"
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: kPrimaryColor,
             NSFontAttributeName: UIFont(name: kJagFontFilled, size: 28)!
@@ -49,7 +49,7 @@ class DashboardTabBarViewController: UITabBarController {
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         
         
-        
+        self.title = item.title
         
         if item.title == "Appointments" {
             if let vcs = viewControllers {
