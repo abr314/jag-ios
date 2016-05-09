@@ -2,57 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rc7-46-eLM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Services-->
-        <scene sceneID="5kM-Rw-JHX">
-            <objects>
-                <tableViewController id="kFa-fX-XRN" customClass="ServicesTableViewController" customModule="JAGBeautyAndBlades" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9w-tB-41i">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="92" id="r8b-sp-pty" customClass="ServicesTableViewCell" customModule="JAGBeautyAndBlades" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="92"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r8b-sp-pty" id="B5J-UT-gjI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AXS-1T-RAe">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="AXS-1T-RAe" secondAttribute="height" multiplier="120:11" constant="-398.18181818181813" id="Ycc-Qr-bhx"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="AXS-1T-RAe" secondAttribute="trailing" id="53L-KD-cab"/>
-                                        <constraint firstItem="AXS-1T-RAe" firstAttribute="top" secondItem="B5J-UT-gjI" secondAttribute="top" id="g0G-1W-hrF"/>
-                                        <constraint firstItem="AXS-1T-RAe" firstAttribute="leading" secondItem="B5J-UT-gjI" secondAttribute="leading" id="jGj-8R-2pF"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="cellImage" destination="AXS-1T-RAe" id="u4Q-XO-0He"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kFa-fX-XRN" id="Gw3-tj-Pvh"/>
-                            <outlet property="delegate" destination="kFa-fX-XRN" id="bkn-AU-YTe"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled.png" id="Bya-Bi-uOf"/>
-                    <connections>
-                        <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="HhC-x2-Biq"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vrg-EL-A0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-215" y="-680"/>
-        </scene>
         <!--Services Collection View-->
         <scene sceneID="UrN-Rp-Lzm">
             <objects>
@@ -103,7 +54,9 @@
                     <tabBarItem key="tabBarItem" title="Services" image="ServiceBellFilled.png" id="jKm-Lb-Q1i">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-7"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="SERVICES" id="WEx-nY-XCU"/>
+                    <navigationItem key="navigationItem" title="Services" id="WEx-nY-XCU">
+                        <barButtonItem key="backBarButtonItem" title="  " id="aT0-pG-INH"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="YRQ-co-0Hs" kind="show" identifier="procedures" id="f3n-E4-k6t"/>
                         <segue destination="H1Y-lA-2fF" kind="show" identifier="proAppointments" id="sSn-mc-49F"/>
@@ -363,7 +316,7 @@
                     <tabBarItem key="tabBarItem" tag="1" title="Appointments" image="CalendarFilled.png" id="Mtn-6l-gd3">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-6"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="APPOINTMENTS" id="epE-lJ-iej"/>
+                    <navigationItem key="navigationItem" title="Appointments" id="epE-lJ-iej"/>
                     <connections>
                         <segue destination="j45-JG-enJ" kind="show" identifier="showDetails" id="XVD-FG-MX6">
                             <nil key="action"/>
@@ -398,7 +351,6 @@
         <image name="ServiceBellFilled.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f3n-E4-k6t"/>
         <segue reference="sSn-mc-49F"/>
     </inferredMetricsTieBreakers>
 </document>

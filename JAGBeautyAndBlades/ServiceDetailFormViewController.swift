@@ -19,6 +19,7 @@ class ServiceDetailFormViewController: XLFormViewController {
     var appointment = HCAppointment()
     var service = ""
     var priceTier = 3
+    var priceTierString = "Skilled"
     var newString = ""
     var newName = ""
     var appointmentID:Int?
@@ -33,6 +34,11 @@ class ServiceDetailFormViewController: XLFormViewController {
     var customerID = ""
     var selectedMainService = HCServiceRequest()
     var mainServiceHasBeenSelected = false
+    let priceTierMapping = [ "Novice" : 1,
+                              "Proficient" : 2,
+                              "Skilled" : 3,
+                              "Expert" : 4,
+                              "Master" : 5]
   
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,38 +50,39 @@ class ServiceDetailFormViewController: XLFormViewController {
       //  initializeForm()
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        if section == 0 {
-            
-        
-        let myCustomView = UIImageView()
-        let myImage: UIImage = UIImage(named: categoryImageName)!
-        myCustomView.image = myImage
-            return myCustomView
-        }
-        
-        return nil
-    }
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        if section == 0 {
+//            
+//        
+//        let myCustomView = UIImageView()
+//        let myImage: UIImage = UIImage(named: categoryImageName)!
+//        myCustomView.image = myImage
+//            return myCustomView
+//        }
+//        
+//        return nil
+//    }
     
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    if  section == 0 {
-
-        return 80.0
-    }
     
-    if section == 2 {
+    switch section {
+    case 0:
+        return 40
+    case 2:
         return 30
+    case 3:
+        return 10
+    default:
+        return 20
     }
     
-    if section == 3 {
-        return 10
-    }
-    return 20
 }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-     //   self.navigationController?.viewWillAppear(true)
+        
+        navigationItem.backBarButtonItem?.title = ""
+
         serviceRequets.removeAll()
         checkedServicesTags.removeAll()
         runningTotal = 0
@@ -88,6 +95,8 @@ class ServiceDetailFormViewController: XLFormViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        navigationItem.backBarButtonItem?.title = ""
         
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -143,16 +152,16 @@ class ServiceDetailFormViewController: XLFormViewController {
         form = XLFormDescriptor(title: "\(service)")
         
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("Price Tier")
+        section = XLFormSectionDescriptor.formSectionWithTitle("Choose a Price Tier")
         
-        row = XLFormRowDescriptor(tag: "PriceTier", rowType: XLFormRowDescriptorTypeSelectorPickerViewInline, title: "Skill Level")
+        row = XLFormRowDescriptor(tag: "PriceTier", rowType: XLFormRowDescriptorTypeSelectorPickerViewInline, title: "Price Tier")
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
         
-        row.selectorOptions = [1, 2, 3, 4, 5]
-        row.value = priceTier
+        row.selectorOptions = ["Novice", "Proficient", "Skilled", "Expert", "Master"]
+        row.value = priceTierString
     
         section.addFormRow(row)
         
@@ -204,7 +213,7 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         row = XLFormRowDescriptor(tag: "Total Price", rowType:XLFormRowDescriptorTypeText)
         
-        row.title = "Total Price: $\(runningTotal)"
+        row.title = "Total Price:               $\(runningTotal)"
         row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
         row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
@@ -219,8 +228,8 @@ class ServiceDetailFormViewController: XLFormViewController {
         
         row = XLFormRowDescriptor(tag: "Add", rowType:XLFormRowDescriptorTypeButton)
         row.title = "Choose Time and Location"
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+        row.cellConfig.setObject(kPurpleColor, forKey: "backgroundColor")
+        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         section.addFormRow(row)
@@ -446,16 +455,16 @@ class ServiceDetailFormViewController: XLFormViewController {
                 
             }
             var row = self.form.formRowWithTag("Total Price")
-            row?.title = "Total Price: $\(runningTotal)"
+            row?.title = "Total Price:               $\(runningTotal)"
             self.reloadFormRow(row)
         }
         
         
         if formRow.tag == "PriceTier" {
             
-            newValue
-            if let thisInt = newValue as? Int {
-                priceTier = thisInt
+            if let newTierString = newValue as? String {
+                priceTier = priceTierMapping[newTierString]!
+                priceTierString = newTierString
                 runningTotal = 0
                 checkedServicesTags.removeAll()
                 initializeForm()
@@ -494,7 +503,7 @@ class ServiceDetailFormViewController: XLFormViewController {
             }
         }
     }
-
+ 
     
     // MARK: - Navigation
 
@@ -517,6 +526,10 @@ class ServiceDetailFormViewController: XLFormViewController {
       
             vc.appointment = appointment
             vc.categoryID = categoryID
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            vc.navigationItem.backBarButtonItem = backItem
        
         }
     }

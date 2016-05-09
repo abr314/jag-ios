@@ -138,7 +138,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       // super.viewDidLoad()
+       
+        navigationItem.backBarButtonItem?.title = ""
         
         var token = ""
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -280,8 +281,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         section = XLFormSectionDescriptor.formSectionWithTitle("")
         
         row = XLFormRowDescriptor(tag: "Book", rowType: XLFormRowDescriptorTypeButton, title: "To Payment")
-        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-        row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+        row.cellConfig.setObject(kPurpleColor, forKey: "backgroundColor")
+        row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
         row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textLabel.font")
         row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
         row.action.formSelector = #selector(ScheduleFormViewController.bookNowPressed)

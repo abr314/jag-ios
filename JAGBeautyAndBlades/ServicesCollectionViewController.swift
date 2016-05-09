@@ -92,7 +92,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         // download the service types dictionary
         hasBeenTapped = false
         
-        self.title = "SERVICES"
+        self.title = "Services"
         /*
             If  user type is provider, transition to the activities VC and disable services
         */
@@ -167,6 +167,7 @@ class ServicesCollectionViewController: UICollectionViewController {
         // pass the proper dictionary to the details VC
         if segue.identifier == "procedures" {
             if let svc = segue.destinationViewController as? ServiceDetailFormViewController {
+                svc.navigationItem.title = selectedCellName
                 svc.service = selectedCellTitle
                 svc.services = servicesJSON
                 svc.newName = selectedCellName
@@ -176,6 +177,10 @@ class ServicesCollectionViewController: UICollectionViewController {
                 svc.bookingID = bookingID
  
                 svc.categoryID = categoryID
+                
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                svc.navigationItem.backBarButtonItem = backItem
                 
                 hasBeenTapped = false
             }

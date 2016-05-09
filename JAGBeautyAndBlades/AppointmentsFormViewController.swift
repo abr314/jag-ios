@@ -328,7 +328,7 @@ class AppointmentsFormViewController: XLFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "APPOINTMENTS"
+        self.title = "Appointments"
         
         appointments = UserInformation.sharedInstance.appointments
         
