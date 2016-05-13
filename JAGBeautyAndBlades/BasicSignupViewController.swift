@@ -86,8 +86,9 @@ class BasicSignupViewController: XLFormViewController {
     //    let isProfessionalArray = [kCustomerRoleString, XLFormRowDescriptorTypeSelectorPickerViewInline]
         let cancelArray = ["Cancel", XLFormRowDescriptorTypeButton]
   //      let referralCodeArray = ["Who were you referred by?", XLFormRowDescriptorTypeText]
+        
     
-        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray] //,
+        let arrayOfRows = [firstNameArray, lastNameArray, phoneNumberArray, emailArray, passwordArray, nextArray, cancelArray]
         // add array of rows to form with parameters
         
         for rowStrings in arrayOfRows {
@@ -108,7 +109,7 @@ class BasicSignupViewController: XLFormViewController {
                 section = XLFormSectionDescriptor.formSectionWithTitle(" ")
                 form.addFormSection(section)
             }
-            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != kCustomerRoleString) {
+            if (row.tag != "Register Now" && row.tag != "I am a Service Provider" && row.tag != "Cancel" && row.tag != kCustomerRoleString && row.tag != kSignUpNote) {
                 row.required = true
 
                 row.cellConfig.setObject(UIFont(name: kBodyFont, size: 17)!, forKey: "textField.font")
@@ -138,15 +139,28 @@ class BasicSignupViewController: XLFormViewController {
                 row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
                 self?.navigationController?.popViewControllerAnimated(false)
                 }
+                
                 section = XLFormSectionDescriptor.formSectionWithTitle(" ")
+                section.footerTitle = kSignUpNote
+                
                 form.addFormSection(section)
-            }
+            }            
+
             
             section.addFormRow(row)
         }
         
         self.form = form
     
+    }
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if section != 2 {
+            return
+        }
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.clearColor() //make the background color light blue
+        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel?.textAlignment = NSTextAlignment.Center
     }
     
     func nextButtonPressed() {
