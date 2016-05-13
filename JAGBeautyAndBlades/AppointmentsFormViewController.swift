@@ -100,8 +100,8 @@ class AppointmentsFormViewController: XLFormViewController {
             }
          //   print(titleString)
             row = XLFormRowDescriptor(tag:"\(appointmentID)", rowType: XLFormRowDescriptorTypeButton, title: titleString)
-            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "backgroundColor")
-            row.cellConfig.setObject(UIColor.blackColor(), forKey: "textLabel.textColor")
+            row.cellConfig.setObject(kPrimaryColor, forKey: "backgroundColor")
+            row.cellConfig.setObject(UIColor.whiteColor(), forKey: "textLabel.textColor")
             row.cellConfig.setObject(UIFont(name: kBodyFont, size: fontSize)!, forKey: "textLabel.font")
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
             row.cellConfig["textLabel.textAlignment"] = NSTextAlignment.Left.rawValue
