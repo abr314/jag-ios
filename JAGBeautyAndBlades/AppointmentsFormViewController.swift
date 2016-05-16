@@ -12,9 +12,11 @@ import Alamofire
 class AppointmentsFormViewController: XLFormViewController {
     var results:JSON?
     var customer:HCCustomer?
+    var isPro:Bool?
     var array:Array<AnyObject>?
     var chosenAppointment:JSON?
     var appointments:JSON?
+    var availableAppointments:JSON?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -37,8 +39,27 @@ class AppointmentsFormViewController: XLFormViewController {
         
         var appointmentsMaking = [JSON]()
         var appointmentsCreated = [JSON]()
+        var appointmentsAvailable = [JSON]()
         var appointmentsConfirmed = [JSON]()
         var appointmentsDone = [JSON]()
+        
+        if (isPro == true) {
+            availableAppointments = UserInformation.sharedInstance.availableAppointments
+            if (availableAppointments?.count > 0) {
+                for appointment in availableAppointments! {
+                    
+                    let status = appointment.1["status"].stringValue
+                    
+                    
+                    let jsonObj = appointment.1
+                    
+                    
+                    if status == "created" {
+                        appointmentsAvailable.append(jsonObj)
+                    }
+                }
+            }
+        }
         
       //  var theseAppointments = JSON.null
         if let app = appointments {
@@ -74,10 +95,18 @@ class AppointmentsFormViewController: XLFormViewController {
         
         form.assignFirstResponderOnShow = true
         
-        section = XLFormSectionDescriptor.formSectionWithTitle("Created")
+        var appointmentsCreatedOrAvailable:[JSON]
+        if isPro == true {
+            section = XLFormSectionDescriptor.formSectionWithTitle("Available")
+            appointmentsCreatedOrAvailable = appointmentsAvailable
+        } else {
+            section = XLFormSectionDescriptor.formSectionWithTitle("Created")
+            appointmentsCreatedOrAvailable = appointmentsCreated
+        }
+        
         
        
-        for jsonObject in appointmentsCreated {
+        for jsonObject in appointmentsCreatedOrAvailable {
             //  row = XLFormRowDescriptor(tag: jsonObject[""], rowType: rowStrings[1], title: rowStrings[0])
             
             let name = jsonObject["category"]["display_name"].stringValue
@@ -130,54 +159,6 @@ class AppointmentsFormViewController: XLFormViewController {
            
             // create block for adding the row object to chosenappointment 
             
-            
-            /* 
-                                Block For Cancelling Appointment
-             
-            row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
-                let alertController = UIAlertController(title: nil, message: "Would you like to cancel this appointment?", preferredStyle: .ActionSheet)
-                
-                let cancelAction = UIAlertAction(title: "No, keep this appointment", style: .Cancel) { (action) in
-                    // ...
-                }
-                alertController.addAction(cancelAction)
-                
-                let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
-             //       print(action)
-                    let headers = ["Authorization":  "Token  \(token)"]
-                    Alamofire.request(.POST, kAppointmentCancelURL, parameters:["appointment_id":"\(appointmentID)"], headers:headers)
-                        .responseJSON { response in
-                            switch response.result {
-                            case .Success(let json):
-                              //  print(json)
-                                Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
-                                    response in switch response.result {
-                                        
-                                    case .Success(let json):
-                                        self?.appointments = JSON(json)
-                                        UserInformation.sharedInstance.appointments = JSON(json)//self.?appointments
-                                        self?.initializeForm()
-                                    case .Failure(let error): print(error)
-                                        
-                                    }
-                                }
-                                
-                            case .Failure(let error):
-                                print(error)
-                            }
-                    }
-                    
- 
-                }
- 
-                alertController.addAction(destroyAction)
-                
-                self!.presentViewController(alertController, animated: true) {
-                    // ...
-                }
- 
-            }
-            */
             section.addFormRow(row)
         }
         
@@ -319,20 +300,52 @@ class AppointmentsFormViewController: XLFormViewController {
             }
         }
     }
-    override func viewDidAppear(animated: Bool) {
-        
-        
+    override func viewWillAppear(animated: Bool) {
         initializeForm()
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.objectForKey("role") as? String == "pro" {
+            retrieveAvailableAppointments()
+        }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Appointments"
         
         appointments = UserInformation.sharedInstance.appointments
+        //customer = UserInformation.sharedInstance.customerProfile
         
         self.navigationController?.navigationBar.translucent = false
-              initializeForm()
+              //initializeForm()
+    }
+    
+    func retrieveAvailableAppointments() {
+        var token = ""
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey(kJAGToken)
+        {
+            token = name
+            //     customerToken = name
+        }
+        
+        let headers = ["Authorization":  "Token  \(token)"]
+        Alamofire.request(.GET, kAvailableAppointmentsURL, headers: headers).responseJSON {
+            response in switch response.result {
+                
+            case .Success(let json):
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    UserInformation.sharedInstance.availableAppointments = JSON(json)
+                    print(JSON(json))
+                    
+                    self.isPro = true
+                    self.initializeForm()
+                })
+                
+            case .Failure(let error): print(error)
+                
+            }
+        }
     }
 }

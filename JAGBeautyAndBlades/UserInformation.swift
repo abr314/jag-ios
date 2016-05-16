@@ -15,6 +15,7 @@ class UserInformation: NSObject {
     static let sharedInstance = UserInformation()
     
     var appointments = JSON.null
+    var availableAppointments = JSON.null
     var token = ""
     var customerProfile:HCCustomer?
     var userAlreadyExists = false
