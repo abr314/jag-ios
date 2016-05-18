@@ -39,14 +39,14 @@ class AppointmentDetailFormViewController: XLFormViewController {
     var user = HCCustomer()
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        initializeForm()
+        //initializeForm()
         //  let token = customer?.token
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initializeForm()
+        //initializeForm()
     }
     
     func createReadableStringFromDateString(string: String) -> String {
@@ -286,96 +286,119 @@ class AppointmentDetailFormViewController: XLFormViewController {
             
         }
         form.addFormSection(section)
-        // Add Cancel button for customers 
-        section = XLFormSectionDescriptor.formSectionWithTitle("")
-        
-        row = XLFormRowDescriptor(tag: kCancel, rowType: XLFormRowDescriptorTypeButton, title: kCancel)
-        
-        row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
-            let alertController = UIAlertController(title: nil, message: "Would you like to cancel this appointment?", preferredStyle: .ActionSheet)
+        // Add Cancel button for customers or Accept button for Pro's
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let shouldShowAcceptButton = (defaults.stringForKey("role") == "pro" && appointmentStatus == AppointmentStatus.Created)
+        let shouldShowCancelButton = (defaults.stringForKey("role") != "pro" && appointmentStatus != AppointmentStatus.Done)
+        if (shouldShowAcceptButton || shouldShowCancelButton) {
+            var alertMessage:String
+            var alertCancelMessage:String
+            var alertConfirmMessage:String
+            var buttonTitle:String
+            var endpointURL:URLStringConvertible
+            var requestType:Alamofire.Method
             
-            let cancelAction = UIAlertAction(title: "No, keep this appointment", style: .Cancel) { (action) in
-                // ...
+            
+            if shouldShowAcceptButton {
+                alertMessage = "Would you like to accept this appointment?"
+                alertConfirmMessage = "Yes, I accept this appointment"
+                alertCancelMessage = "No, I do not accept this appointment"
+                buttonTitle = kAccept
+                requestType = .PUT
+                endpointURL = kAppointmentAcceptURL + self.appointmentID + "/"
+            } else {
+                alertMessage = "Would you like to cancel this appointment?"
+                alertConfirmMessage = "Yes, cancel this appointment"
+                alertCancelMessage = "No, keep this appointment"
+                buttonTitle = kCancel
+                requestType = .POST
+                endpointURL = kAppointmentCancelURL
             }
-            alertController.addAction(cancelAction)
             
-            let destroyAction = UIAlertAction(title: "Yes, cancel this appointment", style: .Destructive) { (action) in
-                //       print(action)
-                var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
-                activityView.color = UIColor.blackColor()
-                //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
-                //  activityIndicator.transform = transform
-                activityView.center = self!.view.center
-                activityView.hidesWhenStopped = true
-                //    activityView.activityIndicatorViewStyle = UIActivityIndicatorView.
+            section = XLFormSectionDescriptor.formSectionWithTitle("")
+            
+            row = XLFormRowDescriptor(tag: buttonTitle, rowType: XLFormRowDescriptorTypeButton, title: buttonTitle)
+            
+            row.action.formBlock = { [weak self] (sender: XLFormRowDescriptor!) -> Void in
+                let alertController = UIAlertController(title: nil, message: alertMessage, preferredStyle: .ActionSheet)
                 
-                activityView.startAnimating()
+                let cancelAction = UIAlertAction(title: alertCancelMessage, style: .Cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
                 
-                self!.view.addSubview(activityView)
-                let headers = ["Authorization":  "Token  \(self!.token)"]
-                Alamofire.request(.POST, kAppointmentCancelURL, parameters:["appointment_id":self!.appointmentID], headers:headers)
-                    .responseJSON { response in
-                        switch response.result {
-                        case .Success(let json):
-                            //  print(json)
-                            Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
-                                response in switch response.result {
-                                    
-                                case .Success(let item):
-                                    dispatch_async(dispatch_get_main_queue()) { ///[unowned self] in
-                                     //   if let newJSON = item as? JSON {
+                let appointmentAction = UIAlertAction(title: alertConfirmMessage, style: .Destructive) { (action) in
+                    //       print(action)
+                    var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                    activityView.color = UIColor.blackColor()
+                    //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
+                    //  activityIndicator.transform = transform
+                    activityView.center = self!.view.center
+                    activityView.hidesWhenStopped = true
+                    //    activityView.activityIndicatorViewStyle = UIActivityIndicatorView.
+                    
+                    activityView.startAnimating()
+                    
+                    self!.view.addSubview(activityView)
+                    let headers = ["Authorization":  "Token  \(self!.token)"]
+                    Alamofire.request(requestType, endpointURL, parameters:["appointment_id":self!.appointmentID], headers:headers)
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success(let json):
+                                  print(json)
+                                Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                                    response in switch response.result {
+                                        
+                                    case .Success(let item):
+                                        dispatch_async(dispatch_get_main_queue()) { ///[unowned self] in
+                                            //   if let newJSON = item as? JSON {
                                             UserInformation.sharedInstance.appointments = JSON(item)
                                             
-                                      //  }
+                                            //  }
+                                        }
+                                        
+                                        activityView.stopAnimating()
+                                        
+                                        
+                                        self?.navigationController?.popViewControllerAnimated(true)
+                                        //    UserInformation.sharedInstance.appointments = self!.appointmentJson//self.?appointments
+                                    //  self?.initializeForm()
+                                    case .Failure(let error): print(error)
+                                        
                                     }
-                                   
-                                    activityView.stopAnimating()
-                                    
-                                    
-                                    self?.navigationController?.popViewControllerAnimated(true)
-                                //    UserInformation.sharedInstance.appointments = self!.appointmentJson//self.?appointments
-                                  //  self?.initializeForm()
-                                case .Failure(let error): print(error)
-                                    
+                                }
+                                
+                            case .Failure(let error):
+                                print(response.result)
+                                print(error)
+                                print(error.code)
+                                print(error.localizedFailureReason)
+                                let alertController = returnAlertControllerForErrorCode(error.code)
+                                activityView.stopAnimating()
+                                self!.presentViewController(alertController, animated: true) {
+                                    // ...
                                 }
                             }
-                            
-                        case .Failure(let error):
-                            print(response.result)
-                            print(error)
-                            print(error.code)
-                            print(error.localizedFailureReason)
-                            let alertController = returnAlertControllerForErrorCode(error.code)
-                            activityView.stopAnimating()
-                            self!.presentViewController(alertController, animated: true) {
-                                // ...
-                            }
-                        }
+                    }
+                    
+                    
                 }
                 
+                alertController.addAction(appointmentAction)
+                
+                self!.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 
             }
             
-            alertController.addAction(destroyAction)
-            
-            self!.presentViewController(alertController, animated: true) {
-                // ...
-            }
-            
-        }
-        row.cellConfig.setObject(UIColor.redColor(), forKey: "textLabel.textColor")
-        section.addFormRow(row)
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        defaults.stringForKey("role")
-        if appointmentStatus != AppointmentStatus.Done && defaults.stringForKey("role") != "pro" {
-            
-            
-            form.addFormSection(section)
+            let textColor = shouldShowAcceptButton ? UIColor.greenColor() : UIColor.redColor()
+            row.cellConfig.setObject(textColor, forKey: "textLabel.textColor")
+            section.addFormRow(row)
+
         }
         
-        
+        form.addFormSection(section)
         self.form = form
     
     }

@@ -97,7 +97,7 @@ class AppointmentsFormViewController: XLFormViewController {
         
         var appointmentsCreatedOrAvailable:[JSON]
         if isPro == true {
-            section = XLFormSectionDescriptor.formSectionWithTitle("Available")
+            section = XLFormSectionDescriptor.formSectionWithTitle("Available for Pickup")
             appointmentsCreatedOrAvailable = appointmentsAvailable
         } else {
             section = XLFormSectionDescriptor.formSectionWithTitle("Created")
@@ -301,11 +301,11 @@ class AppointmentsFormViewController: XLFormViewController {
         }
     }
     override func viewWillAppear(animated: Bool) {
-        initializeForm()
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if defaults.objectForKey("role") as? String == "pro" {
             retrieveAvailableAppointments()
-        }
+        } else {initializeForm()}
     }
     
     override func viewDidLoad() {

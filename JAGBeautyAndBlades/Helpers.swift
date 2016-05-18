@@ -38,6 +38,11 @@ enum AppointmentStatus : String {
 func appointmentStatusToReadableString(status:AppointmentStatus) -> String {
     
     if status == .Created {
+        if NSUserDefaults.standardUserDefaults().objectForKey("role") as? String == "pro" {
+            return "Available for Pickup"
+        }
+
+        
         return "Pending Acceptance"
     }
     
@@ -88,6 +93,7 @@ let kStartTime = "Start Time"
 let kEndTime = "End Time"
 let kAllDay = "All-Day"
 let kSave = "Save"
+let kAccept = "Accept Appointment"
 let kCancel = "Cancel"
 let kSubmit = "Submit"
 let kFirstLine = "First Line"
