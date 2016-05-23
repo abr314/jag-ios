@@ -297,6 +297,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
             var buttonTitle:String
             var endpointURL:URLStringConvertible
             var requestType:Alamofire.Method
+            var params = [String: AnyObject]()
             
             
             if shouldShowAcceptButton {
@@ -306,6 +307,23 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 buttonTitle = kAccept
                 requestType = .PUT
                 endpointURL = kAppointmentAcceptURL + self.appointmentID + "/"
+                
+                params = [
+                          "id":self.appointmentID,
+                          "category":appointmentJson["category"]["id"].stringValue,
+                          "booking":appointmentJson["booking"].stringValue,
+                          "customer" : appointmentJson["customer"]["id"].stringValue,
+                          "status" : "created",
+                          "address": NSNull(),
+                          "requested_start_by": NSNull(),
+                          "requested_end_by": NSNull(),
+                          "appointment_price": appointmentJson["appointment_price"].stringValue,
+                          "actual_start_time": NSNull(),
+                          "actual_end_time": NSNull(),
+                          "confirmed_customer": appointmentJson["confirmed_customer"].stringValue,
+                          "confirmed_provider": appointmentJson["confirmed_provider"].stringValue,
+                          "payment_status": appointmentJson["payment_status"].stringValue
+                ]
             } else {
                 alertMessage = "Would you like to cancel this appointment?"
                 alertConfirmMessage = "Yes, cancel this appointment"
@@ -313,6 +331,8 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 buttonTitle = kCancel
                 requestType = .POST
                 endpointURL = kAppointmentCancelURL
+                
+               params = ["appointment_id":self.appointmentID]
             }
             
             section = XLFormSectionDescriptor.formSectionWithTitle("")
@@ -341,7 +361,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
                     
                     self!.view.addSubview(activityView)
                     let headers = ["Authorization":  "Token  \(self!.token)"]
-                    Alamofire.request(requestType, endpointURL, parameters:["appointment_id":self!.appointmentID], headers:headers)
+                    Alamofire.request(requestType, endpointURL, parameters:params, headers:headers)
                         .responseJSON { response in
                             switch response.result {
                             case .Success(let json):
