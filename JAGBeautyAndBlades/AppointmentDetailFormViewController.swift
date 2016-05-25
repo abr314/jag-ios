@@ -297,7 +297,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
             var buttonTitle:String
             var endpointURL:URLStringConvertible
             var requestType:Alamofire.Method
-            var params = [String: AnyObject]()
+            var params = [String: AnyObject]?()
             
             
             if shouldShowAcceptButton {
@@ -305,25 +305,27 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 alertConfirmMessage = "Yes, I accept this appointment"
                 alertCancelMessage = "No, I do not accept this appointment"
                 buttonTitle = kAccept
-                requestType = .PUT
+                requestType = .POST
                 endpointURL = kAppointmentAcceptURL + self.appointmentID + "/"
                 
-                params = [
-                          "id":self.appointmentID,
-                          "category":appointmentJson["category"]["id"].stringValue,
-                          "booking":appointmentJson["booking"].stringValue,
-                          "customer" : appointmentJson["customer"]["id"].stringValue,
-                          "status" : "created",
-                          "address": NSNull(),
-                          "requested_start_by": NSNull(),
-                          "requested_end_by": NSNull(),
-                          "appointment_price": appointmentJson["appointment_price"].stringValue,
-                          "actual_start_time": NSNull(),
-                          "actual_end_time": NSNull(),
-                          "confirmed_customer": appointmentJson["confirmed_customer"].stringValue,
-                          "confirmed_provider": appointmentJson["confirmed_provider"].stringValue,
-                          "payment_status": appointmentJson["payment_status"].stringValue
-                ]
+                params = nil
+//                params = [
+//                          "id":self.appointmentID,
+//                          "service_provider":4,
+//                          "category":appointmentJson["category"]["id"].stringValue,
+//                          "booking":appointmentJson["booking"].stringValue,
+//                          "customer" : appointmentJson["customer"]["id"].stringValue,
+//                          "status" : "created",
+//                          "address": "",
+//                          "requested_start_by": "",
+//                          "requested_end_by": "",
+//                          "appointment_price": appointmentJson["appointment_price"].stringValue,
+//                          "actual_start_time": "",
+//                          "actual_end_time": "",
+//                          "confirmed_customer": appointmentJson["confirmed_customer"].stringValue,
+//                          "confirmed_provider": appointmentJson["confirmed_provider"].stringValue,
+//                          "payment_status": appointmentJson["payment_status"].stringValue
+//                ]
             } else {
                 alertMessage = "Would you like to cancel this appointment?"
                 alertConfirmMessage = "Yes, cancel this appointment"
@@ -332,7 +334,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 requestType = .POST
                 endpointURL = kAppointmentCancelURL
                 
-               params = ["appointment_id":self.appointmentID]
+                params = ["appointment_id":self.appointmentID]
             }
             
             section = XLFormSectionDescriptor.formSectionWithTitle("")
