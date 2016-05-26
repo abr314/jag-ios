@@ -256,6 +256,23 @@ class LoginFormViewController: XLFormViewController {
                                 defaults.setObject("\(string)", forKey: kJAGToken)
                                 UserInformation.sharedInstance.token = string
                                 UserInformation.sharedInstance.userAlreadyExists = true
+                                
+                                
+                                let userTypeInt = response.result.value?.valueForKey("site_user_type")?.intValue
+                                if userTypeInt == 0 {
+                                    UserInformation.sharedInstance.customerProfile?.isProfessional = false
+                                    defaults.setObject("customer", forKey: "role")
+                                    
+                                }
+                                if userTypeInt == 1 {
+                                    
+                                    
+                                    UserInformation.sharedInstance.customerProfile?.isProfessional = true
+                                    
+                                    
+                                    defaults.setObject("pro", forKey: "role")
+                                }
+
                                 self.performSegueWithIdentifier("appointments", sender:self)
                                 activityView.stopAnimating()
                                 

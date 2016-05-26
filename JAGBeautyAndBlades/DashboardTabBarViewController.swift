@@ -28,9 +28,14 @@ class DashboardTabBarViewController: UITabBarController {
         print(UserInformation.sharedInstance.customerProfile?.email)
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
-        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
-            self.tabBar.items?.dropFirst()
+        
+        let role = NSUserDefaults.standardUserDefaults().valueForKey("role") as? String
+        if role == "pro" {
             
+            self.selectedIndex = 1
+            self.tabBar.hidden = true
+            
+            self.title = "Appointments"
             
         }
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)

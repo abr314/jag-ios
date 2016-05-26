@@ -302,6 +302,8 @@ class AppointmentsFormViewController: XLFormViewController {
     }
     override func viewWillAppear(animated: Bool) {
         
+        retrieveAppointments()
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if defaults.objectForKey("role") as? String == "pro" {
             retrieveAvailableAppointments()
@@ -326,7 +328,6 @@ class AppointmentsFormViewController: XLFormViewController {
         if let name = defaults.stringForKey(kJAGToken)
         {
             token = name
-            //     customerToken = name
         }
         
         let headers = ["Authorization":  "Token  \(token)"]
@@ -348,4 +349,33 @@ class AppointmentsFormViewController: XLFormViewController {
             }
         }
     }
+    
+    func retrieveAppointments() {
+        var token = ""
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey(kJAGToken)
+        {
+            token = name
+            //     customerToken = name
+        }
+        
+        let headers = ["Authorization":  "Token  \(token)"]
+        Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+            response in switch response.result {
+                
+            case .Success(let json):
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    UserInformation.sharedInstance.appointments = JSON(json)
+                    print(JSON(json))
+                    
+                    self.initializeForm()
+                })
+                
+            case .Failure(let error): print(error)
+                
+            }
+        }
+    }
+
 }
