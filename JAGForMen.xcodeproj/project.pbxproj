@@ -106,6 +106,9 @@
 		2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF94B671C5179AB00BBE66E /* 30022D_0_0.ttf */; };
 		2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEB2611C57D1DF00697A3C /* HCLicense.swift */; };
 		3001204940D88A1D991064AA /* libPods-JAGBeautyAndBladesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631D2AF7FD11B2EE26CDA5DB /* libPods-JAGBeautyAndBladesTests.a */; };
+		4C04F56E1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
+		4C04F56F1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
+		4C04F5701CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
 		4C6E8DD81CDD2D310002577E /* CalendarFilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */; };
 		4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */; };
 		4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */; };
@@ -205,6 +208,7 @@
 		2AFEB2611C57D1DF00697A3C /* HCLicense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLicense.swift; sourceTree = "<group>"; };
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
 		47D0F05AB3B8D751609BC8B1 /* Pods-JAGBeautyAndBladesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled@2x.png"; sourceTree = "<group>"; };
 		4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewController.swift; sourceTree = "<group>"; };
 		4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PF Monumenta Pro Regular.ttf"; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 			children = (
 				2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */,
 				2ADA05461C72357D00839564 /* ServiceTypes.plist */,
+				4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */,
 				2AA0FB811CAB3620009BCCCC /* JAGBeautyAndBlades-Bridging-Header.h */,
 				2A7B4CDF1C4D626900660047 /* JAGBeautyAndBlades */,
 				2A7B4CF41C4D626900660047 /* JAGBeautyAndBladesTests */,
@@ -575,6 +580,9 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = ED7KU3F2V3;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -632,6 +640,7 @@
 				2AA284E31C63CCCC0021B99E /* Roboto-Regular.ttf in Resources */,
 				2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
 				2AD2C0141CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */,
+				4C04F56E1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */,
 				2AA284E11C63CC900021B99E /* Raleway-Regular.ttf in Resources */,
 				2A16CFCB1CC5F8E300B94C97 /* Assets.xcassets in Resources */,
 			);
@@ -646,6 +655,7 @@
 				2A2AAB5D1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */,
 				2AD2C01A1CC0BCA60065B8FB /* ManSplashPage.png in Resources */,
 				2AD2C0061CB245A30065B8FB /* ServiceBellFilled.png in Resources */,
+				4C04F56F1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */,
 				2AD2C0151CC0B6310065B8FB /* LaunchScreen.storyboard in Resources */,
 				2A3630191C84DB6300168AC2 /* 30022D_0_0.ttf in Resources */,
 				2ADA05481C72357D00839564 /* ServiceTypes.plist in Resources */,
@@ -661,6 +671,7 @@
 			files = (
 				2A853A371C96152E0066F70C /* Dashboard.storyboard in Resources */,
 				2A853A3C1C9620CE0066F70C /* service-barber.jpg in Resources */,
+				4C04F5701CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

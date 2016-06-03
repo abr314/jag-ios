@@ -16,14 +16,26 @@ import Alamofire
 import SwiftyJSON
 @UIApplicationMain
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
 
     var window: UIWindow?
     var userInfo = UserInformation.sharedInstance
     
+    var connectedToGCM = false
+    var subscribedToTopic = false
+    var gcmSenderID: String?
+    var registrationToken: String?
+    var registrationOptions = [String: AnyObject]()
+    
+    let registrationKey = "onRegistrationCompleted"
+    let messageKey = "onMessageReceived"
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
      //   userInfo = UserInformation.sharedInstance()
         
+        
+        //Register with GCM for push notifications
+        registerApplicationWithGCM(application)
         
         application.statusBarHidden = false;
         application.statusBarStyle = .LightContent;
@@ -162,6 +174,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        GCMService.sharedInstance().disconnect()
+        
+        self.connectedToGCM = false
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -170,12 +185,131 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        GCMService.sharedInstance().connectWithHandler({(error:NSError?) -> Void in
+            if let error = error {
+                print("Could not connect to GCM: \(error.localizedDescription)")
+            } else {
+                self.connectedToGCM = true
+                print("Connected to GCM")
+            }
+        })
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // MARK: Setup and Registration for Push Notifications
+    
+    func registerApplicationWithGCM(application: UIApplication) {
+        // Register for remote notifications
+        
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
+        
+        if #available(iOS 8.0, *) {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        } else {
+            // Fallback
+            let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+            application.registerForRemoteNotificationTypes(types)
+        }
+        
+        let gcmConfig = GCMConfig.defaultConfig()
+        gcmConfig.receiverDelegate = self
+        GCMService.sharedInstance().startWithConfig(gcmConfig)
+    }
+    
+    func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken
+        deviceToken: NSData ) {
+        
+        
+        // Create a config and set a delegate that implements the GGLInstaceIDDelegate protocol.
+        let instanceIDConfig = GGLInstanceIDConfig.defaultConfig()
+        instanceIDConfig.delegate = self
+        // Start the GGLInstanceID shared instance with that config and request a registration
+        // token to enable reception of notifications
+        GGLInstanceID.sharedInstance().startWithConfig(instanceIDConfig)
+        let registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
+                               kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
+                                                                 scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+        
+    }
+    
 
-
+    func application( application: UIApplication, didFailToRegisterForRemoteNotificationsWithError
+        error: NSError ) {
+        print("Registration for remote notification failed with error: \(error.localizedDescription)")
+        // [END receive_apns_token_error]
+        let userInfo = ["error": error.localizedDescription]
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            registrationKey, object: nil, userInfo: userInfo)
+    }
+    
+    
+    
+    
+    func registrationHandler(registrationToken: String!, error: NSError!) {
+        if (registrationToken != nil) {
+            self.registrationToken = registrationToken
+            print("Registration Token: \(registrationToken)")
+            
+            let userInfo = ["registrationToken": registrationToken]
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                self.registrationKey, object: nil, userInfo: userInfo)
+        } else {
+            print("Registration to GCM failed with error: \(error.localizedDescription)")
+            let userInfo = ["error": error.localizedDescription]
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                self.registrationKey, object: nil, userInfo: userInfo)
+        }
+    }
+    
+    // [START on_token_refresh]
+    func onTokenRefresh() {
+        // A rotation of the registration tokens is happening, so the app needs to request a new token.
+        print("The GCM registration token needs to be changed.")
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
+                                                                 scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+    }
+    
+    
+    // MARK: - Receiving Push Notifications
+    
+    func application( application: UIApplication,
+                      didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("Notification received: \(userInfo)")
+        // This works only if the app started the GCM service
+        GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+        // Handle the received message
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
+                                                                  userInfo: userInfo)
+        
+    }
+    
+    func application( application: UIApplication,
+                      didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+                                                   fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
+        print("Notification received: \(userInfo)")
+        // This works only if the app started the GCM service
+        GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+        // Handle the received message
+        // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
+        // [START_EXCLUDE]
+        NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
+                                                                  userInfo: userInfo)
+        handler(UIBackgroundFetchResult.NoData);
+        // [END_EXCLUDE]
+    }
+    
+    
 }
 

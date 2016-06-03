@@ -16,7 +16,7 @@ pod 'XLForm', '~> 3.0'
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
-
+pod 'Google/CloudMessaging'
 
 pod 'UIColor_Hex_Swift', '~> 2.1'
 

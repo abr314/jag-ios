@@ -6,6 +6,7 @@
 //  Copyright © 2016 Hill Country Angel Network. All rights reserved.
 //
 
+#import <Google/CloudMessaging.h>
 #ifndef JAGBeautyAndBlades_Bridging_Header_h
 #define JAGBeautyAndBlades_Bridging_Header_h
 
