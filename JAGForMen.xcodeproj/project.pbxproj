@@ -20,8 +20,6 @@
 		2A13C2521CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */; };
 		2A13C2531CC86406007E4591 /* DashboardTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */; };
 		2A16CFCB1CC5F8E300B94C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE71C4D626900660047 /* Assets.xcassets */; };
-		2A16CFCD1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */; };
-		2A16CFCE1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */; };
 		2A1A0C2C1C9C5F8A002419EA /* HCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */; };
 		2A1A0C2D1C9C5F8A002419EA /* HCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */; };
 		2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */; };
@@ -109,6 +107,8 @@
 		4C04F56E1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
 		4C04F56F1CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
 		4C04F5701CFFB5A5005AEF4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */; };
+		4C1DE95E1D05FEF000423402 /* RatingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1DE95D1D05FEF000423402 /* RatingsPopoverController.swift */; };
+		4C1DE9601D0622D900423402 /* pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1DE95F1D0622D900423402 /* pro.png */; };
 		4C6E8DD81CDD2D310002577E /* CalendarFilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */; };
 		4C7C43D71CD7BDFC000E5F21 /* ServicesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */; };
 		4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */; };
@@ -143,7 +143,6 @@
 		2A1094241C686CC9008192FF /* VerifyInformationFormTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyInformationFormTests.swift; sourceTree = "<group>"; };
 		2A13C24E1CC84F96007E4591 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTabBarViewController.swift; sourceTree = "<group>"; };
-		2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsTableViewController.swift; sourceTree = "<group>"; };
 		2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAddress.swift; sourceTree = "<group>"; };
 		2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFormViewController.swift; sourceTree = "<group>"; };
 		2A2AAB521C9004D300E8F2B7 /* UserPersistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistanceHelper.swift; sourceTree = "<group>"; };
@@ -209,6 +208,8 @@
 		3936AF3FC945AD4DF01F3B0F /* Pods-JAGBeautyAndBlades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBlades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBlades/Pods-JAGBeautyAndBlades.debug.xcconfig"; sourceTree = "<group>"; };
 		47D0F05AB3B8D751609BC8B1 /* Pods-JAGBeautyAndBladesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAGBeautyAndBladesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JAGBeautyAndBladesTests/Pods-JAGBeautyAndBladesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C04F56D1CFFB5A5005AEF4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C1DE95D1D05FEF000423402 /* RatingsPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsPopoverController.swift; sourceTree = "<group>"; };
+		4C1DE95F1D0622D900423402 /* pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pro.png; sourceTree = "<group>"; };
 		4C6E8DD71CDD2D310002577E /* CalendarFilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarFilled@2x.png"; sourceTree = "<group>"; };
 		4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewController.swift; sourceTree = "<group>"; };
 		4C7C43D91CD80343000E5F21 /* PF Monumenta Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PF Monumenta Pro Regular.ttf"; sourceTree = "<group>"; };
@@ -266,7 +267,7 @@
 				2ABB0EA11C9645C900A36697 /* ServiceDetailFormViewController.swift */,
 				4C7C43D61CD7BDFC000E5F21 /* ServicesCollectionViewController.swift */,
 				2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */,
-				2A16CFCC1CC5FA3000B94C97 /* RatingsTableViewController.swift */,
+				4C1DE95D1D05FEF000423402 /* RatingsPopoverController.swift */,
 				2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */,
 			);
 			name = Controller;
@@ -278,6 +279,7 @@
 				2A853A381C961EBF0066F70C /* Collection Cell Images */,
 				2AE5ADE51C64448D007BD715 /* Large Services Cells */,
 				2A3630231C84DDF900168AC2 /* iPhone 6.png */,
+				4C1DE95F1D0622D900423402 /* pro.png */,
 				4C85B2881CD3DB3700FD4153 /* JagAppLaunchImage.png */,
 				4C85B28A1CD3E67200FD4153 /* ManSplash.png */,
 				2A505B001C4EE66100023F1F /* jag_logo_lg.png */,
@@ -629,6 +631,7 @@
 				4C85B28B1CD3E67200FD4153 /* ManSplash.png in Resources */,
 				2AF94B681C5179AB00BBE66E /* 30022D_0_0.ttf in Resources */,
 				4C7C43DA1CD80343000E5F21 /* PF Monumenta Pro Regular.ttf in Resources */,
+				4C1DE9601D0622D900423402 /* pro.png in Resources */,
 				4C85B2891CD3DB3700FD4153 /* JagAppLaunchImage.png in Resources */,
 				2AD2C0021CB245640065B8FB /* CalendarFilled.png in Resources */,
 				4C7C43DC1CD8158C000E5F21 /* ServiceBellFilled@2x.png in Resources */,
@@ -813,8 +816,8 @@
 				2AFEB2621C57D1DF00697A3C /* HCLicense.swift in Sources */,
 				2A42C9C01CCA6BBA0007DF4A /* HCErrorMessageManager.swift in Sources */,
 				2ADC30871C501B79006773AE /* BasicSignupViewController.swift in Sources */,
+				4C1DE95E1D05FEF000423402 /* RatingsPopoverController.swift in Sources */,
 				2A4D5FB21C4E9DF90097316E /* HCAppointment.swift in Sources */,
-				2A16CFCD1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */,
 				2A9BF62B1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
 				2A1A0C2C1C9C5F8A002419EA /* HCAddress.swift in Sources */,
 				2A018EFB1C623E5400437513 /* HCLocation.swift in Sources */,
@@ -833,7 +836,6 @@
 				2A1094251C686CC9008192FF /* VerifyInformationFormTests.swift in Sources */,
 				2A7B4CF61C4D626900660047 /* JAGBeautyAndBladesTests.swift in Sources */,
 				2AE5ADDE1C642CE4007BD715 /* HCFormValidator.swift in Sources */,
-				2A16CFCE1CC5FA3000B94C97 /* RatingsTableViewController.swift in Sources */,
 				2AE5ADDB1C6414DC007BD715 /* LoginFormViewController.swift in Sources */,
 				2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
 				2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */,

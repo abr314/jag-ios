@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class DashboardTabBarViewController: UITabBarController {
+class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationControllerDelegate {
     
     var appointments:JSON?
     
@@ -40,9 +40,14 @@ class DashboardTabBarViewController: UITabBarController {
         }
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         
-        let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(enableDebugTools))
         recognizer.numberOfTapsRequired = 5
         self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
+        
+        
+        let recog = UITapGestureRecognizer(target: self, action: #selector(shouldShowRatingController))
+        recog.numberOfTapsRequired = 1
+        self.navigationController?.navigationBar.addGestureRecognizer(recog)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,15 +74,32 @@ class DashboardTabBarViewController: UITabBarController {
         }
     }
 
-    /*
+    // MARK: - Handling Rating Request
+    func shouldShowRatingController() {
+        self.performSegueWithIdentifier("ratings", sender: nil)
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ratings" {
+            let popoverViewController = segue.destinationViewController //as! UIViewController
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+            
+            
+            popoverViewController.popoverPresentationController?.sourceRect = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/2, 1, 1)
+            popoverViewController.popoverPresentationController?.sourceView = self.view
+        }
     }
-    */
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
 
     func enableDebugTools() {
         

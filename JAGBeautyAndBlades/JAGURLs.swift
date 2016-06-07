@@ -13,7 +13,7 @@ import Foundation
 let kRealURL = "https://jagbeautyandblades.com/"
 //let kTestURL = "http://127.0.0.1:8000/"
 let kDevelopmentURL = "http://45.55.200.56:8000/"
-var URL = kRealURL
+var URL = kDevelopmentURL
 
 //let realURL = true
 
