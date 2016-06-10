@@ -24,7 +24,6 @@
 		2A1A0C2D1C9C5F8A002419EA /* HCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */; };
 		2A1A0C2F1C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */; };
 		2A1A0C301C9C73CD002419EA /* ScheduleFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */; };
-		2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AAB521C9004D300E8F2B7 /* UserPersistanceHelper.swift */; };
 		2A2AAB591C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */; };
 		2A2AAB5A1C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */; };
 		2A2AAB5C1C90FE4200E8F2B7 /* sampleAppointments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */; };
@@ -38,7 +37,6 @@
 		2A4D5FB31C4E9DF90097316E /* HCAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FB11C4E9DF90097316E /* HCAppointment.swift */; };
 		2A4D5FC41C4ECEE30097316E /* HCFontsandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */; };
 		2A7B4CE11C4D626900660047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE01C4D626900660047 /* AppDelegate.swift */; };
-		2A7B4CE31C4D626900660047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CE21C4D626900660047 /* ViewController.swift */; };
 		2A7B4CF61C4D626900660047 /* JAGBeautyAndBladesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4CF51C4D626900660047 /* JAGBeautyAndBladesTests.swift */; };
 		2A7B4D011C4D626900660047 /* JAGBeautyAndBladesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B4D001C4D626900660047 /* JAGBeautyAndBladesUITests.swift */; };
 		2A853A351C96152E0066F70C /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A853A341C96152E0066F70C /* Dashboard.storyboard */; };
@@ -145,7 +143,6 @@
 		2A13C2511CC86406007E4591 /* DashboardTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTabBarViewController.swift; sourceTree = "<group>"; };
 		2A1A0C2B1C9C5F8A002419EA /* HCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCAddress.swift; sourceTree = "<group>"; };
 		2A1A0C2E1C9C73CD002419EA /* ScheduleFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleFormViewController.swift; sourceTree = "<group>"; };
-		2A2AAB521C9004D300E8F2B7 /* UserPersistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistanceHelper.swift; sourceTree = "<group>"; };
 		2A2AAB581C903A6100E8F2B7 /* AppointmentsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsFormViewController.swift; sourceTree = "<group>"; };
 		2A2AAB5B1C90FE4200E8F2B7 /* sampleAppointments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sampleAppointments.plist; sourceTree = "<group>"; };
 		2A3630231C84DDF900168AC2 /* iPhone 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone 6.png"; sourceTree = "<group>"; };
@@ -158,7 +155,6 @@
 		2A770D4A1C52C1C200960766 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2A7B4CDD1C4D626900660047 /* JAGBeautyAndBlades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAGBeautyAndBlades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7B4CE01C4D626900660047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A7B4CE21C4D626900660047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A7B4CE71C4D626900660047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7B4CEC1C4D626900660047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A7B4CF11C4D626900660047 /* JAGBeautyAndBladesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAGBeautyAndBladesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,7 +301,6 @@
 				2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */,
 				2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */,
 				2A9BF6311C8614AA00F281EF /* JAGURLs.swift */,
-				2A2AAB521C9004D300E8F2B7 /* UserPersistanceHelper.swift */,
 				2A42C9BF1CCA6BBA0007DF4A /* HCErrorMessageManager.swift */,
 			);
 			name = Helpers;
@@ -346,7 +341,6 @@
 				2AF94B651C51798C00BBE66E /* Resources */,
 				2A4D5FC21C4ECEBE0097316E /* Helpers */,
 				2A7B4CE01C4D626900660047 /* AppDelegate.swift */,
-				2A7B4CE21C4D626900660047 /* ViewController.swift */,
 				2A7B4CE71C4D626900660047 /* Assets.xcassets */,
 				2A7B4CEC1C4D626900660047 /* Info.plist */,
 			);
@@ -800,7 +794,6 @@
 				2ABB0EA21C9645C900A36697 /* ServiceDetailFormViewController.swift in Sources */,
 				2AA822251C4D7910001A117C /* HCCustomer.swift in Sources */,
 				2AE5ADDA1C6414DC007BD715 /* LoginFormViewController.swift in Sources */,
-				2A7B4CE31C4D626900660047 /* ViewController.swift in Sources */,
 				2AE5ADDD1C642CE4007BD715 /* HCFormValidator.swift in Sources */,
 				2A9BF6321C8614AA00F281EF /* JAGURLs.swift in Sources */,
 				2A2AAB591C903A6100E8F2B7 /* AppointmentsFormViewController.swift in Sources */,
@@ -838,7 +831,6 @@
 				2AE5ADDE1C642CE4007BD715 /* HCFormValidator.swift in Sources */,
 				2AE5ADDB1C6414DC007BD715 /* LoginFormViewController.swift in Sources */,
 				2AD2BFFA1CADD8150065B8FB /* HCXLFormRowDescriptor.swift in Sources */,
-				2A2AAB541C9004D300E8F2B7 /* UserPersistanceHelper.swift in Sources */,
 				2A13C2501CC84F96007E4591 /* UserInformation.swift in Sources */,
 				2A903A601C74ECD600FA5C80 /* HCService.swift in Sources */,
 				2A9BF62C1C8606BA00F281EF /* HCJSONSerializer.swift in Sources */,
