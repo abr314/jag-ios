@@ -54,6 +54,10 @@ func appointmentStatusToReadableString(status:AppointmentStatus) -> String {
         return "Appointment Completed"
     }
     
+    if status == .InProgress {
+        return "In Progress"
+    }
+    
     return ""
     
 }
@@ -95,6 +99,8 @@ let kAllDay = "All-Day"
 let kSave = "Save"
 let kAccept = "Accept Appointment"
 let kCancel = "Cancel"
+let kStartAppointment = "Start Appointment"
+let kEndAppointment = "Finish Appointment"
 let kSubmit = "Submit"
 let kFirstLine = "First Line"
 let kSecondLine = "Second Line"

@@ -171,7 +171,7 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                <real key="value" value="3"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                 <real key="value" value="40"/>
@@ -186,7 +186,7 @@
                                                 <color key="value" red="0.32549019610000002" green="0.2274509804" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -209,11 +209,21 @@
                                 <rect key="frame" x="0.0" y="262.5" width="300" height="37.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5Q-qy-DF2">
-                                        <rect key="frame" x="114" y="0.0" width="72" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="bUN-ek-jhu"/>
+                                            <constraint firstAttribute="width" constant="72" id="wkp-ci-C9J"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="bUN-ek-jhu"/>
+                                                <exclude reference="wkp-ci-C9J"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="userSubmittedRating" destination="MiI-vI-lR5" eventType="touchUpInside" id="HRd-58-R8j"/>
                                         </connections>
@@ -221,7 +231,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.2274509804" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="37.5" id="9zj-ON-hQ6"/>
+                                    <constraint firstAttribute="width" constant="300" id="DjQ-lT-pPe"/>
+                                    <constraint firstItem="h5Q-qy-DF2" firstAttribute="width" secondItem="83e-YG-6l6" secondAttribute="width" id="HDi-BC-TKx"/>
                                     <constraint firstItem="h5Q-qy-DF2" firstAttribute="centerX" secondItem="83e-YG-6l6" secondAttribute="centerX" id="SYe-9S-nCO"/>
+                                    <constraint firstItem="h5Q-qy-DF2" firstAttribute="height" secondItem="83e-YG-6l6" secondAttribute="height" id="bcZ-P9-0xd"/>
                                     <constraint firstItem="h5Q-qy-DF2" firstAttribute="centerX" secondItem="83e-YG-6l6" secondAttribute="centerX" id="rgs-Qe-pdb"/>
                                     <constraint firstItem="h5Q-qy-DF2" firstAttribute="centerY" secondItem="83e-YG-6l6" secondAttribute="centerY" id="yh7-of-ZVa"/>
                                 </constraints>
@@ -250,7 +264,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-XJ-AQE">
                                         <rect key="frame" x="85" y="40" width="26" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -308,6 +322,7 @@
                         <outlet property="providerNameLabel" destination="G7a-XQ-her" id="sMP-HD-yaY"/>
                         <outlet property="starRatingsView" destination="yWt-q6-GuB" id="tkL-vC-BWU"/>
                         <outlet property="submitButton" destination="h5Q-qy-DF2" id="ryg-Jv-8x1"/>
+                        <outlet property="userTypeLabel" destination="ypa-XJ-AQE" id="jOh-Fu-bbD"/>
                         <outlet property="userView" destination="KQh-fz-DBS" id="EuX-3j-EMe"/>
                     </connections>
                 </viewController>
@@ -413,10 +428,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="MiI-vI-lR5" kind="popoverPresentation" identifier="proFinishedAppointment" popoverAnchorView="3fG-R4-ByF" id="XTK-lL-DrN">
+                            <popoverArrowDirection key="popoverArrowDirection"/>
+                        </segue>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE5-mL-dYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="595" y="988"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h1B-B7-za8">
+            <objects>
+                <viewController id="Aij-ey-reM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W8v-mo-R3R"/>
+                        <viewControllerLayoutGuide type="bottom" id="dL2-bL-OiW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ua1-Tu-auW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8N-Ok-TMF">
+                                <rect key="frame" x="0.0" y="525" width="600" height="75"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <state key="normal" title="Appointment Finished">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.2274509804" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.12549019610000001" green="0.5568627451" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Appointment in Progress" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-o5-hj3">
+                                <rect key="frame" x="135" y="156" width="330.5" height="115"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.2274509804" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TAw-o5-hj3" firstAttribute="centerX" secondItem="Ua1-Tu-auW" secondAttribute="centerX" id="AiU-Ws-tOt"/>
+                            <constraint firstItem="TAw-o5-hj3" firstAttribute="width" secondItem="Ua1-Tu-auW" secondAttribute="width" multiplier="65/100" id="Smt-iQ-QzF"/>
+                            <constraint firstItem="dL2-bL-OiW" firstAttribute="top" secondItem="S8N-Ok-TMF" secondAttribute="bottom" id="VvE-Q4-Wag"/>
+                            <constraint firstItem="S8N-Ok-TMF" firstAttribute="leading" secondItem="Ua1-Tu-auW" secondAttribute="leading" id="cce-La-Gro"/>
+                            <constraint firstItem="S8N-Ok-TMF" firstAttribute="height" secondItem="Ua1-Tu-auW" secondAttribute="height" multiplier="1/8" id="sRK-xe-0Pp"/>
+                            <constraint firstAttribute="trailing" secondItem="S8N-Ok-TMF" secondAttribute="trailing" id="vhB-lP-9w7"/>
+                            <constraint firstItem="TAw-o5-hj3" firstAttribute="centerY" secondItem="Ua1-Tu-auW" secondAttribute="centerY" constant="-100" id="ynb-cy-JpX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcZ-YN-JAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579" y="1903"/>
         </scene>
     </scenes>
     <resources>
@@ -426,5 +497,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NRK-Ej-ddg"/>
+        <segue reference="XTK-lL-DrN"/>
     </inferredMetricsTieBreakers>
 </document>

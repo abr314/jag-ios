@@ -13,7 +13,9 @@ import Foundation
 let kRealURL = "https://jagbeautyandblades.com/"
 //let kTestURL = "http://127.0.0.1:8000/"
 let kDevelopmentURL = "http://45.55.200.56:8000/"
-var URL = kDevelopmentURL
+let kLocalEnvURL = "http://127.0.0.1:8000/"
+var URL = kLocalEnvURL
+var GCM_Sandbox_Mode = true
 
 //let realURL = true
 
@@ -37,3 +39,5 @@ let kAppointmentAcceptURL = "\(URL)api/bookings/appointments/accept/"// <appoint
 let kAppointmentCancelURL = "\(URL)api/bookings/appointments/cancel/"
 let kUpdateAppointmentURL = "\(URL)api/bookings/appointments/update/"
 let kUpdateServiceRequestURL = "\(URL)api/bookings/servicerequests/update/"
+let kAppointmentStartURL = "\(URL)api/bookings/appointments/start/" //<appointment_id>/
+let kAppointmentEndURL = "\(URL)api/bookings/appointments/complete/" //<appointment_id>/

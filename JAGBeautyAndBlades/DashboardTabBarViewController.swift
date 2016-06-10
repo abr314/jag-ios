@@ -47,7 +47,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         
         let recog = UITapGestureRecognizer(target: self, action: #selector(shouldShowRatingController))
         recog.numberOfTapsRequired = 1
-        self.navigationController?.navigationBar.addGestureRecognizer(recog)
+        //self.navigationController?.navigationBar.addGestureRecognizer(recog)
     }
     
     override func didReceiveMemoryWarning() {
