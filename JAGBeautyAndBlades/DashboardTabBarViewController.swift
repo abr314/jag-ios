@@ -12,10 +12,14 @@ import SwiftyJSON
 class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationControllerDelegate {
     
     var appointments:JSON?
+    var role:String?
+    var AppointmentToRate = JSON.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForUnratedAppointment(_:)), name: "AppointmentsRetrieved", object: nil)
+        
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
         self.title = "Services"
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -29,7 +33,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
         
-        let role = NSUserDefaults.standardUserDefaults().valueForKey("role") as? String
+        role = NSUserDefaults.standardUserDefaults().valueForKey("role") as? String
         if role == "pro" {
             
             self.selectedIndex = 1
@@ -38,6 +42,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
             self.title = "Appointments"
             
         }
+        
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(enableDebugTools))
@@ -74,7 +79,32 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         }
     }
 
-    // MARK: - Handling Rating Request
+    // MARK: - Customer Appointment Rating
+    func checkForUnratedAppointment(notification: NSNotification) {
+        if role != "customer" { return }
+        let appointments = UserInformation.sharedInstance.appointments
+        
+        for appointment in appointments {
+            
+            let jsonObj = appointment.1
+            let status = jsonObj["status"].stringValue
+            
+            
+            if status == "unrated" {
+                seekRatingForAppointment(jsonObj)
+                break
+            }
+        }
+
+    }
+    
+    func seekRatingForAppointment(appointmentToRate:JSON) {
+        
+        AppointmentToRate = appointmentToRate
+        
+        shouldShowRatingController()
+    }
+    
     func shouldShowRatingController() {
         self.performSegueWithIdentifier("ratings", sender: nil)
     }
@@ -87,17 +117,32 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ratings" {
             let popoverViewController = segue.destinationViewController //as! UIViewController
+            
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
             popoverViewController.popoverPresentationController!.delegate = self
             
             
             popoverViewController.popoverPresentationController?.sourceRect = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/2, 1, 1)
             popoverViewController.popoverPresentationController?.sourceView = self.view
+            
+            
+            if let vc = segue.destinationViewController as? RatingsPopoverController {
+                vc.isProRatingCustomer = false
+                vc.appointmentID = AppointmentToRate["id"].stringValue
+                let lastName = AppointmentToRate["service_provider"]["last_name"].stringValue
+                vc.userToRateName = AppointmentToRate["service_provider"]["first_name"].stringValue + " " + String(lastName[lastName.startIndex]) + "."
+                vc.userToRateImageURL = AppointmentToRate["service_provider"]["profile_picture"].URL
+            }
         }
+
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.None
+    }
+    
+    func popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return false
     }
     
 

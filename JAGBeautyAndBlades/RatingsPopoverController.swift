@@ -126,9 +126,10 @@ class RatingsPopoverController: UIViewController {
                     print(json)
                     //self.navigationController?.popToRootViewControllerAnimated(true)
                     self.dismissViewControllerAnimated(true, completion:nil)
-                    self.popoverPresentationController?.delegate?.popoverPresentationControllerDidDismissPopover!(self.popoverPresentationController!)
-
-                    
+                    if self.isProRatingCustomer == true {
+                        self.popoverPresentationController?.delegate?.popoverPresentationControllerDidDismissPopover!(self.popoverPresentationController!)
+                    }
+                
                 case .Failure(let error):
                     print(response.result)
                     print(error)
