@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
 
     var window: UIWindow?
     var userInfo = UserInformation.sharedInstance
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     var connectedToGCM = false
     var subscribedToTopic = false
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         
         //Register with GCM for push notifications
-        registerApplicationWithGCM(application)
+        //registerApplicationWithGCM(application) CALLING FROM DASHBOARD VC NOW TO ENSURE USER IS AUTHENTICATED BEFORE TRYING TO PASS TOKEN TO BACKEND
         
         application.statusBarHidden = false;
         application.statusBarStyle = .LightContent;
@@ -92,11 +93,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                                 
                             
                             
-                            let defaults = NSUserDefaults.standardUserDefaults()
+                            
                             UserInformation.sharedInstance.userAlreadyExists = true
                             if userTypeInt == 0 {
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = false
-                                defaults.setObject("customer", forKey: "role")
+                                self.defaults.setObject("customer", forKey: "role")
                                 
                             }
                             if userTypeInt == 1 {
@@ -105,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                                 UserInformation.sharedInstance.customerProfile?.isProfessional = true
                                
                                 
-                                defaults.setObject("pro", forKey: "role")
+                                self.defaults.setObject("pro", forKey: "role")
                             }
                           //  })
                             UserInformation.sharedInstance.customerProfile?.customerID = userID
@@ -136,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
          
         */
  
-        let defaults = NSUserDefaults.standardUserDefaults()
+        
         
         
         if let token = defaults.stringForKey(kJAGToken)  {
@@ -264,6 +265,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             let userInfo = ["registrationToken": registrationToken]
             NSNotificationCenter.defaultCenter().postNotificationName(
                 self.registrationKey, object: nil, userInfo: userInfo)
+            
+            if registrationToken != defaults.stringForKey(kGCMToken) {
+                defaults.setObject(registrationToken, forKey: kGCMToken)
+                
+                let token = UserInformation.sharedInstance.token
+                let headers = ["Authorization":  "Token  \(token)"]
+                var params = [String: AnyObject]?()
+                params = ["registration_id":registrationToken]
+                Alamofire.request(.POST, kGCMTokenURL, parameters:params, headers:headers)
+                    .responseJSON { response in
+                        
+                        switch response.result {
+                            
+                        case .Success(let json):
+                            print(json)
+                            
+                        case .Failure(let error):
+                            print(response.result)
+                            print(error)
+                            print(error.code)
+                            print(error.localizedFailureReason)
+//                            let alertController = returnAlertControllerForErrorCode(error.code)
+//                            self.presentViewController(alertController, animated: true) {}
+                            
+                        }
+                        
+                        
+                }
+            }
+            
         } else {
             print("Registration to GCM failed with error: \(error.localizedDescription)")
             let userInfo = ["error": error.localizedDescription]

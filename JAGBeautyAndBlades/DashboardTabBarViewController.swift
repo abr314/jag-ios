@@ -15,6 +15,9 @@ class DashboardTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.registerApplicationWithGCM(UIApplication.sharedApplication())
 
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
         self.title = "Services"

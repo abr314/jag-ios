@@ -11,15 +11,16 @@ import Foundation
 // SignUp
 
 let kRealURL = "https://jagbeautyandblades.com/"
-//let kTestURL = "http://127.0.0.1:8000/"
-let kDevelopmentURL = "http://45.55.200.56:8000/"
-var URL = kRealURL
+let kDevelopmentURL = "http://107.170.135.27:8000/"
+let kLocalEnvURL = "http://127.0.0.1:8000/"
+var URL = kDevelopmentURL
 
 //let realURL = true
 
 let kCustomerSignUpURL = "\(URL)profiles/api/customer/register/"
 let kProSignUpURL = "\(URL)profiles/api/provider/register/"
 let kAPITokenURL = "\(URL)api-token-auth/"
+let kGCMTokenURL = "\(URL)device/gcm/"
 let kAppointmentsURL = "\(URL)api/bookings/appointments/"
 let kAvailableAppointmentsURL = "\(URL)api/bookings/appointments/available/"
 let kServiceCategoriesURL = "\(URL)api/services/categories/"

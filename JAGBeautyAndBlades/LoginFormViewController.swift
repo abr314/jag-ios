@@ -303,36 +303,6 @@ class LoginFormViewController: XLFormViewController {
                                 // ...
                             }
                             
-                       //     HCErrorMessageManager.returnAlertControllerForErrorCode(<#T##HCErrorMessageManager#>)
-                            /*
-                            if error.code == -1004 {
-                                let alertController = UIAlertController(title: nil, message: "Could not connect to the server. Please try again later.", preferredStyle: .Alert)
-                                
-                                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                                    // ...
-                                }
-                                alertController.addAction(okAction)
-                                
-                                self.presentViewController(alertController, animated: true) {
-                                    // ...
-                                }
-                            }
-                            if error.code == -1009 {
-                                
-                                let alertController = UIAlertController(title: nil, message: "The Internet connection appears to be offline. You must be connected to the internet to use JAG services. Please reconnect and try again.", preferredStyle: .Alert)
-                                
-                                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                                    // ...
-                                }
-                                alertController.addAction(okAction)
-                                
-                                self.presentViewController(alertController, animated: true) {
-                                    // ...
-                                }
-                               
-                                
-                            }
-                            */
                             //Log to Fabric
                             let formatter = NSDateFormatter()//.timeStyle = .ShortStyle
                             formatter.timeStyle = .ShortStyle

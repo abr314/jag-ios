@@ -120,6 +120,7 @@ let kProviderTermString = "Service Provider"
 let kNetworkAuthorizationString = "Authorization"
 
 let kJAGToken:String = "JAGToken"
+let kGCMToken:String = "GCM_Registration_ID"
 
 let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
 
