@@ -60,8 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                 case .Success(let json):
                     
                     UserInformation.sharedInstance.appointments = JSON(json)
-                    print("APPOINTMENTS:\(self.userInfo.appointments)")
+                    print("APPOINTMENTS via App Delegate:\(self.userInfo.appointments)")
                     UserInformation.sharedInstance.userAlreadyExists = true
+                    NSNotificationCenter.defaultCenter().postNotificationName("AppointmentsRetrieved", object: nil)
                 
                 case .Failure(let error):
            
@@ -238,7 +239,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // token to enable reception of notifications
         GGLInstanceID.sharedInstance().startWithConfig(instanceIDConfig)
         let registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
-                               kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+                               kGGLInstanceIDAPNSServerTypeSandboxOption:GCM_Sandbox_Mode]
         GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
                                                                  scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
         

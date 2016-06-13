@@ -26,7 +26,7 @@ extension NSDate {
     }
 }
 
-class AppointmentDetailFormViewController: XLFormViewController {
+class AppointmentDetailFormViewController: XLFormViewController, UIPopoverPresentationControllerDelegate {
   
     var appointmentJson = JSON.null
     var appointmentID = ""
@@ -37,11 +37,11 @@ class AppointmentDetailFormViewController: XLFormViewController {
     var priceTier:Int?
     var token = ""
     var user = HCCustomer()
+    var appointmentInProgress:Bool?
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         //initializeForm()
         //  let token = customer?.token
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -146,8 +146,8 @@ class AppointmentDetailFormViewController: XLFormViewController {
      
         let requestedStartTimeString = createReadableStringFromDateString(appointmentJson["requested_start_by"].stringValue)
         let requestedEndTimeString = createReadableStringFromDateString(appointmentJson["requested_end_by"].stringValue)
-        let actualStartTimeString = createReadableStringFromDateString(appointmentJson["actual_start_by"].stringValue)
-        let actualEndTimeString = createReadableStringFromDateString(appointmentJson["actual_end_by"].stringValue)
+        //let actualStartTimeString = createReadableStringFromDateString(appointmentJson["actual_start_by"].stringValue)
+        //let actualEndTimeString = createReadableStringFromDateString(appointmentJson["actual_end_by"].stringValue)
         print(requestedStartTimeString)
         print(requestedEndTimeString)
         
@@ -290,7 +290,10 @@ class AppointmentDetailFormViewController: XLFormViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         let shouldShowAcceptButton = (defaults.stringForKey("role") == "pro" && appointmentStatus == AppointmentStatus.Created)
         let shouldShowCancelButton = (defaults.stringForKey("role") != "pro" && appointmentStatus != AppointmentStatus.Done)
-        if (shouldShowAcceptButton || shouldShowCancelButton) {
+        let shouldShowStartAppointmentButton = (defaults.stringForKey("role") == "pro" && appointmentStatus == AppointmentStatus.Confirmed)
+        let shouldShowEndAppointmentButton = (defaults.stringForKey("role") == "pro" && appointmentStatus == AppointmentStatus.InProgress)
+
+        if (shouldShowAcceptButton || shouldShowCancelButton || shouldShowStartAppointmentButton || shouldShowEndAppointmentButton) {
             var alertMessage:String
             var alertCancelMessage:String
             var alertConfirmMessage:String
@@ -309,24 +312,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 endpointURL = kAppointmentAcceptURL + self.appointmentID + "/"
                 
                 params = nil
-//                params = [
-//                          "id":self.appointmentID,
-//                          "service_provider":4,
-//                          "category":appointmentJson["category"]["id"].stringValue,
-//                          "booking":appointmentJson["booking"].stringValue,
-//                          "customer" : appointmentJson["customer"]["id"].stringValue,
-//                          "status" : "created",
-//                          "address": "",
-//                          "requested_start_by": "",
-//                          "requested_end_by": "",
-//                          "appointment_price": appointmentJson["appointment_price"].stringValue,
-//                          "actual_start_time": "",
-//                          "actual_end_time": "",
-//                          "confirmed_customer": appointmentJson["confirmed_customer"].stringValue,
-//                          "confirmed_provider": appointmentJson["confirmed_provider"].stringValue,
-//                          "payment_status": appointmentJson["payment_status"].stringValue
-//                ]
-            } else {
+            } else if shouldShowCancelButton {
                 alertMessage = "Would you like to cancel this appointment?"
                 alertConfirmMessage = "Yes, cancel this appointment"
                 alertCancelMessage = "No, keep this appointment"
@@ -335,6 +321,26 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 endpointURL = kAppointmentCancelURL
                 
                 params = ["appointment_id":self.appointmentID]
+            } else if shouldShowStartAppointmentButton{
+                alertMessage = "Are you about to begin the appointment?"
+                alertConfirmMessage = "Yes, I am starting services"
+                alertCancelMessage = "No, I am not ready"
+                buttonTitle = kStartAppointment
+                requestType = .POST
+                endpointURL = kAppointmentStartURL + self.appointmentID + "/"
+                
+                params = nil
+            } else {
+                alertMessage = "Appointment completed?"
+                alertConfirmMessage = "Yes, I have finished the appointment"
+                alertCancelMessage = "No, I am still working"
+                buttonTitle = kEndAppointment
+                requestType = .POST
+                endpointURL = kAppointmentEndURL + self.appointmentID + "/"
+                
+                params = ["appointment_provider_rates_customer":self.appointmentID]
+                
+                appointmentInProgress = true
             }
             
             section = XLFormSectionDescriptor.formSectionWithTitle("")
@@ -349,9 +355,14 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 }
                 alertController.addAction(cancelAction)
                 
+                let finishAppointmentAction = UIAlertAction(title: alertConfirmMessage, style: .Destructive) { (action) in
+                    self?.performSegueWithIdentifier("proFinishedAppointment", sender: nil)
+                }
+
+                
                 let appointmentAction = UIAlertAction(title: alertConfirmMessage, style: .Destructive) { (action) in
                     //       print(action)
-                    var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
                     activityView.color = UIColor.blackColor()
                     //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
                     //  activityIndicator.transform = transform
@@ -368,27 +379,38 @@ class AppointmentDetailFormViewController: XLFormViewController {
                             switch response.result {
                             case .Success(let json):
                                   print(json)
-                                Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
+                                  
+                                
+                                  Alamofire.request(.GET, kAppointmentsURL, headers: headers).responseJSON {
                                     response in switch response.result {
                                         
                                     case .Success(let item):
                                         dispatch_async(dispatch_get_main_queue()) { ///[unowned self] in
-                                            //   if let newJSON = item as? JSON {
+                                            
                                             UserInformation.sharedInstance.appointments = JSON(item)
                                             
-                                            //  }
+                                            activityView.stopAnimating()
+                                            if shouldShowStartAppointmentButton {
+                                                //self?.performSegueWithIdentifier("appointmentInProgressSegue", sender: nil)
+                                                //self?.navigationItem.setHidesBackButton(true, animated: true)
+                                                self?.appointmentInProgress = true
+                                                self?.refreshDetailView()
+                                            } else {
+                                                self?.navigationController?.popViewControllerAnimated(true)
+                                            }
+                                            
                                         }
                                         
-                                        activityView.stopAnimating()
                                         
                                         
-                                        self?.navigationController?.popViewControllerAnimated(true)
                                         //    UserInformation.sharedInstance.appointments = self!.appointmentJson//self.?appointments
                                     //  self?.initializeForm()
                                     case .Failure(let error): print(error)
                                         
                                     }
                                 }
+
+                                
                                 
                             case .Failure(let error):
                                 print(response.result)
@@ -405,8 +427,8 @@ class AppointmentDetailFormViewController: XLFormViewController {
                     
                     
                 }
-                
-                alertController.addAction(appointmentAction)
+                let action = shouldShowEndAppointmentButton ? finishAppointmentAction : appointmentAction
+                alertController.addAction(action)
                 
                 self!.presentViewController(alertController, animated: true) {
                     // ...
@@ -414,7 +436,7 @@ class AppointmentDetailFormViewController: XLFormViewController {
                 
             }
             
-            let textColor = shouldShowAcceptButton ? UIColor.greenColor() : UIColor.redColor()
+            let textColor = (shouldShowCancelButton || shouldShowEndAppointmentButton) ? UIColor.redColor() : UIColor.greenColor()
             row.cellConfig.setObject(textColor, forKey: "textLabel.textColor")
             section.addFormRow(row)
 
@@ -427,10 +449,14 @@ class AppointmentDetailFormViewController: XLFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "<Back", style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = newBackButton;
+
+        
         if let profile = UserInformation.sharedInstance.customerProfile {
             
             user = profile
-            
             
         }
      //   user =
@@ -445,6 +471,90 @@ class AppointmentDetailFormViewController: XLFormViewController {
     override func viewWillAppear(animated: Bool) {
         
     }
+    
+    func back() {
+        if appointmentInProgress == true  {
+            let alert = UIAlertController(title: "Appointment in Progress", message: "You must complete the current appointment first", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Gotya!", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func refreshDetailView() {
+        let appointments = UserInformation.sharedInstance.appointments
+        
+        for appointment in appointments {
+            
+            let status = appointment.1["status"].stringValue
+            
+            
+            let jsonObj = appointment.1
+            
+            
+            if status == "in_progress" {
+                appointmentJson = jsonObj
+                
+                categoryName = String(appointmentJson["category"]["name"].stringValue.capitalizedString)
+                
+                appointmentStatus = stringToAppointmentStatus(appointmentJson["status"].stringValue)
+                price = appointmentJson["appointment_price"].stringValue
+                //   vc.appointmentStatus = String(json["status"].stringValue.capitalizedString)
+                services = appointmentJson["service_requests"]
+                
+                priceTier = appointmentJson["requested_tier"].intValue
+                
+                
+                
+                
+                break
+            }
+        }
+        
+        initializeForm()
+        
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "proFinishedAppointment" {
+            let popoverViewController = segue.destinationViewController //as! UIViewController
+            
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+            
+            
+            popoverViewController.popoverPresentationController?.sourceRect = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/2, 1, 1)
+            popoverViewController.popoverPresentationController?.sourceView = self.view
+            
+            
+            if let vc = segue.destinationViewController as? RatingsPopoverController {
+                vc.isProRatingCustomer = true
+                vc.appointmentID = appointmentJson["id"].stringValue
+                let lastName = appointmentJson["customer"]["last_name"].stringValue
+                vc.userToRateName = appointmentJson["customer"]["first_name"].stringValue + " " + String(lastName[lastName.startIndex]) + "."
+                vc.userToRateImageURL = appointmentJson["customer"]["profile_picture"].URL
+            }
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    func popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return false
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
+        appointmentInProgress = false
+        back()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -60,7 +60,7 @@ class ServicesCollectionViewController: UICollectionViewController {
             case .Success(let json):
                 
                 UserInformation.sharedInstance.appointments = JSON(json)
-                print("APPOINTMENTS:\(UserInformation.sharedInstance.appointments)")
+                print("APPOINTMENTS via SCV:\(UserInformation.sharedInstance.appointments)")
                 self.appointmentsDownloaded = true
                 /*
                 if let appointmentsVC = self.tabBarController?.viewControllers {

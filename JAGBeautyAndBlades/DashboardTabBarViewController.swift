@@ -9,9 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class DashboardTabBarViewController: UITabBarController {
+class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationControllerDelegate {
     
     var appointments:JSON?
+    var role:String?
+    var AppointmentToRate = JSON.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,8 @@ class DashboardTabBarViewController: UITabBarController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.registerApplicationWithGCM(UIApplication.sharedApplication())
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForUnratedAppointment(_:)), name: "AppointmentsRetrieved", object: nil)
+        
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
         self.title = "Services"
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -32,7 +36,7 @@ class DashboardTabBarViewController: UITabBarController {
         print(UserInformation.sharedInstance.customerProfile?.isProfessional)
         // Do any additional setup after loading the view.
         
-        let role = NSUserDefaults.standardUserDefaults().valueForKey("role") as? String
+        role = NSUserDefaults.standardUserDefaults().valueForKey("role") as? String
         if role == "pro" {
             
             self.selectedIndex = 1
@@ -41,11 +45,17 @@ class DashboardTabBarViewController: UITabBarController {
             self.title = "Appointments"
             
         }
+        
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         
-        let recognizer = UITapGestureRecognizer(target: self, action: "enableDebugTools")
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(enableDebugTools))
         recognizer.numberOfTapsRequired = 5
         self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
+        
+        
+        let recog = UITapGestureRecognizer(target: self, action: #selector(shouldShowRatingController))
+        recog.numberOfTapsRequired = 1
+        //self.navigationController?.navigationBar.addGestureRecognizer(recog)
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,15 +82,72 @@ class DashboardTabBarViewController: UITabBarController {
         }
     }
 
-    /*
+    // MARK: - Customer Appointment Rating
+    func checkForUnratedAppointment(notification: NSNotification) {
+        if role != "customer" { return }
+        let appointments = UserInformation.sharedInstance.appointments
+        
+        for appointment in appointments {
+            
+            let jsonObj = appointment.1
+            let status = jsonObj["status"].stringValue
+            
+            
+            if status == "unrated" {
+                seekRatingForAppointment(jsonObj)
+                break
+            }
+        }
+
+    }
+    
+    func seekRatingForAppointment(appointmentToRate:JSON) {
+        
+        AppointmentToRate = appointmentToRate
+        
+        shouldShowRatingController()
+    }
+    
+    func shouldShowRatingController() {
+        self.performSegueWithIdentifier("ratings", sender: nil)
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ratings" {
+            let popoverViewController = segue.destinationViewController //as! UIViewController
+            
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+            
+            
+            popoverViewController.popoverPresentationController?.sourceRect = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/2, 1, 1)
+            popoverViewController.popoverPresentationController?.sourceView = self.view
+            
+            
+            if let vc = segue.destinationViewController as? RatingsPopoverController {
+                vc.isProRatingCustomer = false
+                vc.appointmentID = AppointmentToRate["id"].stringValue
+                let lastName = AppointmentToRate["service_provider"]["last_name"].stringValue
+                vc.userToRateName = AppointmentToRate["service_provider"]["first_name"].stringValue + " " + String(lastName[lastName.startIndex]) + "."
+                vc.userToRateImageURL = AppointmentToRate["service_provider"]["profile_picture"].URL
+            }
+        }
+
     }
-    */
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    func popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return false
+    }
+    
 
     func enableDebugTools() {
         

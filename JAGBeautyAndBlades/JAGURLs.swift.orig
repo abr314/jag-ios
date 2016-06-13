@@ -11,11 +11,17 @@ import Foundation
 // SignUp
 
 let kRealURL = "https://jagbeautyandblades.com/"
+<<<<<<< HEAD
+let kDevelopmentURL = "http://107.170.135.27:8000/"
+let kLocalEnvURL = "http://127.0.0.1:8000/"
+var URL = kDevelopmentURL
+=======
 //let kTestURL = "http://127.0.0.1:8000/"
 let kDevelopmentURL = "http://45.55.200.56:8000/"
 let kLocalEnvURL = "http://127.0.0.1:8000/"
 var URL = kLocalEnvURL
 var GCM_Sandbox_Mode = true
+>>>>>>> 71667ffd5afcea5af824a77eb33942231aeea0c5
 
 //let realURL = true
 
