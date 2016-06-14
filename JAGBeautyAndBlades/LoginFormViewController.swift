@@ -161,11 +161,11 @@ class LoginFormViewController: XLFormViewController {
     
     override func viewDidLoad() {
     
-        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
-            
-            
-            performSegueWithIdentifier("providerAppointments", sender:self)
-        }
+//        if UserInformation.sharedInstance.customerProfile?.isProfessional == true {
+//            
+//            
+//            performSegueWithIdentifier("providerAppointments", sender:self)
+//        }
         if (userAlreadyExist()) {
             
             if let string = NSUserDefaults.standardUserDefaults().stringForKey(kJAGToken) {

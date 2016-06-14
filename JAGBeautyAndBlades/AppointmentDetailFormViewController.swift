@@ -397,6 +397,7 @@ class AppointmentDetailFormViewController: XLFormViewController, UIPopoverPresen
                                                 self?.refreshDetailView()
                                             } else {
                                                 self?.navigationController?.popViewControllerAnimated(true)
+                                                NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                                             }
                                             
                                         }

@@ -21,7 +21,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.registerApplicationWithGCM(UIApplication.sharedApplication())
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForUnratedAppointment(_:)), name: "AppointmentsRetrieved", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForUnratedAppointment(_:)), name: kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
         
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
         self.title = "Services"
@@ -52,10 +52,6 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         recognizer.numberOfTapsRequired = 5
         self.navigationController?.navigationBar.addGestureRecognizer(recognizer)
         
-        
-        let recog = UITapGestureRecognizer(target: self, action: #selector(shouldShowRatingController))
-        recog.numberOfTapsRequired = 1
-        //self.navigationController?.navigationBar.addGestureRecognizer(recog)
     }
     
     override func didReceiveMemoryWarning() {

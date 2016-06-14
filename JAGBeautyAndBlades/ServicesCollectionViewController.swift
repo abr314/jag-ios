@@ -62,6 +62,7 @@ class ServicesCollectionViewController: UICollectionViewController {
                 UserInformation.sharedInstance.appointments = JSON(json)
                 print("APPOINTMENTS via SCV:\(UserInformation.sharedInstance.appointments)")
                 self.appointmentsDownloaded = true
+                NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                 /*
                 if let appointmentsVC = self.tabBarController?.viewControllers {
                     for vc in appointmentsVC {

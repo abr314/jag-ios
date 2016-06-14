@@ -294,14 +294,14 @@
 			isa = PBXGroup;
 			children = (
 				2A4D5FC31C4ECEE30097316E /* HCFontsandColors.swift */,
+				2A42C9BF1CCA6BBA0007DF4A /* HCErrorMessageManager.swift */,
+				2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */,
+				2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */,
+				2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */,
 				2ADC30881C502D3F006773AE /* Helpers.swift */,
 				2A770D491C52C1C200960766 /* PhoneNumberFormatter.swift */,
 				2A770D4A1C52C1C200960766 /* StringExtension.swift */,
-				2AE5ADDC1C642CE4007BD715 /* HCFormValidator.swift */,
-				2A9BF62A1C8606BA00F281EF /* HCJSONSerializer.swift */,
-				2A9BF62E1C860D9300F281EF /* HCNetworkConnection.swift */,
 				2A9BF6311C8614AA00F281EF /* JAGURLs.swift */,
-				2A42C9BF1CCA6BBA0007DF4A /* HCErrorMessageManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";

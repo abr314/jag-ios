@@ -25,8 +25,6 @@ class RatingsPopoverController: UIViewController {
     var userToRateName: String?
     var isProRatingCustomer: Bool?
     
-    var rating = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +45,10 @@ class RatingsPopoverController: UIViewController {
             providerImageView.clipsToBounds = true
         }
         
+        self.view.layer.borderWidth = 2
+        self.view.layer.cornerRadius = 10
+        self.view.layer.borderColor = UIColor.whiteColor().CGColor
+        
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -58,9 +60,10 @@ class RatingsPopoverController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         let border = CALayer()
+        let borderHeight = CGFloat(2)
         
-        border.backgroundColor = UIColor.grayColor().CGColor
-        border.frame = CGRect(x: 0, y: userView.frame.size.height-2, width:  userView.frame.size.width, height: 2)
+        border.backgroundColor = UIColor.lightGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: userView.frame.size.height-borderHeight, width:  userView.frame.size.width, height: borderHeight)
         
         userView.layer.addSublayer(border)
         //userView.layer.masksToBounds = true
@@ -76,29 +79,10 @@ class RatingsPopoverController: UIViewController {
             return
         }
         
-        rating = String(Int(starRatingsView.rating))
-        
-        if isProRatingCustomer == true {
-            proRatesCustomer()
-        } else {
-            customerRatesPro()
-        }
-        
-    }
-    
-    
-    func customerRatesPro() {
-        
-        
         submitRating()
         
     }
     
-    func proRatesCustomer() {
-        
-        submitRating()
-    
-    }
     
     func submitRating() {
         
@@ -115,9 +99,19 @@ class RatingsPopoverController: UIViewController {
         
         let token = UserInformation.sharedInstance.token
         let headers = ["Authorization":  "Token  \(token)"]
+        var endpointURL:URLStringConvertible
         var params = [String: AnyObject]?()
-        params = ["appointment_provider_rates_customer":Int(starRatingsView.rating)]
-        Alamofire.request(.POST, (kAppointmentEndURL + appointmentID + "/"), parameters:params, headers:headers)
+        
+        if isProRatingCustomer == true {
+            params = ["appointment_provider_rates_customer":Int(starRatingsView.rating)]
+            endpointURL = kAppointmentEndURL + appointmentID + "/"
+        } else {
+            params = ["rating":Int(starRatingsView.rating), "appointment_id" : appointmentID]
+            endpointURL = kRatingsURL
+        }
+        
+        
+        Alamofire.request(.POST, endpointURL, parameters:params, headers:headers)
             .responseJSON { response in
                 
                 switch response.result {

@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print("APPOINTMENTS via App Delegate:\(self.userInfo.appointments)")
                     UserInformation.sharedInstance.userAlreadyExists = true
-                    NSNotificationCenter.defaultCenter().postNotificationName("AppointmentsRetrieved", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                 
                 case .Failure(let error):
            

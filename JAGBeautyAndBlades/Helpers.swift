@@ -128,6 +128,8 @@ let kNetworkAuthorizationString = "Authorization"
 let kJAGToken:String = "JAGToken"
 let kGCMToken:String = "GCM_Registration_ID"
 
+let kCheckForAppointmentNeedingCustomerRatingNotification = "check_for_appointment_needing_customer_rating_notification"
+
 let path:String? = NSBundle.mainBundle().pathForResource("ServiceTypes", ofType: "plist")
 
 

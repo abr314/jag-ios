@@ -368,7 +368,7 @@ class AppointmentsFormViewController: XLFormViewController {
                 dispatch_async(dispatch_get_main_queue(), {
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print(JSON(json))
-                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                     self.initializeForm()
                 })
                 
