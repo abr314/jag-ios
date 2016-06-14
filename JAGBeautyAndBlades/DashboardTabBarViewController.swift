@@ -92,7 +92,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
             if status == "unrated" && role == "customer" {
                 seekRatingForAppointment(jsonObj)
                 break
-            } else if status == "in_progress" && role != "customer" && !(navigationController?.visibleViewController is AppointmentDetailFormViewController){
+            } else if status == "in_progress" && role != "customer" {
                 performSegueWithIdentifier("appointmentStillInProgress", sender: nil)
             }
         }
