@@ -362,17 +362,16 @@ class AppointmentDetailFormViewController: XLFormViewController, UIPopoverPresen
                 
                 let appointmentAction = UIAlertAction(title: alertConfirmMessage, style: .Destructive) { (action) in
                     //       print(action)
-                    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                    let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
                     activityView.color = UIColor.blackColor()
                     //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
                     //  activityIndicator.transform = transform
                     activityView.center = self!.view.center
                     activityView.hidesWhenStopped = true
-                    //    activityView.activityIndicatorViewStyle = UIActivityIndicatorView.
-                    
+                    self!.view.addSubview(activityView)
                     activityView.startAnimating()
                     
-                    self!.view.addSubview(activityView)
+                    
                     let headers = ["Authorization":  "Token  \(self!.token)"]
                     Alamofire.request(requestType, endpointURL, parameters:params, headers:headers)
                         .responseJSON { response in
@@ -397,7 +396,6 @@ class AppointmentDetailFormViewController: XLFormViewController, UIPopoverPresen
                                                 self?.refreshDetailView()
                                             } else {
                                                 self?.navigationController?.popViewControllerAnimated(true)
-                                                NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                                             }
                                             
                                         }
@@ -497,6 +495,7 @@ class AppointmentDetailFormViewController: XLFormViewController, UIPopoverPresen
             
             if status == "in_progress" {
                 appointmentJson = jsonObj
+                appointmentID = jsonObj["id"].stringValue
                 
                 categoryName = String(appointmentJson["category"]["name"].stringValue.capitalizedString)
                 

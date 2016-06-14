@@ -85,7 +85,7 @@ class AppointmentsFormViewController: XLFormViewController {
                     appointmentsMaking.append(jsonObj)
                 }
                 
-                if status == "done" {
+                if status == "done" || (isPro == true && status == "unrated"){
                     appointmentsDone.append(jsonObj)
                 }
             }
@@ -368,7 +368,7 @@ class AppointmentsFormViewController: XLFormViewController {
                 dispatch_async(dispatch_get_main_queue(), {
                     UserInformation.sharedInstance.appointments = JSON(json)
                     print(JSON(json))
-                    NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
+                    //NSNotificationCenter.defaultCenter().postNotificationName(kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
                     self.initializeForm()
                 })
                 

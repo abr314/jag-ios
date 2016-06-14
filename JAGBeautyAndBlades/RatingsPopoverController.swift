@@ -86,14 +86,14 @@ class RatingsPopoverController: UIViewController {
     
     func submitRating() {
         
-        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         activityView.color = UIColor.blackColor()
         //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
         //  activityIndicator.transform = transform
         activityView.center = self.view.center
         activityView.hidesWhenStopped = true
         //    activityView.activityIndicatorViewStyle = UIActivityIndicatorView.
-        
+        self.view.addSubview(activityView)
         activityView.startAnimating()
         
         
@@ -109,7 +109,6 @@ class RatingsPopoverController: UIViewController {
             params = ["rating":Int(starRatingsView.rating), "appointment_id" : appointmentID]
             endpointURL = kRatingsURL
         }
-        
         
         Alamofire.request(.POST, endpointURL, parameters:params, headers:headers)
             .responseJSON { response in

@@ -14,6 +14,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
     var appointments:JSON?
     var role:String?
     var AppointmentToRate = JSON.null
+    var currentlySegueing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.registerApplicationWithGCM(UIApplication.sharedApplication())
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForUnratedAppointment(_:)), name: kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.checkForMidFlowAppointmentStates(_:)), name: kCheckForAppointmentNeedingCustomerRatingNotification, object: nil)
         
         //if let navBarFont = UIFont(name: kJagFont, size: 30) {
         self.title = "Services"
@@ -79,8 +80,8 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
     }
 
     // MARK: - Customer Appointment Rating
-    func checkForUnratedAppointment(notification: NSNotification) {
-        if role != "customer" { return }
+    func checkForMidFlowAppointmentStates(notification: NSNotification) {
+        
         let appointments = UserInformation.sharedInstance.appointments
         
         for appointment in appointments {
@@ -88,15 +89,17 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
             let jsonObj = appointment.1
             let status = jsonObj["status"].stringValue
             
-            
-            if status == "unrated" {
+            if status == "unrated" && role == "customer" {
                 seekRatingForAppointment(jsonObj)
                 break
+            } else if status == "in_progress" && role != "customer" && !(navigationController?.visibleViewController is AppointmentDetailFormViewController){
+                performSegueWithIdentifier("appointmentStillInProgress", sender: nil)
             }
         }
+    
 
     }
-    
+
     func seekRatingForAppointment(appointmentToRate:JSON) {
         
         AppointmentToRate = appointmentToRate
@@ -132,7 +135,11 @@ class DashboardTabBarViewController: UITabBarController , UIPopoverPresentationC
                 vc.userToRateName = AppointmentToRate["service_provider"]["first_name"].stringValue + " " + String(lastName[lastName.startIndex]) + "."
                 vc.userToRateImageURL = AppointmentToRate["service_provider"]["profile_picture"].URL
             }
+        } else if segue.identifier == "appointmentStillInProgress" {
+            let appointmentDetailVC = segue.destinationViewController as? AppointmentDetailFormViewController
+            appointmentDetailVC?.refreshDetailView()
         }
+        
 
     }
     

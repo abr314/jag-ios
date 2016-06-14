@@ -355,6 +355,7 @@
                         <segue destination="MiI-vI-lR5" kind="popoverPresentation" identifier="ratings" popoverAnchorView="nPy-aV-DzE" id="thd-nr-Syr">
                             <popoverArrowDirection key="popoverArrowDirection"/>
                         </segue>
+                        <segue destination="j45-JG-enJ" kind="show" identifier="appointmentStillInProgress" id="od5-XS-gTT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nd2-Lj-lyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,7 +498,8 @@
         <image name="pro.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NRK-Ej-ddg"/>
         <segue reference="thd-nr-Syr"/>
+        <segue reference="NRK-Ej-ddg"/>
+        <segue reference="od5-XS-gTT"/>
     </inferredMetricsTieBreakers>
 </document>
