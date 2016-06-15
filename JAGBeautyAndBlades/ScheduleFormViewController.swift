@@ -243,7 +243,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             row.cellConfig.setObject(kPurpleColor, forKey: "self.tintColor")
             
             if (row.tag == kCityState) {
-                row.value = "Austin, TX"
+                //row.value = "Please Fill Zip First"
                 row.disabled = true
             }
             section.addFormRow(row)
@@ -432,8 +432,8 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
             if let new = appointment?.appointmentID {
                 appointmentID = new
             }
-            let appointmendRequestURL = "\(kAppointmentUpdateURL)\(appointmentID)/"
-            print("\(appointmendRequestURL)")
+            let appointmentRequestURL = "\(kAppointmentUpdateURL)\(appointmentID)/"
+            print("\(appointmentRequestURL)")
             /**
              Booking and Category are required
             */
@@ -454,7 +454,7 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
                 appPrice = price
             }
         
-            Alamofire.request(.PUT, appointmendRequestURL, headers:[kNetworkAuthorizationString:  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
+            Alamofire.request(.PUT, appointmentRequestURL, headers:[kNetworkAuthorizationString:  "Token  \(token)"], parameters: ["requested_start_by":requestedStartBy,"requested_end_by":"\(requestedEndBy.formattedISO8601)","id":"\(appointmentID)","category":categoryID, "booking":"\(bookingNumber)", "service_provider":"", "address":"", "confirmed_customer":"false", "confirmed_provider":"false", "appointment_price":appPrice, "actual_start_time":"","actual_end_time":"", "customer":"\(customerID)"])
                 
                 .responseString { response in
                     print(response)
@@ -599,6 +599,50 @@ class ScheduleFormViewController: XLFormViewController, BTDropInViewControllerDe
         if formRow.tag ==  kEndTime {
             let indexPath = NSIndexPath(forRow: 0, inSection: 2)
             self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+        } else if formRow.tag == kZipCode {
+            if let zip:Int = formRow.value as? Int {
+                let zipString = String(zip)
+                let zipLength = zipString.characters.count
+                if zipLength == 5 {
+                    let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+                    activityView.color = UIColor.blackColor()
+                    //  transform = CGAffineTransform(CGAffineTransformMakeScale(1.5f, 1.5f);
+                    //  activityIndicator.transform = transform
+                    activityView.center = self.view.center
+                    activityView.hidesWhenStopped = true
+                    self.view.addSubview(activityView)
+                    activityView.startAnimating()
+                    
+                    
+                    //let headers = ["Authorization":  "Token  \(self!.token)"]
+                    Alamofire.request(.GET, ("http://maps.googleapis.com/maps/api/geocode/json?address=&components=postal_code:" + zipString + "&sensor=false"), parameters:nil, headers:nil)
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success(let json):
+                                let data = JSON(json)
+                                print(data)
+                                let cityState = String(data["results"][0]["formatted_address"].stringValue.componentsSeparatedByString(zipString).first!.characters.dropLast())
+                                let row = self.form.formRowWithTag(kCityState)
+                                row!.value = cityState
+                                self.reloadFormRow(row)
+                                activityView.stopAnimating()
+
+                            case .Failure(let error):
+                                print(response.result)
+                                print(error)
+                                print(error.code)
+                                print(error.localizedFailureReason)
+                                let alertController = returnAlertControllerForErrorCode(error.code)
+                                activityView.stopAnimating()
+                                self.presentViewController(alertController, animated: true) {
+                                    // ...
+                                }
+                            }
+                    }
+                }
+
+                
+            }
         }
     }
     
